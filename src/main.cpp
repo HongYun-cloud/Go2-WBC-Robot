@@ -1,0 +1,285 @@
+#include <SIM/MJCsim.hpp>
+#include <MPC/MPC.hpp>
+#include <Model/pinocchio.hpp>
+#include "WBC/WBC.hpp"
+#include <common.h>
+#include <iomanip>
+#include "fsm/ControlFSM.hpp"
+
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <cstring>
+#include <sstream>
+#include <vector>
+
+// PlotJuggler UDP 流式发送 (PlotJuggler → UDP Stream 插件, 默认端口 9870)
+// 格式: JSON 对象, 每行一个, 如 {"timestamp":0.02, "FL_x":0.193, "FL_z":-0.05}
+// 用法: PlotSend(0.02, {{"FL_x", 0.193}, {"FL_z", -0.05}})
+static int _pj_sock = -1;
+static struct sockaddr_in _pj_addr;
+void PlotSend(double time, const std::vector<std::pair<std::string,double>>& data){
+    if (_pj_sock < 0) {
+        _pj_sock = socket(AF_INET, SOCK_DGRAM, 0);
+        std::memset(&_pj_addr, 0, sizeof(_pj_addr));
+        _pj_addr.sin_family = AF_INET;
+        _pj_addr.sin_port = htons(9870);
+        inet_pton(AF_INET, "127.0.0.1", &_pj_addr.sin_addr);
+    }
+    std::ostringstream oss;
+    oss << std::fixed << std::setprecision(4) << "{\"timestamp\":" << time;
+    for (auto& kv : data)
+        oss << ",\"" << kv.first << "\":" << kv.second;
+    oss << "}\n";
+    std::string msg = oss.str();
+    sendto(_pj_sock, msg.c_str(), msg.size(), 0,
+           (struct sockaddr*)&_pj_addr, sizeof(_pj_addr));
+}
+
+std::string xml = "../go2/scene.xml";
+std::string urdf_path = "../go2/go2_description.urdf";
+
+void FootForceCmp(const Eigen::Matrix<double,12,1>& f_mpc,
+                  const Eigen::Matrix<double,12,1>& f_wbc){
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "--- MPC vs WBC 足端力 ---" << std::endl;
+    for (int leg = 0; leg < 4; leg++) {
+        const char* names[] = {"FL", "FR", "RL", "RR"};
+        std::cout << " " << names[leg] << " MPC: " << f_mpc.segment<3>(leg*3).transpose()
+                  << "  WBC: "     << f_wbc.segment<3>(leg*3).transpose() << std::endl;
+    }
+}
+
+// 足端位置表格: 4×3 (每行 = 一条腿的 x y z)
+void FootPosTable(const Eigen::Matrix<double,4,3>& p_foot){
+    std::cout << std::fixed << std::setprecision(3);
+    std::cout << "--- 足端位置 (世界系) ---" << std::endl;
+    const char* names[] = {"FL", "FR", "RL", "RR"};
+    std::cout << " Leg |      x        y        z" << std::endl;
+    for (int leg = 0; leg < 4; leg++) {
+        std::cout << "  " << names[leg] << "  | "
+                  << std::setw(7) << p_foot(leg, 0) << " "
+                  << std::setw(7) << p_foot(leg, 1) << " "
+                  << std::setw(7) << p_foot(leg, 2) << std::endl;
+    }
+}
+void FootAccTable(const Eigen::Matrix<double,12,1>& a_foot){
+    std::cout << std::fixed << std::setprecision(3);
+    std::cout << "--- 足端加速度 (世界系) ---" << std::endl;
+    const char* names[] = {"FL", "FR", "RL", "RR"};
+    std::cout << " Leg |      ax      ay      az |     |a|     方向 (单位向量)" << std::endl;
+    for (int leg = 0; leg < 4; leg++) {
+        Eigen::Vector3d a = a_foot.segment<3>(leg*3);
+        double mag = a.norm();
+        Eigen::Vector3d dir = Eigen::Vector3d::Zero();
+        if (mag > 1e-9) dir = a / mag;
+        std::cout << "  " << names[leg] << "  | "
+                  << std::setw(7) << a(0) << " " << std::setw(7) << a(1) << " " << std::setw(7) << a(2)
+                  << " | " << std::setw(7) << mag
+                  << " | (" << std::setw(6) << dir(0) << "," << std::setw(6) << dir(1) << "," << std::setw(6) << dir(2) << ")"
+                  << std::endl;
+    }
+}
+
+
+
+int main(){
+    auto scheduler  = std::make_shared<Gait::GaitScheduler>();
+    auto estimator  = std::make_shared<Estimator::PositionVelocityEstimator>();
+    auto trajectory = std::make_shared<SwingPlanner::SwingLegPlanner>(scheduler, estimator);
+
+    auto fsm = std::make_unique<fsm::ControlFSM>(scheduler,trajectory);
+    auto mj  = new MJCSIM::SIM(xml);
+    auto pin = new Pinocchio::PinocchioKinematics(urdf_path);
+    auto mpc = new Regulator::MPC(estimator.get());
+    auto wbc = new WBC::WBC(estimator.get());
+
+    // 足端顺序FL,FR,RL,RR
+    // ===== 通过地址连接 Pinocchio 足端数据到 MPCData =====
+    mpc->setLegData(pin->getLegData());
+
+    // ===== WBC 初始化 =====
+    wbc->setPinocchio(pin);
+    wbc->loadConfig("../config/mpc.yaml");
+
+    mj->InitMujoco();
+    // mj->SimStart();
+    // mj->InitViewer();
+
+    Eigen::Vector3d v, w;
+    Eigen::Vector3d q, p;
+    q.setZero(); p.setZero();
+    v.setZero(); w.setZero();
+    v[0] = 0.0;
+    p[2] = 0.25;
+    mpc->update_DesireStateCommand(q,p,v,w);
+    mpc->loadConfig("../config/mpc.yaml");
+    mpc->update_reference_trajectory();
+
+    // WBC 首次 update + init (设置 cmd 并初始化固定矩阵)
+    {
+        auto state = mj->getState();
+        estimator->update(state);
+        pin->setJointVelocity(v8to12(state.joint_velocities));
+        pin->setBaseVelocity(state.linear_vel, state.angular_vel);
+        pin->forwardKinematics(q8toq12(state.joint_positions), state.position, state.quat.coeffs());
+        trajectory->SetFootPositions(pin->getAllFootPositions());  // 用 FK 真值初始化足端位置, 避免默认 -0.25 污染首拍摆动
+
+        mpc->update();
+        mpc->solve();
+        auto f_mpc = mpc->getControl();
+
+        Eigen::Matrix<double, 18, 1> q_des = Eigen::Matrix<double, 18, 1>::Zero();
+        Eigen::Matrix<double, 12, 1> a_des = Eigen::Matrix<double, 12, 1>::Zero();
+        wbc->update(q_des, f_mpc, a_des, state);
+    }
+    wbc->init();
+
+    // ===== MPC 模型参数: 用 URDF 真值替换硬编码 =====
+    // 之前 m=12kg, I=(0.1,0.1,0.02) 是瞎猜的, I_zz 比真值小 ~20 倍 →
+    // 模型以为 yaw 极容易控制, 几乎不输出侧向力差 → 真实 yaw/roll 扰动得不到纠正 → 漂移后倒向固定一侧
+    {
+        double m_total = 0.0;
+        Eigen::Matrix3d I_com = Eigen::Matrix3d::Zero();
+        pin->getTotalMassInertia(m_total, I_com);
+        mpc->setModelParams(m_total, I_com.diagonal().asDiagonal());  // 简化模型: 机身系对角惯性
+        std::cout << "[MPC] mass=" << m_total << " kg, I diag=" << I_com.diagonal().transpose() << std::endl;
+    }
+
+    // DEBUG: FSM: 设置初始步态为 TROT, 进入跑步状态
+    fsm->SetCmd(Gait::GaitType::TROT);
+    fsm->SetState(fsm::FSM_State::GAIT_RUNNING);
+
+    const double sim_dt = 0.002;
+    int count = 0;
+
+    // ===== 足端实际加速度 (世界系): v_foot_act 数值微分 =====
+    Eigen::Matrix<double, 12, 1> v_foot_prev = Eigen::Matrix<double, 12, 1>::Zero();
+    Eigen::Matrix<double, 12, 1> a_foot_act = Eigen::Matrix<double, 12, 1>::Zero();
+    bool have_prev_v = false;
+
+    while (1){
+        fsm->run(sim_dt);
+        count++;
+        auto state = mj->getState();
+
+        // ===== 计划接触 (步态相位): 摆动/支撑划分不能用实测接触 =====
+        // 静止时四足全着地 → 实测接触全 1 → 摆动任务永远不触发 (死锁: 脚不抬就永远"支撑")
+        // 覆写 state.contact_states 为计划接触, 后续 estimator/MPC/PD/WBC 全部按计划划分
+        for (int leg = 0; leg < 4; leg++)
+            state.contact_states[leg] = (scheduler->GetSwingPhases(leg) <= 0) ? 1 : 0;
+
+        estimator->update(state);
+        pin->setJointVelocity(v8to12(state.joint_velocities));
+        pin->setBaseVelocity(state.linear_vel, state.angular_vel);
+        pin->forwardKinematics(q8toq12(state.joint_positions), state.position, state.quat.coeffs());
+        trajectory->SetFootPositions(pin->getAllFootPositions());  // FK 足端位置反馈给摆动轨迹规划器
+
+        // MPC 计算期望力
+        // 接触预测: 按步态相位滚动到预测时域 (之前复制当前接触, 接触切换点附近预测模型错误)
+        mpc->setContactSchedule(scheduler->GetContactSchedule(mpc->getDt(), mpc->getHorizonN()));
+        mpc->update();
+        mpc->solve();
+        auto f_mpc = mpc->getControl();
+
+        // // WBC: QP 求解一致的加速度和力
+        Eigen::Matrix<double, 18, 1> q_des = Eigen::Matrix<double, 18, 1>::Zero();
+
+        // ===== 摆动腿 PD 闭环: 位置/速度误差 → 足端加速度指令 =====
+        // WBC 摆动任务只跟踪加速度, 轨迹的向上运动在初速度里, 必须闭环
+        const double Kp = 1000.0, Kd = 20.0;
+        double T_swing = scheduler->GetSwingTime();
+        if (T_swing < 1e-3) T_swing = 1e-3;  // STAND 时 duty=1 → T_swing=0, 防除零
+
+        Eigen::Matrix<double, 4, 3> p_ref = trajectory->GetSwingPos();
+        Eigen::Matrix<double, 4, 3> v_ref = trajectory->GetSwingVel() / T_swing;   // 相位速度 → 时间速度 (m/s)
+        Eigen::Matrix<double, 4, 3> p_act = pin->getAllFootPositions();
+        
+        // 足端实际速度: J_floating × v_full (与 WBC 摆动任务同坐标系)
+        Eigen::Matrix<double, 18, 1> v_full;
+        v_full << state.linear_vel, state.angular_vel, v8to12(state.joint_velocities);
+        Eigen::Matrix<double, 12, 1> v_foot_act;
+        for (int leg = 0; leg < 4; leg++)
+            v_foot_act.segment<3>(leg * 3) = pin->getFootJacobianFloatingBase(leg) * v_full;
+
+        // ===== 足端实际加速度 (世界系): v_foot_act 数值微分 =====
+        if (have_prev_v)
+            a_foot_act = (v_foot_act - v_foot_prev) / sim_dt;
+        v_foot_prev = v_foot_act;
+        have_prev_v = true;
+
+        // 前馈 + PD 反馈;
+        // (之前双除 → a_ff = -6H/T⁴ ≈ -153 m/s² → 限幅成恒定 -40 向下偏置: 步高被压死, 起摆时把脚往地里压 → 机身被顶飞)
+        Eigen::Matrix<double, 12, 1> a_ff = trajectory->GetSwingAccVec();
+        Eigen::Matrix<double, 12, 1> a_des = Eigen::Matrix<double, 12, 1>::Zero();
+
+        for (int leg = 0; leg < 4; leg++) {
+            if (state.contact_states[leg] == 1) continue;  // 计划支撑腿
+
+            // 边界软化: 起摆/落地两端 10% 相位内, 速度参考与前馈线性压到 0
+            // (贝塞尔起摆 v_ref 从 0 突跳 +1.2 m/s、落地 −1.2 m/s 砸地, 经 Kd 放大成 ±24 m/s² 的猛拽/砸地)
+            double t = scheduler->GetSwingPhases(leg);
+            double blend = 1.0;
+            if (t < 0.1)      blend = t / 0.1;
+            else if (t > 0.9) blend = (1.0 - t) / 0.1;
+
+            Eigen::Vector3d e_p = p_ref.row(leg).transpose() - p_act.row(leg).transpose();
+            Eigen::Vector3d e_v = blend * v_ref.row(leg).transpose() - v_foot_act.segment<3>(leg * 3);
+            Eigen::Vector3d a_leg = blend * a_ff.segment<3>(leg * 3) + Kp * e_p + Kd * e_v;
+            float max_ff = 80.0;
+            if (a_leg.norm() > max_ff) a_leg *= max_ff / a_leg.norm();  // 保险限幅 ±40 m/s² (20 太小: Kp·e_p 在 4cm 误差就饱和, 步高被压)
+            a_des.segment<3>(leg * 3) = a_leg;
+        }
+
+
+        // ===== PlotJuggler UDP 发送 (PlotJuggler → UDP Stream, 127.0.0.1:9870) =====
+        // 用 foot_time 为时间戳 (秒), 每 10 帧 (0.02s) 发一次
+        {
+            double t = count * sim_dt;
+            std::vector<std::pair<std::string,double>> pj;
+            const char* legN[] = {"FL","FR","RL","RR"};
+            for (int leg = 0; leg < 4; leg++) {
+                pj.push_back({std::string("p_ref_") + legN[leg] + "_x", p_ref(leg,0)});
+                pj.push_back({std::string("p_ref_") + legN[leg] + "_y", p_ref(leg,1)});
+                pj.push_back({std::string("p_ref_") + legN[leg] + "_z", p_ref(leg,2)});
+                pj.push_back({std::string("p_act_") + legN[leg] + "_x", p_act(leg,0)});
+                pj.push_back({std::string("p_act_") + legN[leg] + "_y", p_act(leg,1)});
+                pj.push_back({std::string("p_act_") + legN[leg] + "_z", p_act(leg,2)});
+
+                pj.push_back({std::string("a_ref_") + legN[leg] + "_x", a_des(leg,0)});
+                pj.push_back({std::string("a_ref_") + legN[leg] + "_y", a_des(leg,1)});
+                pj.push_back({std::string("a_ref_") + legN[leg] + "_z", a_des(leg,2)});
+
+                pj.push_back({std::string("a_act_") + legN[leg] + "_x", a_foot_act(leg*3+0)});
+                pj.push_back({std::string("a_act_") + legN[leg] + "_y", a_foot_act(leg*3+1)});
+                pj.push_back({std::string("a_act_") + legN[leg] + "_z", a_foot_act(leg*3+2)});
+            }
+            pj.push_back({"body_x", state.position[0]});
+            pj.push_back({"body_z", state.position[2]});
+            if (count % 10 == 0) PlotSend(t, pj);
+        }
+        if (count % 10 == 0)
+            FootAccTable(a_des);  // PD 后的指令加速度 (世界系)
+
+
+
+        wbc->update(q_des, f_mpc, a_des, state);
+        wbc->solve();
+
+        WBC::SolutionVector sol;
+        wbc->GetSolution(sol);
+        Eigen::Matrix<double, 12, 1> f_wbc = sol.tail(12);
+
+        if (count % 10 == 0)
+            FootForceCmp(f_mpc, f_wbc);
+
+        // 关节力矩用 WBC 完整解 (逆动力学 τ = M·a + h − Jᵀf):
+        // 只用 f_wbc 时摆动腿 f=0 (硬约束) → 摆动腿关节零力矩, 腿抬不起来
+        auto tau = pin->getJointTorquesFromSolution(sol.head(18), f_wbc);
+
+        mj->control(tau);
+        mj->Step();
+        mj->Render();
+    }
+}
