@@ -28,7 +28,7 @@ struct DesireCMD{
     Vec3d w;
 };
 
-struct legController{
+struct legData{
     std::array<Vec3d,4> p;  // 质心到足端的向量
     std::array<Vec3d,4> w;  // 足端角速度
 };
@@ -38,7 +38,7 @@ struct MPCData{
     Vec12d control;         // f1,f2,f3,f4
     Vec13d desireState;     // yaw,pitch,roll,x,y,z,wx,wy,wz,vx,vy,vz
     DesireCMD state_Cmd;
-    legController* leg = nullptr;  // 指向 LegController 内部 leg 的地址
+    legData* leg = nullptr;  // 指向 LegController 内部 leg 的地址
     Estimator::ConvertEstimatorForMPC est_state ;
     MPCData(){
         desireState.setZero();

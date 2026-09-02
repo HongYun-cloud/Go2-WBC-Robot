@@ -144,7 +144,7 @@ void PinocchioKinematics::forwardKinematics(const Eigen::VectorXd& q,
     _syncLegData();
 }
 
-Regulator::legController* PinocchioKinematics::getLegData()
+Regulator::legData* PinocchioKinematics::getLegData()
 {
     return &leg_data_;
 }

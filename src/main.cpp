@@ -148,7 +148,7 @@ int main(){
     }
 
     // DEBUG: FSM: 设置初始步态为 TROT, 进入跑步状态
-    fsm->SetCmd(Gait::GaitType::TROT);
+    fsm->SetCmd(Gait::GaitType::TROT,v);
     fsm->SetState(fsm::FSM_State::GAIT_RUNNING);
 
     const double sim_dt = 0.002;
@@ -186,16 +186,13 @@ int main(){
         // // WBC: QP 求解一致的加速度和力
         Eigen::Matrix<double, 18, 1> q_des = Eigen::Matrix<double, 18, 1>::Zero();
 
-        // ===== 摆动腿 PD 闭环: 位置/速度误差 → 足端加速度指令 =====
-        // WBC 摆动任务只跟踪加速度, 轨迹的向上运动在初速度里, 必须闭环
-        const double Kp = 1000.0, Kd = 20.0;
         double T_swing = scheduler->GetSwingTime();
         if (T_swing < 1e-3) T_swing = 1e-3;  // STAND 时 duty=1 → T_swing=0, 防除零
 
         Eigen::Matrix<double, 4, 3> p_ref = trajectory->GetSwingPos();
         Eigen::Matrix<double, 4, 3> v_ref = trajectory->GetSwingVel() / T_swing;   // 相位速度 → 时间速度 (m/s)
         Eigen::Matrix<double, 4, 3> p_act = pin->getAllFootPositions();
-        
+
         // 足端实际速度: J_floating × v_full (与 WBC 摆动任务同坐标系)
         Eigen::Matrix<double, 18, 1> v_full;
         v_full << state.linear_vel, state.angular_vel, v8to12(state.joint_velocities);
@@ -209,16 +206,30 @@ int main(){
         v_foot_prev = v_foot_act;
         have_prev_v = true;
 
-        // 前馈 + PD 反馈;
-        // (之前双除 → a_ff = -6H/T⁴ ≈ -153 m/s² → 限幅成恒定 -40 向下偏置: 步高被压死, 起摆时把脚往地里压 → 机身被顶飞)
+        // ===== 纯前馈: 贝塞尔加速度直接进 WBC, 不加 PD 混合 =====
+        // WBC 通过动力学约束 M·a + h − Jᵀf ≈ 0 将其转为动力学正确的足端力
         Eigen::Matrix<double, 12, 1> a_ff = trajectory->GetSwingAccVec();
-        Eigen::Matrix<double, 12, 1> a_des = Eigen::Matrix<double, 12, 1>::Zero();
+        Eigen::Matrix<double, 12, 1> a_des = a_ff;
+        // 支撑腿: a_des 置零 (WBC 不跟踪摆动加速度)
+        for (int leg = 0; leg < 4; leg++)
+            if (state.contact_states[leg] == 1)
+                a_des.segment<3>(leg*3).setZero();
 
+        wbc->update(q_des, f_mpc, a_des, state);
+        wbc->solve();
+
+        WBC::SolutionVector sol;
+        wbc->GetSolution(sol);
+        Eigen::Matrix<double, 12, 1> f_wbc = sol.tail(12);
+
+        // 关节力矩: τ = M·a + h − Jᵀf (WBC 逆动力学)
+        auto tau = pin->getJointTorquesFromSolution(sol.head(18), f_wbc);
+
+        // ===== 摆动腿阻抗修正: τ += Jᵀ·(Kp·e_p + Kd·e_v) =====
+        // 在 WBC 动力学正确的力基础上, 补充位置/速度误差的阻抗力
         for (int leg = 0; leg < 4; leg++) {
-            if (state.contact_states[leg] == 1) continue;  // 计划支撑腿
+            if (state.contact_states[leg] == 1) continue;  // 支撑腿跳过
 
-            // 边界软化: 起摆/落地两端 10% 相位内, 速度参考与前馈线性压到 0
-            // (贝塞尔起摆 v_ref 从 0 突跳 +1.2 m/s、落地 −1.2 m/s 砸地, 经 Kd 放大成 ±24 m/s² 的猛拽/砸地)
             double t = scheduler->GetSwingPhases(leg);
             double blend = 1.0;
             if (t < 0.1)      blend = t / 0.1;
@@ -226,12 +237,27 @@ int main(){
 
             Eigen::Vector3d e_p = p_ref.row(leg).transpose() - p_act.row(leg).transpose();
             Eigen::Vector3d e_v = blend * v_ref.row(leg).transpose() - v_foot_act.segment<3>(leg * 3);
-            Eigen::Vector3d a_leg = blend * a_ff.segment<3>(leg * 3) + Kp * e_p + Kd * e_v;
-            float max_ff = 80.0;
-            if (a_leg.norm() > max_ff) a_leg *= max_ff / a_leg.norm();  // 保险限幅 ±40 m/s² (20 太小: Kp·e_p 在 4cm 误差就饱和, 步高被压)
-            a_des.segment<3>(leg * 3) = a_leg;
+            Eigen::Vector3d Kp_vec(1000, 10, 1000);  // xy 小增益防震荡, z 大增益
+            Eigen::Vector3d Kd_vec(20, 10, 20);
+            Eigen::Vector3d f_imp = Kp_vec.cwiseProduct(e_p) + Kd_vec.cwiseProduct(e_v);  // 阻抗力
+
+            // 足端雅可比 (3×12, 关节空间) → 关节力矩
+            Eigen::MatrixXd J_leg = pin->getFootJacobian(leg);
+            Eigen::VectorXd tau_imp_full = J_leg.transpose() * f_imp;  // 12 维 (Pinocchio 顺序)
+
+            // 跳过 hip 关节 (索引 0,3,6,9), 叠加到 8 维 tau (MuJoCo 顺序)
+            int idx = 0;
+            for (int i = 0; i < 12; i++) {
+                if (i % 3 != 0) {
+                    tau(idx) += tau_imp_full(i);
+                    idx++;
+                }
+            }
         }
 
+        mj->control(tau);
+        mj->Step();
+        mj->Render();
 
         // ===== PlotJuggler UDP 发送 (PlotJuggler → UDP Stream, 127.0.0.1:9870) =====
         // 用 foot_time 为时间戳 (秒), 每 10 帧 (0.02s) 发一次
@@ -243,43 +269,44 @@ int main(){
                 pj.push_back({std::string("p_ref_") + legN[leg] + "_x", p_ref(leg,0)});
                 pj.push_back({std::string("p_ref_") + legN[leg] + "_y", p_ref(leg,1)});
                 pj.push_back({std::string("p_ref_") + legN[leg] + "_z", p_ref(leg,2)});
+
                 pj.push_back({std::string("p_act_") + legN[leg] + "_x", p_act(leg,0)});
                 pj.push_back({std::string("p_act_") + legN[leg] + "_y", p_act(leg,1)});
                 pj.push_back({std::string("p_act_") + legN[leg] + "_z", p_act(leg,2)});
 
-                pj.push_back({std::string("a_ref_") + legN[leg] + "_x", a_des(leg,0)});
-                pj.push_back({std::string("a_ref_") + legN[leg] + "_y", a_des(leg,1)});
-                pj.push_back({std::string("a_ref_") + legN[leg] + "_z", a_des(leg,2)});
+                pj.push_back({std::string("v_ref_") + legN[leg] + "_x", v_ref(leg,0)});
+                pj.push_back({std::string("v_ref_") + legN[leg] + "_y", v_ref(leg,1)});
+                pj.push_back({std::string("v_ref_") + legN[leg] + "_z", v_ref(leg,2)});
+
+                pj.push_back({std::string("v_act_") + legN[leg] + "_x", v_foot_act(leg*3+0)});
+                pj.push_back({std::string("v_act_") + legN[leg] + "_y", v_foot_act(leg*3+1)});
+                pj.push_back({std::string("v_act_") + legN[leg] + "_z", v_foot_act(leg*3+2)});
+
+                pj.push_back({std::string("a_ref_") + legN[leg] + "_x", a_des(leg*3 + 0)});
+                pj.push_back({std::string("a_ref_") + legN[leg] + "_y", a_des(leg*3 + 1)});
+                pj.push_back({std::string("a_ref_") + legN[leg] + "_z", a_des(leg*3 + 2)});
+
+                pj.push_back({std::string("a_ff_") + legN[leg] + "_x", a_ff(leg*3+0)});
+                pj.push_back({std::string("a_ff_") + legN[leg] + "_y", a_ff(leg*3+1)});
+                pj.push_back({std::string("a_ff_") + legN[leg] + "_z", a_ff(leg*3+2)});
 
                 pj.push_back({std::string("a_act_") + legN[leg] + "_x", a_foot_act(leg*3+0)});
                 pj.push_back({std::string("a_act_") + legN[leg] + "_y", a_foot_act(leg*3+1)});
                 pj.push_back({std::string("a_act_") + legN[leg] + "_z", a_foot_act(leg*3+2)});
+
+                pj.push_back({std::string("f_mpc_") + legN[leg] + "_x", f_mpc(leg*3+0)});
+                pj.push_back({std::string("f_mpc_") + legN[leg] + "_y", f_mpc(leg*3+1)});
+                pj.push_back({std::string("f_mpc_") + legN[leg] + "_z", f_mpc(leg*3+2)});
+
+                pj.push_back({std::string("f_wbc_") + legN[leg] + "_x", f_wbc(leg*3+0)});
+                pj.push_back({std::string("f_wbc_") + legN[leg] + "_y", f_wbc(leg*3+1)});
+                pj.push_back({std::string("f_wbc_") + legN[leg] + "_z", f_wbc(leg*3+2)});
+                
+                pj.push_back({std::string("contract_") + legN[leg] + "_z", state.contact_states[leg]});
             }
             pj.push_back({"body_x", state.position[0]});
             pj.push_back({"body_z", state.position[2]});
             if (count % 10 == 0) PlotSend(t, pj);
         }
-        if (count % 10 == 0)
-            FootAccTable(a_des);  // PD 后的指令加速度 (世界系)
-
-
-
-        wbc->update(q_des, f_mpc, a_des, state);
-        wbc->solve();
-
-        WBC::SolutionVector sol;
-        wbc->GetSolution(sol);
-        Eigen::Matrix<double, 12, 1> f_wbc = sol.tail(12);
-
-        if (count % 10 == 0)
-            FootForceCmp(f_mpc, f_wbc);
-
-        // 关节力矩用 WBC 完整解 (逆动力学 τ = M·a + h − Jᵀf):
-        // 只用 f_wbc 时摆动腿 f=0 (硬约束) → 摆动腿关节零力矩, 腿抬不起来
-        auto tau = pin->getJointTorquesFromSolution(sol.head(18), f_wbc);
-
-        mj->control(tau);
-        mj->Step();
-        mj->Render();
     }
 }

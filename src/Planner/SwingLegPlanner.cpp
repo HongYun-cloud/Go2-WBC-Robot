@@ -52,7 +52,6 @@ void SwingLegPlanner::Reset(){
 void SwingLegPlanner::Generate(Velocity& v_des,std::function<double(size_t)> phase_func)
 {
     double k = 0.2;             // Raibert 落脚点启发式: 速度误差增益
-    double REPLAN_END = 0.8;    // 摆动期前 80% 动态重规划落脚点, 后 20% 锁定
 
     // phase_func(leg) 返回腿 leg 的摆动相位 [0, 1)
     // 支撑期返回 0, 摆动期 (0, 1)
@@ -73,33 +72,21 @@ void SwingLegPlanner::Generate(Velocity& v_des,std::function<double(size_t)> pha
     for (int leg = 0; leg < 4; leg++) {
         double t = phase_func(leg);
 
-        // 抬腿边沿 (上一周期支撑 0 && 现在摆动 >0): 每摆动周期只更新一次 Start / Mid[0]
+        // 抬腿边沿: 只在此刻一次性算好落脚点, 摆动中不再重规划
         bool lift_off = (_last_phase[leg] == 0.0 && t > 0.0);
         if (lift_off) {
             control_point[leg].Start_Point = _foot_pos.row(leg).transpose();  // 摆动前一刻的足端点
             control_point[leg].Mid_Point.clear();
             control_point[leg].Mid_Point.push_back(control_point[leg].Start_Point + Point{0,0,Walk_H} + offset[leg]);
-            control_point[leg].Mid_Point.push_back(Point::Zero());  // 占位
-        }
 
-        // 动态重规划: 前0.8s更新后2位控制点，之后就不更新了
-        if (t > 0.0 && (t < REPLAN_END || lift_off)) {
             Point p_hip = est.p + R * HIP_OFFSET[leg];  // 髋部世界系位置
             control_point[leg].End_Point = p_hip + (T_stance / 2) * v_actual + k * (v_actual - v_des);
             control_point[leg].End_Point(2) = 0.023;      // 世界坐标系地面高度
+            // 覆盖 xy: 以起点为基准 + 期望速度 × 摆动时间, 避免原地踏步时 x 方向加速度突变
+            // control_point[leg].End_Point(0) = control_point[leg].Start_Point(0) + v_des(0) * T_swing;
+            // control_point[leg].End_Point(1) = control_point[leg].Start_Point(1) + v_des(1) * T_swing;
             control_point[leg].Mid_Point[1] = control_point[leg].End_Point + Point{0,0,Walk_H} + offset[leg];
         }
-        // static int dbg_cnt = 0;
-        // if (leg == 0 && dbg_cnt++ % 100 == 0) {  // 每 100 帧打印一次 (500Hz → 0.2s)
-        //     for (int l = 0; l < 4; l++) {
-        //         std::cout << "controlPoint leg" << l
-        //                   << " S:"  << control_point[l].Start_Point.transpose()
-        //                   << " M0:" << control_point[l].Mid_Point[0].transpose()
-        //                   << " M1:" << control_point[l].Mid_Point[1].transpose()
-        //                   << " E:"  << control_point[l].End_Point.transpose()
-        //                   << " t:"  << phase_func(l) << std::endl;
-        //     }
-        // }
 
         Point p = Bezier_Math::evaluatePos(t, control_point[leg]);
         Point v = Bezier_Math::evaluateVel(t, control_point[leg]);

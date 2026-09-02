@@ -214,7 +214,7 @@ public:
      * 每次 forwardKinematics() 后自动更新 p(世界系 质心→足端 向量)
      * 将此指针传给 MPC::setLegData() 即可实现自动同步
      */
-    Regulator::legController* getLegData();
+    Regulator::legData* getLegData();
 
     /**
      * 计算整机总质量与关于质心的惯性 (CRBA + CoM 平移, 在当前 q_ 配置下)
@@ -256,7 +256,7 @@ private:
 
     // 足端数据 (供 MPC 通过指针直接读取)
     // forwardKinematics() 后自动更新
-    Regulator::legController leg_data_;
+    Regulator::legData leg_data_;
 
     /** 去除 URDF 中引用 package:// 的 visual/collision 标签 */
     std::string stripPackageTags(const std::string& urdf_path) const;

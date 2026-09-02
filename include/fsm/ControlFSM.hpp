@@ -20,7 +20,7 @@ namespace fsm
         void runStand();
         void runStopping();
     public:
-        void SetCmd(Gait::GaitType type);
+        void SetCmd(Gait::GaitType type,Velocity v);
         void SetState(FSM_State state) { Robot_state = state; }
         /** 获取期望速度指令 (供 MPC 参考轨迹使用) */
         Velocity GetDesiredVelocity() const { return Gait_cmd.v; }

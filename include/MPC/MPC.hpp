@@ -44,8 +44,9 @@ class MPC{
         void update_reference_trajectory();
         Vec12d getControl();
 
-        // 连接 LegController 的 leg 数据地址到 MPCData
-        void setLegData(legController* leg_ptr){
+        // 连接 pin 的 leg 数据地址到 MPCData
+        // 这个数据在mpc里为足端向量和足端角速度
+        void setLegData(legData* leg_ptr){
             controller->data->leg = leg_ptr;
         }
 

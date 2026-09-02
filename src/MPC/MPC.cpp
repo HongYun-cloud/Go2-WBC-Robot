@@ -201,12 +201,10 @@ namespace Regulator{
         d(5) = c.p(2);
         
 
-        // 下一步就是先能走再说
-        d(3) = e.p(0) + c.v(0) * dt;
-        d(4) = e.p(1) + c.v(0) * dt;
-        d(5) = 0.25 + c.v(0) * dt;
-        std::cout << "act:" << e.p(0) << ", "  << e.p(1) << ", "  << e.p(2) << std::endl;
-        std::cout << "desire: " << d(3) << ", " << d(4) << ", " << d(5) << std::endl;
+        // // 下一步就是先能走再说
+        // d(3) = e.p(0) + c.v(0) * dt;
+        // d(4) = e.p(1) + c.v(0) * dt;
+        // d(5) = 0.25 + c.v(0) * dt;
 
         d(6) = c.w(0);
         d(7) = c.w(1);
@@ -231,7 +229,6 @@ namespace Regulator{
     
     
     void MPC::update(){
-        // FootVectorInfo(controller->data->leg);
         controller->data->est_state = estimator->get_estresult();
 
         update_reference_trajectory();

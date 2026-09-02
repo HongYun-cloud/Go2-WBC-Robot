@@ -10,9 +10,9 @@ namespace fsm
 
     ControlFSM::~ControlFSM() {}
 
-    void ControlFSM::SetCmd(Gait::GaitType type){
+    void ControlFSM::SetCmd(Gait::GaitType type,Velocity v){
         Gait_cmd.type = type;
-        Gait_cmd.v = Velocity{0.0,0,0};
+        Gait_cmd.v = v;
     }
 
     void ControlFSM::run(double dt){
