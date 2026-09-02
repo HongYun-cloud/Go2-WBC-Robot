@@ -80,13 +80,15 @@ void SwingLegPlanner::Generate(Velocity& v_des,std::function<double(size_t)> pha
             control_point[leg].Mid_Point.push_back(control_point[leg].Start_Point + Point{0,0,Walk_H} + offset[leg]);
 
             Point p_hip = est.p + R * HIP_OFFSET[leg];  // 髋部世界系位置
-            control_point[leg].End_Point = p_hip + (T_stance / 2) * v_actual + k * (v_actual - v_des);
+            control_point[leg].End_Point = p_hip + (T_stance / 2) * v_des + k * (v_actual - v_des);
             control_point[leg].End_Point(2) = 0.023;      // 世界坐标系地面高度
             // 覆盖 xy: 以起点为基准 + 期望速度 × 摆动时间, 避免原地踏步时 x 方向加速度突变
+            // control_point[leg].End_Point(0) += 0.05;
             // control_point[leg].End_Point(0) = control_point[leg].Start_Point(0) + v_des(0) * T_swing;
             // control_point[leg].End_Point(1) = control_point[leg].Start_Point(1) + v_des(1) * T_swing;
             control_point[leg].Mid_Point[1] = control_point[leg].End_Point + Point{0,0,Walk_H} + offset[leg];
         }
+
 
         Point p = Bezier_Math::evaluatePos(t, control_point[leg]);
         Point v = Bezier_Math::evaluateVel(t, control_point[leg]);

@@ -111,7 +111,7 @@ int main(){
     Eigen::Vector3d q, p;
     q.setZero(); p.setZero();
     v.setZero(); w.setZero();
-    v[0] = 0.0;
+    v[0] = 0.05;
     p[2] = 0.25;
     mpc->update_DesireStateCommand(q,p,v,w);
     mpc->loadConfig("../config/mpc.yaml");
@@ -206,29 +206,15 @@ int main(){
         v_foot_prev = v_foot_act;
         have_prev_v = true;
 
-        // ===== 纯前馈: 贝塞尔加速度直接进 WBC, 不加 PD 混合 =====
-        // WBC 通过动力学约束 M·a + h − Jᵀf ≈ 0 将其转为动力学正确的足端力
-        Eigen::Matrix<double, 12, 1> a_ff = trajectory->GetSwingAccVec();
-        Eigen::Matrix<double, 12, 1> a_des = a_ff;
-        // 支撑腿: a_des 置零 (WBC 不跟踪摆动加速度)
-        for (int leg = 0; leg < 4; leg++)
-            if (state.contact_states[leg] == 1)
-                a_des.segment<3>(leg*3).setZero();
-
-        wbc->update(q_des, f_mpc, a_des, state);
-        wbc->solve();
-
-        WBC::SolutionVector sol;
-        wbc->GetSolution(sol);
-        Eigen::Matrix<double, 12, 1> f_wbc = sol.tail(12);
-
-        // 关节力矩: τ = M·a + h − Jᵀf (WBC 逆动力学)
-        auto tau = pin->getJointTorquesFromSolution(sol.head(18), f_wbc);
-
-        // ===== 摆动腿阻抗修正: τ += Jᵀ·(Kp·e_p + Kd·e_v) =====
-        // 在 WBC 动力学正确的力基础上, 补充位置/速度误差的阻抗力
+        // ===== 加速度层阻抗: a_des = a_ff + 阻抗修正 =====
+        // 阻抗修正放在加速度层, 让 WBC QP 统一处理, 保持动力学一致性
+        // 支撑腿: a_des 置零, 不跟踪摆动加速度
+        Eigen::Matrix<double, 12, 1> a_des = trajectory->GetSwingAccVec();
         for (int leg = 0; leg < 4; leg++) {
-            if (state.contact_states[leg] == 1) continue;  // 支撑腿跳过
+            if (state.contact_states[leg] == 1) {
+                a_des.segment<3>(leg*3).setZero();
+                continue;
+            }
 
             double t = scheduler->GetSwingPhases(leg);
             double blend = 1.0;
@@ -237,23 +223,20 @@ int main(){
 
             Eigen::Vector3d e_p = p_ref.row(leg).transpose() - p_act.row(leg).transpose();
             Eigen::Vector3d e_v = blend * v_ref.row(leg).transpose() - v_foot_act.segment<3>(leg * 3);
-            Eigen::Vector3d Kp_vec(1000, 10, 1000);  // xy 小增益防震荡, z 大增益
-            Eigen::Vector3d Kd_vec(20, 10, 20);
-            Eigen::Vector3d f_imp = Kp_vec.cwiseProduct(e_p) + Kd_vec.cwiseProduct(e_v);  // 阻抗力
-
-            // 足端雅可比 (3×12, 关节空间) → 关节力矩
-            Eigen::MatrixXd J_leg = pin->getFootJacobian(leg);
-            Eigen::VectorXd tau_imp_full = J_leg.transpose() * f_imp;  // 12 维 (Pinocchio 顺序)
-
-            // 跳过 hip 关节 (索引 0,3,6,9), 叠加到 8 维 tau (MuJoCo 顺序)
-            int idx = 0;
-            for (int i = 0; i < 12; i++) {
-                if (i % 3 != 0) {
-                    tau(idx) += tau_imp_full(i);
-                    idx++;
-                }
-            }
+            Eigen::Vector3d Kp_vec(300, 300, 1000);
+            Eigen::Vector3d Kd_vec(10, 10, 20);
+            a_des.segment<3>(leg * 3) += Kp_vec.cwiseProduct(e_p) + Kd_vec.cwiseProduct(e_v);
         }
+
+        wbc->update(q_des, f_mpc, a_des, state);
+        wbc->solve();
+
+        WBC::SolutionVector sol;
+        wbc->GetSolution(sol);
+        Eigen::Matrix<double, 12, 1> f_wbc = sol.tail(12);
+
+        // 关节力矩: τ = M·a + h − Jᵀf (WBC 逆动力学, 已包含 a_des 跟踪)
+        auto tau = pin->getJointTorquesFromSolution(sol.head(18), f_wbc);
 
         mj->control(tau);
         mj->Step();
@@ -286,10 +269,7 @@ int main(){
                 pj.push_back({std::string("a_ref_") + legN[leg] + "_y", a_des(leg*3 + 1)});
                 pj.push_back({std::string("a_ref_") + legN[leg] + "_z", a_des(leg*3 + 2)});
 
-                pj.push_back({std::string("a_ff_") + legN[leg] + "_x", a_ff(leg*3+0)});
-                pj.push_back({std::string("a_ff_") + legN[leg] + "_y", a_ff(leg*3+1)});
-                pj.push_back({std::string("a_ff_") + legN[leg] + "_z", a_ff(leg*3+2)});
-
+                
                 pj.push_back({std::string("a_act_") + legN[leg] + "_x", a_foot_act(leg*3+0)});
                 pj.push_back({std::string("a_act_") + legN[leg] + "_y", a_foot_act(leg*3+1)});
                 pj.push_back({std::string("a_act_") + legN[leg] + "_z", a_foot_act(leg*3+2)});
@@ -306,6 +286,9 @@ int main(){
             }
             pj.push_back({"body_x", state.position[0]});
             pj.push_back({"body_z", state.position[2]});
+
+            pj.push_back({"body_x_v", state.linear_vel[0]});
+            pj.push_back({"body_z_v", state.linear_vel[2]});
             if (count % 10 == 0) PlotSend(t, pj);
         }
     }
