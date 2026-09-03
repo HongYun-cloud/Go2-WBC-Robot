@@ -1,0 +1,162 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"install_basic_package_files"
+		],
+		"files" : 
+		[
+			"third_party/osqp-eigen/CMakeLists.txt",
+			"third_party/osqp-eigen/cmake/InstallBasicPackageFiles.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 139,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 148,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 593,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 652,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 678,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 157,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "shlib",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"lib/libOsqpEigen.so.0.11.0"
+			],
+			"targetId" : "OsqpEigen::@8fec0e3d5ceea1312797",
+			"targetIndex" : 28,
+			"targetInstallNamelink" : "skip",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "shlib",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"lib/libOsqpEigen.so"
+			],
+			"targetId" : "OsqpEigen::@8fec0e3d5ceea1312797",
+			"targetIndex" : 28,
+			"targetInstallNamelink" : "only",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "runtime",
+			"destination" : "include/OsqpEigen",
+			"paths" : 
+			[
+				"third_party/osqp-eigen/include/OsqpEigen/OsqpEigen.h",
+				"third_party/osqp-eigen/include/OsqpEigen/Constants.hpp",
+				"third_party/osqp-eigen/include/OsqpEigen/SparseMatrixHelper.hpp",
+				"third_party/osqp-eigen/include/OsqpEigen/SparseMatrixHelper.tpp",
+				"third_party/osqp-eigen/include/OsqpEigen/Data.hpp",
+				"third_party/osqp-eigen/include/OsqpEigen/Data.tpp",
+				"third_party/osqp-eigen/include/OsqpEigen/Settings.hpp",
+				"third_party/osqp-eigen/include/OsqpEigen/Solver.hpp",
+				"third_party/osqp-eigen/include/OsqpEigen/Solver.tpp",
+				"third_party/osqp-eigen/include/OsqpEigen/Compat.hpp",
+				"third_party/osqp-eigen/include/OsqpEigen/Debug.hpp"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "OsqpEigen",
+			"destination" : "lib/cmake/OsqpEigen",
+			"paths" : 
+			[
+				"build/go2_robot/OsqpEigenConfigVersion.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "OsqpEigen",
+			"destination" : "lib/cmake/OsqpEigen",
+			"paths" : 
+			[
+				{
+					"from" : "build/go2_robot/third_party/osqp-eigen/CMakeFiles/OsqpEigenConfig.cmake.install",
+					"to" : "OsqpEigenConfig.cmake"
+				}
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "OsqpEigen",
+			"destination" : "lib/cmake/OsqpEigen",
+			"exportName" : "OsqpEigen",
+			"exportTargets" : 
+			[
+				{
+					"id" : "OsqpEigen::@8fec0e3d5ceea1312797",
+					"index" : 28
+				}
+			],
+			"paths" : 
+			[
+				"third_party/osqp-eigen/CMakeFiles/Export/lib/cmake/OsqpEigen/OsqpEigenTargets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "Unspecified",
+			"destination" : "share/cmake/osqp-eigen",
+			"paths" : 
+			[
+				"third_party/osqp-eigen/package.xml"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "third_party/osqp-eigen",
+		"source" : "third_party/osqp-eigen"
+	}
+}

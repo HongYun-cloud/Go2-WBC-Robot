@@ -1,0 +1,399 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-1752a8f7caad09347357.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						29,
+						30,
+						31,
+						32
+					]
+				},
+				{
+					"build" : "third_party/osqp-eigen",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.osqp-eigen-Release-d92e6c9c2c30e55205bc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "third_party/osqp-eigen",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28
+					]
+				},
+				{
+					"build" : "third_party/osqp-eigen/tests",
+					"jsonFile" : "directory-third_party.osqp-eigen.tests-Release-6555ce83967be5d39611.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/osqp-eigen/tests"
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "go2_robot",
+					"targetIndexes" : 
+					[
+						29,
+						30,
+						31,
+						32
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2
+					],
+					"name" : "OsqpEigen",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "Continuous::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-Continuous-Release-ac9c116a48e51f19ea3d.json",
+					"name" : "Continuous",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousBuild::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-ContinuousBuild-Release-ce3a18a575c569c750c1.json",
+					"name" : "ContinuousBuild",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousConfigure::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-ContinuousConfigure-Release-352c692158395977a3d6.json",
+					"name" : "ContinuousConfigure",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousCoverage::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-ContinuousCoverage-Release-0d2e1e7b1928f654bb86.json",
+					"name" : "ContinuousCoverage",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousMemCheck::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-ContinuousMemCheck-Release-8dfdc7fb6a21116f140d.json",
+					"name" : "ContinuousMemCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousStart::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-ContinuousStart-Release-907d225883755f84feae.json",
+					"name" : "ContinuousStart",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousSubmit::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-ContinuousSubmit-Release-f1aa6e4e6d0687bfd0f9.json",
+					"name" : "ContinuousSubmit",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousTest::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-ContinuousTest-Release-4589816a565ad201fb3e.json",
+					"name" : "ContinuousTest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousUpdate::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-ContinuousUpdate-Release-e9e36ef7a6e3bb4e52a8.json",
+					"name" : "ContinuousUpdate",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Experimental::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-Experimental-Release-b84f8f36446550e48476.json",
+					"name" : "Experimental",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalBuild::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-ExperimentalBuild-Release-8f9b698a5d0d24766a3c.json",
+					"name" : "ExperimentalBuild",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalConfigure::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-ExperimentalConfigure-Release-05d8072fb535b97a1d9d.json",
+					"name" : "ExperimentalConfigure",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalCoverage::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-ExperimentalCoverage-Release-c9d6d444f7ae4dd00a1c.json",
+					"name" : "ExperimentalCoverage",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalMemCheck::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-ExperimentalMemCheck-Release-a53abadd0fee72a5218c.json",
+					"name" : "ExperimentalMemCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalStart::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-ExperimentalStart-Release-d756a7af6225e2581652.json",
+					"name" : "ExperimentalStart",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalSubmit::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-ExperimentalSubmit-Release-835ca83c9c590480fdde.json",
+					"name" : "ExperimentalSubmit",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalTest::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-ExperimentalTest-Release-ba22e1d8220cc4a281be.json",
+					"name" : "ExperimentalTest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalUpdate::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-ExperimentalUpdate-Release-8de79ae3a40572201931.json",
+					"name" : "ExperimentalUpdate",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Nightly::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-Nightly-Release-6354000cd3c37d21eaa0.json",
+					"name" : "Nightly",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyBuild::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-NightlyBuild-Release-802cc84b2ac846b63fb9.json",
+					"name" : "NightlyBuild",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyConfigure::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-NightlyConfigure-Release-39a552e958fdcf10a71f.json",
+					"name" : "NightlyConfigure",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyCoverage::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-NightlyCoverage-Release-e01c180476a50fa4cb6c.json",
+					"name" : "NightlyCoverage",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyMemCheck::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-NightlyMemCheck-Release-bf3fd5cafd33ba120a9a.json",
+					"name" : "NightlyMemCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyMemoryCheck::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-NightlyMemoryCheck-Release-f591ac3adb1671156486.json",
+					"name" : "NightlyMemoryCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyStart::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-NightlyStart-Release-ef1cf2d13f6fd014b5dc.json",
+					"name" : "NightlyStart",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlySubmit::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-NightlySubmit-Release-72b8a1621974f9d0a87f.json",
+					"name" : "NightlySubmit",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyTest::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-NightlyTest-Release-43b08f883a5406452f3a.json",
+					"name" : "NightlyTest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyUpdate::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-NightlyUpdate-Release-763e3a0835ed56af2920.json",
+					"name" : "NightlyUpdate",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "OsqpEigen::@8fec0e3d5ceea1312797",
+					"jsonFile" : "target-OsqpEigen-Release-f097d10b3b789d2f6b1f.json",
+					"name" : "OsqpEigen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "go2_control_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-go2_control_node-Release-a69d38d6b783adb3b0fd.json",
+					"name" : "go2_control_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "go2_core::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-go2_core-Release-80fd75d4b2a75fb44dfb.json",
+					"name" : "go2_core",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "go2_robot_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-go2_robot_uninstall-Release-98cc4576789b5c067944.json",
+					"name" : "go2_robot_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-986ef1df1741e0ee11a7.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/hong/Movement_Control/Go2Robot/build/go2_robot",
+		"source" : "/home/hong/Movement_Control/Go2Robot"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

@@ -1,0 +1,524 @@
+[0.000000] (-) TimerEvent: {}
+[0.000199] (go2_robot) JobQueued: {'identifier': 'go2_robot', 'dependencies': OrderedDict()}
+[0.000237] (go2_robot) JobStarted: {'identifier': 'go2_robot'}
+[0.099661] (-) TimerEvent: {}
+[0.128420] (go2_robot) JobProgress: {'identifier': 'go2_robot', 'progress': 'cmake'}
+[0.160163] (go2_robot) Command: {'cmd': ['/usr/bin/cmake', '/home/hong/Movement_Control/Go2Robot', '-DCMAKE_BUILD_TYPE=Release', '-DCMAKE_INSTALL_PREFIX=/home/hong/Movement_Control/Go2Robot/install/go2_robot'], 'cwd': '/home/hong/Movement_Control/Go2Robot/build/go2_robot', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/hong'), ('ANTHROPIC_MODEL', 'GLM-5.3'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('AI_AGENT', 'claude-code_2-1-259_agent'), ('LANGUAGE', 'zh_CN:zh:en_US:en'), ('USER', 'hong'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/hong/.config/Code/clp/4c1d03004af65f9b16ba94f4936a2bd5.zh-cn/tcf.json","messagesFile":"/home/hong/.config/Code/clp/4c1d03004af65f9b16ba94f4936a2bd5.zh-cn/6a49527b96e326fe62fbdb56f60e16877c9aa724/nls.messages.json","corruptMarkerFile":"/home/hong/.config/Code/clp/4c1d03004af65f9b16ba94f4936a2bd5.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"4c1d03004af65f9b16ba94f4936a2bd5.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/hong/.config/Code/clp/4c1d03004af65f9b16ba94f4936a2bd5.zh-cn/tcf.json","_cacheRoot":"/home/hong/.config/Code/clp/4c1d03004af65f9b16ba94f4936a2bd5.zh-cn","_resolvedLanguagePackCoreLocation":"/home/hong/.config/Code/clp/4c1d03004af65f9b16ba94f4936a2bd5.zh-cn/6a49527b96e326fe62fbdb56f60e16877c9aa724","_corruptedFile":"/home/hong/.config/Code/clp/4c1d03004af65f9b16ba94f4936a2bd5.zh-cn/corrupted.info"}'), ('GIT_EDITOR', 'true'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('CLAUDE_AGENT_SDK_VERSION', '0.3.259'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.1/lib64:'), ('CLAUDE_CODE_MESSAGING_TOKEN', 'd367aa61d6121260c65ebb678bb43dd6'), ('INPUT_METHOD', 'fcitx'), ('HOME', '/home/hong'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-2085e3a6-1.12-main.sock'), ('ANTHROPIC_DEFAULT_SONNET_MODEL', 'GLM-5.3'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SDL_IM_MODULE', 'fcitx'), ('CLAUDE_CODE_CHILD_SESSION', '1'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('MANAGERPID', '1742'), ('GLFW_IM_MODULE', 'ibus'), ('SYSTEMD_EXEC_PID', '1977'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('_CONDA_ROOT', '/home/hong/miniconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3691'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('VSCODE_L10N_BUNDLE_LOCATION', 'file:///home/hong/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.131.2026082318/translations/extensions/vscode.json-language-features.i18n.json'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'hong'), ('JOURNAL_STREAM', '8:15557'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('MUJOCO_HOME', '/home/hong/.mujoco/mujoco-3.9.0'), ('USERNAME', 'hong'), ('ANTHROPIC_BASE_URL', 'https://api.scnet.cn/api/llm/anthropic'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('ANTHROPIC_DEFAULT_OPUS_MODEL', 'GLM-5.3'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/home/hong/miniconda3/envs/rl_env/bin:/home/hong/.local/bin:/opt/ros/humble/bin:/usr/local/cuda-12.1/bin:/home/hong/miniconda3/condabin:/home/hong/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/hong/.mujoco/mujoco-3.9.0/bin'), ('SESSION_MANAGER', 'local/hong:@/tmp/.ICE-unix/1954,unix/hong:/tmp/.ICE-unix/1954'), ('INVOCATION_ID', 'c7d4f1790a5c407e8c10bbebe50c3ef0'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('CLAUDE_EFFORT', 'high'), ('DISPLAY', ':1'), ('CLAUDE_PID', '16758'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('ANTHROPIC_DEFAULT_HAIKU_MODEL', 'GLM-5.3'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/hong/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ANTHROPIC_AUTH_TOKEN', 'sk-tp-OTI4LTEyMTIyMzgxNDQ1LTE3ODg0MDA4MDE4MzY='), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('CLAUDE_CODE_SESSION_ID', 'c974b873-7678-440b-8e00-a431ee96c42b'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/hong/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VIRTUAL_ENV', '/home/hong/miniconda3/envs/rl_env'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/hong/Movement_Control/Go2Robot/build/go2_robot'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/hong/miniconda3/bin/conda'), ('VSCODE_CODE_CACHE_PATH', '/home/hong/.config/Code/CachedData/6a49527b96e326fe62fbdb56f60e16877c9aa724'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/hong/.vscode/extensions/anthropic.claude-code-2.1.259-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('CLAUDE_CODE_ENABLE_TASKS', '0'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CLAUDE_CODE_MESSAGING_SOCKET', '/run/user/1000/cc-socks/16758.sock'), ('VSCODE_PID', '3691'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.168979] (go2_robot) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.199863] (-) TimerEvent: {}
+[0.209413] (go2_robot) StdoutLine: {'line': b'-- Found Python3: /home/hong/miniconda3/envs/rl_env/bin/python3 (found version "3.8.10") found components: Interpreter \n'}
+[0.298358] (go2_robot) StdoutLine: {'line': b'-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.299975] (-) TimerEvent: {}
+[0.327598] (go2_robot) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.329103] (go2_robot) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.333351] (go2_robot) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.339761] (go2_robot) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.347851] (go2_robot) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.369078] (go2_robot) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.369885] (go2_robot) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.400150] (-) TimerEvent: {}
+[0.446100] (go2_robot) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.484045] (go2_robot) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.1 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[0.493048] (go2_robot) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.500318] (-) TimerEvent: {}
+[0.533809] (go2_robot) StderrLine: {'line': b'CMake Warning (dev) at /usr/share/cmake-3.22/Modules/FindOpenGL.cmake:315 (message):\n'}
+[0.533915] (go2_robot) StderrLine: {'line': b'  Policy CMP0072 is not set: FindOpenGL prefers GLVND by default when\n'}
+[0.533953] (go2_robot) StderrLine: {'line': b'  available.  Run "cmake --help-policy CMP0072" for policy details.  Use the\n'}
+[0.533983] (go2_robot) StderrLine: {'line': b'  cmake_policy command to set the policy and suppress this warning.\n'}
+[0.534013] (go2_robot) StderrLine: {'line': b'\n'}
+[0.534042] (go2_robot) StderrLine: {'line': b'  FindOpenGL found both a legacy GL library:\n'}
+[0.534073] (go2_robot) StderrLine: {'line': b'\n'}
+[0.534102] (go2_robot) StderrLine: {'line': b'    OPENGL_gl_LIBRARY: /usr/lib/x86_64-linux-gnu/libGL.so\n'}
+[0.534130] (go2_robot) StderrLine: {'line': b'\n'}
+[0.534158] (go2_robot) StderrLine: {'line': b'  and GLVND libraries for OpenGL and GLX:\n'}
+[0.534187] (go2_robot) StderrLine: {'line': b'\n'}
+[0.534214] (go2_robot) StderrLine: {'line': b'    OPENGL_opengl_LIBRARY: /usr/lib/x86_64-linux-gnu/libOpenGL.so\n'}
+[0.534242] (go2_robot) StderrLine: {'line': b'    OPENGL_glx_LIBRARY: /usr/lib/x86_64-linux-gnu/libGLX.so\n'}
+[0.534272] (go2_robot) StderrLine: {'line': b'\n'}
+[0.534301] (go2_robot) StderrLine: {'line': b'  OpenGL_GL_PREFERENCE has not been set to "GLVND" or "LEGACY", so for\n'}
+[0.534329] (go2_robot) StderrLine: {'line': b'  compatibility with CMake 3.10 and below the legacy GL library will be used.\n'}
+[0.534357] (go2_robot) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.534384] (go2_robot) StderrLine: {'line': b'  CMakeLists.txt:26 (find_package)\n'}
+[0.534410] (go2_robot) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[0.534438] (go2_robot) StderrLine: {'line': b'\n'}
+[0.573438] (go2_robot) StdoutLine: {'line': b'-- pinocchio_default FOUND. pinocchio_default at /opt/ros/humble/lib/x86_64-linux-gnu/libpinocchio_default.so\n'}
+[0.573551] (go2_robot) StdoutLine: {'line': b'-- pinocchio_parsers FOUND. pinocchio_parsers at /opt/ros/humble/lib/x86_64-linux-gnu/libpinocchio_parsers.so\n'}
+[0.573868] (go2_robot) StdoutLine: {'line': b'-- boost_filesystem FOUND. boost_filesystem at /lib/x86_64-linux-gnu/libboost_filesystem.so\n'}
+[0.580545] (go2_robot) StdoutLine: {'line': b'-- Found Boost: /usr/include (found version "1.74.0") found components: filesystem serialization \n'}
+[0.581420] (go2_robot) StdoutLine: {'line': b'-- eigenpy FOUND. eigenpy at /opt/ros/humble/lib/x86_64-linux-gnu/libeigenpy.so\n'}
+[0.599728] (go2_robot) StdoutLine: {'line': b'-- Checking for NumPy\n'}
+[0.600410] (-) TimerEvent: {}
+[0.700561] (-) TimerEvent: {}
+[0.772789] (go2_robot) StdoutLine: {'line': b'--   NUMPY_INCLUDE_DIRS=/home/hong/miniconda3/envs/rl_env/lib/python3.8/site-packages/numpy/core/include\n'}
+[0.801654] (-) TimerEvent: {}
+[0.867336] (go2_robot) StdoutLine: {'line': b'--   NUMPY_VERSION=1.23.2\n'}
+[0.901748] (-) TimerEvent: {}
+[1.001893] (-) TimerEvent: {}
+[1.080073] (go2_robot) StdoutLine: {'line': b'-- Found Python3: /home/hong/miniconda3/envs/rl_env/bin/python3 (found version "3.8.10") found components: Interpreter Development.Module NumPy \n'}
+[1.080957] (go2_robot) StdoutLine: {'line': b'-- PythonLibraryDirs: \n'}
+[1.081043] (go2_robot) StdoutLine: {'line': b'-- PythonLibVersionString: 3.8.10\n'}
+[1.096767] (go2_robot) StdoutLine: {'line': b'-- Python site lib: lib/python3.8/site-packages\n'}
+[1.096890] (go2_robot) StdoutLine: {'line': b'-- Python include dirs: /home/hong/miniconda3/envs/rl_env/include/python3.8\n'}
+[1.101981] (-) TimerEvent: {}
+[1.127582] (go2_robot) StdoutLine: {'line': b'-- Checking for NumPy\n'}
+[1.202148] (-) TimerEvent: {}
+[1.214340] (go2_robot) StdoutLine: {'line': b'--   NUMPY_INCLUDE_DIRS=/home/hong/miniconda3/envs/rl_env/lib/python3.8/site-packages/numpy/core/include\n'}
+[1.292323] (go2_robot) StdoutLine: {'line': b'--   NUMPY_VERSION=1.23.2\n'}
+[1.292448] (go2_robot) StdoutLine: {'line': b'-- NumPy include dir: /home/hong/miniconda3/envs/rl_env/lib/python3.8/site-packages/numpy/core/include\n'}
+[1.295869] (go2_robot) StderrLine: {'line': b'CMake Warning at /usr/share/cmake-3.22/Modules/FindBoost.cmake:2201 (message):\n'}
+[1.295961] (go2_robot) StderrLine: {'line': b'  No header defined for python310; skipping header check (note: header-only\n'}
+[1.296010] (go2_robot) StderrLine: {'line': b'  libraries have no designated component)\n'}
+[1.296039] (go2_robot) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[1.296067] (go2_robot) StderrLine: {'line': b'  /opt/ros/humble/lib/x86_64-linux-gnu/cmake/eigenpy/boost.cmake:148 (find_package)\n'}
+[1.296097] (go2_robot) StderrLine: {'line': b'  /opt/ros/humble/lib/x86_64-linux-gnu/cmake/eigenpy/eigenpyConfig.cmake:149 (SEARCH_FOR_BOOST_PYTHON)\n'}
+[1.296126] (go2_robot) StderrLine: {'line': b'  /usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)\n'}
+[1.296154] (go2_robot) StderrLine: {'line': b'  /opt/ros/humble/lib/x86_64-linux-gnu/cmake/pinocchio/pinocchioConfig.cmake:161 (find_dependency)\n'}
+[1.296181] (go2_robot) StderrLine: {'line': b'  CMakeLists.txt:38 (find_package)\n'}
+[1.296210] (go2_robot) StderrLine: {'line': b'\n'}
+[1.296270] (go2_robot) StderrLine: {'line': b'\n'}
+[1.296362] (go2_robot) StdoutLine: {'line': b'-- Found Boost: /usr/include (found version "1.74.0") found components: python310 \n'}
+[1.302270] (-) TimerEvent: {}
+[1.402487] (-) TimerEvent: {}
+[1.502757] (-) TimerEvent: {}
+[1.523461] (go2_robot) StdoutLine: {'line': b'-- Default C++ standard: 201703\n'}
+[1.523579] (go2_robot) StdoutLine: {'line': b'-- C++ standard sufficient: Minimal required 11, currently defined: 17\n'}
+[1.524873] (go2_robot) StdoutLine: {'line': b'-- hpp-fcl FOUND. hpp-fcl at /opt/ros/humble/lib/x86_64-linux-gnu/libhpp-fcl.so\n'}
+[1.530322] (go2_robot) StdoutLine: {'line': b'-- Found Boost: /usr/include (found version "1.74.0") found components: chrono serialization filesystem \n'}
+[1.531382] (go2_robot) StdoutLine: {'line': b'-- C++ standard sufficient: Minimal required 11, currently defined: 17\n'}
+[1.531885] (go2_robot) StdoutLine: {'line': b'-- C++ standard sufficient: Minimal required 11, currently defined: 17\n'}
+[1.590985] (go2_robot) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.602909] (-) TimerEvent: {}
+[1.703129] (-) TimerEvent: {}
+[1.803374] (-) TimerEvent: {}
+[1.903629] (-) TimerEvent: {}
+[2.003780] (-) TimerEvent: {}
+[2.104041] (-) TimerEvent: {}
+[2.191647] (go2_robot) StdoutLine: {'line': b'-- Generating done\n'}
+[2.204130] (-) TimerEvent: {}
+[2.214058] (go2_robot) StdoutLine: {'line': b'-- Build files have been written to: /home/hong/Movement_Control/Go2Robot/build/go2_robot\n'}
+[2.223087] (go2_robot) CommandEnded: {'returncode': 0}
+[2.223377] (go2_robot) JobProgress: {'identifier': 'go2_robot', 'progress': 'build'}
+[2.223393] (go2_robot) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/hong/Movement_Control/Go2Robot/build/go2_robot', '--', '-j24', '-l24'], 'cwd': '/home/hong/Movement_Control/Go2Robot/build/go2_robot', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/hong'), ('ANTHROPIC_MODEL', 'GLM-5.3'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('AI_AGENT', 'claude-code_2-1-259_agent'), ('LANGUAGE', 'zh_CN:zh:en_US:en'), ('USER', 'hong'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/hong/.config/Code/clp/4c1d03004af65f9b16ba94f4936a2bd5.zh-cn/tcf.json","messagesFile":"/home/hong/.config/Code/clp/4c1d03004af65f9b16ba94f4936a2bd5.zh-cn/6a49527b96e326fe62fbdb56f60e16877c9aa724/nls.messages.json","corruptMarkerFile":"/home/hong/.config/Code/clp/4c1d03004af65f9b16ba94f4936a2bd5.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"4c1d03004af65f9b16ba94f4936a2bd5.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/hong/.config/Code/clp/4c1d03004af65f9b16ba94f4936a2bd5.zh-cn/tcf.json","_cacheRoot":"/home/hong/.config/Code/clp/4c1d03004af65f9b16ba94f4936a2bd5.zh-cn","_resolvedLanguagePackCoreLocation":"/home/hong/.config/Code/clp/4c1d03004af65f9b16ba94f4936a2bd5.zh-cn/6a49527b96e326fe62fbdb56f60e16877c9aa724","_corruptedFile":"/home/hong/.config/Code/clp/4c1d03004af65f9b16ba94f4936a2bd5.zh-cn/corrupted.info"}'), ('GIT_EDITOR', 'true'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('CLAUDE_AGENT_SDK_VERSION', '0.3.259'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.1/lib64:'), ('CLAUDE_CODE_MESSAGING_TOKEN', 'd367aa61d6121260c65ebb678bb43dd6'), ('INPUT_METHOD', 'fcitx'), ('HOME', '/home/hong'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-2085e3a6-1.12-main.sock'), ('ANTHROPIC_DEFAULT_SONNET_MODEL', 'GLM-5.3'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SDL_IM_MODULE', 'fcitx'), ('CLAUDE_CODE_CHILD_SESSION', '1'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('MANAGERPID', '1742'), ('GLFW_IM_MODULE', 'ibus'), ('SYSTEMD_EXEC_PID', '1977'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('_CONDA_ROOT', '/home/hong/miniconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3691'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('VSCODE_L10N_BUNDLE_LOCATION', 'file:///home/hong/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.131.2026082318/translations/extensions/vscode.json-language-features.i18n.json'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'hong'), ('JOURNAL_STREAM', '8:15557'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('MUJOCO_HOME', '/home/hong/.mujoco/mujoco-3.9.0'), ('USERNAME', 'hong'), ('ANTHROPIC_BASE_URL', 'https://api.scnet.cn/api/llm/anthropic'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('ANTHROPIC_DEFAULT_OPUS_MODEL', 'GLM-5.3'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/home/hong/miniconda3/envs/rl_env/bin:/home/hong/.local/bin:/opt/ros/humble/bin:/usr/local/cuda-12.1/bin:/home/hong/miniconda3/condabin:/home/hong/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/hong/.mujoco/mujoco-3.9.0/bin'), ('SESSION_MANAGER', 'local/hong:@/tmp/.ICE-unix/1954,unix/hong:/tmp/.ICE-unix/1954'), ('INVOCATION_ID', 'c7d4f1790a5c407e8c10bbebe50c3ef0'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('CLAUDE_EFFORT', 'high'), ('DISPLAY', ':1'), ('CLAUDE_PID', '16758'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('ANTHROPIC_DEFAULT_HAIKU_MODEL', 'GLM-5.3'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/hong/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ANTHROPIC_AUTH_TOKEN', 'sk-tp-OTI4LTEyMTIyMzgxNDQ1LTE3ODg0MDA4MDE4MzY='), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('CLAUDE_CODE_SESSION_ID', 'c974b873-7678-440b-8e00-a431ee96c42b'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/hong/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VIRTUAL_ENV', '/home/hong/miniconda3/envs/rl_env'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/hong/Movement_Control/Go2Robot/build/go2_robot'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/hong/miniconda3/bin/conda'), ('VSCODE_CODE_CACHE_PATH', '/home/hong/.config/Code/CachedData/6a49527b96e326fe62fbdb56f60e16877c9aa724'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/hong/.vscode/extensions/anthropic.claude-code-2.1.259-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('CLAUDE_CODE_ENABLE_TASKS', '0'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CLAUDE_CODE_MESSAGING_SOCKET', '/run/user/1000/cc-socks/16758.sock'), ('VSCODE_PID', '3691'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[2.277783] (go2_robot) StdoutLine: {'line': b'[  5%] Building CXX object third_party/osqp-eigen/CMakeFiles/OsqpEigen.dir/src/Data.cpp.o\n'}
+[2.278491] (go2_robot) StdoutLine: {'line': b'[ 11%] Building CXX object third_party/osqp-eigen/CMakeFiles/OsqpEigen.dir/src/Debug.cpp.o\n'}
+[2.278734] (go2_robot) StdoutLine: {'line': b'[ 17%] Building CXX object third_party/osqp-eigen/CMakeFiles/OsqpEigen.dir/src/Settings.cpp.o\n'}
+[2.279055] (go2_robot) StdoutLine: {'line': b'[ 23%] Building CXX object third_party/osqp-eigen/CMakeFiles/OsqpEigen.dir/src/Solver.cpp.o\n'}
+[2.304358] (-) TimerEvent: {}
+[2.404644] (-) TimerEvent: {}
+[2.504900] (-) TimerEvent: {}
+[2.605087] (-) TimerEvent: {}
+[2.705248] (-) TimerEvent: {}
+[2.805431] (-) TimerEvent: {}
+[2.905607] (-) TimerEvent: {}
+[3.005898] (-) TimerEvent: {}
+[3.106109] (-) TimerEvent: {}
+[3.206394] (-) TimerEvent: {}
+[3.306655] (-) TimerEvent: {}
+[3.406941] (-) TimerEvent: {}
+[3.448814] (go2_robot) StdoutLine: {'line': b'[ 29%] Linking CXX shared library ../../lib/libOsqpEigen.so\n'}
+[3.507146] (-) TimerEvent: {}
+[3.526633] (go2_robot) StdoutLine: {'line': b'[ 29%] Built target OsqpEigen\n'}
+[3.546431] (go2_robot) StdoutLine: {'line': b'[ 35%] Building CXX object CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.o\n'}
+[3.547027] (go2_robot) StdoutLine: {'line': b'[ 41%] Building CXX object CMakeFiles/go2_core.dir/src/Planner/GaitScheduler.cpp.o\n'}
+[3.548544] (go2_robot) StdoutLine: {'line': b'[ 47%] Building CXX object CMakeFiles/go2_core.dir/src/fsm/ControlFSM.cpp.o\n'}
+[3.548658] (go2_robot) StdoutLine: {'line': b'[ 52%] Building CXX object CMakeFiles/go2_core.dir/src/Estimator/PositionVelocityEstimator.cpp.o\n'}
+[3.548957] (go2_robot) StdoutLine: {'line': b'[ 58%] Building CXX object CMakeFiles/go2_core.dir/src/SIM/MJCsim.cpp.o\n'}
+[3.549235] (go2_robot) StdoutLine: {'line': b'[ 64%] Building CXX object CMakeFiles/go2_core.dir/src/MPC/MPC.cpp.o\n'}
+[3.549510] (go2_robot) StdoutLine: {'line': b'[ 70%] Building CXX object CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o\n'}
+[3.550205] (go2_robot) StdoutLine: {'line': b'[ 76%] Building CXX object CMakeFiles/go2_core.dir/src/Planner/SwingLegPlanner.cpp.o\n'}
+[3.607315] (-) TimerEvent: {}
+[3.707628] (-) TimerEvent: {}
+[3.807871] (-) TimerEvent: {}
+[3.908069] (-) TimerEvent: {}
+[4.008337] (-) TimerEvent: {}
+[4.108570] (-) TimerEvent: {}
+[4.208779] (-) TimerEvent: {}
+[4.308959] (-) TimerEvent: {}
+[4.409119] (-) TimerEvent: {}
+[4.509303] (-) TimerEvent: {}
+[4.609479] (-) TimerEvent: {}
+[4.680245] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/MPC/MPC.cpp:215:25: warning: use of \xe2\x80\x98auto\xe2\x80\x99 in parameter declaration only available with \xe2\x80\x98-std=c++20\xe2\x80\x99 or \xe2\x80\x98-fconcepts\xe2\x80\x99\n'}
+[4.680388] (go2_robot) StderrLine: {'line': b'  215 |     void FootVectorInfo(auto s){\n'}
+[4.680425] (go2_robot) StderrLine: {'line': b'      |                         ^~~~\n'}
+[4.709665] (-) TimerEvent: {}
+[4.809873] (-) TimerEvent: {}
+[4.910056] (-) TimerEvent: {}
+[5.010213] (-) TimerEvent: {}
+[5.110467] (-) TimerEvent: {}
+[5.210709] (-) TimerEvent: {}
+[5.310865] (-) TimerEvent: {}
+[5.411039] (-) TimerEvent: {}
+[5.511229] (-) TimerEvent: {}
+[5.611482] (-) TimerEvent: {}
+[5.711759] (-) TimerEvent: {}
+[5.811924] (-) TimerEvent: {}
+[5.912113] (-) TimerEvent: {}
+[6.012362] (-) TimerEvent: {}
+[6.112618] (-) TimerEvent: {}
+[6.212787] (-) TimerEvent: {}
+[6.312957] (-) TimerEvent: {}
+[6.413157] (-) TimerEvent: {}
+[6.513419] (-) TimerEvent: {}
+[6.613677] (-) TimerEvent: {}
+[6.713853] (-) TimerEvent: {}
+[6.814054] (-) TimerEvent: {}
+[6.914304] (-) TimerEvent: {}
+[7.014555] (-) TimerEvent: {}
+[7.114740] (-) TimerEvent: {}
+[7.214908] (-) TimerEvent: {}
+[7.315103] (-) TimerEvent: {}
+[7.415361] (-) TimerEvent: {}
+[7.515612] (-) TimerEvent: {}
+[7.615779] (-) TimerEvent: {}
+[7.715945] (-) TimerEvent: {}
+[7.816142] (-) TimerEvent: {}
+[7.916395] (-) TimerEvent: {}
+[8.016657] (-) TimerEvent: {}
+[8.116815] (-) TimerEvent: {}
+[8.216988] (-) TimerEvent: {}
+[8.317243] (-) TimerEvent: {}
+[8.417490] (-) TimerEvent: {}
+[8.517746] (-) TimerEvent: {}
+[8.617993] (-) TimerEvent: {}
+[8.718251] (-) TimerEvent: {}
+[8.818492] (-) TimerEvent: {}
+[8.918756] (-) TimerEvent: {}
+[9.019000] (-) TimerEvent: {}
+[9.119241] (-) TimerEvent: {}
+[9.219490] (-) TimerEvent: {}
+[9.319777] (-) TimerEvent: {}
+[9.419936] (-) TimerEvent: {}
+[9.520128] (-) TimerEvent: {}
+[9.620379] (-) TimerEvent: {}
+[9.720624] (-) TimerEvent: {}
+[9.820887] (-) TimerEvent: {}
+[9.921130] (-) TimerEvent: {}
+[10.021381] (-) TimerEvent: {}
+[10.121640] (-) TimerEvent: {}
+[10.221813] (-) TimerEvent: {}
+[10.321993] (-) TimerEvent: {}
+[10.422176] (-) TimerEvent: {}
+[10.522422] (-) TimerEvent: {}
+[10.622674] (-) TimerEvent: {}
+[10.722831] (-) TimerEvent: {}
+[10.822990] (-) TimerEvent: {}
+[10.923148] (-) TimerEvent: {}
+[11.023380] (-) TimerEvent: {}
+[11.123648] (-) TimerEvent: {}
+[11.223805] (-) TimerEvent: {}
+[11.323963] (-) TimerEvent: {}
+[11.424145] (-) TimerEvent: {}
+[11.524384] (-) TimerEvent: {}
+[11.624634] (-) TimerEvent: {}
+[11.724794] (-) TimerEvent: {}
+[11.825044] (-) TimerEvent: {}
+[11.925297] (-) TimerEvent: {}
+[12.025547] (-) TimerEvent: {}
+[12.125799] (-) TimerEvent: {}
+[12.226050] (-) TimerEvent: {}
+[12.326290] (-) TimerEvent: {}
+[12.426535] (-) TimerEvent: {}
+[12.526795] (-) TimerEvent: {}
+[12.627039] (-) TimerEvent: {}
+[12.727277] (-) TimerEvent: {}
+[12.827520] (-) TimerEvent: {}
+[12.927763] (-) TimerEvent: {}
+[13.028013] (-) TimerEvent: {}
+[13.128253] (-) TimerEvent: {}
+[13.228500] (-) TimerEvent: {}
+[13.328745] (-) TimerEvent: {}
+[13.428992] (-) TimerEvent: {}
+[13.529236] (-) TimerEvent: {}
+[13.629478] (-) TimerEvent: {}
+[13.729711] (-) TimerEvent: {}
+[13.829953] (-) TimerEvent: {}
+[13.930204] (-) TimerEvent: {}
+[14.030456] (-) TimerEvent: {}
+[14.130615] (-) TimerEvent: {}
+[14.230883] (-) TimerEvent: {}
+[14.331159] (-) TimerEvent: {}
+[14.431426] (-) TimerEvent: {}
+[14.531672] (-) TimerEvent: {}
+[14.631830] (-) TimerEvent: {}
+[14.732093] (-) TimerEvent: {}
+[14.832344] (-) TimerEvent: {}
+[14.932623] (-) TimerEvent: {}
+[15.032924] (-) TimerEvent: {}
+[15.133184] (-) TimerEvent: {}
+[15.233431] (-) TimerEvent: {}
+[15.333683] (-) TimerEvent: {}
+[15.433965] (-) TimerEvent: {}
+[15.534214] (-) TimerEvent: {}
+[15.634471] (-) TimerEvent: {}
+[15.734709] (-) TimerEvent: {}
+[15.834965] (-) TimerEvent: {}
+[15.935128] (-) TimerEvent: {}
+[16.035839] (-) TimerEvent: {}
+[16.136092] (-) TimerEvent: {}
+[16.236331] (-) TimerEvent: {}
+[16.336572] (-) TimerEvent: {}
+[16.436973] (-) TimerEvent: {}
+[16.537272] (-) TimerEvent: {}
+[16.637565] (-) TimerEvent: {}
+[16.737863] (-) TimerEvent: {}
+[16.838148] (-) TimerEvent: {}
+[16.938419] (-) TimerEvent: {}
+[17.038719] (-) TimerEvent: {}
+[17.139000] (-) TimerEvent: {}
+[17.239298] (-) TimerEvent: {}
+[17.339573] (-) TimerEvent: {}
+[17.439837] (-) TimerEvent: {}
+[17.540096] (-) TimerEvent: {}
+[17.640345] (-) TimerEvent: {}
+[17.740883] (-) TimerEvent: {}
+[17.841232] (-) TimerEvent: {}
+[17.941550] (-) TimerEvent: {}
+[18.041824] (-) TimerEvent: {}
+[18.142121] (-) TimerEvent: {}
+[18.242407] (-) TimerEvent: {}
+[18.342722] (-) TimerEvent: {}
+[18.442981] (-) TimerEvent: {}
+[18.543227] (-) TimerEvent: {}
+[18.643490] (-) TimerEvent: {}
+[18.743773] (-) TimerEvent: {}
+[18.844052] (-) TimerEvent: {}
+[18.944345] (-) TimerEvent: {}
+[19.044602] (-) TimerEvent: {}
+[19.144860] (-) TimerEvent: {}
+[19.245124] (-) TimerEvent: {}
+[19.345367] (-) TimerEvent: {}
+[19.445628] (-) TimerEvent: {}
+[19.545812] (-) TimerEvent: {}
+[19.646252] (-) TimerEvent: {}
+[19.746656] (-) TimerEvent: {}
+[19.846812] (-) TimerEvent: {}
+[19.946971] (-) TimerEvent: {}
+[20.047129] (-) TimerEvent: {}
+[20.147319] (-) TimerEvent: {}
+[20.247503] (-) TimerEvent: {}
+[20.347640] (-) TimerEvent: {}
+[20.447808] (-) TimerEvent: {}
+[20.548008] (-) TimerEvent: {}
+[20.648213] (-) TimerEvent: {}
+[20.748509] (-) TimerEvent: {}
+[20.848642] (-) TimerEvent: {}
+[20.948821] (-) TimerEvent: {}
+[21.049017] (-) TimerEvent: {}
+[21.149187] (-) TimerEvent: {}
+[21.249455] (-) TimerEvent: {}
+[21.349751] (-) TimerEvent: {}
+[21.449918] (-) TimerEvent: {}
+[21.550075] (-) TimerEvent: {}
+[21.650266] (-) TimerEvent: {}
+[21.750523] (-) TimerEvent: {}
+[21.850780] (-) TimerEvent: {}
+[21.950937] (-) TimerEvent: {}
+[22.051094] (-) TimerEvent: {}
+[22.151305] (-) TimerEvent: {}
+[22.251562] (-) TimerEvent: {}
+[22.351733] (-) TimerEvent: {}
+[22.451896] (-) TimerEvent: {}
+[22.552091] (-) TimerEvent: {}
+[22.652284] (-) TimerEvent: {}
+[22.752535] (-) TimerEvent: {}
+[22.852847] (-) TimerEvent: {}
+[22.953054] (-) TimerEvent: {}
+[23.053252] (-) TimerEvent: {}
+[23.153514] (-) TimerEvent: {}
+[23.253731] (-) TimerEvent: {}
+[23.353940] (-) TimerEvent: {}
+[23.454143] (-) TimerEvent: {}
+[23.554305] (-) TimerEvent: {}
+[23.654557] (-) TimerEvent: {}
+[23.754739] (-) TimerEvent: {}
+[23.854904] (-) TimerEvent: {}
+[23.955094] (-) TimerEvent: {}
+[24.055297] (-) TimerEvent: {}
+[24.155541] (-) TimerEvent: {}
+[24.255742] (-) TimerEvent: {}
+[24.355904] (-) TimerEvent: {}
+[24.456083] (-) TimerEvent: {}
+[24.556337] (-) TimerEvent: {}
+[24.656583] (-) TimerEvent: {}
+[24.756745] (-) TimerEvent: {}
+[24.856908] (-) TimerEvent: {}
+[24.957067] (-) TimerEvent: {}
+[25.057313] (-) TimerEvent: {}
+[25.157567] (-) TimerEvent: {}
+[25.257742] (-) TimerEvent: {}
+[25.357904] (-) TimerEvent: {}
+[25.458105] (-) TimerEvent: {}
+[25.558393] (-) TimerEvent: {}
+[25.658696] (-) TimerEvent: {}
+[25.758860] (-) TimerEvent: {}
+[25.859119] (-) TimerEvent: {}
+[25.959369] (-) TimerEvent: {}
+[26.059643] (-) TimerEvent: {}
+[26.159816] (-) TimerEvent: {}
+[26.259995] (-) TimerEvent: {}
+[26.360154] (-) TimerEvent: {}
+[26.460339] (-) TimerEvent: {}
+[26.560581] (-) TimerEvent: {}
+[26.660842] (-) TimerEvent: {}
+[26.760997] (-) TimerEvent: {}
+[26.861183] (-) TimerEvent: {}
+[26.961382] (-) TimerEvent: {}
+[27.061658] (-) TimerEvent: {}
+[27.161919] (-) TimerEvent: {}
+[27.262187] (-) TimerEvent: {}
+[27.362431] (-) TimerEvent: {}
+[27.462674] (-) TimerEvent: {}
+[27.562838] (-) TimerEvent: {}
+[27.663102] (-) TimerEvent: {}
+[27.763356] (-) TimerEvent: {}
+[27.863606] (-) TimerEvent: {}
+[27.963870] (-) TimerEvent: {}
+[28.064120] (-) TimerEvent: {}
+[28.164316] (-) TimerEvent: {}
+[28.264575] (-) TimerEvent: {}
+[28.364873] (-) TimerEvent: {}
+[28.465135] (-) TimerEvent: {}
+[28.565394] (-) TimerEvent: {}
+[28.665649] (-) TimerEvent: {}
+[28.765903] (-) TimerEvent: {}
+[28.866089] (-) TimerEvent: {}
+[28.966336] (-) TimerEvent: {}
+[29.066574] (-) TimerEvent: {}
+[29.166746] (-) TimerEvent: {}
+[29.266984] (-) TimerEvent: {}
+[29.367218] (-) TimerEvent: {}
+[29.467462] (-) TimerEvent: {}
+[29.567669] (-) TimerEvent: {}
+[29.667955] (-) TimerEvent: {}
+[29.768254] (-) TimerEvent: {}
+[29.868520] (-) TimerEvent: {}
+[29.968759] (-) TimerEvent: {}
+[30.069034] (-) TimerEvent: {}
+[30.169801] (-) TimerEvent: {}
+[30.270061] (-) TimerEvent: {}
+[30.370217] (-) TimerEvent: {}
+[30.470388] (-) TimerEvent: {}
+[30.570678] (-) TimerEvent: {}
+[30.671231] (-) TimerEvent: {}
+[30.771687] (-) TimerEvent: {}
+[30.871870] (-) TimerEvent: {}
+[30.972161] (-) TimerEvent: {}
+[31.072405] (-) TimerEvent: {}
+[31.172972] (-) TimerEvent: {}
+[31.273246] (-) TimerEvent: {}
+[31.373444] (-) TimerEvent: {}
+[31.473711] (-) TimerEvent: {}
+[31.573969] (-) TimerEvent: {}
+[31.674233] (-) TimerEvent: {}
+[31.774484] (-) TimerEvent: {}
+[31.874868] (-) TimerEvent: {}
+[31.975130] (-) TimerEvent: {}
+[32.075410] (-) TimerEvent: {}
+[32.175704] (-) TimerEvent: {}
+[32.275881] (-) TimerEvent: {}
+[32.376060] (-) TimerEvent: {}
+[32.476305] (-) TimerEvent: {}
+[32.576551] (-) TimerEvent: {}
+[32.676785] (-) TimerEvent: {}
+[32.777035] (-) TimerEvent: {}
+[32.877294] (-) TimerEvent: {}
+[32.977522] (-) TimerEvent: {}
+[33.077745] (-) TimerEvent: {}
+[33.177984] (-) TimerEvent: {}
+[33.278241] (-) TimerEvent: {}
+[33.378494] (-) TimerEvent: {}
+[33.478741] (-) TimerEvent: {}
+[33.578978] (-) TimerEvent: {}
+[33.679164] (-) TimerEvent: {}
+[33.779407] (-) TimerEvent: {}
+[33.879655] (-) TimerEvent: {}
+[33.979922] (-) TimerEvent: {}
+[34.080163] (-) TimerEvent: {}
+[34.180409] (-) TimerEvent: {}
+[34.280652] (-) TimerEvent: {}
+[34.380808] (-) TimerEvent: {}
+[34.481058] (-) TimerEvent: {}
+[34.581304] (-) TimerEvent: {}
+[34.681553] (-) TimerEvent: {}
+[34.781742] (-) TimerEvent: {}
+[34.881901] (-) TimerEvent: {}
+[34.982091] (-) TimerEvent: {}
+[35.082271] (-) TimerEvent: {}
+[35.182530] (-) TimerEvent: {}
+[35.282812] (-) TimerEvent: {}
+[35.382972] (-) TimerEvent: {}
+[35.483160] (-) TimerEvent: {}
+[35.583401] (-) TimerEvent: {}
+[35.683656] (-) TimerEvent: {}
+[35.783813] (-) TimerEvent: {}
+[35.883990] (-) TimerEvent: {}
+[35.984177] (-) TimerEvent: {}
+[36.084412] (-) TimerEvent: {}
+[36.184668] (-) TimerEvent: {}
+[36.284831] (-) TimerEvent: {}
+[36.384995] (-) TimerEvent: {}
+[36.485235] (-) TimerEvent: {}
+[36.585408] (-) TimerEvent: {}
+[36.685664] (-) TimerEvent: {}
+[36.785902] (-) TimerEvent: {}
+[36.886088] (-) TimerEvent: {}
+[36.986330] (-) TimerEvent: {}
+[37.086647] (-) TimerEvent: {}
+[37.186804] (-) TimerEvent: {}
+[37.287060] (-) TimerEvent: {}
+[37.387241] (-) TimerEvent: {}
+[37.487475] (-) TimerEvent: {}
+[37.587716] (-) TimerEvent: {}
+[37.687960] (-) TimerEvent: {}
+[37.788113] (-) TimerEvent: {}
+[37.888447] (-) TimerEvent: {}
+[37.989224] (-) TimerEvent: {}
+[38.089620] (-) TimerEvent: {}
+[38.189880] (-) TimerEvent: {}
+[38.290173] (-) TimerEvent: {}
+[38.390370] (-) TimerEvent: {}
+[38.490616] (-) TimerEvent: {}
+[38.590862] (-) TimerEvent: {}
+[38.691115] (-) TimerEvent: {}
+[38.791266] (-) TimerEvent: {}
+[38.891499] (-) TimerEvent: {}
+[38.991742] (-) TimerEvent: {}
+[39.091895] (-) TimerEvent: {}
+[39.192136] (-) TimerEvent: {}
+[39.292392] (-) TimerEvent: {}
+[39.381145] (go2_robot) StdoutLine: {'line': b'[ 82%] Linking CXX static library libgo2_core.a\n'}
+[39.392549] (-) TimerEvent: {}
+[39.492851] (-) TimerEvent: {}
+[39.537512] (go2_robot) StdoutLine: {'line': b'[ 82%] Built target go2_core\n'}
+[39.593018] (go2_robot) StdoutLine: {'line': b'[ 88%] Building CXX object CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o\n'}
+[39.593140] (-) TimerEvent: {}
+[39.593561] (go2_robot) StdoutLine: {'line': b'[ 94%] Building CXX object CMakeFiles/go2_control_node.dir/src/ros2/main.cpp.o\n'}
+[39.693324] (-) TimerEvent: {}
+[39.793690] (-) TimerEvent: {}
+[39.893917] (-) TimerEvent: {}
+[39.994163] (-) TimerEvent: {}
+[40.094342] (-) TimerEvent: {}
+[40.194534] (-) TimerEvent: {}
+[40.294784] (-) TimerEvent: {}
+[40.395065] (-) TimerEvent: {}
+[40.495465] (-) TimerEvent: {}
+[40.595884] (-) TimerEvent: {}
+[40.666195] (go2_robot) StderrLine: {'line': b'In file included from /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:1:\n'}
+[40.666636] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/include/ros2/go2_control_node.hpp:27:10: fatal error: geometry_msgs/msg/odometry.hpp: \xe6\xb2\xa1\xe6\x9c\x89\xe9\x82\xa3\xe4\xb8\xaa\xe6\x96\x87\xe4\xbb\xb6\xe6\x88\x96\xe7\x9b\xae\xe5\xbd\x95\n'}
+[40.666858] (go2_robot) StderrLine: {'line': b'   27 | #include <geometry_msgs/msg/odometry.hpp>\n'}
+[40.667021] (go2_robot) StderrLine: {'line': b'      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[40.667176] (go2_robot) StderrLine: {'line': b'compilation terminated.\n'}
+[40.667334] (go2_robot) StderrLine: {'line': b'In file included from /home/hong/Movement_Control/Go2Robot/src/ros2/main.cpp:2:\n'}
+[40.667494] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/include/ros2/go2_control_node.hpp:27:10: fatal error: geometry_msgs/msg/odometry.hpp: \xe6\xb2\xa1\xe6\x9c\x89\xe9\x82\xa3\xe4\xb8\xaa\xe6\x96\x87\xe4\xbb\xb6\xe6\x88\x96\xe7\x9b\xae\xe5\xbd\x95\n'}
+[40.667676] (go2_robot) StderrLine: {'line': b'   27 | #include <geometry_msgs/msg/odometry.hpp>\n'}
+[40.667829] (go2_robot) StderrLine: {'line': b'      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[40.667972] (go2_robot) StderrLine: {'line': b'compilation terminated.\n'}
+[40.671976] (go2_robot) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/go2_control_node.dir/build.make:90\xef\xbc\x9aCMakeFiles/go2_control_node.dir/src/ros2/main.cpp.o] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[40.672171] (go2_robot) StderrLine: {'line': b'gmake[2]: *** \xe6\xad\xa3\xe5\x9c\xa8\xe7\xad\x89\xe5\xbe\x85\xe6\x9c\xaa\xe5\xae\x8c\xe6\x88\x90\xe7\x9a\x84\xe4\xbb\xbb\xe5\x8a\xa1....\n'}
+[40.672299] (go2_robot) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/go2_control_node.dir/build.make:76\xef\xbc\x9aCMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[40.672565] (go2_robot) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:228\xef\xbc\x9aCMakeFiles/go2_control_node.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[40.672881] (go2_robot) StderrLine: {'line': b'gmake: *** [Makefile:146\xef\xbc\x9aall] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[40.675781] (go2_robot) CommandEnded: {'returncode': 2}
+[40.687297] (go2_robot) JobEnded: {'identifier': 'go2_robot', 'rc': 2}
+[40.695963] (-) TimerEvent: {}
+[40.698095] (-) EventReactorShutdown: {}

@@ -1,0 +1,19 @@
+# Go2 控制节点 ROS 2 参数
+# 用法: ros2 run go2_robot go2_control_node --ros-args --params-file <path>/go2_params.yaml
+# 相对路径基于运行目录 (默认从 Go2Robot/build/ 运行, 与原 ../go2 行为一致)
+go2_control_node:
+  ros__parameters:
+    # ===== 模型/配置文件路径 =====
+    mujoco_model: "go2/scene.xml"          # 原 ../go2/scene.xml
+    urdf_path:    "go2/go2_description.urdf"
+    mpc_config:   "config/mpc.yaml"        # MPC/WBC 权重 (原 yaml 原样使用)
+
+    # ===== 频率 (Hz) =====
+    control_frequency: 500.0    # WBC 主控循环; 必须等于 1/mujoco_timestep (0.002), 节点会校验告警
+    mpc_frequency:     100.0    # MPC 异步线程 (独立 std::thread, 不阻塞 WBC)
+    publish_frequency: 50.0     # odom / joint_states / 足端力 发布
+
+    # ===== 控制参数 =====
+    initial_gait: "TROT"        # TROT / WALK / STAND
+    desired_height: 0.25        # MPC 期望机身高度 (原 p[2]=0.25)
+    max_cmd_vel: 0.05           # /cmd_vel linear.x 限幅 (原键盘 w/s 为 ±0.05)

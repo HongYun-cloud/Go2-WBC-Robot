@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgo2_core.a CMakeFiles/go2_core.dir/src/SIM/MJCsim.cpp.o CMakeFiles/go2_core.dir/src/MPC/MPC.cpp.o CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.o CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o CMakeFiles/go2_core.dir/src/Planner/GaitScheduler.cpp.o CMakeFiles/go2_core.dir/src/Planner/SwingLegPlanner.cpp.o CMakeFiles/go2_core.dir/src/fsm/ControlFSM.cpp.o CMakeFiles/go2_core.dir/src/Estimator/PositionVelocityEstimator.cpp.o
+/usr/bin/ranlib libgo2_core.a

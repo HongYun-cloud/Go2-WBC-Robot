@@ -1,0 +1,94 @@
+[0.008s] Invoking command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24
+[0.034s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.079s] -- Found Python3: /home/hong/miniconda3/envs/rl_env/bin/python3 (found version "3.8.10") found components: Interpreter 
+[0.127s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[0.147s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.149s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.153s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.159s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.168s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.189s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.190s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.266s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.297s] -- Found geometry_msgs: 4.9.2 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.305s] -- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.343s] [33mCMake Warning (dev) at /usr/share/cmake-3.22/Modules/FindOpenGL.cmake:315 (message):
+[0.343s]   Policy CMP0072 is not set: FindOpenGL prefers GLVND by default when
+[0.343s]   available.  Run "cmake --help-policy CMP0072" for policy details.  Use the
+[0.343s]   cmake_policy command to set the policy and suppress this warning.
+[0.343s] 
+[0.343s]   FindOpenGL found both a legacy GL library:
+[0.343s] 
+[0.343s]     OPENGL_gl_LIBRARY: /usr/lib/x86_64-linux-gnu/libGL.so
+[0.343s] 
+[0.343s]   and GLVND libraries for OpenGL and GLX:
+[0.343s] 
+[0.343s]     OPENGL_opengl_LIBRARY: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+[0.343s]     OPENGL_glx_LIBRARY: /usr/lib/x86_64-linux-gnu/libGLX.so
+[0.343s] 
+[0.344s]   OpenGL_GL_PREFERENCE has not been set to "GLVND" or "LEGACY", so for
+[0.344s]   compatibility with CMake 3.10 and below the legacy GL library will be used.
+[0.344s] Call Stack (most recent call first):
+[0.344s]   CMakeLists.txt:26 (find_package)
+[0.344s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.344s] [0m
+[0.362s] -- pinocchio_default FOUND. pinocchio_default at /opt/ros/humble/lib/x86_64-linux-gnu/libpinocchio_default.so
+[0.362s] -- pinocchio_parsers FOUND. pinocchio_parsers at /opt/ros/humble/lib/x86_64-linux-gnu/libpinocchio_parsers.so
+[0.363s] -- boost_filesystem FOUND. boost_filesystem at /lib/x86_64-linux-gnu/libboost_filesystem.so
+[0.368s] -- Found Boost: /usr/include (found version "1.74.0") found components: filesystem serialization 
+[0.369s] -- eigenpy FOUND. eigenpy at /opt/ros/humble/lib/x86_64-linux-gnu/libeigenpy.so
+[0.386s] -- Checking for NumPy
+[0.559s] --   NUMPY_INCLUDE_DIRS=/home/hong/miniconda3/envs/rl_env/lib/python3.8/site-packages/numpy/core/include
+[0.639s] --   NUMPY_VERSION=1.23.2
+[0.837s] -- Found Python3: /home/hong/miniconda3/envs/rl_env/bin/python3 (found version "3.8.10") found components: Interpreter Development.Module NumPy 
+[0.837s] -- PythonLibraryDirs: 
+[0.838s] -- PythonLibVersionString: 3.8.10
+[0.854s] -- Python site lib: lib/python3.8/site-packages
+[0.854s] -- Python include dirs: /home/hong/miniconda3/envs/rl_env/include/python3.8
+[0.888s] -- Checking for NumPy
+[0.984s] --   NUMPY_INCLUDE_DIRS=/home/hong/miniconda3/envs/rl_env/lib/python3.8/site-packages/numpy/core/include
+[1.067s] --   NUMPY_VERSION=1.23.2
+[1.067s] -- NumPy include dir: /home/hong/miniconda3/envs/rl_env/lib/python3.8/site-packages/numpy/core/include
+[1.071s] [33mCMake Warning at /usr/share/cmake-3.22/Modules/FindBoost.cmake:2201 (message):
+[1.071s]   No header defined for python310; skipping header check (note: header-only
+[1.071s]   libraries have no designated component)
+[1.071s] Call Stack (most recent call first):
+[1.071s]   /opt/ros/humble/lib/x86_64-linux-gnu/cmake/eigenpy/boost.cmake:148 (find_package)
+[1.071s]   /opt/ros/humble/lib/x86_64-linux-gnu/cmake/eigenpy/eigenpyConfig.cmake:149 (SEARCH_FOR_BOOST_PYTHON)
+[1.071s]   /usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+[1.071s]   /opt/ros/humble/lib/x86_64-linux-gnu/cmake/pinocchio/pinocchioConfig.cmake:161 (find_dependency)
+[1.071s]   CMakeLists.txt:38 (find_package)
+[1.071s] 
+[1.072s] [0m
+[1.072s] -- Found Boost: /usr/include (found version "1.74.0") found components: python310 
+[1.296s] -- Default C++ standard: 201703
+[1.296s] -- C++ standard sufficient: Minimal required 11, currently defined: 17
+[1.298s] -- hpp-fcl FOUND. hpp-fcl at /opt/ros/humble/lib/x86_64-linux-gnu/libhpp-fcl.so
+[1.307s] -- Found Boost: /usr/include (found version "1.74.0") found components: chrono serialization filesystem 
+[1.309s] -- C++ standard sufficient: Minimal required 11, currently defined: 17
+[1.310s] -- C++ standard sufficient: Minimal required 11, currently defined: 17
+[1.376s] -- Configuring done
+[1.393s] -- Generating done
+[1.406s] -- Build files have been written to: /home/hong/Movement_Control/Go2Robot/build/go2_robot
+[1.431s] [35m[1mConsolidate compiler generated dependencies of target OsqpEigen[0m
+[1.447s] [ 29%] Built target OsqpEigen
+[1.460s] [35m[1mConsolidate compiler generated dependencies of target go2_core[0m
+[1.493s] [ 82%] Built target go2_core
+[1.511s] [ 88%] [32mBuilding CXX object CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o[0m
+[1.511s] [ 94%] [32mBuilding CXX object CMakeFiles/go2_control_node.dir/src/ros2/main.cpp.o[0m
+[1.644s] In file included from [01m[K/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:1[m[K:
+[1.644s] [01m[K/home/hong/Movement_Control/Go2Robot/include/ros2/go2_control_node.hpp:27:10:[m[K [01;31m[Kfatal error: [m[Kgeometry_msgs/msg/odometry.hpp: 没有那个文件或目录
+[1.644s]    27 | #include [01;31m[K<geometry_msgs/msg/odometry.hpp>[m[K
+[1.644s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.644s] compilation terminated.
+[1.646s] gmake[2]: *** [CMakeFiles/go2_control_node.dir/build.make:76：CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o] 错误 1
+[1.646s] gmake[2]: *** 正在等待未完成的任务....
+[1.649s] In file included from [01m[K/home/hong/Movement_Control/Go2Robot/src/ros2/main.cpp:2[m[K:
+[1.649s] [01m[K/home/hong/Movement_Control/Go2Robot/include/ros2/go2_control_node.hpp:27:10:[m[K [01;31m[Kfatal error: [m[Kgeometry_msgs/msg/odometry.hpp: 没有那个文件或目录
+[1.649s]    27 | #include [01;31m[K<geometry_msgs/msg/odometry.hpp>[m[K
+[1.649s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.649s] compilation terminated.
+[1.651s] gmake[2]: *** [CMakeFiles/go2_control_node.dir/build.make:90：CMakeFiles/go2_control_node.dir/src/ros2/main.cpp.o] 错误 1
+[1.651s] gmake[1]: *** [CMakeFiles/Makefile2:228：CMakeFiles/go2_control_node.dir/all] 错误 2
+[1.652s] gmake: *** [Makefile:146：all] 错误 2
+[1.653s] Invoked command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24

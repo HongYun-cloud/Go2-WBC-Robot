@@ -14,7 +14,7 @@ void MJCSIM::SIM::InitMujoco(){
     // 仿真时间步长 (0.002s = 500步/秒)
     // 12kg 四足的接触动力学需要小步长, 0.01 会导致落地弹跳偏软
     // 调大提速: 0.005=200步/秒, 0.01=100步/秒 (main 的 sim_dt 会自动跟随)
-    m->opt.timestep = 0.002;
+    m->opt.timestep = 0.0002;
     mj_forward(m, d);
 
     SimStart();
