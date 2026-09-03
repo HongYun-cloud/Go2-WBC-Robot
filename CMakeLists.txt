@@ -13,6 +13,7 @@ find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
 # =========================
 # 2. MuJoCo 路径
 # =========================
@@ -98,7 +99,17 @@ target_include_directories(go2_control_node PUBLIC
 
 
 # =========================
-# 8. 安装
+# 8. 自定义消息 (PlotJuggler 遥测)
+# =========================
+rosidl_generate_interfaces(${PROJECT_NAME}
+    "msg/Go2Telemetry.msg"
+    DEPENDENCIES std_msgs
+)
+rosidl_get_typesupport_target(go2_telemetry_typesupport ${PROJECT_NAME} rosidl_typesupport_cpp)
+target_link_libraries(go2_control_node ${go2_telemetry_typesupport})
+
+# =========================
+# 9. 安装
 # =========================
 install(TARGETS go2_control_node
     DESTINATION lib/${PROJECT_NAME}

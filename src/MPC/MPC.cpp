@@ -109,11 +109,11 @@ namespace Regulator{
                         contact_expanded[j * 4 + i] = cs[i];
             }
         }
-        _qpconstraint.updateConstraints(contact_expanded);
-        Eigen::SparseMatrix<double> A_sparse = _qpconstraint.A_constraint.sparseView();
+        _qpconstraint->updateConstraints(contact_expanded);
+        Eigen::SparseMatrix<double> A_sparse = _qpconstraint->A_constraint.sparseView();
         // 注意: OsqpEigen 存裸指针, 必须用持久对象而非局部变量
-        Eigen::VectorXd& boundL = _qpconstraint.L_constraint;
-        Eigen::VectorXd& boundU = _qpconstraint.U_constraint;
+        Eigen::VectorXd& boundL = _qpconstraint->L_constraint;
+        Eigen::VectorXd& boundU = _qpconstraint->U_constraint;
 
         A_sparse.makeCompressed();
         H_sparse.makeCompressed();
@@ -212,18 +212,7 @@ namespace Regulator{
         d(11) = c.v(2);
         controller->data->desireState = d;
     }   
-    void FootVectorInfo(auto s){
-        const char* legNames[] = {"FL", "FR", "RL", "RR"};
 
-        for (int i = 0; i < 4; ++i) {
-            std::cout << legNames[i] 
-                    << " | Pos (p): [" << s->p[i].transpose() << "]"
-                    << " | AngVel (w): [" << s->w[i].transpose() << "]" 
-                    << std::endl;
-        }
-    }
-    
-    
     void MPC::update(){
         controller->data->est_state = estimator->get_estresult();
 
@@ -263,8 +252,6 @@ namespace Regulator{
     void MPC::setContactSchedule(const std::vector<int>& sched){
         contact_sched_ = sched;
     }
-
-    
 
     void MPC::compuseEGH(){
         double dt = controller->config->dt;

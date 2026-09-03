@@ -2,9 +2,13 @@
     "configurations": [
         {
             "name": "Linux",
-            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            "compileCommands": [
+                "${workspaceFolder}/build/compile_commands.json"
+            ],
             "includePath": [
-                "${workspaceFolder}/include"
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/",
+                "${workspaceFolder}/install/go2_robot/include/go2_robot"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",

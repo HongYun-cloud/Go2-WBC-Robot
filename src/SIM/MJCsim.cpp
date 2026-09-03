@@ -14,7 +14,9 @@ void MJCSIM::SIM::InitMujoco(){
     // 仿真时间步长 (0.002s = 500步/秒)
     // 12kg 四足的接触动力学需要小步长, 0.01 会导致落地弹跳偏软
     // 调大提速: 0.005=200步/秒, 0.01=100步/秒 (main 的 sim_dt 会自动跟随)
-    m->opt.timestep = 0.0002;
+    // 注意不能调到 0.0002 量级: 控制循环单拍要跑完 WBC QP + 渲染 (~1ms),
+    // 步长 0.0002 时每拍预算只有 0.2ms, 仿真时间追不上墙钟 → 慢动作
+    m->opt.timestep = 0.002;
     mj_forward(m, d);
 
     SimStart();
@@ -52,6 +54,16 @@ void MJCSIM::SIM::Step(){
 };
 
 void MJCSIM::SIM::Render(){
+    // 渲染按墙钟节流到 ~60Hz: 控制循环 500Hz, 每拍都 updateScene+mjr_render+SwapBuffers
+    // 会吃掉实时预算 (渲染路径 ~ms 级, 500 拍/秒远超显示需要)。窗口事件每拍照常
+    // 轮询, 鼠标/键盘交互不受影响。
+    auto now = std::chrono::steady_clock::now();
+    if (std::chrono::duration<double>(now - last_render_).count() < 1.0 / 60.0) {
+        glfwPollEvents();
+        return;
+    }
+    last_render_ = now;
+
     mjv_updateScene(m, d, &opt, NULL, &cam,mjCAT_ALL, &scn);
     mjrRect viewport = {0, 0, 1200, 900};
     mjr_render(viewport, &scn, con);
@@ -106,6 +118,9 @@ void MJCSIM::SIM::SimStart(){
         glfwInit();
         window = glfwCreateWindow(1200, 900, "MuJoCo", NULL, NULL);
         glfwMakeContextCurrent(window);
+        // 关闭垂直同步: GLX 默认 swap interval=1, 每次 SwapBuffers 阻塞等 vblank
+        // (~16.7ms @60Hz), 500Hz 控制循环会被压到 60Hz → 仿真慢动作 (实测 RTF≈0.12)
+        glfwSwapInterval(0);
 
         // Register mouse + scroll + keyboard callbacks
         glfwSetWindowUserPointer(window, this);

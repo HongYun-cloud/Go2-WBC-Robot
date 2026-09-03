@@ -1,2 +1,0 @@
-Invoking command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/hong/Movement_Control/Go2Robot -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/hong/Movement_Control/Go2Robot/install/go2_robot
-Invoked command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/hong/Movement_Control/Go2Robot -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/home/hong/Movement_Control/Go2Robot/install/go2_robot

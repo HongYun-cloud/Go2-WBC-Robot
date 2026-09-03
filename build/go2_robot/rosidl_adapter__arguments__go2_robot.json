@@ -1,0 +1,6 @@
+{
+  "package_name": "go2_robot",
+  "non_idl_tuples": [
+    "/home/hong/Movement_Control/Go2Robot:msg/Go2Telemetry.msg"
+  ]
+}

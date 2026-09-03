@@ -671,6 +671,12 @@ CMakeFiles/go2_control_node.dir/src/ros2/main.cpp.o: \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__traits.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64_multi_array__type_support.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /home/hong/Movement_Control/Go2Robot/build/go2_robot/rosidl_generator_cpp/go2_robot/msg/go2_telemetry.hpp \
+ /home/hong/Movement_Control/Go2Robot/build/go2_robot/rosidl_generator_cpp/go2_robot/msg/detail/go2_telemetry__struct.hpp \
+ /home/hong/Movement_Control/Go2Robot/build/go2_robot/rosidl_generator_cpp/go2_robot/msg/detail/go2_telemetry__builder.hpp \
+ /home/hong/Movement_Control/Go2Robot/build/go2_robot/rosidl_generator_cpp/go2_robot/msg/detail/go2_telemetry__traits.hpp \
+ /home/hong/Movement_Control/Go2Robot/build/go2_robot/rosidl_generator_cpp/go2_robot/msg/detail/go2_telemetry__type_support.hpp \
+ /home/hong/Movement_Control/Go2Robot/build/go2_robot/rosidl_generator_cpp/go2_robot/msg/rosidl_generator_cpp__visibility_control.hpp \
  /home/hong/Movement_Control/Go2Robot/include/common.h \
  /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/Core \
  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \

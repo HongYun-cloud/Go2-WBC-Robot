@@ -1,4 +1,0 @@
-[ 29%] Built target OsqpEigen
-[ 82%] Built target go2_core
-[ 88%] [32mBuilding CXX object CMakeFiles/go2_control_node.dir/src/ros2/main.cpp.o[0m
-[ 94%] [32mBuilding CXX object CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o[0m

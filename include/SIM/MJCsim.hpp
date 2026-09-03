@@ -4,6 +4,7 @@
 #include "mujoco/mujoco.h"
 #include <GLFW/glfw3.h>
 #include <string.h>
+#include <chrono>
 #include <iostream>
 #include <Eigen/Dense>
 #include "common.h"
@@ -50,6 +51,9 @@ class SIM{
         // 缓存 touch sensor ID，避免每帧 mj_name2id 字符串查找
         int  touch_id_[4] = {-1, -1, -1, -1};
         bool touch_id_cached_ = false;
+
+        // 渲染节流 (Render 按墙钟 ~60Hz, 控制循环每拍调用但多数只轮询事件)
+        std::chrono::steady_clock::time_point last_render_{};
 
         // Quaternion to Euler (roll, pitch, yaw) — ZYX intrinsic convention
         static Eigen::Vector3d quatToEuler(float qw, float qx, float qy, float qz);

@@ -66,50 +66,6 @@ void PlotSend(double time, const std::vector<std::pair<std::string,double>>& dat
 std::string xml = "../go2/scene.xml";
 std::string urdf_path = "../go2/go2_description.urdf";
 
-void FootForceCmp(const Eigen::Matrix<double,12,1>& f_mpc,
-                  const Eigen::Matrix<double,12,1>& f_wbc){
-    std::cout << std::fixed << std::setprecision(2);
-    std::cout << "--- MPC vs WBC 足端力 ---" << std::endl;
-    for (int leg = 0; leg < 4; leg++) {
-        const char* names[] = {"FL", "FR", "RL", "RR"};
-        std::cout << " " << names[leg] << " MPC: " << f_mpc.segment<3>(leg*3).transpose()
-                  << "  WBC: "     << f_wbc.segment<3>(leg*3).transpose() << std::endl;
-    }
-}
-
-// 足端位置表格: 4×3 (每行 = 一条腿的 x y z)
-void FootPosTable(const Eigen::Matrix<double,4,3>& p_foot){
-    std::cout << std::fixed << std::setprecision(3);
-    std::cout << "--- 足端位置 (世界系) ---" << std::endl;
-    const char* names[] = {"FL", "FR", "RL", "RR"};
-    std::cout << " Leg |      x        y        z" << std::endl;
-    for (int leg = 0; leg < 4; leg++) {
-        std::cout << "  " << names[leg] << "  | "
-                  << std::setw(7) << p_foot(leg, 0) << " "
-                  << std::setw(7) << p_foot(leg, 1) << " "
-                  << std::setw(7) << p_foot(leg, 2) << std::endl;
-    }
-}
-void FootAccTable(const Eigen::Matrix<double,12,1>& a_foot){
-    std::cout << std::fixed << std::setprecision(3);
-    std::cout << "--- 足端加速度 (世界系) ---" << std::endl;
-    const char* names[] = {"FL", "FR", "RL", "RR"};
-    std::cout << " Leg |      ax      ay      az |     |a|     方向 (单位向量)" << std::endl;
-    for (int leg = 0; leg < 4; leg++) {
-        Eigen::Vector3d a = a_foot.segment<3>(leg*3);
-        double mag = a.norm();
-        Eigen::Vector3d dir = Eigen::Vector3d::Zero();
-        if (mag > 1e-9) dir = a / mag;
-        std::cout << "  " << names[leg] << "  | "
-                  << std::setw(7) << a(0) << " " << std::setw(7) << a(1) << " " << std::setw(7) << a(2)
-                  << " | " << std::setw(7) << mag
-                  << " | (" << std::setw(6) << dir(0) << "," << std::setw(6) << dir(1) << "," << std::setw(6) << dir(2) << ")"
-                  << std::endl;
-    }
-}
-
-
-
 int main(){
     auto scheduler  = std::make_shared<Gait::GaitScheduler>();
     auto estimator  = std::make_shared<Estimator::PositionVelocityEstimator>();
@@ -163,7 +119,6 @@ int main(){
     wbc->init();
 
     // ===== MPC 模型参数: 用 URDF 真值替换硬编码 =====
-    // 之前 m=12kg, I=(0.1,0.1,0.02) 是瞎猜的, I_zz 比真值小 ~20 倍 →
     // 模型以为 yaw 极容易控制, 几乎不输出侧向力差 → 真实 yaw/roll 扰动得不到纠正 → 漂移后倒向固定一侧
     {
         double m_total = 0.0;

@@ -34,7 +34,9 @@ AMENT_CMAKE_UNINSTALL_TARGET:BOOL=ON
 //The path where test results are generated
 AMENT_TEST_RESULTS_DIR:PATH=/home/hong/Movement_Control/Go2Robot/build/go2_robot/test_results
 
-//Build libraries as shared as opposed to static
+//Global flag to cause add_library() to create shared libraries
+// if on. If set to true, this will cause all libraries to be built
+// shared unless the library was explicitly added as a static library.
 BUILD_SHARED_LIBS:BOOL=ON
 
 //Build the testing tree.
@@ -414,7 +416,7 @@ OPENGL_GLX_INCLUDE_DIR:PATH=/usr/include
 OPENGL_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
-OPENGL_egl_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libEGL.so
+OPENGL_egl_LIBRARY:FILEPATH=/tmp/.mount_ZCode-Z5tzII/libEGL.so
 
 //Path to a library.
 OPENGL_gl_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libGL.so
@@ -465,11 +467,20 @@ PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 //Enable Debian-style Python package layout
 PYTHON_DEB_LAYOUT:BOOL=OFF
 
+//Path to a program.
+PYTHON_EXECUTABLE:FILEPATH=
+
+//Path to a library.
+PYTHON_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpython3.10.so
+
+//Path to a library.
+PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
+
 //Enable standard Python package layout
 PYTHON_STANDARD_LAYOUT:BOOL=ON
 
 //Path to a program.
-Python3_EXECUTABLE:FILEPATH=/home/hong/miniconda3/envs/rl_env/bin/python3
+Python3_EXECUTABLE:FILEPATH=/usr/bin/python3
 
 //Name of the computer/site where compile is being run
 SITE:STRING=hong
@@ -485,6 +496,9 @@ VALGRIND_PROGRAM:FILEPATH=VALGRIND_PROGRAM-NOTFOUND
 
 //Path to a library.
 _lib:FILEPATH=/opt/ros/humble/lib/libnav_msgs__rosidl_typesupport_fastrtps_cpp.so
+
+//Path to a file.
+_numpy_h:FILEPATH=/usr/include/python3.10/numpy/numpyconfig.h
 
 //The directory containing a CMake configuration file for ament_cmake.
 ament_cmake_DIR:PATH=/opt/ros/humble/share/ament_cmake/cmake
@@ -516,14 +530,26 @@ ament_cmake_export_targets_DIR:PATH=/opt/ros/humble/share/ament_cmake_export_tar
 //The directory containing a CMake configuration file for ament_cmake_gen_version_h.
 ament_cmake_gen_version_h_DIR:PATH=/opt/ros/humble/share/ament_cmake_gen_version_h/cmake
 
+//The directory containing a CMake configuration file for ament_cmake_gmock.
+ament_cmake_gmock_DIR:PATH=/opt/ros/humble/share/ament_cmake_gmock/cmake
+
+//The directory containing a CMake configuration file for ament_cmake_gtest.
+ament_cmake_gtest_DIR:PATH=/opt/ros/humble/share/ament_cmake_gtest/cmake
+
 //The directory containing a CMake configuration file for ament_cmake_include_directories.
 ament_cmake_include_directories_DIR:PATH=/opt/ros/humble/share/ament_cmake_include_directories/cmake
 
 //The directory containing a CMake configuration file for ament_cmake_libraries.
 ament_cmake_libraries_DIR:PATH=/opt/ros/humble/share/ament_cmake_libraries/cmake
 
+//The directory containing a CMake configuration file for ament_cmake_pytest.
+ament_cmake_pytest_DIR:PATH=/opt/ros/humble/share/ament_cmake_pytest/cmake
+
 //The directory containing a CMake configuration file for ament_cmake_python.
 ament_cmake_python_DIR:PATH=/opt/ros/humble/share/ament_cmake_python/cmake
+
+//The directory containing a CMake configuration file for ament_cmake_ros.
+ament_cmake_ros_DIR:PATH=/opt/ros/humble/share/ament_cmake_ros/cmake
 
 //The directory containing a CMake configuration file for ament_cmake_target_dependencies.
 ament_cmake_target_dependencies_DIR:PATH=/opt/ros/humble/share/ament_cmake_target_dependencies/cmake
@@ -579,6 +605,39 @@ go2_robot_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 go2_robot_SOURCE_DIR:STATIC=/home/hong/Movement_Control/Go2Robot
 
+//Dependencies for the target
+go2_robot__rosidl_generator_c_LIB_DEPENDS:STATIC=general;std_msgs::std_msgs__rosidl_generator_c;general;builtin_interfaces::builtin_interfaces__rosidl_generator_c;general;rosidl_runtime_c::rosidl_runtime_c;general;rcutils::rcutils;
+
+//Dependencies for the target
+go2_robot__rosidl_generator_py_LIB_DEPENDS:STATIC=general;go2_robot__rosidl_generator_c;general;/usr/lib/x86_64-linux-gnu/libpython3.10.so;general;go2_robot__rosidl_typesupport_c;general;std_msgs::std_msgs__rosidl_generator_py;general;builtin_interfaces::builtin_interfaces__rosidl_generator_py;
+
+//Dependencies for the target
+go2_robot__rosidl_typesupport_c_LIB_DEPENDS:STATIC=general;go2_robot__rosidl_generator_c;general;rosidl_runtime_c::rosidl_runtime_c;general;rosidl_typesupport_c::rosidl_typesupport_c;general;std_msgs::std_msgs__rosidl_typesupport_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_c;
+
+//Dependencies for the target
+go2_robot__rosidl_typesupport_c__pyext_LIB_DEPENDS:STATIC=general;go2_robot__rosidl_generator_py;general;/usr/lib/x86_64-linux-gnu/libpython3.10.so;general;go2_robot__rosidl_typesupport_c;general;go2_robot__rosidl_typesupport_c;general;rosidl_runtime_c::rosidl_runtime_c;general;rosidl_typesupport_c::rosidl_typesupport_c;general;std_msgs::std_msgs__rosidl_generator_c;general;std_msgs::std_msgs__rosidl_typesupport_fastrtps_c;general;std_msgs::std_msgs__rosidl_typesupport_fastrtps_cpp;general;std_msgs::std_msgs__rosidl_typesupport_introspection_c;general;std_msgs::std_msgs__rosidl_typesupport_c;general;std_msgs::std_msgs__rosidl_typesupport_introspection_cpp;general;std_msgs::std_msgs__rosidl_typesupport_cpp;general;std_msgs::std_msgs__rosidl_generator_py;general;builtin_interfaces::builtin_interfaces__rosidl_generator_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_fastrtps_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_introspection_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_fastrtps_cpp;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_introspection_cpp;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_cpp;general;builtin_interfaces::builtin_interfaces__rosidl_generator_py;general;rosidl_runtime_c::rosidl_runtime_c;general;/opt/ros/humble/lib/librmw.so;general;rcutils::rcutils;general;rosidl_runtime_c::rosidl_runtime_c;
+
+//Dependencies for the target
+go2_robot__rosidl_typesupport_cpp_LIB_DEPENDS:STATIC=general;rosidl_runtime_c::rosidl_runtime_c;general;rosidl_typesupport_cpp::rosidl_typesupport_cpp;general;rosidl_typesupport_c::rosidl_typesupport_c;general;std_msgs::std_msgs__rosidl_typesupport_cpp;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_cpp;
+
+//Dependencies for the target
+go2_robot__rosidl_typesupport_fastrtps_c_LIB_DEPENDS:STATIC=general;fastcdr;general;rosidl_runtime_c::rosidl_runtime_c;general;rosidl_typesupport_fastrtps_cpp::rosidl_typesupport_fastrtps_cpp;general;rosidl_typesupport_fastrtps_c::rosidl_typesupport_fastrtps_c;general;go2_robot__rosidl_generator_c;general;std_msgs::std_msgs__rosidl_typesupport_fastrtps_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_fastrtps_c;
+
+//Dependencies for the target
+go2_robot__rosidl_typesupport_fastrtps_c__pyext_LIB_DEPENDS:STATIC=general;go2_robot__rosidl_generator_py;general;/usr/lib/x86_64-linux-gnu/libpython3.10.so;general;go2_robot__rosidl_typesupport_fastrtps_c;general;go2_robot__rosidl_typesupport_c;general;rosidl_runtime_c::rosidl_runtime_c;general;rosidl_typesupport_c::rosidl_typesupport_c;general;std_msgs::std_msgs__rosidl_generator_c;general;std_msgs::std_msgs__rosidl_typesupport_fastrtps_c;general;std_msgs::std_msgs__rosidl_typesupport_fastrtps_cpp;general;std_msgs::std_msgs__rosidl_typesupport_introspection_c;general;std_msgs::std_msgs__rosidl_typesupport_c;general;std_msgs::std_msgs__rosidl_typesupport_introspection_cpp;general;std_msgs::std_msgs__rosidl_typesupport_cpp;general;std_msgs::std_msgs__rosidl_generator_py;general;builtin_interfaces::builtin_interfaces__rosidl_generator_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_fastrtps_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_introspection_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_fastrtps_cpp;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_introspection_cpp;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_cpp;general;builtin_interfaces::builtin_interfaces__rosidl_generator_py;general;rosidl_runtime_c::rosidl_runtime_c;general;/opt/ros/humble/lib/librmw.so;general;rcutils::rcutils;general;rosidl_runtime_c::rosidl_runtime_c;
+
+//Dependencies for the target
+go2_robot__rosidl_typesupport_fastrtps_cpp_LIB_DEPENDS:STATIC=general;fastcdr;general;rmw::rmw;general;rosidl_runtime_c::rosidl_runtime_c;general;rosidl_typesupport_fastrtps_cpp::rosidl_typesupport_fastrtps_cpp;general;std_msgs::std_msgs__rosidl_typesupport_fastrtps_cpp;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_fastrtps_cpp;
+
+//Dependencies for the target
+go2_robot__rosidl_typesupport_introspection_c_LIB_DEPENDS:STATIC=general;go2_robot__rosidl_generator_c;general;rosidl_typesupport_introspection_c::rosidl_typesupport_introspection_c;general;std_msgs::std_msgs__rosidl_typesupport_introspection_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_introspection_c;
+
+//Dependencies for the target
+go2_robot__rosidl_typesupport_introspection_c__pyext_LIB_DEPENDS:STATIC=general;go2_robot__rosidl_generator_py;general;/usr/lib/x86_64-linux-gnu/libpython3.10.so;general;go2_robot__rosidl_typesupport_introspection_c;general;go2_robot__rosidl_typesupport_c;general;rosidl_runtime_c::rosidl_runtime_c;general;rosidl_typesupport_c::rosidl_typesupport_c;general;std_msgs::std_msgs__rosidl_generator_c;general;std_msgs::std_msgs__rosidl_typesupport_fastrtps_c;general;std_msgs::std_msgs__rosidl_typesupport_fastrtps_cpp;general;std_msgs::std_msgs__rosidl_typesupport_introspection_c;general;std_msgs::std_msgs__rosidl_typesupport_c;general;std_msgs::std_msgs__rosidl_typesupport_introspection_cpp;general;std_msgs::std_msgs__rosidl_typesupport_cpp;general;std_msgs::std_msgs__rosidl_generator_py;general;builtin_interfaces::builtin_interfaces__rosidl_generator_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_fastrtps_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_introspection_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_c;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_fastrtps_cpp;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_introspection_cpp;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_cpp;general;builtin_interfaces::builtin_interfaces__rosidl_generator_py;general;rosidl_runtime_c::rosidl_runtime_c;general;/opt/ros/humble/lib/librmw.so;general;rcutils::rcutils;general;rosidl_runtime_c::rosidl_runtime_c;
+
+//Dependencies for the target
+go2_robot__rosidl_typesupport_introspection_cpp_LIB_DEPENDS:STATIC=general;rosidl_runtime_c::rosidl_runtime_c;general;rosidl_typesupport_introspection_cpp::rosidl_typesupport_introspection_cpp;general;std_msgs::std_msgs__rosidl_typesupport_introspection_cpp;general;builtin_interfaces::builtin_interfaces__rosidl_typesupport_introspection_cpp;
+
 //The directory containing a CMake configuration file for hpp-fcl.
 hpp-fcl_DIR:PATH=/opt/ros/humble/lib/x86_64-linux-gnu/cmake/hpp-fcl
 
@@ -611,6 +670,9 @@ pkgcfg_lib__OPENSSL_crypto:FILEPATH=/usr/lib/x86_64-linux-gnu/libcrypto.so
 
 //Path to a library.
 pkgcfg_lib__OPENSSL_ssl:FILEPATH=/usr/lib/x86_64-linux-gnu/libssl.so
+
+//The directory containing a CMake configuration file for python_cmake_module.
+python_cmake_module_DIR:PATH=/opt/ros/humble/share/python_cmake_module/cmake
 
 //The directory containing a CMake configuration file for rcl.
 rcl_DIR:PATH=/opt/ros/humble/share/rcl/cmake
@@ -663,6 +725,9 @@ rosidl_adapter_DIR:PATH=/opt/ros/humble/share/rosidl_adapter/cmake
 //The directory containing a CMake configuration file for rosidl_cmake.
 rosidl_cmake_DIR:PATH=/opt/ros/humble/share/rosidl_cmake/cmake
 
+//The directory containing a CMake configuration file for rosidl_default_generators.
+rosidl_default_generators_DIR:PATH=/opt/ros/humble/share/rosidl_default_generators/cmake
+
 //The directory containing a CMake configuration file for rosidl_default_runtime.
 rosidl_default_runtime_DIR:PATH=/opt/ros/humble/share/rosidl_default_runtime/cmake
 
@@ -671,6 +736,12 @@ rosidl_generator_c_DIR:PATH=/opt/ros/humble/share/rosidl_generator_c/cmake
 
 //The directory containing a CMake configuration file for rosidl_generator_cpp.
 rosidl_generator_cpp_DIR:PATH=/opt/ros/humble/share/rosidl_generator_cpp/cmake
+
+//The directory containing a CMake configuration file for rosidl_generator_py.
+rosidl_generator_py_DIR:PATH=/opt/ros/humble/share/rosidl_generator_py/cmake
+
+//The directory containing a CMake configuration file for rosidl_generator_rs.
+rosidl_generator_rs_DIR:PATH=/opt/ros/humble/share/rosidl_generator_rs/cmake
 
 //The directory containing a CMake configuration file for rosidl_runtime_c.
 rosidl_runtime_c_DIR:PATH=/opt/ros/humble/share/rosidl_runtime_c/cmake
@@ -896,7 +967,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -962,7 +1033,13 @@ FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libOpenG
 //Details about finding OpenSSL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenSSL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcrypto.so][/usr/include][c ][v3.0.2()]
 //Details about finding Python3
-FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/home/hong/miniconda3/envs/rl_env/bin/python3][/home/hong/miniconda3/envs/rl_env/include/python3.8][/home/hong/miniconda3/envs/rl_env/lib/python3.8/site-packages/numpy/core/include][cfound components: Interpreter Development.Module NumPy ][v3.8.10()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/usr/bin/python3][cfound components: Interpreter ][v3.10.12()]
+//Details about finding PythonExtra
+FIND_PACKAGE_MESSAGE_DETAILS_PythonExtra:INTERNAL=[.so][/usr/include/python3.10][/usr/lib/x86_64-linux-gnu/libpython3.10.so][.cpython-310-x86_64-linux-gnu][..cpython-310-x86_64-linux-gnu][v()]
+//Details about finding PythonInterp
+FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python3][v3.10.12(3.6)]
+//Details about finding PythonLibs
+FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpython3.10.so][/usr/include/python3.10][v3.10.12(3.5)]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //ADVANCED property for variable: GITCOMMAND
@@ -1023,6 +1100,17 @@ OSQP_IS_V1_FINAL:INTERNAL=TRUE
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PYTHON_EXECUTABLE
+PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
+//The directory for Python library installation. This needs to
+// be in PYTHONPATH when 'setup.py install' is called.
+PYTHON_INSTALL_DIR:INTERNAL=local/lib/python3.10/dist-packages
+//ADVANCED property for variable: PYTHON_LIBRARY
+PYTHON_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PYTHON_LIBRARY_DEBUG
+PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//The full suffix for Python native extensions. See PEP-3149: https://www.python.org/dev/peps/pep-3149/.
+PythonExtra_EXTENSION_SUFFIX:INTERNAL=..cpython-310-x86_64-linux-gnu
 //ADVANCED property for variable: SITE
 SITE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: VALGRIND_INCLUDE_DIR
@@ -1081,15 +1169,21 @@ _OPENSSL_openssl_INCLUDEDIR:INTERNAL=
 _OPENSSL_openssl_LIBDIR:INTERNAL=
 _OPENSSL_openssl_PREFIX:INTERNAL=
 _OPENSSL_openssl_VERSION:INTERNAL=
-_Python3_DEVELOPMENT_MODULE_SIGNATURE:INTERNAL=4bf9a284876daa2c39f4ad0f55d61063
-_Python3_EXECUTABLE:INTERNAL=/home/hong/miniconda3/envs/rl_env/bin/python3
-_Python3_INCLUDE_DIR:INTERNAL=/home/hong/miniconda3/envs/rl_env/include/python3.8
-//Python3 Properties
-_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;8;10;64;;cpython-38-x86_64-linux-gnu;/home/hong/miniconda3/envs/rl_env/lib/python3.8;/home/hong/miniconda3/envs/rl_env/lib/python3.8;/home/hong/miniconda3/envs/rl_env/lib/python3.8/site-packages;/home/hong/miniconda3/envs/rl_env/lib/python3.8/site-packages
-_Python3_INTERPRETER_SIGNATURE:INTERNAL=33fb05708fc91bdd19917aec46338748
-_Python3_NUMPY_SIGNATURE:INTERNAL=43c8fb58b8fb6ad6482fe41dc029f3ce
+//Path to a program.
+_Python2_CONFIG:INTERNAL=_Python2_CONFIG-NOTFOUND
+//Path to a program.
+_Python2_EXECUTABLE:INTERNAL=Python2_EXECUTABLE-NOTFOUND
 //Path to a file.
-_Python3_NumPy_INCLUDE_DIR:INTERNAL=/home/hong/miniconda3/envs/rl_env/lib/python3.8/site-packages/numpy/core/include
+_Python2_INCLUDE_DIR:INTERNAL=_Python2_INCLUDE_DIR-NOTFOUND
+_Python3_DEVELOPMENT_MODULE_SIGNATURE:INTERNAL=4bc14a0ea6a21ea267e38aa660e9b54b
+_Python3_EXECUTABLE:INTERNAL=/usr/bin/python3
+_Python3_INCLUDE_DIR:INTERNAL=/usr/include/python3.10
+//Python3 Properties
+_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;10;12;64;;cpython-310-x86_64-linux-gnu;/usr/lib/python3.10;/usr/lib/python3.10;/usr/lib/python3/dist-packages;/usr/lib/python3/dist-packages
+_Python3_INTERPRETER_SIGNATURE:INTERNAL=0f3e53742e142b1d9e50e4ca5b901dd8
+_Python3_NUMPY_SIGNATURE:INTERNAL=2c9f54926079e6790283292d6d849f51
+//Path to a file.
+_Python3_NumPy_INCLUDE_DIR:INTERNAL=/home/hong/.local/lib/python3.10/site-packages/numpy/_core/include
 __pkg_config_arguments__OPENSSL:INTERNAL=QUIET;openssl
 __pkg_config_checked__OPENSSL:INTERNAL=1
 //Result of TRY_COMPILE

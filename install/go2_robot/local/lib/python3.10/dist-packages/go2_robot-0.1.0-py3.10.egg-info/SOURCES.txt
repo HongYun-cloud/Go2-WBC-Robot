@@ -1,0 +1,8 @@
+setup.py
+go2_robot/__init__.py
+go2_robot.egg-info/PKG-INFO
+go2_robot.egg-info/SOURCES.txt
+go2_robot.egg-info/dependency_links.txt
+go2_robot.egg-info/top_level.txt
+go2_robot/msg/__init__.py
+go2_robot/msg/_go2_telemetry.py

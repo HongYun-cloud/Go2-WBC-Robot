@@ -1,0 +1,151 @@
+[0.000000] (-) TimerEvent: {}
+[0.000063] (go2_robot) JobQueued: {'identifier': 'go2_robot', 'dependencies': OrderedDict()}
+[0.000500] (go2_robot) JobStarted: {'identifier': 'go2_robot'}
+[0.030165] (go2_robot) JobProgress: {'identifier': 'go2_robot', 'progress': 'cmake'}
+[0.030558] (go2_robot) Command: {'cmd': ['/usr/bin/cmake', '/home/hong/Movement_Control/Go2Robot', '-DCMAKE_INSTALL_PREFIX=/home/hong/Movement_Control/Go2Robot/install/go2_robot'], 'cwd': '/home/hong/Movement_Control/Go2Robot/build/go2_robot', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('PYTHONIOENCODING', 'utf-8'), ('ZAI_OAUTH_CLIENT_ID', 'client_P8X5CMWmlaRO9gyO-KSqtg'), ('ZCODE_DESKTOP_CONTEXT_PROMPT_ENABLED', '1'), ('LANGUAGE', 'zh_CN:zh:en_US:en'), ('USER', 'hong'), ('LC_TIME', 'zh_CN.UTF-8'), ('GIT_EDITOR', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/tmp/.mount_ZCode-Z5tzII/usr/lib:'), ('INPUT_METHOD', 'fcitx'), ('HOME', '/home/hong'), ('CHROME_DESKTOP', 'zcode.desktop'), ('APPDIR', '/tmp/.mount_ZCode-Z5tzII'), ('DESKTOP_SESSION', 'ubuntu'), ('ZAI_OAUTH_ORIGIN', 'https://chat.z.ai'), ('GIO_LAUNCHED_DESKTOP_FILE', '/home/hong/.local/share/applications/zcode.desktop'), ('ZCODE_APP_VERSION', '3.10.2'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SDL_IM_MODULE', 'fcitx'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('MANAGERPID', '1742'), ('LC_CTYPE', 'zh_CN.UTF-8'), ('GLFW_IM_MODULE', 'ibus'), ('SYSTEMD_EXEC_PID', '1977'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('ZCODE_PROCESS_LABEL', 'local-1'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '30954'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'hong'), ('ZCODE_RUNTIME_ENV', 'production'), ('OWD', '/home/hong'), ('JOURNAL_STREAM', '8:15557'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'hong'), ('ZAI_BUSINESS_BASE_URL', 'https://api.z.ai'), ('TERM', 'dumb'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/hong/.local/bin:/opt/ros/humble/bin:/usr/local/cuda-12.1/bin:/home/hong/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/tmp/.mount_ZCode-Z5tzII:/tmp/.mount_ZCode-Z5tzII/usr/sbin:/usr/games:/usr/local/games:/snap/bin:/home/hong/.mujoco/mujoco-3.9.0/bin:/tmp/.mount_ZCode-Z5tzII/resources/tools/bfs:/tmp/.mount_ZCode-Z5tzII/resources/tools/ripgrep:/tmp/.mount_ZCode-Z5tzII/resources/tools/ugrep'), ('SESSION_MANAGER', 'local/hong:@/tmp/.ICE-unix/1954,unix/hong:/tmp/.ICE-unix/1954'), ('INVOCATION_ID', 'c7d4f1790a5c407e8c10bbebe50c3ef0'), ('APPIMAGE', '/home/hong/下载/ZCode-3.10.2-linux-x64.AppImage'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('ZCODE_BUILD_COMMIT_ID', '35824adf'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('ZCODE_BFS_BINARY', '/tmp/.mount_ZCode-Z5tzII/resources/tools/bfs/bfs'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('GSETTINGS_SCHEMA_DIR', '/tmp/.mount_ZCode-Z5tzII/usr/share/glib-2.0/schemas:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ARGV0', '/home/hong/下载/ZCode-3.10.2-linux-x64.AppImage'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('PYTHONUTF8', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('ZCODE_CUA_GRAY_ENABLED', '0'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/hong/Movement_Control/Go2Robot/build/go2_robot'), ('ZCODE_BASE_URL', 'https://zcode.z.ai'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/tmp/.mount_ZCode-Z5tzII/usr/share/:./share/:/usr/share/gnome:/usr/local/share/:/usr/share/:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop:/usr/share/gnome/:/usr/local/share/:/usr/share/'), ('ZCODE_RG_BINARY', '/tmp/.mount_ZCode-Z5tzII/resources/tools/ripgrep/rg'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('ZCODE_UGREP_BINARY', '/tmp/.mount_ZCode-Z5tzII/resources/tools/ugrep/ugrep'), ('ZCODE_ENV', 'production'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.090913] (go2_robot) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.099819] (-) TimerEvent: {}
+[0.137297] (go2_robot) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.143719] (go2_robot) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.200010] (-) TimerEvent: {}
+[0.204160] (go2_robot) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.211897] (go2_robot) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.212200] (go2_robot) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.212374] (go2_robot) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.215250] (go2_robot) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.282452] (go2_robot) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.290172] (go2_robot) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.290321] (go2_robot) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.290621] (go2_robot) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.292126] (go2_robot) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.300065] (-) TimerEvent: {}
+[0.397319] (go2_robot) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.400164] (-) TimerEvent: {}
+[0.480281] (go2_robot) StdoutLine: {'line': b'-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.500259] (-) TimerEvent: {}
+[0.542483] (go2_robot) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.545587] (go2_robot) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.551084] (go2_robot) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.558673] (go2_robot) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.568908] (go2_robot) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.596956] (go2_robot) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.598618] (go2_robot) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.600378] (-) TimerEvent: {}
+[0.700600] (-) TimerEvent: {}
+[0.740909] (go2_robot) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.766094] (go2_robot) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.800701] (-) TimerEvent: {}
+[0.802224] (go2_robot) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.807850] (go2_robot) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[0.867047] (go2_robot) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[0.867465] (go2_robot) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[0.900862] (-) TimerEvent: {}
+[0.931175] (go2_robot) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[0.932199] (go2_robot) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[0.968969] (go2_robot) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.2 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[0.978263] (go2_robot) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.991561] (go2_robot) StdoutLine: {'line': b'-- Found nav_msgs: 4.9.1 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[1.000908] (-) TimerEvent: {}
+[1.003912] (go2_robot) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[1.047708] (go2_robot) StdoutLine: {'line': b'-- Found GLEW: /usr/include (found version "2.2.0") \n'}
+[1.050848] (go2_robot) StderrLine: {'line': b'CMake Warning (dev) at /usr/share/cmake-3.22/Modules/FindOpenGL.cmake:315 (message):\n'}
+[1.051030] (go2_robot) StderrLine: {'line': b'  Policy CMP0072 is not set: FindOpenGL prefers GLVND by default when\n'}
+[1.051096] (go2_robot) StderrLine: {'line': b'  available.  Run "cmake --help-policy CMP0072" for policy details.  Use the\n'}
+[1.051155] (go2_robot) StderrLine: {'line': b'  cmake_policy command to set the policy and suppress this warning.\n'}
+[1.051212] (go2_robot) StderrLine: {'line': b'\n'}
+[1.051267] (go2_robot) StderrLine: {'line': b'  FindOpenGL found both a legacy GL library:\n'}
+[1.051429] (go2_robot) StderrLine: {'line': b'\n'}
+[1.051503] (go2_robot) StderrLine: {'line': b'    OPENGL_gl_LIBRARY: /usr/lib/x86_64-linux-gnu/libGL.so\n'}
+[1.051564] (go2_robot) StderrLine: {'line': b'\n'}
+[1.051620] (go2_robot) StderrLine: {'line': b'  and GLVND libraries for OpenGL and GLX:\n'}
+[1.051676] (go2_robot) StderrLine: {'line': b'\n'}
+[1.051731] (go2_robot) StderrLine: {'line': b'    OPENGL_opengl_LIBRARY: /usr/lib/x86_64-linux-gnu/libOpenGL.so\n'}
+[1.051785] (go2_robot) StderrLine: {'line': b'    OPENGL_glx_LIBRARY: /usr/lib/x86_64-linux-gnu/libGLX.so\n'}
+[1.051840] (go2_robot) StderrLine: {'line': b'\n'}
+[1.051903] (go2_robot) StderrLine: {'line': b'  OpenGL_GL_PREFERENCE has not been set to "GLVND" or "LEGACY", so for\n'}
+[1.051961] (go2_robot) StderrLine: {'line': b'  compatibility with CMake 3.10 and below the legacy GL library will be used.\n'}
+[1.052016] (go2_robot) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[1.052071] (go2_robot) StderrLine: {'line': b'  CMakeLists.txt:27 (find_package)\n'}
+[1.052124] (go2_robot) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[1.052178] (go2_robot) StderrLine: {'line': b'\n'}
+[1.052232] (go2_robot) StdoutLine: {'line': b'-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so   \n'}
+[1.056567] (go2_robot) StdoutLine: {'line': b"-- Setting build type to 'Release' as none was specified.\n"}
+[1.101001] (-) TimerEvent: {}
+[1.201179] (-) TimerEvent: {}
+[1.231637] (go2_robot) StdoutLine: {'line': b'-- pinocchio_default FOUND. pinocchio_default at /opt/ros/humble/lib/x86_64-linux-gnu/libpinocchio_default.so\n'}
+[1.231807] (go2_robot) StdoutLine: {'line': b'-- pinocchio_parsers FOUND. pinocchio_parsers at /opt/ros/humble/lib/x86_64-linux-gnu/libpinocchio_parsers.so\n'}
+[1.232156] (go2_robot) StdoutLine: {'line': b'-- boost_filesystem FOUND. boost_filesystem at /lib/x86_64-linux-gnu/libboost_filesystem.so\n'}
+[1.274379] (go2_robot) StdoutLine: {'line': b'-- Found Boost: /usr/include (found version "1.74.0") found components: filesystem serialization \n'}
+[1.275210] (go2_robot) StdoutLine: {'line': b'-- eigenpy FOUND. eigenpy at /opt/ros/humble/lib/x86_64-linux-gnu/libeigenpy.so\n'}
+[1.292190] (go2_robot) StdoutLine: {'line': b'-- Checking for NumPy\n'}
+[1.301245] (-) TimerEvent: {}
+[1.401426] (-) TimerEvent: {}
+[1.459379] (go2_robot) StdoutLine: {'line': b'--   NUMPY_INCLUDE_DIRS=/home/hong/.local/lib/python3.10/site-packages/numpy/_core/include\n'}
+[1.502919] (-) TimerEvent: {}
+[1.525183] (go2_robot) StdoutLine: {'line': b'--   NUMPY_VERSION=2.2.6\n'}
+[1.605963] (-) TimerEvent: {}
+[1.706178] (-) TimerEvent: {}
+[1.772075] (go2_robot) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter Development.Module NumPy \n'}
+[1.772497] (go2_robot) StdoutLine: {'line': b'-- PythonLibraryDirs: \n'}
+[1.772629] (go2_robot) StdoutLine: {'line': b'-- PythonLibVersionString: 3.10.12\n'}
+[1.781889] (go2_robot) StdoutLine: {'line': b'-- Python site lib: lib/python3.10/site-packages\n'}
+[1.782039] (go2_robot) StdoutLine: {'line': b'-- Python include dirs: /usr/include/python3.10\n'}
+[1.806268] (-) TimerEvent: {}
+[1.810712] (go2_robot) StdoutLine: {'line': b'-- Checking for NumPy\n'}
+[1.906917] (-) TimerEvent: {}
+[1.911953] (go2_robot) StdoutLine: {'line': b'--   NUMPY_INCLUDE_DIRS=/home/hong/.local/lib/python3.10/site-packages/numpy/_core/include\n'}
+[1.989136] (go2_robot) StdoutLine: {'line': b'--   NUMPY_VERSION=2.2.6\n'}
+[1.989298] (go2_robot) StdoutLine: {'line': b'-- NumPy include dir: /home/hong/.local/lib/python3.10/site-packages/numpy/_core/include\n'}
+[1.993233] (go2_robot) StderrLine: {'line': b'CMake Warning at /usr/share/cmake-3.22/Modules/FindBoost.cmake:2201 (message):\n'}
+[1.993386] (go2_robot) StderrLine: {'line': b'  No header defined for python310; skipping header check (note: header-only\n'}
+[1.993455] (go2_robot) StderrLine: {'line': b'  libraries have no designated component)\n'}
+[1.993518] (go2_robot) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[1.993579] (go2_robot) StderrLine: {'line': b'  /opt/ros/humble/lib/x86_64-linux-gnu/cmake/eigenpy/boost.cmake:148 (find_package)\n'}
+[1.993639] (go2_robot) StderrLine: {'line': b'  /opt/ros/humble/lib/x86_64-linux-gnu/cmake/eigenpy/eigenpyConfig.cmake:149 (SEARCH_FOR_BOOST_PYTHON)\n'}
+[1.993699] (go2_robot) StderrLine: {'line': b'  /usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)\n'}
+[1.993758] (go2_robot) StderrLine: {'line': b'  /opt/ros/humble/lib/x86_64-linux-gnu/cmake/pinocchio/pinocchioConfig.cmake:161 (find_dependency)\n'}
+[1.993817] (go2_robot) StderrLine: {'line': b'  CMakeLists.txt:39 (find_package)\n'}
+[1.993881] (go2_robot) StderrLine: {'line': b'\n'}
+[1.993941] (go2_robot) StderrLine: {'line': b'\n'}
+[1.996727] (go2_robot) StdoutLine: {'line': b'-- Found Boost: /usr/include (found version "1.74.0") found components: python310 \n'}
+[2.007111] (-) TimerEvent: {}
+[2.107343] (-) TimerEvent: {}
+[2.207591] (-) TimerEvent: {}
+[2.241798] (go2_robot) StdoutLine: {'line': b'-- Default C++ standard: 201703\n'}
+[2.241985] (go2_robot) StdoutLine: {'line': b'-- Minimal C++ standard upgraded to 11\n'}
+[2.242054] (go2_robot) StdoutLine: {'line': b'-- C++ standard sufficient: Minimal required 11, currently defined: 17\n'}
+[2.243184] (go2_robot) StdoutLine: {'line': b'-- hpp-fcl FOUND. hpp-fcl at /opt/ros/humble/lib/x86_64-linux-gnu/libhpp-fcl.so\n'}
+[2.255211] (go2_robot) StdoutLine: {'line': b'-- Found Boost: /usr/include (found version "1.74.0") found components: chrono serialization filesystem \n'}
+[2.257689] (go2_robot) StdoutLine: {'line': b'-- C++ standard sufficient: Minimal required 11, currently defined: 17\n'}
+[2.258218] (go2_robot) StdoutLine: {'line': b'-- C++ standard sufficient: Minimal required 11, currently defined: 17\n'}
+[2.307793] (-) TimerEvent: {}
+[2.308970] (go2_robot) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[2.407996] (-) TimerEvent: {}
+[2.481519] (go2_robot) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[2.508158] (-) TimerEvent: {}
+[2.608438] (-) TimerEvent: {}
+[2.708698] (-) TimerEvent: {}
+[2.755044] (go2_robot) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.808928] (-) TimerEvent: {}
+[2.854309] (go2_robot) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.870092] (go2_robot) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[2.871084] (go2_robot) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[2.872181] (go2_robot) StderrLine: {'line': b'CMake Error at /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:230 (message):\n'}
+[2.872330] (go2_robot) StderrLine: {'line': b'  Could NOT find PythonInterp (missing: PYTHON_EXECUTABLE) (found suitable\n'}
+[2.872403] (go2_robot) StderrLine: {'line': b'  version "3.10.12", minimum required is "3.6")\n'}
+[2.872470] (go2_robot) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[2.872533] (go2_robot) StderrLine: {'line': b'  /usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake:594 (_FPHSA_FAILURE_MESSAGE)\n'}
+[2.872708] (go2_robot) StderrLine: {'line': b'  /usr/share/cmake-3.22/Modules/FindPythonInterp.cmake:169 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)\n'}
+[2.872781] (go2_robot) StderrLine: {'line': b'  /opt/ros/humble/share/python_cmake_module/cmake/Modules/FindPythonExtra.cmake:52 (find_package)\n'}
+[2.872847] (go2_robot) StderrLine: {'line': b'  /opt/ros/humble/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:23 (find_package)\n'}
+[2.872932] (go2_robot) StderrLine: {'line': b'  /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)\n'}
+[2.873001] (go2_robot) StderrLine: {'line': b'  /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)\n'}
+[2.873067] (go2_robot) StderrLine: {'line': b'  CMakeLists.txt:104 (rosidl_generate_interfaces)\n'}
+[2.873133] (go2_robot) StderrLine: {'line': b'\n'}
+[2.873198] (go2_robot) StderrLine: {'line': b'\n'}
+[2.873263] (go2_robot) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[2.873340] (go2_robot) StdoutLine: {'line': b'See also "/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles/CMakeOutput.log".\n'}
+[2.883284] (go2_robot) CommandEnded: {'returncode': 1}
+[2.911290] (-) TimerEvent: {}
+[2.915325] (go2_robot) JobEnded: {'identifier': 'go2_robot', 'rc': 1}
+[2.926125] (-) EventReactorShutdown: {}

@@ -17,7 +17,9 @@ class MPC{
             controller = new MPCContorller();
             controller->config = new MPCConfig();
             controller->data   = new MPCData();
+            _qpconstraint = new QPConstraint(controller->config->N);
             params   = new ModelPARAMS();
+            
             estimator = extern_estimator;
 
             params->mass = 12.0; // kg
@@ -64,8 +66,8 @@ class MPC{
 
     private:
         double gravity = -9.81;
-        QPConstraint _qpconstraint;
         MPCContorller* controller;
+        QPConstraint* _qpconstraint;
         ModelPARAMS*   params;
         Estimator::PositionVelocityEstimator* estimator;
         std::vector<int> contact_sched_;   // 滚动接触预测缓存 (4*N)

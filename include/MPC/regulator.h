@@ -113,11 +113,13 @@ class QPConstraint{
         double mu = 0.5;
         double fz_min = 0;
         double fz_max = 200;
+        int _N;
 
-        QPConstraint(){
-            A_constraint.resize(200, 120);
-            L_constraint.resize(200);
-            U_constraint.resize(200);
+        QPConstraint(int N):_N(N){
+
+            A_constraint.resize(20 * _N, 12 * _N);
+            L_constraint.resize(20 * _N);
+            U_constraint.resize(20 * _N);
 
             A_constraint.setZero();
             L_constraint.setConstant(-1e10);   // OSQP 兼容的大负数 (不用 -INFINITY)

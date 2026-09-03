@@ -11,6 +11,7 @@
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
 
   <depend>rclcpp</depend>
   <depend>geometry_msgs</depend>
@@ -20,6 +21,9 @@
   <!-- Pinocchio 来自 ROS Humble 的系统安装, 非 ament 包, 通过 CMake find_package 使用 -->
   <depend>eigen</depend>
   <depend>yaml-cpp</depend>
+
+  <exec_depend>rosidl_default_runtime</exec_depend>
+  <member_of_group>rosidl_interface_packages</member_of_group>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

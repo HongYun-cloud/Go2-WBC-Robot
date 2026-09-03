@@ -671,6 +671,12 @@ CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o: \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/multi_array_dimension__traits.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64_multi_array__type_support.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /home/hong/Movement_Control/Go2Robot/build/go2_robot/rosidl_generator_cpp/go2_robot/msg/go2_telemetry.hpp \
+ /home/hong/Movement_Control/Go2Robot/build/go2_robot/rosidl_generator_cpp/go2_robot/msg/detail/go2_telemetry__struct.hpp \
+ /home/hong/Movement_Control/Go2Robot/build/go2_robot/rosidl_generator_cpp/go2_robot/msg/detail/go2_telemetry__builder.hpp \
+ /home/hong/Movement_Control/Go2Robot/build/go2_robot/rosidl_generator_cpp/go2_robot/msg/detail/go2_telemetry__traits.hpp \
+ /home/hong/Movement_Control/Go2Robot/build/go2_robot/rosidl_generator_cpp/go2_robot/msg/detail/go2_telemetry__type_support.hpp \
+ /home/hong/Movement_Control/Go2Robot/build/go2_robot/rosidl_generator_cpp/go2_robot/msg/rosidl_generator_cpp__visibility_control.hpp \
  /home/hong/Movement_Control/Go2Robot/include/common.h \
  /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/Core \
  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
@@ -2627,22 +2633,4 @@ CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o: \
  /home/hong/Movement_Control/Go2Robot/include/fsm/fsmstate.h \
  /home/hong/Movement_Control/Go2Robot/include/Planner/GaitScheduler.hpp \
  /home/hong/Movement_Control/Go2Robot/include/Planner/Gait.h \
- /home/hong/Movement_Control/Go2Robot/include/Planner/SwingLegPlanner.hpp \
- /usr/include/x86_64-linux-gnu/sys/socket.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
- /usr/include/x86_64-linux-gnu/bits/socket.h \
- /usr/include/x86_64-linux-gnu/bits/socket_type.h \
- /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
- /usr/include/x86_64-linux-gnu/asm/socket.h \
- /usr/include/asm-generic/socket.h /usr/include/linux/posix_types.h \
- /usr/include/linux/stddef.h \
- /usr/include/x86_64-linux-gnu/asm/posix_types.h \
- /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
- /usr/include/asm-generic/posix_types.h \
- /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
- /usr/include/asm-generic/bitsperlong.h \
- /usr/include/x86_64-linux-gnu/asm/sockios.h \
- /usr/include/asm-generic/sockios.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
- /usr/include/x86_64-linux-gnu/bits/socket2.h /usr/include/netinet/in.h \
- /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/arpa/inet.h
+ /home/hong/Movement_Control/Go2Robot/include/Planner/SwingLegPlanner.hpp

@@ -1,43 +1,9 @@
 #include "ros2/go2_control_node.hpp"
 
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <unistd.h>
-#include <cstring>
-#include <sstream>
-#include <iomanip>
-#include <vector>
-
-namespace go2
-{
-
-// PlotJuggler UDP 流式发送 (PlotJuggler → UDP Stream 插件, 默认端口 9870)
-// 格式: JSON 对象, 每行一个, 如 {"timestamp":0.02, "FL_x":0.193, "FL_z":-0.05}
-// 用法: PlotSend(0.02, {{"FL_x", 0.193}, {"FL_z", -0.05}})
-static int _pj_sock = -1;
-static struct sockaddr_in _pj_addr;
-static void PlotSend(double time, const std::vector<std::pair<std::string,double>>& data){
-    if (_pj_sock < 0) {
-        _pj_sock = socket(AF_INET, SOCK_DGRAM, 0);
-        std::memset(&_pj_addr, 0, sizeof(_pj_addr));
-        _pj_addr.sin_family = AF_INET;
-        _pj_addr.sin_port = htons(9870);
-        inet_pton(AF_INET, "127.0.0.1", &_pj_addr.sin_addr);
-    }
-    std::ostringstream oss;
-    oss << std::fixed << std::setprecision(4) << "{\"timestamp\":" << time;
-    for (auto& kv : data)
-        oss << ",\"" << kv.first << "\":" << kv.second;
-    oss << "}\n";
-    std::string msg = oss.str();
-    sendto(_pj_sock, msg.c_str(), msg.size(), 0,
-           (struct sockaddr*)&_pj_addr, sizeof(_pj_addr));
-}
-
 // ============================================================
 // 构造 / 析构
 // ============================================================
+namespace go2{
 
 Go2ControlNode::Go2ControlNode() : rclcpp::Node("go2_control_node")
 {
@@ -179,6 +145,9 @@ void Go2ControlNode::startTimersAndThreads()
     cmd_sub_          = create_subscription<geometry_msgs::msg::Twist>(
         "cmd_vel", 10,
         std::bind(&Go2ControlNode::cmdVelCallback, this, std::placeholders::_1));
+    
+    // ===== Telemetry Publisher =====
+    telemetry_pub_ = create_publisher<go2_robot::msg::Go2Telemetry>("go2_telemetry", 10);
 
     // ===== 主控制循环: 500Hz wall timer (executor 主线程, GLFW Render 需在此线程) =====
     double ctrl_period = sim_dt;   // 严格 = 物理步长
@@ -371,12 +340,8 @@ void Go2ControlNode::wbcControlLoop()
         for (int i = 0; i < 12; i++) force_msg_.data[i] = f_wbc(i);
     }
 
-    // ===== PlotJuggler UDP 发送 (每 10 帧 0.02s 一次, 非阻塞) =====
-    {
-        double t = count * sim_dt;
-        if (count % 10 == 0)
-            publishPlotJuggler(t, p_ref, p_act, v_ref, v_foot_act, a_des, f_mpc, f_wbc, state);
-    }
+    // ===== Telemetry 缓存: 500Hz 纯内存拷贝, publishState (50Hz) 发布 =====
+    fillTelemetryMessage(p_ref, p_act, v_ref, v_foot_act, a_des, f_mpc, f_wbc, state);
 }
 
 // ============================================================
@@ -446,23 +411,26 @@ void Go2ControlNode::publishState()
     nav_msgs::msg::Odometry odom;
     sensor_msgs::msg::JointState joint;
     std_msgs::msg::Float64MultiArray force;
+    go2_robot::msg::Go2Telemetry telemetry;
     {
         std::lock_guard<std::mutex> lk(state_msg_mutex_);
         odom  = odom_msg_;
         joint = joint_msg_;
         force = force_msg_;
+        telemetry = telemetry_msg_;
     }
     odom_pub_->publish(odom);
     joint_state_pub_->publish(joint);
     foot_force_pub_->publish(force);
+    telemetry_pub_->publish(telemetry);
 }
 
 // ============================================================
-// PlotJuggler UDP: 原主循环末段, 逻辑零修改抽出
+// Telemetry 填充: 500Hz WBC 循环写缓存, 50Hz publishState 发布
+// 字段与原 PlotSend UDP JSON key 一致 (供 PlotJuggler ROS2 插件绘图)
 // ============================================================
 
-void Go2ControlNode::publishPlotJuggler(double t,
-                                        const Eigen::Matrix<double,4,3>& p_ref,
+void Go2ControlNode::fillTelemetryMessage(const Eigen::Matrix<double,4,3>& p_ref,
                                         const Eigen::Matrix<double,4,3>& p_act,
                                         const Eigen::Matrix<double,4,3>& v_ref,
                                         const Eigen::Matrix<double,12,1>& v_foot_act,
@@ -471,52 +439,88 @@ void Go2ControlNode::publishPlotJuggler(double t,
                                         const Eigen::Matrix<double,12,1>& f_wbc,
                                         const RobotState& state)
 {
-    std::vector<std::pair<std::string,double>> pj;
-    const char* legN[] = {"FL","FR","RL","RR"};
+    // 成员指针表: [leg*3+axis] → 消息字段, 足端顺序 FL,FR,RL,RR × x,y,z (世界系)
+    using Msg = go2_robot::msg::Go2Telemetry;
+    using Field = double Msg::*;
+    static const Field p_ref_f[12] = {
+        &Msg::p_ref_fl_x, &Msg::p_ref_fl_y, &Msg::p_ref_fl_z,
+        &Msg::p_ref_fr_x, &Msg::p_ref_fr_y, &Msg::p_ref_fr_z,
+        &Msg::p_ref_rl_x, &Msg::p_ref_rl_y, &Msg::p_ref_rl_z,
+        &Msg::p_ref_rr_x, &Msg::p_ref_rr_y, &Msg::p_ref_rr_z,
+    };
+    static const Field p_act_f[12] = {
+        &Msg::p_act_fl_x, &Msg::p_act_fl_y, &Msg::p_act_fl_z,
+        &Msg::p_act_fr_x, &Msg::p_act_fr_y, &Msg::p_act_fr_z,
+        &Msg::p_act_rl_x, &Msg::p_act_rl_y, &Msg::p_act_rl_z,
+        &Msg::p_act_rr_x, &Msg::p_act_rr_y, &Msg::p_act_rr_z,
+    };
+    static const Field v_ref_f[12] = {
+        &Msg::v_ref_fl_x, &Msg::v_ref_fl_y, &Msg::v_ref_fl_z,
+        &Msg::v_ref_fr_x, &Msg::v_ref_fr_y, &Msg::v_ref_fr_z,
+        &Msg::v_ref_rl_x, &Msg::v_ref_rl_y, &Msg::v_ref_rl_z,
+        &Msg::v_ref_rr_x, &Msg::v_ref_rr_y, &Msg::v_ref_rr_z,
+    };
+    static const Field v_act_f[12] = {
+        &Msg::v_act_fl_x, &Msg::v_act_fl_y, &Msg::v_act_fl_z,
+        &Msg::v_act_fr_x, &Msg::v_act_fr_y, &Msg::v_act_fr_z,
+        &Msg::v_act_rl_x, &Msg::v_act_rl_y, &Msg::v_act_rl_z,
+        &Msg::v_act_rr_x, &Msg::v_act_rr_y, &Msg::v_act_rr_z,
+    };
+    static const Field a_ref_f[12] = {   // a_ref = a_des (摆动前馈 + 阻抗修正)
+        &Msg::a_ref_fl_x, &Msg::a_ref_fl_y, &Msg::a_ref_fl_z,
+        &Msg::a_ref_fr_x, &Msg::a_ref_fr_y, &Msg::a_ref_fr_z,
+        &Msg::a_ref_rl_x, &Msg::a_ref_rl_y, &Msg::a_ref_rl_z,
+        &Msg::a_ref_rr_x, &Msg::a_ref_rr_y, &Msg::a_ref_rr_z,
+    };
+    static const Field a_act_f[12] = {   // a_act = 足端速度数值微分 (成员 a_foot_act)
+        &Msg::a_act_fl_x, &Msg::a_act_fl_y, &Msg::a_act_fl_z,
+        &Msg::a_act_fr_x, &Msg::a_act_fr_y, &Msg::a_act_fr_z,
+        &Msg::a_act_rl_x, &Msg::a_act_rl_y, &Msg::a_act_rl_z,
+        &Msg::a_act_rr_x, &Msg::a_act_rr_y, &Msg::a_act_rr_z,
+    };
+    static const Field f_mpc_f[12] = {
+        &Msg::f_mpc_fl_x, &Msg::f_mpc_fl_y, &Msg::f_mpc_fl_z,
+        &Msg::f_mpc_fr_x, &Msg::f_mpc_fr_y, &Msg::f_mpc_fr_z,
+        &Msg::f_mpc_rl_x, &Msg::f_mpc_rl_y, &Msg::f_mpc_rl_z,
+        &Msg::f_mpc_rr_x, &Msg::f_mpc_rr_y, &Msg::f_mpc_rr_z,
+    };
+    static const Field f_wbc_f[12] = {
+        &Msg::f_wbc_fl_x, &Msg::f_wbc_fl_y, &Msg::f_wbc_fl_z,
+        &Msg::f_wbc_fr_x, &Msg::f_wbc_fr_y, &Msg::f_wbc_fr_z,
+        &Msg::f_wbc_rl_x, &Msg::f_wbc_rl_y, &Msg::f_wbc_rl_z,
+        &Msg::f_wbc_rr_x, &Msg::f_wbc_rr_y, &Msg::f_wbc_rr_z,
+    };
+
+    std::lock_guard<std::mutex> lock(state_msg_mutex_);
+    telemetry_msg_.header.stamp = now();
+
     for (int leg = 0; leg < 4; leg++) {
-        pj.push_back({std::string("p_ref_") + legN[leg] + "_x", p_ref(leg,0)});
-        pj.push_back({std::string("p_ref_") + legN[leg] + "_y", p_ref(leg,1)});
-        pj.push_back({std::string("p_ref_") + legN[leg] + "_z", p_ref(leg,2)});
-
-        pj.push_back({std::string("p_act_") + legN[leg] + "_x", p_act(leg,0)});
-        pj.push_back({std::string("p_act_") + legN[leg] + "_y", p_act(leg,1)});
-        pj.push_back({std::string("p_act_") + legN[leg] + "_z", p_act(leg,2)});
-
-        pj.push_back({std::string("v_ref_") + legN[leg] + "_x", v_ref(leg,0)});
-        pj.push_back({std::string("v_ref_") + legN[leg] + "_y", v_ref(leg,1)});
-        pj.push_back({std::string("v_ref_") + legN[leg] + "_z", v_ref(leg,2)});
-
-        pj.push_back({std::string("v_act_") + legN[leg] + "_x", v_foot_act(leg*3+0)});
-        pj.push_back({std::string("v_act_") + legN[leg] + "_y", v_foot_act(leg*3+1)});
-        pj.push_back({std::string("v_act_") + legN[leg] + "_z", v_foot_act(leg*3+2)});
-
-        pj.push_back({std::string("a_ref_") + legN[leg] + "_x", a_des(leg*3 + 0)});
-        pj.push_back({std::string("a_ref_") + legN[leg] + "_y", a_des(leg*3 + 1)});
-        pj.push_back({std::string("a_ref_") + legN[leg] + "_z", a_des(leg*3 + 2)});
-
-        pj.push_back({std::string("a_act_") + legN[leg] + "_x", a_foot_act(leg*3+0)});
-        pj.push_back({std::string("a_act_") + legN[leg] + "_y", a_foot_act(leg*3+1)});
-        pj.push_back({std::string("a_act_") + legN[leg] + "_z", a_foot_act(leg*3+2)});
-
-        pj.push_back({std::string("f_mpc_") + legN[leg] + "_x", f_mpc(leg*3+0)});
-        pj.push_back({std::string("f_mpc_") + legN[leg] + "_y", f_mpc(leg*3+1)});
-        pj.push_back({std::string("f_mpc_") + legN[leg] + "_z", f_mpc(leg*3+2)});
-
-        pj.push_back({std::string("f_wbc_") + legN[leg] + "_x", f_wbc(leg*3+0)});
-        pj.push_back({std::string("f_wbc_") + legN[leg] + "_y", f_wbc(leg*3+1)});
-        pj.push_back({std::string("f_wbc_") + legN[leg] + "_z", f_wbc(leg*3+2)});
-
-        pj.push_back({std::string("contract_") + legN[leg] + "_z", state.contact_states[leg]});
+        for (int axis = 0; axis < 3; axis++) {
+            const int i = leg * 3 + axis;
+            telemetry_msg_.*p_ref_f[i] = p_ref(leg, axis);
+            telemetry_msg_.*p_act_f[i] = p_act(leg, axis);
+            telemetry_msg_.*v_ref_f[i] = v_ref(leg, axis);
+            telemetry_msg_.*v_act_f[i] = v_foot_act(i);
+            telemetry_msg_.*a_ref_f[i] = a_des(i);
+            telemetry_msg_.*a_act_f[i] = a_foot_act(i);
+            telemetry_msg_.*f_mpc_f[i] = f_mpc(i);
+            telemetry_msg_.*f_wbc_f[i] = f_wbc(i);
+        }
     }
-    pj.push_back({"body_x", state.position[0]});
-    pj.push_back({"body_z", state.position[2]});
 
-    pj.push_back({"body_x_v", state.linear_vel[0]});
-    pj.push_back({"body_z_v", state.linear_vel[2]});
+    // 计划接触状态 (1=支撑, 0=摆动)
+    telemetry_msg_.contact_fl = state.contact_states[0];
+    telemetry_msg_.contact_fr = state.contact_states[1];
+    telemetry_msg_.contact_rl = state.contact_states[2];
+    telemetry_msg_.contact_rr = state.contact_states[3];
 
-    pj.push_back({"body_x_v_d", v[0]});
-    pj.push_back({"body_z_v_d", v[2]});
-    PlotSend(t, pj);
+    // 机身位置/速度与期望速度 (v 与 WBC 循环同在 executor 线程, 读安全)
+    telemetry_msg_.body_x     = state.position(0);
+    telemetry_msg_.body_z     = state.position(2);
+    telemetry_msg_.body_x_v   = state.linear_vel(0);
+    telemetry_msg_.body_z_v   = state.linear_vel(2);
+    telemetry_msg_.body_x_v_d = v(0);
+    telemetry_msg_.body_z_v_d = v(2);
 }
 
 } // namespace go2

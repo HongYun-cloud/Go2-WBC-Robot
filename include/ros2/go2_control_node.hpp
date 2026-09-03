@@ -27,6 +27,7 @@
 #include <nav_msgs/msg/odometry.hpp>
 #include <sensor_msgs/msg/joint_state.hpp>
 #include <std_msgs/msg/float64_multi_array.hpp>
+#include "go2_robot/msg/go2_telemetry.hpp"
 
 #include <thread>
 #include <mutex>
@@ -96,6 +97,7 @@ private:
     rclcpp::Publisher<sensor_msgs::msg::JointState>::SharedPtr joint_state_pub_;
     rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr foot_force_pub_;
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_sub_;
+    rclcpp::Publisher<go2_robot::msg::Go2Telemetry>::SharedPtr telemetry_pub_;
 
     rclcpp::TimerBase::SharedPtr wbc_timer_;   // 500Hz 主控制循环
     rclcpp::TimerBase::SharedPtr pub_timer_;   // 50Hz  状态发布
@@ -104,6 +106,7 @@ private:
     nav_msgs::msg::Odometry   odom_msg_;
     sensor_msgs::msg::JointState   joint_msg_;
     std_msgs::msg::Float64MultiArray force_msg_;
+    go2_robot::msg::Go2Telemetry telemetry_msg_;
     std::mutex state_msg_mutex_;
 
     // ===== 原初始化段 (构造函数里按原顺序调用) =====
@@ -119,14 +122,14 @@ private:
     // 原循环内的功能段 (拆成私有函数便于阅读, 代码原样)
     void computeFootKinematics(RobotState& state);       // FK + 足端速度/加速度
     Eigen::Matrix<double, 12, 1> computeSwingAccDes(const RobotState& state);  // 加速度层阻抗
-    void publishPlotJuggler(double t, const Eigen::Matrix<double,4,3>& p_ref,
-                            const Eigen::Matrix<double,4,3>& p_act,
-                            const Eigen::Matrix<double,4,3>& v_ref,
-                            const Eigen::Matrix<double,12,1>& v_foot_act,
-                            const Eigen::Matrix<double,12,1>& a_des,
-                            const Eigen::Matrix<double,12,1>& f_mpc,
-                            const Eigen::Matrix<double,12,1>& f_wbc,
-                            const RobotState& state);    // 原每 10 帧一次的 UDP 发送
+    void fillTelemetryMessage(const Eigen::Matrix<double,4,3>& p_ref,
+                          const Eigen::Matrix<double,4,3>& p_act,
+                          const Eigen::Matrix<double,4,3>& v_ref,
+                          const Eigen::Matrix<double,12,1>& v_foot_act,
+                          const Eigen::Matrix<double,12,1>& a_des,
+                          const Eigen::Matrix<double,12,1>& f_mpc,
+                          const Eigen::Matrix<double,12,1>& f_wbc,
+                          const RobotState& state);    // Telemetry message filling
 };
 
 } // namespace go2

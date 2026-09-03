@@ -1,0 +1,241 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from go2_robot/msg/Go2Telemetry.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module go2_robot {
+  module msg {
+    @verbatim (language="comment", text=
+      "Go2 控制遥测: 供 PlotJuggler (ROS2 Topic Subscriber) 绘图" "\n"
+      "字段名与原 PlotSend UDP JSON key 一一对应 (contract_* 笔误已改为 contact_*)" "\n"
+      "足端字段顺序均为 FL, FR, RL, RR × x, y, z (世界系)")
+    struct Go2Telemetry {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "摆动轨迹参考/实际足端位置")
+      double p_ref_fl_x;
+
+      double p_ref_fl_y;
+
+      double p_ref_fl_z;
+
+      double p_ref_fr_x;
+
+      double p_ref_fr_y;
+
+      double p_ref_fr_z;
+
+      double p_ref_rl_x;
+
+      double p_ref_rl_y;
+
+      double p_ref_rl_z;
+
+      double p_ref_rr_x;
+
+      double p_ref_rr_y;
+
+      double p_ref_rr_z;
+
+      double p_act_fl_x;
+
+      double p_act_fl_y;
+
+      double p_act_fl_z;
+
+      double p_act_fr_x;
+
+      double p_act_fr_y;
+
+      double p_act_fr_z;
+
+      double p_act_rl_x;
+
+      double p_act_rl_y;
+
+      double p_act_rl_z;
+
+      double p_act_rr_x;
+
+      double p_act_rr_y;
+
+      double p_act_rr_z;
+
+      @verbatim (language="comment", text=
+        "摆动轨迹参考/实际足端速度")
+      double v_ref_fl_x;
+
+      double v_ref_fl_y;
+
+      double v_ref_fl_z;
+
+      double v_ref_fr_x;
+
+      double v_ref_fr_y;
+
+      double v_ref_fr_z;
+
+      double v_ref_rl_x;
+
+      double v_ref_rl_y;
+
+      double v_ref_rl_z;
+
+      double v_ref_rr_x;
+
+      double v_ref_rr_y;
+
+      double v_ref_rr_z;
+
+      double v_act_fl_x;
+
+      double v_act_fl_y;
+
+      double v_act_fl_z;
+
+      double v_act_fr_x;
+
+      double v_act_fr_y;
+
+      double v_act_fr_z;
+
+      double v_act_rl_x;
+
+      double v_act_rl_y;
+
+      double v_act_rl_z;
+
+      double v_act_rr_x;
+
+      double v_act_rr_y;
+
+      double v_act_rr_z;
+
+      @verbatim (language="comment", text=
+        "a_ref = a_des (摆动前馈加速度 + 阻抗修正), a_act = v_act 数值微分")
+      double a_ref_fl_x;
+
+      double a_ref_fl_y;
+
+      double a_ref_fl_z;
+
+      double a_ref_fr_x;
+
+      double a_ref_fr_y;
+
+      double a_ref_fr_z;
+
+      double a_ref_rl_x;
+
+      double a_ref_rl_y;
+
+      double a_ref_rl_z;
+
+      double a_ref_rr_x;
+
+      double a_ref_rr_y;
+
+      double a_ref_rr_z;
+
+      double a_act_fl_x;
+
+      double a_act_fl_y;
+
+      double a_act_fl_z;
+
+      double a_act_fr_x;
+
+      double a_act_fr_y;
+
+      double a_act_fr_z;
+
+      double a_act_rl_x;
+
+      double a_act_rl_y;
+
+      double a_act_rl_z;
+
+      double a_act_rr_x;
+
+      double a_act_rr_y;
+
+      double a_act_rr_z;
+
+      @verbatim (language="comment", text=
+        "MPC / WBC 足端接触力")
+      double f_mpc_fl_x;
+
+      double f_mpc_fl_y;
+
+      double f_mpc_fl_z;
+
+      double f_mpc_fr_x;
+
+      double f_mpc_fr_y;
+
+      double f_mpc_fr_z;
+
+      double f_mpc_rl_x;
+
+      double f_mpc_rl_y;
+
+      double f_mpc_rl_z;
+
+      double f_mpc_rr_x;
+
+      double f_mpc_rr_y;
+
+      double f_mpc_rr_z;
+
+      double f_wbc_fl_x;
+
+      double f_wbc_fl_y;
+
+      double f_wbc_fl_z;
+
+      double f_wbc_fr_x;
+
+      double f_wbc_fr_y;
+
+      double f_wbc_fr_z;
+
+      double f_wbc_rl_x;
+
+      double f_wbc_rl_y;
+
+      double f_wbc_rl_z;
+
+      double f_wbc_rr_x;
+
+      double f_wbc_rr_y;
+
+      double f_wbc_rr_z;
+
+      @verbatim (language="comment", text=
+        "计划接触状态 (1=支撑, 0=摆动)")
+      double contact_fl;
+
+      double contact_fr;
+
+      double contact_rl;
+
+      double contact_rr;
+
+      @verbatim (language="comment", text=
+        "机身位置/速度 (x, z) 与期望速度 (body_x_v_d = v[0], body_z_v_d = v[2])")
+      double body_x;
+
+      double body_z;
+
+      double body_x_v;
+
+      double body_z_v;
+
+      double body_x_v_d;
+
+      double body_z_v_d;
+    };
+  };
+};

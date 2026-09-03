@@ -121,6 +121,7 @@ go2_control_node: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_introsp
 go2_control_node: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_introspection_cpp.so
 go2_control_node: /opt/ros/humble/lib/libsensor_msgs__rosidl_generator_py.so
 go2_control_node: libgo2_core.a
+go2_control_node: libgo2_robot__rosidl_typesupport_cpp.so
 go2_control_node: /opt/ros/humble/lib/liblibstatistics_collector.so
 go2_control_node: /opt/ros/humble/lib/librcl.so
 go2_control_node: /opt/ros/humble/lib/librmw_implementation.so
@@ -188,13 +189,6 @@ go2_control_node: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.
 go2_control_node: /usr/lib/x86_64-linux-gnu/libpython3.10.so
 go2_control_node: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_cpp.so
 go2_control_node: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
-go2_control_node: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
-go2_control_node: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
-go2_control_node: /opt/ros/humble/lib/librosidl_typesupport_cpp.so
-go2_control_node: /opt/ros/humble/lib/librosidl_typesupport_c.so
-go2_control_node: /opt/ros/humble/lib/librcpputils.so
-go2_control_node: /opt/ros/humble/lib/librosidl_runtime_c.so
-go2_control_node: /opt/ros/humble/lib/librcutils.so
 go2_control_node: /opt/ros/humble/lib/x86_64-linux-gnu/libpinocchio_parsers.so.3.9.0
 go2_control_node: /opt/ros/humble/lib/x86_64-linux-gnu/liburdfdom_sensor.so.3.0
 go2_control_node: /opt/ros/humble/lib/x86_64-linux-gnu/liburdfdom_model.so.3.0
@@ -216,6 +210,13 @@ go2_control_node: /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.7.0
 go2_control_node: /home/hong/.mujoco/mujoco-3.9.0/lib/libmujoco.so
 go2_control_node: /usr/lib/x86_64-linux-gnu/libglfw.so.3.3
 go2_control_node: /usr/lib/x86_64-linux-gnu/libGL.so
+go2_control_node: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
+go2_control_node: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_cpp.so
+go2_control_node: /opt/ros/humble/lib/librosidl_typesupport_cpp.so
+go2_control_node: /opt/ros/humble/lib/librosidl_typesupport_c.so
+go2_control_node: /opt/ros/humble/lib/librcpputils.so
+go2_control_node: /opt/ros/humble/lib/librosidl_runtime_c.so
+go2_control_node: /opt/ros/humble/lib/librcutils.so
 go2_control_node: CMakeFiles/go2_control_node.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable go2_control_node"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/go2_control_node.dir/link.txt --verbose=$(VERBOSE)
