@@ -10,9 +10,35 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+#include <fcntl.h>
 #include <cstring>
 #include <sstream>
 #include <vector>
+#include <termios.h>
+
+// ===== 非阻塞键盘输入 =====
+// 把终端切到非规范模式 (关掉行缓冲), 按键立即送达, 长按自动连发
+static struct termios _old_tio;
+static bool _term_raw = false;
+static void restore_term() {
+    if (_term_raw) tcsetattr(STDIN_FILENO, TCSANOW, &_old_tio);
+}
+char get_key_noblock() {
+    if (!_term_raw) {
+        tcgetattr(STDIN_FILENO, &_old_tio);
+        struct termios new_tio = _old_tio;
+        new_tio.c_lflag &= ~(ICANON | ECHO);  // 非规范 + 不回显
+        new_tio.c_cc[VMIN] = 0;               // 不阻塞
+        new_tio.c_cc[VTIME] = 0;
+        tcsetattr(STDIN_FILENO, TCSANOW, &new_tio);
+        _term_raw = true;
+        atexit(restore_term);  // 退出时恢复终端
+    }
+    char c = 0;
+    if (read(STDIN_FILENO, &c, 1) > 0)
+        return c;
+    return 0;
+}
 
 // PlotJuggler UDP 流式发送 (PlotJuggler → UDP Stream 插件, 默认端口 9870)
 // 格式: JSON 对象, 每行一个, 如 {"timestamp":0.02, "FL_x":0.193, "FL_z":-0.05}
@@ -111,7 +137,7 @@ int main(){
     Eigen::Vector3d q, p;
     q.setZero(); p.setZero();
     v.setZero(); w.setZero();
-    v[0] = 0.05;
+    v[0] = 0.0;
     p[2] = 0.25;
     mpc->update_DesireStateCommand(q,p,v,w);
     mpc->loadConfig("../config/mpc.yaml");
@@ -151,7 +177,10 @@ int main(){
     fsm->SetCmd(Gait::GaitType::TROT,v);
     fsm->SetState(fsm::FSM_State::GAIT_RUNNING);
 
-    const double sim_dt = 0.002;
+    // 控制步长必须等于 MuJoCo 物理步长 (InitMujoco 里设为 0.01)
+    // 之前硬编码 0.002 与物理 0.01 失配: 步态时钟慢 5 倍 → 摆动相实际 1.25s;
+    // 且 v_ref/a 前馈按 T_swing=0.25s 换算 (虚大 5/25 倍) 干扰跟踪 → 步高偏低
+    const double sim_dt = mj->getTimestep();
     int count = 0;
 
     // ===== 足端实际加速度 (世界系): v_foot_act 数值微分 =====
@@ -163,6 +192,18 @@ int main(){
         fsm->run(sim_dt);
         count++;
         auto state = mj->getState();
+
+        // ===== 键盘控制: 按 w 前进, 松手停止 =====
+        {
+            char key = get_key_noblock();
+            if (key == 'w')
+                v[0] = 0.05;
+            else if (key == 's')
+                v[0] = -0.05;
+            else
+                v[0] = 0.0;
+            mpc->update_DesireStateCommand(q,p,v,w);
+        }
 
         // ===== 计划接触 (步态相位): 摆动/支撑划分不能用实测接触 =====
         // 静止时四足全着地 → 实测接触全 1 → 摆动任务永远不触发 (死锁: 脚不抬就永远"支撑")
@@ -222,10 +263,13 @@ int main(){
             else if (t > 0.9) blend = (1.0 - t) / 0.1;
 
             Eigen::Vector3d e_p = p_ref.row(leg).transpose() - p_act.row(leg).transpose();
-            Eigen::Vector3d e_v = blend * v_ref.row(leg).transpose() - v_foot_act.segment<3>(leg * 3);
+            Eigen::Vector3d e_v = v_ref.row(leg).transpose() - v_foot_act.segment<3>(leg * 3);
             Eigen::Vector3d Kp_vec(300, 300, 1000);
             Eigen::Vector3d Kd_vec(10, 10, 20);
-            a_des.segment<3>(leg * 3) += Kp_vec.cwiseProduct(e_p) + Kd_vec.cwiseProduct(e_v);
+            Eigen::Vector3d Kt(10, 10, 20);
+            // 速度误差只取足端实际速度 (不缩放 v_ref), 避免摆动入地时阻抗主动对抗足端运动
+            // blend 用于起落阶段平滑衰减阻抗, 避免接地瞬间冲击
+            a_des.segment<3>(leg * 3) += blend * (Kp_vec.cwiseProduct(e_p) + Kd_vec.cwiseProduct(e_v));
         }
 
         wbc->update(q_des, f_mpc, a_des, state);
@@ -289,6 +333,9 @@ int main(){
 
             pj.push_back({"body_x_v", state.linear_vel[0]});
             pj.push_back({"body_z_v", state.linear_vel[2]});
+
+            pj.push_back({"body_x_v_d", v[0]});
+            pj.push_back({"body_z_v_d", v[2]});
             if (count % 10 == 0) PlotSend(t, pj);
         }
     }

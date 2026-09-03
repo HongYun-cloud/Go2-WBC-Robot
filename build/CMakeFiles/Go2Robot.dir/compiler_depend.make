@@ -10037,8 +10037,49 @@ CMakeFiles/Go2Robot.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/x86_64-linux-gnu/bits/socket2.h \
   /usr/include/netinet/in.h \
   /usr/include/x86_64-linux-gnu/bits/in.h \
-  /usr/include/arpa/inet.h
+  /usr/include/arpa/inet.h \
+  /usr/include/fcntl.h \
+  /usr/include/x86_64-linux-gnu/bits/fcntl.h \
+  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
+  /usr/include/linux/falloc.h \
+  /usr/include/x86_64-linux-gnu/bits/stat.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
+  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
+  /usr/include/termios.h \
+  /usr/include/x86_64-linux-gnu/bits/termios.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-struct.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-c_cc.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-c_iflag.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-c_oflag.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-baud.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-c_cflag.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-c_lflag.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-tcflow.h \
+  /usr/include/x86_64-linux-gnu/bits/termios-misc.h \
+  /usr/include/x86_64-linux-gnu/sys/ttydefaults.h
 
+
+/usr/include/x86_64-linux-gnu/sys/ttydefaults.h:
+
+/usr/include/x86_64-linux-gnu/bits/termios-tcflow.h:
+
+/usr/include/x86_64-linux-gnu/bits/termios-c_cflag.h:
+
+/usr/include/x86_64-linux-gnu/bits/termios-baud.h:
+
+/usr/include/x86_64-linux-gnu/bits/termios-c_oflag.h:
+
+/usr/include/x86_64-linux-gnu/bits/termios-c_iflag.h:
+
+/usr/include/x86_64-linux-gnu/bits/termios-struct.h:
+
+/usr/include/x86_64-linux-gnu/bits/termios.h:
+
+/usr/include/x86_64-linux-gnu/bits/stat.h:
+
+/usr/include/linux/falloc.h:
+
+/usr/include/fcntl.h:
 
 /usr/include/arpa/inet.h:
 
@@ -10212,6 +10253,8 @@ CMakeFiles/Go2Robot.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/boost/iostreams/optimal_buffer_size.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h:
+
 /usr/include/boost/mpl/aux_/has_tag.hpp:
 
 /usr/include/c++/11/iostream:
@@ -10303,6 +10346,8 @@ CMakeFiles/Go2Robot.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/boost/preprocessor/variadic/elem.hpp:
 
 /usr/include/boost/type_traits/has_trivial_copy.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/termios-c_cc.h:
 
 /usr/include/boost/preprocessor/tuple/detail/is_single_return.hpp:
 
@@ -10765,6 +10810,8 @@ CMakeFiles/Go2Robot.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/eigen3/Eigen/src/SparseCore/SparseTriangularView.h:
 
 /opt/ros/humble/include/pinocchio/multibody/model.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/termios-c_lflag.h:
 
 /usr/include/c++/11/bits/regex_compiler.h:
 
@@ -11387,6 +11434,8 @@ CMakeFiles/Go2Robot.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/yaml-cpp/stlemitter.h:
 
 /usr/include/boost/mpl/list/aux_/front.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/fcntl.h:
 
 /usr/include/c++/11/string_view:
 
@@ -13284,6 +13333,8 @@ CMakeFiles/Go2Robot.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/boost/type_traits/has_trivial_move_constructor.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/struct_stat.h:
+
 /usr/include/boost/fusion/view/reverse_view/detail/deref_data_impl.hpp:
 
 /usr/include/boost/math/special_functions/sign.hpp:
@@ -13529,6 +13580,8 @@ CMakeFiles/Go2Robot.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/boost/variant/detail/substitute.hpp:
 
 /usr/include/boost/function_types/detail/pp_retag_default_cc/preprocessed.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/fcntl2.h:
 
 /usr/include/boost/fusion/container/list/cons_fwd.hpp:
 
@@ -13825,6 +13878,8 @@ CMakeFiles/Go2Robot.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
 /usr/include/boost/fusion/container/list/detail/next_impl.hpp:
+
+/usr/include/termios.h:
 
 /usr/include/boost/fusion/container/list/detail/value_of_impl.hpp:
 
@@ -14537,6 +14592,8 @@ CMakeFiles/Go2Robot.dir/src/main.cpp.o: ../src/main.cpp \
 /opt/ros/humble/include/pinocchio/algorithm/kinematics.hxx:
 
 /usr/include/boost/fusion/view/filter_view/detail/value_of_data_impl.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/termios-misc.h:
 
 /usr/include/boost/fusion/view/filter_view/detail/key_of_impl.hpp:
 

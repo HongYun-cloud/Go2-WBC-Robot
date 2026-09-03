@@ -74,7 +74,7 @@ struct MPCConfig
         Q.setIdentity();
         R.setIdentity();
         P.setIdentity();
-        N = 10;
+        N = 20;
     }
 };
 

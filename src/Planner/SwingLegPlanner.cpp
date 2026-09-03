@@ -15,7 +15,9 @@ SwingLegPlanner::SwingLegPlanner(std::shared_ptr<Gait::GaitScheduler> scheduler,
                 std::shared_ptr<Estimator::PositionVelocityEstimator> estimator)
                 : _scheduler(scheduler), _estimator(estimator)
 {
-    Walk_H = 0.15;  // 抬腿高度 (m)
+    // 抬腿高度: 根据 T_swing 自适应, 使垂直加速度不超过物理可行范围
+    // a_z_max = 6 * Walk_H / T_swing², 约束 a_z_max ≤ 15 m/s²
+    // 标称 H=0.15 对应 T_swing=0.25s (a_z=14.4 m/s²)
     _foot_vel.setZero();
     _foot_acc.setZero();
     for (int leg = 0; leg < 4; leg++) {
@@ -26,8 +28,8 @@ SwingLegPlanner::SwingLegPlanner(std::shared_ptr<Gait::GaitScheduler> scheduler,
         // 初始站立轨迹: 停留在原地的一条抬腿曲线
         control_point[leg].Start_Point = _foot_pos.row(leg).transpose();
         control_point[leg].End_Point   = control_point[leg].Start_Point;
-        control_point[leg].Mid_Point.push_back(control_point[leg].Start_Point + Point{0,0,Walk_H} + offset[leg]);
-        control_point[leg].Mid_Point.push_back(control_point[leg].End_Point   + Point{0,0,Walk_H} + offset[leg]);
+        control_point[leg].Mid_Point.push_back(control_point[leg].Start_Point + Point{0,0,0.08} + offset[leg]);
+        control_point[leg].Mid_Point.push_back(control_point[leg].End_Point   + Point{0,0,0.08} + offset[leg]);
     }
 }
 
@@ -44,14 +46,14 @@ void SwingLegPlanner::Reset(){
         control_point[leg].Start_Point = _foot_pos.row(leg).transpose();
         control_point[leg].End_Point   = _foot_pos.row(leg).transpose();
         control_point[leg].Mid_Point.clear();
-        control_point[leg].Mid_Point.push_back(control_point[leg].Start_Point + Point{0,0,Walk_H} + offset[leg]);
-        control_point[leg].Mid_Point.push_back(control_point[leg].End_Point   + Point{0,0,Walk_H} + offset[leg]);
+        control_point[leg].Mid_Point.push_back(control_point[leg].Start_Point + Point{0,0,0.08} + offset[leg]);
+        control_point[leg].Mid_Point.push_back(control_point[leg].End_Point   + Point{0,0,0.08} + offset[leg]);
     }
 }
 
 void SwingLegPlanner::Generate(Velocity& v_des,std::function<double(size_t)> phase_func)
 {
-    double k = 0.2;             // Raibert 落脚点启发式: 速度误差增益
+    double k = 0.05;             // Raibert 落脚点启发式: 速度误差增益
 
     // phase_func(leg) 返回腿 leg 的摆动相位 [0, 1)
     // 支撑期返回 0, 摆动期 (0, 1)
@@ -60,6 +62,8 @@ void SwingLegPlanner::Generate(Velocity& v_des,std::function<double(size_t)> pha
 
     double T_stance = _scheduler->GetStanceTime();
     double T_swing  = _scheduler->GetSwingTime();
+    // 自适应步高: 限制垂直加速度 ≤ 15 m/s² (a_z = 6*Walk_H/T_swing²)
+    Walk_H = std::min(0.15, 15.0 * T_swing * T_swing / 6.0);
     auto est = _estimator->get_estresult();
     Velocity v_actual = est.v;
 
@@ -72,7 +76,7 @@ void SwingLegPlanner::Generate(Velocity& v_des,std::function<double(size_t)> pha
     for (int leg = 0; leg < 4; leg++) {
         double t = phase_func(leg);
 
-        // 抬腿边沿: 只在此刻一次性算好落脚点, 摆动中不再重规划
+        // 抬腿边沿: 只在此刻一次性算好落脚点, 
         bool lift_off = (_last_phase[leg] == 0.0 && t > 0.0);
         if (lift_off) {
             control_point[leg].Start_Point = _foot_pos.row(leg).transpose();  // 摆动前一刻的足端点
@@ -80,12 +84,11 @@ void SwingLegPlanner::Generate(Velocity& v_des,std::function<double(size_t)> pha
             control_point[leg].Mid_Point.push_back(control_point[leg].Start_Point + Point{0,0,Walk_H} + offset[leg]);
 
             Point p_hip = est.p + R * HIP_OFFSET[leg];  // 髋部世界系位置
-            control_point[leg].End_Point = p_hip + (T_stance / 2) * v_des + k * (v_actual - v_des);
+            control_point[leg].End_Point = p_hip + (T_stance / 2) * v_actual + k * (v_actual - v_des);
             control_point[leg].End_Point(2) = 0.023;      // 世界坐标系地面高度
-            // 覆盖 xy: 以起点为基准 + 期望速度 × 摆动时间, 避免原地踏步时 x 方向加速度突变
-            // control_point[leg].End_Point(0) += 0.05;
-            // control_point[leg].End_Point(0) = control_point[leg].Start_Point(0) + v_des(0) * T_swing;
-            // control_point[leg].End_Point(1) = control_point[leg].Start_Point(1) + v_des(1) * T_swing;
+            // 落脚点 x 不下于髋部, 防止起步时 v_actual≈0 落脚点在髋后 → 前倾摔倒
+            if (control_point[leg].End_Point(0) < p_hip(0))
+                control_point[leg].End_Point(0) = p_hip(0);
             control_point[leg].Mid_Point[1] = control_point[leg].End_Point + Point{0,0,Walk_H} + offset[leg];
         }
 

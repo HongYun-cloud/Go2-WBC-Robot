@@ -24,6 +24,9 @@ class SIM{
         void control(Eigen::VectorXd &tau, bool hip_enabled = false);
         void getModel(double &box_mass,double &stick_mass,double &stick_length);
         RobotState getState();
+
+        // 物理步长: 控制循环的 dt 必须与之一致, 否则步态时钟与物理时间失配
+        double getTimestep() const { return m->opt.timestep; }
         
         bool isMouseControlActive() const { return mouse_left || mouse_right; }
         double getMouseTargetPosition() const;
