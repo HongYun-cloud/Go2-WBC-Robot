@@ -1,0 +1,150 @@
+[0.000000] (-) TimerEvent: {}
+[0.000467] (go2_robot) JobQueued: {'identifier': 'go2_robot', 'dependencies': OrderedDict()}
+[0.000631] (go2_robot) JobStarted: {'identifier': 'go2_robot'}
+[0.099988] (-) TimerEvent: {}
+[0.176023] (go2_robot) JobProgress: {'identifier': 'go2_robot', 'progress': 'cmake'}
+[0.176760] (go2_robot) JobProgress: {'identifier': 'go2_robot', 'progress': 'build'}
+[0.177593] (go2_robot) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/hong/Movement_Control/Go2Robot/build/go2_robot', '--', '-j24', '-l24'], 'cwd': '/home/hong/Movement_Control/Go2Robot/build/go2_robot', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('ANTHROPIC_MODEL', 'DeepSeek-V4-Flash'), ('HTTPS_PROXY', 'http://127.0.0.1:7897/'), ('no_proxy', 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,::1'), ('LANGUAGE', 'zh_CN:zh:en_US:en'), ('USER', 'hong'), ('LC_TIME', 'zh_CN.UTF-8'), ('all_proxy', 'socks://127.0.0.1:7897/'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/hong/Movement_Control/Go2Robot/install/go2_robot/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.1/lib64:'), ('INPUT_METHOD', 'fcitx'), ('HOME', '/home/hong'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/hong/Movement_Control'), ('DESKTOP_SESSION', 'ubuntu'), ('NO_PROXY', 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,::1'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SDL_IM_MODULE', 'fcitx'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('GLFW_IM_MODULE', 'ibus'), ('SYSTEMD_EXEC_PID', '2437'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('_CONDA_ROOT', '/home/hong/miniconda3'), ('https_proxy', 'http://127.0.0.1:7897/'), ('COLCON_PREFIX_PATH', '/home/hong/Movement_Control/Go2Robot/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'hong'), ('ALL_PROXY', 'socks://127.0.0.1:7897/'), ('http_proxy', 'http://127.0.0.1:7897/'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('MUJOCO_HOME', '/home/hong/.mujoco/mujoco-3.9.0'), ('USERNAME', 'hong'), ('ANTHROPIC_BASE_URL', 'https://api.scnet.cn/api/llm/anthropic'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/usr/local/cuda-12.1/bin:/home/hong/miniconda3/condabin:/home/hong/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/hong/.mujoco/mujoco-3.9.0/bin'), ('SESSION_MANAGER', 'local/hong:@/tmp/.ICE-unix/2413,unix/hong:/tmp/.ICE-unix/2413'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/f3c4043e_9952_4d42_a9bd_a997372150de'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=fcitx'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.161'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/hong/Movement_Control/Go2Robot/install/go2_robot:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/hong/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ANTHROPIC_AUTH_TOKEN', 'sk-tp-OTIyLTEyMTIyMzgxNDQ1LTE3ODczNjY2ODg0ODY='), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('_CONDA_EXE', '/home/hong/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/hong/Movement_Control/Go2Robot/build/go2_robot'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/hong/miniconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:7897/'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/hong/Movement_Control/Go2Robot/install/go2_robot:/opt/ros/humble')]), 'shell': False}
+[0.200062] (-) TimerEvent: {}
+[0.299028] (go2_robot) StdoutLine: {'line': b'[  2%] Built target go2_robot__rs\n'}
+[0.300163] (go2_robot) StdoutLine: {'line': b'[  4%] Built target go2_robot__cpp\n'}
+[0.300267] (-) TimerEvent: {}
+[0.301625] (go2_robot) StdoutLine: {'line': b'[ 10%] Built target go2_robot__rosidl_generator_c\n'}
+[0.304541] (go2_robot) StdoutLine: {'line': b'[ 20%] Built target OsqpEigen\n'}
+[0.306051] (go2_robot) StdoutLine: {'line': b'[ 20%] Built target ament_cmake_python_copy_go2_robot\n'}
+[0.315654] (go2_robot) StdoutLine: {'line': b'[ 36%] Built target go2_robot__rosidl_typesupport_introspection_cpp\n'}
+[0.315895] (go2_robot) StdoutLine: {'line': b'[ 36%] Built target go2_robot__rosidl_typesupport_cpp\n'}
+[0.315994] (go2_robot) StdoutLine: {'line': b'[ 38%] Built target go2_robot__rosidl_typesupport_introspection_c\n'}
+[0.316918] (go2_robot) StdoutLine: {'line': b'[ 44%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp\n'}
+[0.317688] (go2_robot) StdoutLine: {'line': b'[ 51%] Built target go2_robot__rosidl_typesupport_c\n'}
+[0.319903] (go2_robot) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target go2_core\x1b[0m\n'}
+[0.321376] (go2_robot) StdoutLine: {'line': b'[ 57%] Built target go2_robot__rosidl_typesupport_fastrtps_c\n'}
+[0.338521] (go2_robot) StdoutLine: {'line': b'[ 57%] Built target go2_robot\n'}
+[0.355178] (go2_robot) StdoutLine: {'line': b'[ 59%] Built target go2_robot__py\n'}
+[0.361821] (go2_robot) StdoutLine: {'line': b'[ 77%] Built target go2_core\n'}
+[0.373373] (go2_robot) StdoutLine: {'line': b'[ 81%] Built target go2_robot__rosidl_generator_py\n'}
+[0.389637] (go2_robot) StdoutLine: {'line': b'[ 85%] Built target go2_robot__rosidl_typesupport_c__pyext\n'}
+[0.391652] (go2_robot) StdoutLine: {'line': b'[ 89%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.392243] (go2_robot) StdoutLine: {'line': b'[ 93%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext\n'}
+[0.400361] (-) TimerEvent: {}
+[0.403335] (go2_robot) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding CXX object CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o\x1b[0m\n'}
+[0.404086] (go2_robot) StdoutLine: {'line': b'[ 97%] \x1b[32mBuilding CXX object CMakeFiles/go2_control_node.dir/src/ros2/main.cpp.o\x1b[0m\n'}
+[0.442130] (go2_robot) StdoutLine: {'line': b'running egg_info\n'}
+[0.442507] (go2_robot) StdoutLine: {'line': b'writing go2_robot.egg-info/PKG-INFO\n'}
+[0.442627] (go2_robot) StdoutLine: {'line': b'writing dependency_links to go2_robot.egg-info/dependency_links.txt\n'}
+[0.442672] (go2_robot) StdoutLine: {'line': b'writing top-level names to go2_robot.egg-info/top_level.txt\n'}
+[0.444135] (go2_robot) StdoutLine: {'line': b"reading manifest file 'go2_robot.egg-info/SOURCES.txt'\n"}
+[0.444337] (go2_robot) StdoutLine: {'line': b"writing manifest file 'go2_robot.egg-info/SOURCES.txt'\n"}
+[0.463695] (go2_robot) StdoutLine: {'line': b'[ 97%] Built target ament_cmake_python_build_go2_robot_egg\n'}
+[0.500478] (-) TimerEvent: {}
+[0.600749] (-) TimerEvent: {}
+[0.701163] (-) TimerEvent: {}
+[0.801445] (-) TimerEvent: {}
+[0.901713] (-) TimerEvent: {}
+[1.002091] (-) TimerEvent: {}
+[1.102464] (-) TimerEvent: {}
+[1.202901] (-) TimerEvent: {}
+[1.303193] (-) TimerEvent: {}
+[1.403513] (-) TimerEvent: {}
+[1.503915] (-) TimerEvent: {}
+[1.604207] (-) TimerEvent: {}
+[1.704522] (-) TimerEvent: {}
+[1.804912] (-) TimerEvent: {}
+[1.905313] (-) TimerEvent: {}
+[2.005623] (-) TimerEvent: {}
+[2.105935] (-) TimerEvent: {}
+[2.206336] (-) TimerEvent: {}
+[2.306734] (-) TimerEvent: {}
+[2.407148] (-) TimerEvent: {}
+[2.507555] (-) TimerEvent: {}
+[2.607967] (-) TimerEvent: {}
+[2.708440] (-) TimerEvent: {}
+[2.808767] (-) TimerEvent: {}
+[2.909127] (-) TimerEvent: {}
+[3.009394] (-) TimerEvent: {}
+[3.109719] (-) TimerEvent: {}
+[3.210018] (-) TimerEvent: {}
+[3.310356] (-) TimerEvent: {}
+[3.410645] (-) TimerEvent: {}
+[3.510881] (-) TimerEvent: {}
+[3.611186] (-) TimerEvent: {}
+[3.711470] (-) TimerEvent: {}
+[3.811796] (-) TimerEvent: {}
+[3.912113] (-) TimerEvent: {}
+[4.012501] (-) TimerEvent: {}
+[4.112904] (-) TimerEvent: {}
+[4.213198] (-) TimerEvent: {}
+[4.313586] (-) TimerEvent: {}
+[4.413993] (-) TimerEvent: {}
+[4.514403] (-) TimerEvent: {}
+[4.614848] (-) TimerEvent: {}
+[4.715168] (-) TimerEvent: {}
+[4.815480] (-) TimerEvent: {}
+[4.915809] (-) TimerEvent: {}
+[5.016219] (-) TimerEvent: {}
+[5.116631] (-) TimerEvent: {}
+[5.216992] (-) TimerEvent: {}
+[5.317306] (-) TimerEvent: {}
+[5.417659] (-) TimerEvent: {}
+[5.518014] (-) TimerEvent: {}
+[5.618352] (-) TimerEvent: {}
+[5.718686] (-) TimerEvent: {}
+[5.747141] (go2_robot) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid go2::Go2ControlNode::wbcControlLoop()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.747381] (go2_robot) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:292:60:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kgo2::Go2ControlNode::computeSwingAccDes(RobotState&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.747474] (go2_robot) StderrLine: {'line': b'  292 |     Eigen::Matrix<double, 12, 1> a_des = \x1b[01;31m\x1b[KcomputeSwingAccDes(state)\x1b[m\x1b[K;\n'}
+[5.747557] (go2_robot) StderrLine: {'line': b'      |                                          \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~^~~~~~~\x1b[m\x1b[K\n'}
+[5.747635] (go2_robot) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:1\x1b[m\x1b[K:\n'}
+[5.747714] (go2_robot) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hong/Movement_Control/Go2Robot/include/ros2/go2_control_node.hpp:124:34:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[KEigen::Matrix<double, 12, 1, 0, 12, 1> go2::Go2ControlNode::computeSwingAccDes(const RobotState&, bool)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.747794] (go2_robot) StderrLine: {'line': b'  124 |     Eigen::Matrix<double, 12, 1> \x1b[01;36m\x1b[KcomputeSwingAccDes\x1b[m\x1b[K(const RobotState& state,bool pd_open);  // \xe5\x8a\xa0\xe9\x80\x9f\xe5\xba\xa6\xe5\xb1\x82\xe9\x98\xbb\xe6\x8a\x97\n'}
+[5.747884] (go2_robot) StderrLine: {'line': b'      |                                  \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.747966] (go2_robot) StderrLine: {'line': b'\x1b[01m\x1b[K/home/hong/Movement_Control/Go2Robot/include/ros2/go2_control_node.hpp:124:34:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 1 provided\n'}
+[5.818895] (-) TimerEvent: {}
+[5.919307] (-) TimerEvent: {}
+[6.019723] (-) TimerEvent: {}
+[6.120187] (-) TimerEvent: {}
+[6.220510] (-) TimerEvent: {}
+[6.320814] (-) TimerEvent: {}
+[6.421126] (-) TimerEvent: {}
+[6.521445] (-) TimerEvent: {}
+[6.621844] (-) TimerEvent: {}
+[6.722172] (-) TimerEvent: {}
+[6.822595] (-) TimerEvent: {}
+[6.922966] (-) TimerEvent: {}
+[7.023278] (-) TimerEvent: {}
+[7.123684] (-) TimerEvent: {}
+[7.224062] (-) TimerEvent: {}
+[7.324406] (-) TimerEvent: {}
+[7.424812] (-) TimerEvent: {}
+[7.525114] (-) TimerEvent: {}
+[7.625512] (-) TimerEvent: {}
+[7.725933] (-) TimerEvent: {}
+[7.826365] (-) TimerEvent: {}
+[7.926715] (-) TimerEvent: {}
+[8.027070] (-) TimerEvent: {}
+[8.127326] (-) TimerEvent: {}
+[8.227648] (-) TimerEvent: {}
+[8.327983] (-) TimerEvent: {}
+[8.428216] (-) TimerEvent: {}
+[8.528463] (-) TimerEvent: {}
+[8.628788] (-) TimerEvent: {}
+[8.729022] (-) TimerEvent: {}
+[8.829257] (-) TimerEvent: {}
+[8.929607] (-) TimerEvent: {}
+[9.029952] (-) TimerEvent: {}
+[9.130183] (-) TimerEvent: {}
+[9.230502] (-) TimerEvent: {}
+[9.331005] (-) TimerEvent: {}
+[9.373937] (go2_robot) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/go2_control_node.dir/build.make:76\xef\xbc\x9aCMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[9.374421] (go2_robot) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:294\xef\xbc\x9aCMakeFiles/go2_control_node.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[9.375024] (go2_robot) StderrLine: {'line': b'gmake: *** [Makefile:146\xef\xbc\x9aall] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[9.378949] (go2_robot) CommandEnded: {'returncode': 2}
+[9.431230] (-) TimerEvent: {}
+[9.531776] (-) TimerEvent: {}
+[9.632313] (-) TimerEvent: {}
+[9.732617] (-) TimerEvent: {}
+[9.833079] (-) TimerEvent: {}
+[9.933514] (-) TimerEvent: {}
+[10.034067] (-) TimerEvent: {}
+[10.035827] (go2_robot) JobEnded: {'identifier': 'go2_robot', 'rc': 2}
+[10.234573] (-) TimerEvent: {}
+[10.234831] (-) EventReactorShutdown: {}

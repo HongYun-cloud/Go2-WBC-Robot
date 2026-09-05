@@ -19,15 +19,15 @@ namespace SwingPlanner
     {
         public:
             struct Control_Point{
-                Point Start_Point;
-                std::vector<Point> Mid_Point;  // 便于以后扩展成多阶贝塞尔
-                Point End_Point;
+                double Start_Point;
+                std::vector<double> Mid_Point;  // 便于以后扩展成多阶贝塞尔
+                double End_Point;
             };
 
 
-            static Point evaluatePos(double t,const Control_Point P_control);
-            static Point evaluateVel(double t,const Control_Point P_control);
-            static Point evaluateAcc(double t,const Control_Point P_control);
+            static double evaluatePos(double t,const Control_Point P_control);
+            static double evaluateVel(double t,const Control_Point P_control);
+            static double evaluateAcc(double t,const Control_Point P_control);
 
     };
 
@@ -43,9 +43,11 @@ namespace SwingPlanner
         DesPoint pos;
         DesPoint vel;
         DesPoint acc;
-        Bezier_Math::Control_Point control_point[4];
-
+        Bezier_Math::Control_Point control_point_x[4];
+        Bezier_Math::Control_Point control_point_z_up[4];
+        Bezier_Math::Control_Point control_point_z_down[4];
         std::array<double,4> _last_phase;             // 上一周期的摆动相位, 用于抬腿边沿检测
+        std::array<double,4> _swing_y;                // 抬腿边沿记录的足端 y, 整个摆动期保持不变
         DesPoint _foot_pos;          // 当前足端位置 (世界系, 行序 FL,FR,RL,RR)
         DesPoint _foot_vel;
         DesPoint _foot_acc;

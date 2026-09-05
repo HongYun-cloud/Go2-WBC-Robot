@@ -99,6 +99,7 @@ namespace Regulator{
         // 优先用外部滚动预测 (按步态相位, 接触切换点可被预测到);
         // 未设置时回退到旧行为: 当前接触复制到所有预测步 (切换点附近模型错误)
         std::vector<int> contact_expanded(N * 4, 1);
+        
         if (contact_sched_.size() == (size_t)(N * 4)) {
             contact_expanded = contact_sched_;
         } else {
@@ -109,6 +110,9 @@ namespace Regulator{
                         contact_expanded[j * 4 + i] = cs[i];
             }
         }
+        // DEBUG 全接触查看期望位置加速度波形
+        // std::fill(contact_expanded.begin(), contact_expanded.end(), 1);
+        
         _qpconstraint->updateConstraints(contact_expanded);
         Eigen::SparseMatrix<double> A_sparse = _qpconstraint->A_constraint.sparseView();
         // 注意: OsqpEigen 存裸指针, 必须用持久对象而非局部变量

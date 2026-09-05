@@ -289,7 +289,7 @@ void Go2ControlNode::wbcControlLoop()
     v_foot_prev = v_foot_act;
     have_prev_v = true;
 
-    Eigen::Matrix<double, 12, 1> a_des = computeSwingAccDes(state);
+    Eigen::Matrix<double, 12, 1> a_des = computeSwingAccDes(state,true);
 
     wbc->update(q_des, f_mpc, a_des, state);
     wbc->solve();
@@ -297,10 +297,10 @@ void Go2ControlNode::wbcControlLoop()
     WBC::SolutionVector sol;
     wbc->GetSolution(sol);
     Eigen::Matrix<double, 12, 1> f_wbc = sol.tail(12);
-
+    Eigen::Matrix<double, 18, 1> test_a = Eigen::Matrix<double, 18, 1>::Zero();
     // 关节力矩: τ = M·a + h − Jᵀf (WBC 逆动力学, 已包含 a_des 跟踪)
     auto tau = pin->getJointTorquesFromSolution(sol.head(18), f_wbc);
-
+    // auto tau = pin->getJointTorquesFromSolution(test_a, f_mpc);
     mj->control(tau);
     mj->Step();
     mj->Render();
@@ -348,7 +348,7 @@ void Go2ControlNode::wbcControlLoop()
 // 加速度层阻抗: 原主循环内嵌段, 逻辑零修改抽出
 // ============================================================
 
-Eigen::Matrix<double, 12, 1> Go2ControlNode::computeSwingAccDes(const RobotState& state)
+Eigen::Matrix<double, 12, 1> Go2ControlNode::computeSwingAccDes(const RobotState& state,bool pd_open)
 {
     double T_swing = scheduler->GetSwingTime();
     if (T_swing < 1e-3) T_swing = 1e-3;
@@ -367,26 +367,29 @@ Eigen::Matrix<double, 12, 1> Go2ControlNode::computeSwingAccDes(const RobotState
     // 阻抗修正放在加速度层, 让 WBC QP 统一处理, 保持动力学一致性
     // 支撑腿: a_des 置零, 不跟踪摆动加速度
     Eigen::Matrix<double, 12, 1> a_des = trajectory->GetSwingAccVec();
-    for (int leg = 0; leg < 4; leg++) {
-        if (state.contact_states[leg] == 1) {
-            a_des.segment<3>(leg*3).setZero();
-            continue;
+
+    if (pd_open){
+        for (int leg = 0; leg < 4; leg++) {
+            if (state.contact_states[leg] == 1) {
+                // 支撑相为0
+                a_des.segment<3>(leg*3).setZero();
+                continue;
+            }
+
+            double t = scheduler->GetSwingPhases(leg);
+            double blend = 1.0;
+            if (t < 0.1)      blend = t / 0.1;
+            else if (t > 0.9) blend = (1.0 - t) / 0.1;
+
+            Eigen::Vector3d e_p = p_ref.row(leg).transpose() - p_act.row(leg).transpose();
+            Eigen::Vector3d e_v = v_ref.row(leg).transpose() - v_foot_act.segment<3>(leg * 3);
+            Eigen::Vector3d Kp_vec(50, 300, 1000);
+            Eigen::Vector3d Kd_vec(2, 10, 20);
+            // 速度误差只取足端实际速度 (不缩放 v_ref), 避免摆动入地时阻抗主动对抗足端运动
+            // blend 用于起落阶段平滑衰减阻抗, 避免接地瞬间冲击
+            a_des.segment<3>(leg * 3) += blend * (Kp_vec.cwiseProduct(e_p) + Kd_vec.cwiseProduct(e_v));
         }
-
-        double t = scheduler->GetSwingPhases(leg);
-        double blend = 1.0;
-        if (t < 0.1)      blend = t / 0.1;
-        else if (t > 0.9) blend = (1.0 - t) / 0.1;
-
-        Eigen::Vector3d e_p = p_ref.row(leg).transpose() - p_act.row(leg).transpose();
-        Eigen::Vector3d e_v = v_ref.row(leg).transpose() - v_foot_act.segment<3>(leg * 3);
-        Eigen::Vector3d Kp_vec(300, 300, 1000);
-        Eigen::Vector3d Kd_vec(10, 10, 20);
-        Eigen::Vector3d Kt(10, 10, 20);
-        // 速度误差只取足端实际速度 (不缩放 v_ref), 避免摆动入地时阻抗主动对抗足端运动
-        // blend 用于起落阶段平滑衰减阻抗, 避免接地瞬间冲击
-        a_des.segment<3>(leg * 3) += blend * (Kp_vec.cwiseProduct(e_p) + Kd_vec.cwiseProduct(e_v));
-    }
+    }      
     return a_des;
 }
 

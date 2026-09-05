@@ -6,9 +6,12 @@
                 "${workspaceFolder}/build/compile_commands.json"
             ],
             "includePath": [
-                "${workspaceFolder}/include",
-                "${workspaceFolder}/",
-                "${workspaceFolder}/install/go2_robot/include/go2_robot"
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/install/go2_robot/include/go2_robot/**",
+                "/opt/ros/humble/include/**",
+                "/usr/include/eigen3",
+                "~/.mujoco/mujoco-3.9.0/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",
