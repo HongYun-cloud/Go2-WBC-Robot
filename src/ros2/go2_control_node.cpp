@@ -303,7 +303,7 @@ void Go2ControlNode::wbcControlLoop()
     wbc->GetAcc(q_a_wbc);
     Eigen::Matrix<double, 18, 1> test_a = Eigen::Matrix<double, 18, 1>::Zero();
     // 关节力矩: τ = M·a + h − Jᵀf (WBC 逆动力学, 已包含 a_des 跟踪)
-    auto tau = pin->getJointTorquesFromSolution(q_des, f_mpc);
+    auto tau = pin->getJointTorquesFromSolution(q_a_wbc, f_wbc);
     // auto tau = pin->getJointTorquesFromSolution(test_a, f_wbc);
     mj->control(tau);
     mj->Step();
@@ -387,8 +387,8 @@ Eigen::Matrix<double, 18, 1> Go2ControlNode::computePoseAccDes(
         // yaw 漂移时两系的 roll/pitch 轴不重合, 不转系则纠偏力矩方向歪 (表现为 roll 越纠越偏)
         // 增益正值量级: 坐标系 bug 已修 (输出已转机体系), 无需负号补偿;
         // 配合 FI=10 / C动力学=100, PD 输出已能传导到接触力
-        Eigen::Vector3d Kp_ang(70.0, 50.0, 30.0);
-        Eigen::Vector3d Kd_ang(6.0, 10.0, 5.0);
+        Eigen::Vector3d Kp_ang(10.0, 10.0, 10.0);
+        Eigen::Vector3d Kd_ang(1.0, 1.0, 2.0);
         // 机体系角速度 → 世界系 (MuJoCo free joint 角速度是机体系)
         Eigen::Matrix3d R =
         (Eigen::AngleAxisd(est.q(2), Eigen::Vector3d::UnitZ()) *

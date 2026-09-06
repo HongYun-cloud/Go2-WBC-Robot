@@ -108,12 +108,33 @@ namespace WBC
         qpconstraint->A.setZero();
         qpconstraint->lower.setZero();
         qpconstraint->upper.setZero();
+        _pin->computeFloatingBaseDynamics();
+        Mat18d M = _pin->getMassMatrix();
+        auto h = _pin->getBiasForces(); 
+        Eigen::Matrix<double, 12, 18> Jc;
+        
+        for (int leg = 0; leg < 4; leg++) {
+            Eigen::Matrix<double, 3, 18> J  = _pin->getFootJacobianFloatingBase(leg);
+            Jc.block<3,18>(leg * 3,0) = J;
+        }
+        // 第一个约束 动力学方程
+        {
+        Eigen::Matrix<double, 6, 30> A_dyn;
+        Eigen::Matrix<double, 6, 1> b_dyn;
+        A_dyn.block<6, 18>(0, 0)  = M.topRows<6>();               // 前 18 列
+        A_dyn.block<18, 12>(0, 18) = -Jc.transpose();  // 最后 12 列
+        b_dyn = -h.head(6);
+        qpconstraint->A.block<6, 30>(0, 0) = A_dyn;
+        qpconstraint->lower.segment<6>(0) = b_dyn;
+        qpconstraint->upper.segment<6>(0) = b_dyn;
+        }
 
         // ---- 腿级约束 (行 18-29): 支撑腿接触 / 摆动腿力为零 ----
         for (int leg = 0; leg < 4; leg++) {
             int row = 18 + leg * 3;
             int col_f = 18 + leg * 3;
 
+            // 第二个约束 接触足端无滑动
             if (contact_states_[leg] == 1) {
                 // 支撑腿: J_leg * a = -dJ_leg * v  (足端无滑动)
                 Eigen::Matrix<double, 3, 18> J  = _pin->getFootJacobianFloatingBase(leg);
@@ -123,17 +144,15 @@ namespace WBC
                 qpconstraint->lower.segment<3>(row) = rhs;
                 qpconstraint->upper.segment<3>(row) = rhs;
             } else {
-                // 摆动腿: f_leg = 0  (无地面接触力)
+                // 第三个约束 摆动腿: f_leg = 0  (无地面接触力)
                 qpconstraint->A.block<3, 3>(row, col_f).setIdentity();
                 qpconstraint->lower.segment<3>(row).setZero();
                 qpconstraint->upper.segment<3>(row).setZero();
-            }
+            }  
         }
 
-        // ---- 摩擦锥约束 (行 30-49, 4腿×5行): 支撑腿 |fx|,|fy| ≤ μ·fz 且 fz ∈ [0, fz_max] ----
-        // 原本 WBC 的 QP 没有摩擦锥, 为了满足动力学项会编造物理上实现不了的接触力
-        // (切向力超出 μ·fz 或 fz<0), MuJoCo 里脚打滑/无法吸附 → QP 解出的基座加速度落不了地
-        // 系数每帧都写 (稀疏模式稳定), 只按接触状态改上下界
+        // 第四个约束 摩擦锥约束 (行 30-49, 4腿×5行): 支撑腿 |fx|,|fy| ≤ μ·fz 且 fz ∈ [0, fz_max] ----
+        
         for (int leg = 0; leg < 4; leg++) {
             int col = 18 + leg * 3;
             int row = 30 + leg * 5;
@@ -159,6 +178,8 @@ namespace WBC
                 qpconstraint->upper.segment<5>(row).setConstant(1e10);
             }
         }
+
+        
     }
     
     void WBC::compuseHg(){

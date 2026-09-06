@@ -1,0 +1,50 @@
+[  2%] Built target go2_robot__rs
+[ 12%] Built target OsqpEigen
+[ 14%] Built target go2_robot__cpp
+[ 20%] Built target go2_robot__rosidl_generator_c
+[ 26%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp
+[ 32%] Built target go2_robot__rosidl_typesupport_c
+[ 38%] Built target go2_robot__rosidl_typesupport_introspection_c
+[ 44%] Built target go2_robot__rosidl_typesupport_cpp
+[ 44%] Built target ament_cmake_python_copy_go2_robot
+[ 46%] [32mBuilding CXX object CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o[0m
+[ 53%] Built target go2_robot__rosidl_typesupport_fastrtps_c
+[ 59%] Built target go2_robot__rosidl_typesupport_introspection_cpp
+[ 59%] Built target go2_robot
+[ 61%] Built target go2_robot__py
+[ 65%] Built target go2_robot__rosidl_generator_py
+[ 69%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext
+[ 73%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext
+[ 77%] Built target go2_robot__rosidl_typesupport_c__pyext
+running egg_info
+writing go2_robot.egg-info/PKG-INFO
+writing dependency_links to go2_robot.egg-info/dependency_links.txt
+writing top-level names to go2_robot.egg-info/top_level.txt
+reading manifest file 'go2_robot.egg-info/SOURCES.txt'
+writing manifest file 'go2_robot.egg-info/SOURCES.txt'
+[ 77%] Built target ament_cmake_python_build_go2_robot_egg
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:164[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:5[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1[m[K:
+/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h: In instantiation of ‘[01m[Kvoid Eigen::internal::call_assignment_no_alias(Dst&, const Src&, const Func&) [with Dst = Eigen::Block<Eigen::Matrix<double, 18, 30>, 18, 12, false>; Src = Eigen::CwiseUnaryOp<Eigen::internal::scalar_opposite_op<double>, const Eigen::Transpose<Eigen::Matrix<double, 3, 18> > >; Func = Eigen::internal::assign_op<double, double>][m[K’:
+[01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:858:27:[m[K   required from ‘[01m[Kvoid Eigen::internal::call_assignment(Dst&, const Src&, const Func&, typename Eigen::internal::enable_if<(! Eigen::internal::evaluator_assume_aliasing<Src>::value), void*>::type) [with Dst = Eigen::Block<Eigen::Matrix<double, 18, 30>, 18, 12, false>; Src = Eigen::CwiseUnaryOp<Eigen::internal::scalar_opposite_op<double>, const Eigen::Transpose<Eigen::Matrix<double, 3, 18> > >; Func = Eigen::internal::assign_op<double, double>; typename Eigen::internal::enable_if<(! Eigen::internal::evaluator_assume_aliasing<Src>::value), void*>::type = void*; typename Eigen::internal::evaluator_traits<SrcXprType>::Shape = Eigen::DenseShape][m[K’
+[01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:836:18:[m[K   required from ‘[01m[Kvoid Eigen::internal::call_assignment(Dst&, const Src&) [with Dst = Eigen::Block<Eigen::Matrix<double, 18, 30>, 18, 12, false>; Src = Eigen::CwiseUnaryOp<Eigen::internal::scalar_opposite_op<double>, const Eigen::Transpose<Eigen::Matrix<double, 3, 18> > >][m[K’
+[01m[K/usr/include/eigen3/Eigen/src/Core/Assign.h:66:28:[m[K   required from ‘[01m[KDerived& Eigen::MatrixBase<Derived>::operator=(const Eigen::DenseBase<OtherDerived>&) [with OtherDerived = Eigen::CwiseUnaryOp<Eigen::internal::scalar_opposite_op<double>, const Eigen::Transpose<Eigen::Matrix<double, 3, 18> > >; Derived = Eigen::Block<Eigen::Matrix<double, 18, 30>, 18, 12, false>][m[K’
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:123:55:[m[K   required from here
+[01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:887:3:[m[K [01;31m[Kerror: [m[Kstatic assertion failed: YOU_MIXED_MATRICES_OF_DIFFERENT_SIZES
+  887 |   [01;31m[KEIGEN_STATIC_ASSERT_SAME_MATRIX_SIZE[m[K(ActualDstTypeCleaned,Src)
+      |   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:887:3:[m[K [01;36m[Knote: [m[K‘[01m[K(((((int)Eigen::internal::size_of_xpr_at_compile_time<Eigen::Block<Eigen::Matrix<double, 18, 30>, 18, 12, false> >::ret) == 0) && (((int)Eigen::internal::size_of_xpr_at_compile_time<Eigen::CwiseUnaryOp<Eigen::internal::scalar_opposite_op<double>, const Eigen::Transpose<Eigen::Matrix<double, 3, 18> > > >::ret) == 0)) || ((((((int)Eigen::Block<Eigen::Matrix<double, 18, 30>, 18, 12, false>::RowsAtCompileTime) == ((int)Eigen::Dynamic)) || (((int)Eigen::CwiseUnaryOp<Eigen::internal::scalar_opposite_op<double>, const Eigen::Transpose<Eigen::Matrix<double, 3, 18> > >::RowsAtCompileTime) == ((int)Eigen::Dynamic))) || (((int)Eigen::Block<Eigen::Matrix<double, 18, 30>, 18, 12, false>::RowsAtCompileTime) == ((int)Eigen::CwiseUnaryOp<Eigen::internal::scalar_opposite_op<double>, const Eigen::Transpose<Eigen::Matrix<double, 3, 18> > >::RowsAtCompileTime))) && (((((int)Eigen::Block<Eigen::Matrix<double, 18, 30>, 18, 12, false>::ColsAtCompileTime) == ((int)Eigen::Dynamic)) || (((int)Eigen::CwiseUnaryOp<Eigen::internal::scalar_opposite_op<double>, const Eigen::Transpose<Eigen::Matrix<double, 3, 18> > >::ColsAtCompileTime) == ((int)Eigen::Dynamic))) || (((int)Eigen::Block<Eigen::Matrix<double, 18, 30>, 18, 12, false>::ColsAtCompileTime) == ((int)Eigen::CwiseUnaryOp<Eigen::internal::scalar_opposite_op<double>, const Eigen::Transpose<Eigen::Matrix<double, 3, 18> > >::ColsAtCompileTime)))))[m[K’ evaluates to false
+/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h: In instantiation of ‘[01m[Kvoid Eigen::internal::call_assignment_no_alias(Dst&, const Src&, const Func&) [with Dst = Eigen::Matrix<double, 30, 1, 0, 30, 1>; Src = Eigen::Matrix<double, 18, 1, 0, 18, 1>; Func = Eigen::internal::assign_op<double, double>][m[K’:
+[01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:858:27:[m[K   required from ‘[01m[Kvoid Eigen::internal::call_assignment(Dst&, const Src&, const Func&, typename Eigen::internal::enable_if<(! Eigen::internal::evaluator_assume_aliasing<Src>::value), void*>::type) [with Dst = Eigen::Matrix<double, 30, 1, 0, 30, 1>; Src = Eigen::Matrix<double, 18, 1, 0, 18, 1>; Func = Eigen::internal::assign_op<double, double>; typename Eigen::internal::enable_if<(! Eigen::internal::evaluator_assume_aliasing<Src>::value), void*>::type = void*; typename Eigen::internal::evaluator_traits<SrcXprType>::Shape = Eigen::DenseShape][m[K’
+[01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:836:18:[m[K   required from ‘[01m[Kvoid Eigen::internal::call_assignment(Dst&, const Src&) [with Dst = Eigen::Matrix<double, 30, 1, 0, 30, 1>; Src = Eigen::Matrix<double, 18, 1, 0, 18, 1>][m[K’
+[01m[K/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:779:32:[m[K   required from ‘[01m[KDerived& Eigen::PlainObjectBase<Derived>::_set(const Eigen::DenseBase<OtherDerived>&) [with OtherDerived = Eigen::Matrix<double, 18, 1, 0, 18, 1>; Derived = Eigen::Matrix<double, 30, 1, 0, 30, 1>][m[K’
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:225:24:[m[K   required from ‘[01m[KEigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>& Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::operator=(const Eigen::DenseBase<OtherDerived>&) [with OtherDerived = Eigen::Matrix<double, 18, 1, 0, 18, 1>; _Scalar = double; int _Rows = 30; int _Cols = 1; int _Options = 0; int _MaxRows = 30; int _MaxCols = 1][m[K’
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:124:21:[m[K   required from here
+[01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:887:3:[m[K [01;31m[Kerror: [m[Kstatic assertion failed: YOU_MIXED_MATRICES_OF_DIFFERENT_SIZES
+[01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:887:3:[m[K [01;36m[Knote: [m[K‘[01m[K(((((int)Eigen::internal::size_of_xpr_at_compile_time<Eigen::Matrix<double, 30, 1, 0, 30, 1> >::ret) == 0) && (((int)Eigen::internal::size_of_xpr_at_compile_time<Eigen::Matrix<double, 18, 1, 0, 18, 1> >::ret) == 0)) || ((((((int)Eigen::Matrix<double, 30, 1, 0, 30, 1>::RowsAtCompileTime) == ((int)Eigen::Dynamic)) || (((int)Eigen::Matrix<double, 18, 1, 0, 18, 1>::RowsAtCompileTime) == ((int)Eigen::Dynamic))) || (((int)Eigen::Matrix<double, 30, 1, 0, 30, 1>::RowsAtCompileTime) == ((int)Eigen::Matrix<double, 18, 1, 0, 18, 1>::RowsAtCompileTime))) && (((((int)Eigen::Matrix<double, 30, 1, 0, 30, 1>::ColsAtCompileTime) == ((int)Eigen::Dynamic)) || (((int)Eigen::Matrix<double, 18, 1, 0, 18, 1>::ColsAtCompileTime) == ((int)Eigen::Dynamic))) || (((int)Eigen::Matrix<double, 30, 1, 0, 30, 1>::ColsAtCompileTime) == ((int)Eigen::Matrix<double, 18, 1, 0, 18, 1>::ColsAtCompileTime)))))[m[K’ evaluates to false
+gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:118：CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:265：CMakeFiles/go2_core.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

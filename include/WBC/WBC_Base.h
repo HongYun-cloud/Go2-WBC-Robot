@@ -28,7 +28,7 @@ namespace WBC
     using SolForce = Eigen::Vector<double,12>;
     using BounderVector = Eigen::Vector<double,30>;
 
-    // QP 约束总行数: 18(保留) + 12(腿级: 支撑不打滑/摆动 f=0) + 20(摩擦锥, 4腿×5行)
+    // QP 约束总行数: 18(动力学) + 12(腿级: 支撑不打滑/摆动 f=0) + 20(摩擦锥, 4腿×5行)
     using QPAMat = Eigen::Matrix<double,50,30>;
     using QPBVec = Eigen::Matrix<double,50,1>;
 

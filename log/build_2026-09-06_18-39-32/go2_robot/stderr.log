@@ -1,0 +1,76 @@
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:[m[K In member function ‘[01m[Kvoid WBC::WBC::updateconstraint()[m[K’:
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:118:27:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KEigen::Matrix<double, 12, 18>::block<3, 18>(int)[m[K’
+  118 |             [01;31m[KJc.block<3,18>(leg * 3)[m[K = J;
+      |             [01;31m[K~~~~~~~~~~~~~~^~~~~~~~~[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:659[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:5[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/BlockMethods.h:96:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class NRowsType, class NColsType> typename Eigen::DenseBase<Derived>::FixedBlockXpr<Eigen::internal::get_fixed_value<NRowsType>::value, Eigen::internal::get_fixed_value<NColsType>::value>::Type Eigen::DenseBase<Derived>::block(Eigen::Index, Eigen::Index, NRowsType, NColsType) [with NRowsType = NRowsType; NColsType = NColsType; Derived = Eigen::Matrix<double, 12, 18>][m[K’
+   96 | [01;36m[Kblock[m[K(Index startRow, Index startCol, NRowsType blockRows, NColsType blockCols)
+      | [01;36m[K^~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/BlockMethods.h:96:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:118:27:[m[K [01;31m[Kerror: [m[Ktype/value mismatch at argument 1 in template parameter list for ‘[01m[Ktemplate<class NRowsType, class NColsType> typename Eigen::DenseBase<Derived>::FixedBlockXpr<Eigen::internal::get_fixed_value<NRowsType>::value, Eigen::internal::get_fixed_value<NColsType>::value>::Type Eigen::DenseBase<Derived>::block(Eigen::Index, Eigen::Index, NRowsType, NColsType) [with NRowsType = NRowsType; NColsType = NColsType; Derived = Eigen::Matrix<double, 12, 18>][m[K’
+  118 |             [01;31m[KJc.block<3,18>(leg * 3)[m[K = J;
+      |             [01;31m[K~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:118:27:[m[K [01;36m[Knote: [m[K  expected a type, got ‘[01m[K3[m[K’
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:118:27:[m[K [01;31m[Kerror: [m[Ktype/value mismatch at argument 2 in template parameter list for ‘[01m[Ktemplate<class NRowsType, class NColsType> typename Eigen::DenseBase<Derived>::FixedBlockXpr<Eigen::internal::get_fixed_value<NRowsType>::value, Eigen::internal::get_fixed_value<NColsType>::value>::Type Eigen::DenseBase<Derived>::block(Eigen::Index, Eigen::Index, NRowsType, NColsType) [with NRowsType = NRowsType; NColsType = NColsType; Derived = Eigen::Matrix<double, 12, 18>][m[K’
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:118:27:[m[K [01;36m[Knote: [m[K  expected a type, got ‘[01m[K18[m[K’
+In file included from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:659[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:5[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/BlockMethods.h:110:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class NRowsType, class NColsType> const typename Eigen::DenseBase<Derived>::ConstFixedBlockXpr<Eigen::internal::get_fixed_value<NRowsType>::value, Eigen::internal::get_fixed_value<NColsType>::value>::Type Eigen::DenseBase<Derived>::block(Eigen::Index, Eigen::Index, NRowsType, NColsType) const [with NRowsType = NRowsType; NColsType = NColsType; Derived = Eigen::Matrix<double, 12, 18>][m[K’
+  110 | [01;36m[Kblock[m[K(Index startRow, Index startCol, NRowsType blockRows, NColsType blockCols) const
+      | [01;36m[K^~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/BlockMethods.h:110:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:118:27:[m[K [01;31m[Kerror: [m[Ktype/value mismatch at argument 1 in template parameter list for ‘[01m[Ktemplate<class NRowsType, class NColsType> const typename Eigen::DenseBase<Derived>::ConstFixedBlockXpr<Eigen::internal::get_fixed_value<NRowsType>::value, Eigen::internal::get_fixed_value<NColsType>::value>::Type Eigen::DenseBase<Derived>::block(Eigen::Index, Eigen::Index, NRowsType, NColsType) const [with NRowsType = NRowsType; NColsType = NColsType; Derived = Eigen::Matrix<double, 12, 18>][m[K’
+  118 |             [01;31m[KJc.block<3,18>(leg * 3)[m[K = J;
+      |             [01;31m[K~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:118:27:[m[K [01;36m[Knote: [m[K  expected a type, got ‘[01m[K3[m[K’
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:118:27:[m[K [01;31m[Kerror: [m[Ktype/value mismatch at argument 2 in template parameter list for ‘[01m[Ktemplate<class NRowsType, class NColsType> const typename Eigen::DenseBase<Derived>::ConstFixedBlockXpr<Eigen::internal::get_fixed_value<NRowsType>::value, Eigen::internal::get_fixed_value<NColsType>::value>::Type Eigen::DenseBase<Derived>::block(Eigen::Index, Eigen::Index, NRowsType, NColsType) const [with NRowsType = NRowsType; NColsType = NColsType; Derived = Eigen::Matrix<double, 12, 18>][m[K’
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:118:27:[m[K [01;36m[Knote: [m[K  expected a type, got ‘[01m[K18[m[K’
+In file included from [01m[K/usr/include/eigen3/Eigen/src/Core/DenseBase.h:659[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Core:272[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:5[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/plugins/BlockMethods.h:1027:43:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktypename Eigen::DenseBase<Derived>::FixedBlockXpr<Rows, Cols>::Type Eigen::DenseBase<Derived>::block(Eigen::Index, Eigen::Index) [with int NRows = 3; int NCols = 18; Derived = Eigen::Matrix<double, 12, 18>; typename Eigen::DenseBase<Derived>::FixedBlockXpr<Rows, Cols>::Type = Eigen::Block<Eigen::Matrix<double, 12, 18>, 3, 18, false>; Eigen::Index = long int][m[K’
+ 1027 | typename FixedBlockXpr<NRows,NCols>::Type [01;36m[Kblock[m[K(Index startRow, Index startCol)
+      |                                           [01;36m[K^~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/BlockMethods.h:1027:43:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/eigen3/Eigen/src/plugins/BlockMethods.h:1035:54:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconst typename Eigen::DenseBase<Derived>::ConstFixedBlockXpr<Rows, Cols>::Type Eigen::DenseBase<Derived>::block(Eigen::Index, Eigen::Index) const [with int NRows = 3; int NCols = 18; Derived = Eigen::Matrix<double, 12, 18>; typename Eigen::DenseBase<Derived>::ConstFixedBlockXpr<Rows, Cols>::Type = Eigen::Block<const Eigen::Matrix<double, 12, 18>, 3, 18, false>; Eigen::Index = long int][m[K’
+ 1035 | const typename ConstFixedBlockXpr<NRows,NCols>::Type [01;36m[Kblock[m[K(Index startRow, Index startCol) const
+      |                                                      [01;36m[K^~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/BlockMethods.h:1035:54:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+[01m[K/usr/include/eigen3/Eigen/src/plugins/BlockMethods.h:1073:43:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktypename Eigen::DenseBase<Derived>::FixedBlockXpr<Rows, Cols>::Type Eigen::DenseBase<Derived>::block(Eigen::Index, Eigen::Index, Eigen::Index, Eigen::Index) [with int NRows = 3; int NCols = 18; Derived = Eigen::Matrix<double, 12, 18>; typename Eigen::DenseBase<Derived>::FixedBlockXpr<Rows, Cols>::Type = Eigen::Block<Eigen::Matrix<double, 12, 18>, 3, 18, false>; Eigen::Index = long int][m[K’
+ 1073 | typename FixedBlockXpr<NRows,NCols>::Type [01;36m[Kblock[m[K(Index startRow, Index startCol,
+      |                                           [01;36m[K^~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/BlockMethods.h:1073:43:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 1 provided
+[01m[K/usr/include/eigen3/Eigen/src/plugins/BlockMethods.h:1082:54:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconst typename Eigen::DenseBase<Derived>::ConstFixedBlockXpr<Rows, Cols>::Type Eigen::DenseBase<Derived>::block(Eigen::Index, Eigen::Index, Eigen::Index, Eigen::Index) const [with int NRows = 3; int NCols = 18; Derived = Eigen::Matrix<double, 12, 18>; typename Eigen::DenseBase<Derived>::ConstFixedBlockXpr<Rows, Cols>::Type = Eigen::Block<const Eigen::Matrix<double, 12, 18>, 3, 18, false>; Eigen::Index = long int][m[K’
+ 1082 | const typename ConstFixedBlockXpr<NRows,NCols>::Type [01;36m[Kblock[m[K(Index startRow, Index startCol,
+      |                                                      [01;36m[K^~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/plugins/BlockMethods.h:1082:54:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 1 provided
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:164[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:5[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1[m[K:
+/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h: In instantiation of ‘[01m[Kvoid Eigen::internal::call_assignment_no_alias(Dst&, const Src&, const Func&) [with Dst = Eigen::Matrix<double, 30, 1, 0, 30, 1>; Src = Eigen::Matrix<double, 18, 1, 0, 18, 1>; Func = Eigen::internal::assign_op<double, double>][m[K’:
+[01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:858:27:[m[K   required from ‘[01m[Kvoid Eigen::internal::call_assignment(Dst&, const Src&, const Func&, typename Eigen::internal::enable_if<(! Eigen::internal::evaluator_assume_aliasing<Src>::value), void*>::type) [with Dst = Eigen::Matrix<double, 30, 1, 0, 30, 1>; Src = Eigen::Matrix<double, 18, 1, 0, 18, 1>; Func = Eigen::internal::assign_op<double, double>; typename Eigen::internal::enable_if<(! Eigen::internal::evaluator_assume_aliasing<Src>::value), void*>::type = void*; typename Eigen::internal::evaluator_traits<SrcXprType>::Shape = Eigen::DenseShape][m[K’
+[01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:836:18:[m[K   required from ‘[01m[Kvoid Eigen::internal::call_assignment(Dst&, const Src&) [with Dst = Eigen::Matrix<double, 30, 1, 0, 30, 1>; Src = Eigen::Matrix<double, 18, 1, 0, 18, 1>][m[K’
+[01m[K/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:779:32:[m[K   required from ‘[01m[KDerived& Eigen::PlainObjectBase<Derived>::_set(const Eigen::DenseBase<OtherDerived>&) [with OtherDerived = Eigen::Matrix<double, 18, 1, 0, 18, 1>; Derived = Eigen::Matrix<double, 30, 1, 0, 30, 1>][m[K’
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:225:24:[m[K   required from ‘[01m[KEigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>& Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::operator=(const Eigen::DenseBase<OtherDerived>&) [with OtherDerived = Eigen::Matrix<double, 18, 1, 0, 18, 1>; _Scalar = double; int _Rows = 30; int _Cols = 1; int _Options = 0; int _MaxRows = 30; int _MaxCols = 1][m[K’
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:126:17:[m[K   required from here
+[01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:887:3:[m[K [01;31m[Kerror: [m[Kstatic assertion failed: YOU_MIXED_MATRICES_OF_DIFFERENT_SIZES
+  887 |   [01;31m[KEIGEN_STATIC_ASSERT_SAME_MATRIX_SIZE[m[K(ActualDstTypeCleaned,Src)
+      |   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:887:3:[m[K [01;36m[Knote: [m[K‘[01m[K(((((int)Eigen::internal::size_of_xpr_at_compile_time<Eigen::Matrix<double, 30, 1, 0, 30, 1> >::ret) == 0) && (((int)Eigen::internal::size_of_xpr_at_compile_time<Eigen::Matrix<double, 18, 1, 0, 18, 1> >::ret) == 0)) || ((((((int)Eigen::Matrix<double, 30, 1, 0, 30, 1>::RowsAtCompileTime) == ((int)Eigen::Dynamic)) || (((int)Eigen::Matrix<double, 18, 1, 0, 18, 1>::RowsAtCompileTime) == ((int)Eigen::Dynamic))) || (((int)Eigen::Matrix<double, 30, 1, 0, 30, 1>::RowsAtCompileTime) == ((int)Eigen::Matrix<double, 18, 1, 0, 18, 1>::RowsAtCompileTime))) && (((((int)Eigen::Matrix<double, 30, 1, 0, 30, 1>::ColsAtCompileTime) == ((int)Eigen::Dynamic)) || (((int)Eigen::Matrix<double, 18, 1, 0, 18, 1>::ColsAtCompileTime) == ((int)Eigen::Dynamic))) || (((int)Eigen::Matrix<double, 30, 1, 0, 30, 1>::ColsAtCompileTime) == ((int)Eigen::Matrix<double, 18, 1, 0, 18, 1>::ColsAtCompileTime)))))[m[K’ evaluates to false
+gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:118：CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:265：CMakeFiles/go2_core.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2
