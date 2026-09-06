@@ -124,3 +124,41 @@ float64 body_x_v
 float64 body_z_v
 float64 body_x_v_d
 float64 body_z_v_d
+# WBC 期望加速度 q_des (computePoseAccDes 输出: 基座线3 + 角3 + 关节12)
+float64 q_des_lin_x
+float64 q_des_lin_y
+float64 q_des_lin_z
+float64 q_des_ang_x
+float64 q_des_ang_y
+float64 q_des_ang_z
+float64 q_des_joint_0
+float64 q_des_joint_1
+float64 q_des_joint_2
+float64 q_des_joint_3
+float64 q_des_joint_4
+float64 q_des_joint_5
+float64 q_des_joint_6
+float64 q_des_joint_7
+float64 q_des_joint_8
+float64 q_des_joint_9
+float64 q_des_joint_10
+float64 q_des_joint_11
+
+# 诊断: 偏航力矩 Σ(x·fy − y·fx) (世界系, 足端相对机身) 与摩擦锥利用率 |ft|/(μ·fz), μ=0.5
+float64 tau_yaw_mpc
+float64 tau_yaw_wbc
+float64 f_cone_fl
+float64 f_cone_fr
+float64 f_cone_rl
+float64 f_cone_rr
+
+# 诊断: roll/pitch 力矩 Σ(r × f) (世界系, 足端相对机身), 与 tau_yaw 配套
+float64 tau_roll_mpc
+float64 tau_roll_wbc
+float64 tau_pitch_mpc
+float64 tau_pitch_wbc
+
+# 诊断: WBC QP 解出的基座角加速度 (机体系, sol.head(18) 第3~5维), 与 q_des_ang 对比用
+float64 a_wbc_ang_x
+float64 a_wbc_ang_y
+float64 a_wbc_ang_z

@@ -21,16 +21,512 @@ namespace msg
 namespace builder
 {
 
+class Init_Go2Telemetry_a_wbc_ang_z
+{
+public:
+  explicit Init_Go2Telemetry_a_wbc_ang_z(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  ::go2_robot::msg::Go2Telemetry a_wbc_ang_z(::go2_robot::msg::Go2Telemetry::_a_wbc_ang_z_type arg)
+  {
+    msg_.a_wbc_ang_z = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_a_wbc_ang_y
+{
+public:
+  explicit Init_Go2Telemetry_a_wbc_ang_y(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_a_wbc_ang_z a_wbc_ang_y(::go2_robot::msg::Go2Telemetry::_a_wbc_ang_y_type arg)
+  {
+    msg_.a_wbc_ang_y = std::move(arg);
+    return Init_Go2Telemetry_a_wbc_ang_z(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_a_wbc_ang_x
+{
+public:
+  explicit Init_Go2Telemetry_a_wbc_ang_x(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_a_wbc_ang_y a_wbc_ang_x(::go2_robot::msg::Go2Telemetry::_a_wbc_ang_x_type arg)
+  {
+    msg_.a_wbc_ang_x = std::move(arg);
+    return Init_Go2Telemetry_a_wbc_ang_y(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_pitch_wbc
+{
+public:
+  explicit Init_Go2Telemetry_tau_pitch_wbc(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_a_wbc_ang_x tau_pitch_wbc(::go2_robot::msg::Go2Telemetry::_tau_pitch_wbc_type arg)
+  {
+    msg_.tau_pitch_wbc = std::move(arg);
+    return Init_Go2Telemetry_a_wbc_ang_x(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_pitch_mpc
+{
+public:
+  explicit Init_Go2Telemetry_tau_pitch_mpc(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_pitch_wbc tau_pitch_mpc(::go2_robot::msg::Go2Telemetry::_tau_pitch_mpc_type arg)
+  {
+    msg_.tau_pitch_mpc = std::move(arg);
+    return Init_Go2Telemetry_tau_pitch_wbc(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_roll_wbc
+{
+public:
+  explicit Init_Go2Telemetry_tau_roll_wbc(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_pitch_mpc tau_roll_wbc(::go2_robot::msg::Go2Telemetry::_tau_roll_wbc_type arg)
+  {
+    msg_.tau_roll_wbc = std::move(arg);
+    return Init_Go2Telemetry_tau_pitch_mpc(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_roll_mpc
+{
+public:
+  explicit Init_Go2Telemetry_tau_roll_mpc(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_roll_wbc tau_roll_mpc(::go2_robot::msg::Go2Telemetry::_tau_roll_mpc_type arg)
+  {
+    msg_.tau_roll_mpc = std::move(arg);
+    return Init_Go2Telemetry_tau_roll_wbc(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_f_cone_rr
+{
+public:
+  explicit Init_Go2Telemetry_f_cone_rr(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_roll_mpc f_cone_rr(::go2_robot::msg::Go2Telemetry::_f_cone_rr_type arg)
+  {
+    msg_.f_cone_rr = std::move(arg);
+    return Init_Go2Telemetry_tau_roll_mpc(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_f_cone_rl
+{
+public:
+  explicit Init_Go2Telemetry_f_cone_rl(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_f_cone_rr f_cone_rl(::go2_robot::msg::Go2Telemetry::_f_cone_rl_type arg)
+  {
+    msg_.f_cone_rl = std::move(arg);
+    return Init_Go2Telemetry_f_cone_rr(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_f_cone_fr
+{
+public:
+  explicit Init_Go2Telemetry_f_cone_fr(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_f_cone_rl f_cone_fr(::go2_robot::msg::Go2Telemetry::_f_cone_fr_type arg)
+  {
+    msg_.f_cone_fr = std::move(arg);
+    return Init_Go2Telemetry_f_cone_rl(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_f_cone_fl
+{
+public:
+  explicit Init_Go2Telemetry_f_cone_fl(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_f_cone_fr f_cone_fl(::go2_robot::msg::Go2Telemetry::_f_cone_fl_type arg)
+  {
+    msg_.f_cone_fl = std::move(arg);
+    return Init_Go2Telemetry_f_cone_fr(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_yaw_wbc
+{
+public:
+  explicit Init_Go2Telemetry_tau_yaw_wbc(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_f_cone_fl tau_yaw_wbc(::go2_robot::msg::Go2Telemetry::_tau_yaw_wbc_type arg)
+  {
+    msg_.tau_yaw_wbc = std::move(arg);
+    return Init_Go2Telemetry_f_cone_fl(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_yaw_mpc
+{
+public:
+  explicit Init_Go2Telemetry_tau_yaw_mpc(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_yaw_wbc tau_yaw_mpc(::go2_robot::msg::Go2Telemetry::_tau_yaw_mpc_type arg)
+  {
+    msg_.tau_yaw_mpc = std::move(arg);
+    return Init_Go2Telemetry_tau_yaw_wbc(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_joint_11
+{
+public:
+  explicit Init_Go2Telemetry_q_des_joint_11(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_yaw_mpc q_des_joint_11(::go2_robot::msg::Go2Telemetry::_q_des_joint_11_type arg)
+  {
+    msg_.q_des_joint_11 = std::move(arg);
+    return Init_Go2Telemetry_tau_yaw_mpc(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_joint_10
+{
+public:
+  explicit Init_Go2Telemetry_q_des_joint_10(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_joint_11 q_des_joint_10(::go2_robot::msg::Go2Telemetry::_q_des_joint_10_type arg)
+  {
+    msg_.q_des_joint_10 = std::move(arg);
+    return Init_Go2Telemetry_q_des_joint_11(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_joint_9
+{
+public:
+  explicit Init_Go2Telemetry_q_des_joint_9(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_joint_10 q_des_joint_9(::go2_robot::msg::Go2Telemetry::_q_des_joint_9_type arg)
+  {
+    msg_.q_des_joint_9 = std::move(arg);
+    return Init_Go2Telemetry_q_des_joint_10(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_joint_8
+{
+public:
+  explicit Init_Go2Telemetry_q_des_joint_8(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_joint_9 q_des_joint_8(::go2_robot::msg::Go2Telemetry::_q_des_joint_8_type arg)
+  {
+    msg_.q_des_joint_8 = std::move(arg);
+    return Init_Go2Telemetry_q_des_joint_9(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_joint_7
+{
+public:
+  explicit Init_Go2Telemetry_q_des_joint_7(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_joint_8 q_des_joint_7(::go2_robot::msg::Go2Telemetry::_q_des_joint_7_type arg)
+  {
+    msg_.q_des_joint_7 = std::move(arg);
+    return Init_Go2Telemetry_q_des_joint_8(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_joint_6
+{
+public:
+  explicit Init_Go2Telemetry_q_des_joint_6(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_joint_7 q_des_joint_6(::go2_robot::msg::Go2Telemetry::_q_des_joint_6_type arg)
+  {
+    msg_.q_des_joint_6 = std::move(arg);
+    return Init_Go2Telemetry_q_des_joint_7(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_joint_5
+{
+public:
+  explicit Init_Go2Telemetry_q_des_joint_5(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_joint_6 q_des_joint_5(::go2_robot::msg::Go2Telemetry::_q_des_joint_5_type arg)
+  {
+    msg_.q_des_joint_5 = std::move(arg);
+    return Init_Go2Telemetry_q_des_joint_6(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_joint_4
+{
+public:
+  explicit Init_Go2Telemetry_q_des_joint_4(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_joint_5 q_des_joint_4(::go2_robot::msg::Go2Telemetry::_q_des_joint_4_type arg)
+  {
+    msg_.q_des_joint_4 = std::move(arg);
+    return Init_Go2Telemetry_q_des_joint_5(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_joint_3
+{
+public:
+  explicit Init_Go2Telemetry_q_des_joint_3(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_joint_4 q_des_joint_3(::go2_robot::msg::Go2Telemetry::_q_des_joint_3_type arg)
+  {
+    msg_.q_des_joint_3 = std::move(arg);
+    return Init_Go2Telemetry_q_des_joint_4(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_joint_2
+{
+public:
+  explicit Init_Go2Telemetry_q_des_joint_2(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_joint_3 q_des_joint_2(::go2_robot::msg::Go2Telemetry::_q_des_joint_2_type arg)
+  {
+    msg_.q_des_joint_2 = std::move(arg);
+    return Init_Go2Telemetry_q_des_joint_3(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_joint_1
+{
+public:
+  explicit Init_Go2Telemetry_q_des_joint_1(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_joint_2 q_des_joint_1(::go2_robot::msg::Go2Telemetry::_q_des_joint_1_type arg)
+  {
+    msg_.q_des_joint_1 = std::move(arg);
+    return Init_Go2Telemetry_q_des_joint_2(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_joint_0
+{
+public:
+  explicit Init_Go2Telemetry_q_des_joint_0(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_joint_1 q_des_joint_0(::go2_robot::msg::Go2Telemetry::_q_des_joint_0_type arg)
+  {
+    msg_.q_des_joint_0 = std::move(arg);
+    return Init_Go2Telemetry_q_des_joint_1(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_ang_z
+{
+public:
+  explicit Init_Go2Telemetry_q_des_ang_z(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_joint_0 q_des_ang_z(::go2_robot::msg::Go2Telemetry::_q_des_ang_z_type arg)
+  {
+    msg_.q_des_ang_z = std::move(arg);
+    return Init_Go2Telemetry_q_des_joint_0(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_ang_y
+{
+public:
+  explicit Init_Go2Telemetry_q_des_ang_y(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_ang_z q_des_ang_y(::go2_robot::msg::Go2Telemetry::_q_des_ang_y_type arg)
+  {
+    msg_.q_des_ang_y = std::move(arg);
+    return Init_Go2Telemetry_q_des_ang_z(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_ang_x
+{
+public:
+  explicit Init_Go2Telemetry_q_des_ang_x(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_ang_y q_des_ang_x(::go2_robot::msg::Go2Telemetry::_q_des_ang_x_type arg)
+  {
+    msg_.q_des_ang_x = std::move(arg);
+    return Init_Go2Telemetry_q_des_ang_y(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_lin_z
+{
+public:
+  explicit Init_Go2Telemetry_q_des_lin_z(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_ang_x q_des_lin_z(::go2_robot::msg::Go2Telemetry::_q_des_lin_z_type arg)
+  {
+    msg_.q_des_lin_z = std::move(arg);
+    return Init_Go2Telemetry_q_des_ang_x(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_lin_y
+{
+public:
+  explicit Init_Go2Telemetry_q_des_lin_y(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_lin_z q_des_lin_y(::go2_robot::msg::Go2Telemetry::_q_des_lin_y_type arg)
+  {
+    msg_.q_des_lin_y = std::move(arg);
+    return Init_Go2Telemetry_q_des_lin_z(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_q_des_lin_x
+{
+public:
+  explicit Init_Go2Telemetry_q_des_lin_x(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_q_des_lin_y q_des_lin_x(::go2_robot::msg::Go2Telemetry::_q_des_lin_x_type arg)
+  {
+    msg_.q_des_lin_x = std::move(arg);
+    return Init_Go2Telemetry_q_des_lin_y(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
 class Init_Go2Telemetry_body_z_v_d
 {
 public:
   explicit Init_Go2Telemetry_body_z_v_d(::go2_robot::msg::Go2Telemetry & msg)
   : msg_(msg)
   {}
-  ::go2_robot::msg::Go2Telemetry body_z_v_d(::go2_robot::msg::Go2Telemetry::_body_z_v_d_type arg)
+  Init_Go2Telemetry_q_des_lin_x body_z_v_d(::go2_robot::msg::Go2Telemetry::_body_z_v_d_type arg)
   {
     msg_.body_z_v_d = std::move(arg);
-    return std::move(msg_);
+    return Init_Go2Telemetry_q_des_lin_x(msg_);
   }
 
 private:

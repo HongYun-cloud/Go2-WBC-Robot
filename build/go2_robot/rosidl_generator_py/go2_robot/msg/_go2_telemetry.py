@@ -168,6 +168,37 @@ class Go2Telemetry(metaclass=Metaclass_Go2Telemetry):
         '_body_z_v',
         '_body_x_v_d',
         '_body_z_v_d',
+        '_q_des_lin_x',
+        '_q_des_lin_y',
+        '_q_des_lin_z',
+        '_q_des_ang_x',
+        '_q_des_ang_y',
+        '_q_des_ang_z',
+        '_q_des_joint_0',
+        '_q_des_joint_1',
+        '_q_des_joint_2',
+        '_q_des_joint_3',
+        '_q_des_joint_4',
+        '_q_des_joint_5',
+        '_q_des_joint_6',
+        '_q_des_joint_7',
+        '_q_des_joint_8',
+        '_q_des_joint_9',
+        '_q_des_joint_10',
+        '_q_des_joint_11',
+        '_tau_yaw_mpc',
+        '_tau_yaw_wbc',
+        '_f_cone_fl',
+        '_f_cone_fr',
+        '_f_cone_rl',
+        '_f_cone_rr',
+        '_tau_roll_mpc',
+        '_tau_roll_wbc',
+        '_tau_pitch_mpc',
+        '_tau_pitch_wbc',
+        '_a_wbc_ang_x',
+        '_a_wbc_ang_y',
+        '_a_wbc_ang_z',
     ]
 
     _fields_and_field_types = {
@@ -278,10 +309,72 @@ class Go2Telemetry(metaclass=Metaclass_Go2Telemetry):
         'body_z_v': 'double',
         'body_x_v_d': 'double',
         'body_z_v_d': 'double',
+        'q_des_lin_x': 'double',
+        'q_des_lin_y': 'double',
+        'q_des_lin_z': 'double',
+        'q_des_ang_x': 'double',
+        'q_des_ang_y': 'double',
+        'q_des_ang_z': 'double',
+        'q_des_joint_0': 'double',
+        'q_des_joint_1': 'double',
+        'q_des_joint_2': 'double',
+        'q_des_joint_3': 'double',
+        'q_des_joint_4': 'double',
+        'q_des_joint_5': 'double',
+        'q_des_joint_6': 'double',
+        'q_des_joint_7': 'double',
+        'q_des_joint_8': 'double',
+        'q_des_joint_9': 'double',
+        'q_des_joint_10': 'double',
+        'q_des_joint_11': 'double',
+        'tau_yaw_mpc': 'double',
+        'tau_yaw_wbc': 'double',
+        'f_cone_fl': 'double',
+        'f_cone_fr': 'double',
+        'f_cone_rl': 'double',
+        'f_cone_rr': 'double',
+        'tau_roll_mpc': 'double',
+        'tau_roll_wbc': 'double',
+        'tau_pitch_mpc': 'double',
+        'tau_pitch_wbc': 'double',
+        'a_wbc_ang_x': 'double',
+        'a_wbc_ang_y': 'double',
+        'a_wbc_ang_z': 'double',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.NamespacedType(['std_msgs', 'msg'], 'Header'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
@@ -502,6 +595,37 @@ class Go2Telemetry(metaclass=Metaclass_Go2Telemetry):
         self.body_z_v = kwargs.get('body_z_v', float())
         self.body_x_v_d = kwargs.get('body_x_v_d', float())
         self.body_z_v_d = kwargs.get('body_z_v_d', float())
+        self.q_des_lin_x = kwargs.get('q_des_lin_x', float())
+        self.q_des_lin_y = kwargs.get('q_des_lin_y', float())
+        self.q_des_lin_z = kwargs.get('q_des_lin_z', float())
+        self.q_des_ang_x = kwargs.get('q_des_ang_x', float())
+        self.q_des_ang_y = kwargs.get('q_des_ang_y', float())
+        self.q_des_ang_z = kwargs.get('q_des_ang_z', float())
+        self.q_des_joint_0 = kwargs.get('q_des_joint_0', float())
+        self.q_des_joint_1 = kwargs.get('q_des_joint_1', float())
+        self.q_des_joint_2 = kwargs.get('q_des_joint_2', float())
+        self.q_des_joint_3 = kwargs.get('q_des_joint_3', float())
+        self.q_des_joint_4 = kwargs.get('q_des_joint_4', float())
+        self.q_des_joint_5 = kwargs.get('q_des_joint_5', float())
+        self.q_des_joint_6 = kwargs.get('q_des_joint_6', float())
+        self.q_des_joint_7 = kwargs.get('q_des_joint_7', float())
+        self.q_des_joint_8 = kwargs.get('q_des_joint_8', float())
+        self.q_des_joint_9 = kwargs.get('q_des_joint_9', float())
+        self.q_des_joint_10 = kwargs.get('q_des_joint_10', float())
+        self.q_des_joint_11 = kwargs.get('q_des_joint_11', float())
+        self.tau_yaw_mpc = kwargs.get('tau_yaw_mpc', float())
+        self.tau_yaw_wbc = kwargs.get('tau_yaw_wbc', float())
+        self.f_cone_fl = kwargs.get('f_cone_fl', float())
+        self.f_cone_fr = kwargs.get('f_cone_fr', float())
+        self.f_cone_rl = kwargs.get('f_cone_rl', float())
+        self.f_cone_rr = kwargs.get('f_cone_rr', float())
+        self.tau_roll_mpc = kwargs.get('tau_roll_mpc', float())
+        self.tau_roll_wbc = kwargs.get('tau_roll_wbc', float())
+        self.tau_pitch_mpc = kwargs.get('tau_pitch_mpc', float())
+        self.tau_pitch_wbc = kwargs.get('tau_pitch_wbc', float())
+        self.a_wbc_ang_x = kwargs.get('a_wbc_ang_x', float())
+        self.a_wbc_ang_y = kwargs.get('a_wbc_ang_y', float())
+        self.a_wbc_ang_z = kwargs.get('a_wbc_ang_z', float())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -745,6 +869,68 @@ class Go2Telemetry(metaclass=Metaclass_Go2Telemetry):
         if self.body_x_v_d != other.body_x_v_d:
             return False
         if self.body_z_v_d != other.body_z_v_d:
+            return False
+        if self.q_des_lin_x != other.q_des_lin_x:
+            return False
+        if self.q_des_lin_y != other.q_des_lin_y:
+            return False
+        if self.q_des_lin_z != other.q_des_lin_z:
+            return False
+        if self.q_des_ang_x != other.q_des_ang_x:
+            return False
+        if self.q_des_ang_y != other.q_des_ang_y:
+            return False
+        if self.q_des_ang_z != other.q_des_ang_z:
+            return False
+        if self.q_des_joint_0 != other.q_des_joint_0:
+            return False
+        if self.q_des_joint_1 != other.q_des_joint_1:
+            return False
+        if self.q_des_joint_2 != other.q_des_joint_2:
+            return False
+        if self.q_des_joint_3 != other.q_des_joint_3:
+            return False
+        if self.q_des_joint_4 != other.q_des_joint_4:
+            return False
+        if self.q_des_joint_5 != other.q_des_joint_5:
+            return False
+        if self.q_des_joint_6 != other.q_des_joint_6:
+            return False
+        if self.q_des_joint_7 != other.q_des_joint_7:
+            return False
+        if self.q_des_joint_8 != other.q_des_joint_8:
+            return False
+        if self.q_des_joint_9 != other.q_des_joint_9:
+            return False
+        if self.q_des_joint_10 != other.q_des_joint_10:
+            return False
+        if self.q_des_joint_11 != other.q_des_joint_11:
+            return False
+        if self.tau_yaw_mpc != other.tau_yaw_mpc:
+            return False
+        if self.tau_yaw_wbc != other.tau_yaw_wbc:
+            return False
+        if self.f_cone_fl != other.f_cone_fl:
+            return False
+        if self.f_cone_fr != other.f_cone_fr:
+            return False
+        if self.f_cone_rl != other.f_cone_rl:
+            return False
+        if self.f_cone_rr != other.f_cone_rr:
+            return False
+        if self.tau_roll_mpc != other.tau_roll_mpc:
+            return False
+        if self.tau_roll_wbc != other.tau_roll_wbc:
+            return False
+        if self.tau_pitch_mpc != other.tau_pitch_mpc:
+            return False
+        if self.tau_pitch_wbc != other.tau_pitch_wbc:
+            return False
+        if self.a_wbc_ang_x != other.a_wbc_ang_x:
+            return False
+        if self.a_wbc_ang_y != other.a_wbc_ang_y:
+            return False
+        if self.a_wbc_ang_z != other.a_wbc_ang_z:
             return False
         return True
 
@@ -2356,3 +2542,468 @@ class Go2Telemetry(metaclass=Metaclass_Go2Telemetry):
             assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
                 "The 'body_z_v_d' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
         self._body_z_v_d = value
+
+    @builtins.property
+    def q_des_lin_x(self):
+        """Message field 'q_des_lin_x'."""
+        return self._q_des_lin_x
+
+    @q_des_lin_x.setter
+    def q_des_lin_x(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_lin_x' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_lin_x' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_lin_x = value
+
+    @builtins.property
+    def q_des_lin_y(self):
+        """Message field 'q_des_lin_y'."""
+        return self._q_des_lin_y
+
+    @q_des_lin_y.setter
+    def q_des_lin_y(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_lin_y' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_lin_y' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_lin_y = value
+
+    @builtins.property
+    def q_des_lin_z(self):
+        """Message field 'q_des_lin_z'."""
+        return self._q_des_lin_z
+
+    @q_des_lin_z.setter
+    def q_des_lin_z(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_lin_z' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_lin_z' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_lin_z = value
+
+    @builtins.property
+    def q_des_ang_x(self):
+        """Message field 'q_des_ang_x'."""
+        return self._q_des_ang_x
+
+    @q_des_ang_x.setter
+    def q_des_ang_x(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_ang_x' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_ang_x' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_ang_x = value
+
+    @builtins.property
+    def q_des_ang_y(self):
+        """Message field 'q_des_ang_y'."""
+        return self._q_des_ang_y
+
+    @q_des_ang_y.setter
+    def q_des_ang_y(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_ang_y' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_ang_y' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_ang_y = value
+
+    @builtins.property
+    def q_des_ang_z(self):
+        """Message field 'q_des_ang_z'."""
+        return self._q_des_ang_z
+
+    @q_des_ang_z.setter
+    def q_des_ang_z(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_ang_z' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_ang_z' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_ang_z = value
+
+    @builtins.property
+    def q_des_joint_0(self):
+        """Message field 'q_des_joint_0'."""
+        return self._q_des_joint_0
+
+    @q_des_joint_0.setter
+    def q_des_joint_0(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_joint_0' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_joint_0' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_joint_0 = value
+
+    @builtins.property
+    def q_des_joint_1(self):
+        """Message field 'q_des_joint_1'."""
+        return self._q_des_joint_1
+
+    @q_des_joint_1.setter
+    def q_des_joint_1(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_joint_1' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_joint_1' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_joint_1 = value
+
+    @builtins.property
+    def q_des_joint_2(self):
+        """Message field 'q_des_joint_2'."""
+        return self._q_des_joint_2
+
+    @q_des_joint_2.setter
+    def q_des_joint_2(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_joint_2' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_joint_2' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_joint_2 = value
+
+    @builtins.property
+    def q_des_joint_3(self):
+        """Message field 'q_des_joint_3'."""
+        return self._q_des_joint_3
+
+    @q_des_joint_3.setter
+    def q_des_joint_3(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_joint_3' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_joint_3' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_joint_3 = value
+
+    @builtins.property
+    def q_des_joint_4(self):
+        """Message field 'q_des_joint_4'."""
+        return self._q_des_joint_4
+
+    @q_des_joint_4.setter
+    def q_des_joint_4(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_joint_4' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_joint_4' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_joint_4 = value
+
+    @builtins.property
+    def q_des_joint_5(self):
+        """Message field 'q_des_joint_5'."""
+        return self._q_des_joint_5
+
+    @q_des_joint_5.setter
+    def q_des_joint_5(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_joint_5' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_joint_5' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_joint_5 = value
+
+    @builtins.property
+    def q_des_joint_6(self):
+        """Message field 'q_des_joint_6'."""
+        return self._q_des_joint_6
+
+    @q_des_joint_6.setter
+    def q_des_joint_6(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_joint_6' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_joint_6' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_joint_6 = value
+
+    @builtins.property
+    def q_des_joint_7(self):
+        """Message field 'q_des_joint_7'."""
+        return self._q_des_joint_7
+
+    @q_des_joint_7.setter
+    def q_des_joint_7(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_joint_7' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_joint_7' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_joint_7 = value
+
+    @builtins.property
+    def q_des_joint_8(self):
+        """Message field 'q_des_joint_8'."""
+        return self._q_des_joint_8
+
+    @q_des_joint_8.setter
+    def q_des_joint_8(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_joint_8' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_joint_8' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_joint_8 = value
+
+    @builtins.property
+    def q_des_joint_9(self):
+        """Message field 'q_des_joint_9'."""
+        return self._q_des_joint_9
+
+    @q_des_joint_9.setter
+    def q_des_joint_9(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_joint_9' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_joint_9' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_joint_9 = value
+
+    @builtins.property
+    def q_des_joint_10(self):
+        """Message field 'q_des_joint_10'."""
+        return self._q_des_joint_10
+
+    @q_des_joint_10.setter
+    def q_des_joint_10(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_joint_10' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_joint_10' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_joint_10 = value
+
+    @builtins.property
+    def q_des_joint_11(self):
+        """Message field 'q_des_joint_11'."""
+        return self._q_des_joint_11
+
+    @q_des_joint_11.setter
+    def q_des_joint_11(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'q_des_joint_11' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'q_des_joint_11' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._q_des_joint_11 = value
+
+    @builtins.property
+    def tau_yaw_mpc(self):
+        """Message field 'tau_yaw_mpc'."""
+        return self._tau_yaw_mpc
+
+    @tau_yaw_mpc.setter
+    def tau_yaw_mpc(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_yaw_mpc' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_yaw_mpc' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_yaw_mpc = value
+
+    @builtins.property
+    def tau_yaw_wbc(self):
+        """Message field 'tau_yaw_wbc'."""
+        return self._tau_yaw_wbc
+
+    @tau_yaw_wbc.setter
+    def tau_yaw_wbc(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_yaw_wbc' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_yaw_wbc' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_yaw_wbc = value
+
+    @builtins.property
+    def f_cone_fl(self):
+        """Message field 'f_cone_fl'."""
+        return self._f_cone_fl
+
+    @f_cone_fl.setter
+    def f_cone_fl(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'f_cone_fl' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'f_cone_fl' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._f_cone_fl = value
+
+    @builtins.property
+    def f_cone_fr(self):
+        """Message field 'f_cone_fr'."""
+        return self._f_cone_fr
+
+    @f_cone_fr.setter
+    def f_cone_fr(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'f_cone_fr' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'f_cone_fr' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._f_cone_fr = value
+
+    @builtins.property
+    def f_cone_rl(self):
+        """Message field 'f_cone_rl'."""
+        return self._f_cone_rl
+
+    @f_cone_rl.setter
+    def f_cone_rl(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'f_cone_rl' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'f_cone_rl' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._f_cone_rl = value
+
+    @builtins.property
+    def f_cone_rr(self):
+        """Message field 'f_cone_rr'."""
+        return self._f_cone_rr
+
+    @f_cone_rr.setter
+    def f_cone_rr(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'f_cone_rr' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'f_cone_rr' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._f_cone_rr = value
+
+    @builtins.property
+    def tau_roll_mpc(self):
+        """Message field 'tau_roll_mpc'."""
+        return self._tau_roll_mpc
+
+    @tau_roll_mpc.setter
+    def tau_roll_mpc(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_roll_mpc' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_roll_mpc' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_roll_mpc = value
+
+    @builtins.property
+    def tau_roll_wbc(self):
+        """Message field 'tau_roll_wbc'."""
+        return self._tau_roll_wbc
+
+    @tau_roll_wbc.setter
+    def tau_roll_wbc(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_roll_wbc' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_roll_wbc' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_roll_wbc = value
+
+    @builtins.property
+    def tau_pitch_mpc(self):
+        """Message field 'tau_pitch_mpc'."""
+        return self._tau_pitch_mpc
+
+    @tau_pitch_mpc.setter
+    def tau_pitch_mpc(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_pitch_mpc' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_pitch_mpc' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_pitch_mpc = value
+
+    @builtins.property
+    def tau_pitch_wbc(self):
+        """Message field 'tau_pitch_wbc'."""
+        return self._tau_pitch_wbc
+
+    @tau_pitch_wbc.setter
+    def tau_pitch_wbc(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_pitch_wbc' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_pitch_wbc' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_pitch_wbc = value
+
+    @builtins.property
+    def a_wbc_ang_x(self):
+        """Message field 'a_wbc_ang_x'."""
+        return self._a_wbc_ang_x
+
+    @a_wbc_ang_x.setter
+    def a_wbc_ang_x(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'a_wbc_ang_x' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'a_wbc_ang_x' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._a_wbc_ang_x = value
+
+    @builtins.property
+    def a_wbc_ang_y(self):
+        """Message field 'a_wbc_ang_y'."""
+        return self._a_wbc_ang_y
+
+    @a_wbc_ang_y.setter
+    def a_wbc_ang_y(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'a_wbc_ang_y' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'a_wbc_ang_y' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._a_wbc_ang_y = value
+
+    @builtins.property
+    def a_wbc_ang_z(self):
+        """Message field 'a_wbc_ang_z'."""
+        return self._a_wbc_ang_z
+
+    @a_wbc_ang_z.setter
+    def a_wbc_ang_z(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'a_wbc_ang_z' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'a_wbc_ang_z' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._a_wbc_ang_z = value

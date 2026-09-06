@@ -267,8 +267,9 @@ void Go2ControlNode::wbcControlLoop()
     }
 
     // // WBC: QP 求解一致的加速度和力
-    Eigen::Matrix<double, 18, 1> q_des = Eigen::Matrix<double, 18, 1>::Zero();
-
+    // 基座 PD 处理后的期望加速度 (前馈暂传零 → 纯 PD 调节), 作为 WBC 第一代价项 q_d
+    Eigen::Matrix<double, 18, 1> q_des = computePoseAccDes(state,true);
+    // q_des = Eigen::Matrix<double, 18, 1>::Zero();
     double T_swing = scheduler->GetSwingTime();
     if (T_swing < 1e-3) T_swing = 1e-3;  // STAND 时 duty=1 → T_swing=0, 防除零
 
@@ -295,12 +296,15 @@ void Go2ControlNode::wbcControlLoop()
     wbc->solve();
 
     WBC::SolutionVector sol;
+    WBC::SolForce f_wbc;
+    WBC::SolAcc q_a_wbc;
     wbc->GetSolution(sol);
-    Eigen::Matrix<double, 12, 1> f_wbc = sol.tail(12);
+    wbc->GetForce(f_wbc);
+    wbc->GetAcc(q_a_wbc);
     Eigen::Matrix<double, 18, 1> test_a = Eigen::Matrix<double, 18, 1>::Zero();
     // 关节力矩: τ = M·a + h − Jᵀf (WBC 逆动力学, 已包含 a_des 跟踪)
-    auto tau = pin->getJointTorquesFromSolution(sol.head(18), f_wbc);
-    // auto tau = pin->getJointTorquesFromSolution(test_a, f_mpc);
+    auto tau = pin->getJointTorquesFromSolution(q_des, f_mpc);
+    // auto tau = pin->getJointTorquesFromSolution(test_a, f_wbc);
     mj->control(tau);
     mj->Step();
     mj->Render();
@@ -341,9 +345,68 @@ void Go2ControlNode::wbcControlLoop()
     }
 
     // ===== Telemetry 缓存: 500Hz 纯内存拷贝, publishState (50Hz) 发布 =====
-    fillTelemetryMessage(p_ref, p_act, v_ref, v_foot_act, a_des, f_mpc, f_wbc, state);
+    // a_wbc_ang = WBC QP 解出的基座角加速度 (机体系), 与 q_des_ang 对比验证 PD 是否被执行
+    fillTelemetryMessage(p_ref, p_act, v_ref, v_foot_act, a_des, f_mpc, f_wbc, q_des,
+                         sol.segment<3>(3), state);
 }
 
+// ============================================================
+// 基座加速度层 PD: 输出作为 WBC 第一代价项的期望加速度 q_d
+// 18 维顺序与 WBC 全状态一致: [基座线加速度3; 角加速度3; 关节加速度12]
+// ============================================================
+
+Eigen::Matrix<double, 18, 1> Go2ControlNode::computePoseAccDes(
+    const RobotState& state, bool pd_open)
+{
+
+    Eigen::Vector3d a_lin;
+    Eigen::Vector3d a_ang;
+    Eigen::Matrix<double,12,1> a_joint_des;
+    a_lin = Eigen::Vector3d::Zero();
+    a_ang = Eigen::Vector3d::Zero();
+    if (pd_open) {
+        // 期望值: 节点成员 q/p/v/w (调试期手动设置, 与 MPC DesireCMD 同源)
+        // 实际值: 估计器 p, v, q(世界系roll-pitch-yaw), w
+        auto est = estimator->get_estresult();
+        Eigen::Vector3d p_des, v_des, rpy_des, w_des;
+        {
+            std::lock_guard<std::mutex> lk(cmd_mutex_);
+            p_des = p; v_des = v; rpy_des = q; w_des = w;
+        }
+
+        // 线加速度: 位置 PD 只取 z 轴 (x/y 做位置 PD 会把行走中的机身拉回原点),
+        // 速度 PD 三轴全做 (跟踪 /cmd_vel)
+        Eigen::Vector3d Kp_lin(0.0, 0.0, 50.0);
+        Eigen::Vector3d Kd_lin(10.0, 10.0, 10.0);
+        Eigen::Vector3d e_p_z(0.0, 0.0, p_des.z() - est.p.z());
+        Eigen::Vector3d e_v = v_des - est.v;
+        a_lin = Kp_lin.cwiseProduct(e_p_z) + Kd_lin.cwiseProduct(e_v);
+
+        // 角加速度: rpy 位置 PD + 角速度 PD, 全在世界系计算, 末尾转机体系
+        // WBC QP 的基座角加速度是 Pinocchio free-flyer 机体系量, 而 rpy 误差是世界系;
+        // yaw 漂移时两系的 roll/pitch 轴不重合, 不转系则纠偏力矩方向歪 (表现为 roll 越纠越偏)
+        // 增益正值量级: 坐标系 bug 已修 (输出已转机体系), 无需负号补偿;
+        // 配合 FI=10 / C动力学=100, PD 输出已能传导到接触力
+        Eigen::Vector3d Kp_ang(70.0, 50.0, 30.0);
+        Eigen::Vector3d Kd_ang(6.0, 10.0, 5.0);
+        // 机体系角速度 → 世界系 (MuJoCo free joint 角速度是机体系)
+        Eigen::Matrix3d R =
+        (Eigen::AngleAxisd(est.q(2), Eigen::Vector3d::UnitZ()) *
+        Eigen::AngleAxisd(est.q(1), Eigen::Vector3d::UnitY()) *
+        Eigen::AngleAxisd(est.q(0), Eigen::Vector3d::UnitX())).toRotationMatrix();
+        
+        Eigen::Vector3d e_rpy = R.transpose() * (rpy_des - est.q);
+        Eigen::Vector3d e_w = w_des - est.w;
+        a_ang = Kp_ang.cwiseProduct(e_rpy) + Kd_ang.cwiseProduct(e_w);  // 机身系
+        a_ang = R.transpose() * a_ang;  // 世界系 → 机体系喂 WBC (忽略 ω×ω 小量)
+    }
+
+    // 关节加速度: 暂无期望关节位置/速度参考 → 前馈直通。
+    // 后续接入期望关节轨迹后在此加: Kp_j·(qj_des − qj_act) + Kd_j·(qd_des − qd_act)
+    Eigen::Matrix<double, 18, 1> a_out;
+    a_out << a_lin, a_ang, a_joint_des;
+    return a_out;
+}
 // ============================================================
 // 加速度层阻抗: 原主循环内嵌段, 逻辑零修改抽出
 // ============================================================
@@ -440,6 +503,8 @@ void Go2ControlNode::fillTelemetryMessage(const Eigen::Matrix<double,4,3>& p_ref
                                         const Eigen::Matrix<double,12,1>& a_des,
                                         const Eigen::Matrix<double,12,1>& f_mpc,
                                         const Eigen::Matrix<double,12,1>& f_wbc,
+                                        const Eigen::Matrix<double,18,1>& q_des,
+                                        const Eigen::Vector3d& a_wbc_ang,
                                         const RobotState& state)
 {
     // 成员指针表: [leg*3+axis] → 消息字段, 足端顺序 FL,FR,RL,RR × x,y,z (世界系)
@@ -493,6 +558,14 @@ void Go2ControlNode::fillTelemetryMessage(const Eigen::Matrix<double,4,3>& p_ref
         &Msg::f_wbc_rl_x, &Msg::f_wbc_rl_y, &Msg::f_wbc_rl_z,
         &Msg::f_wbc_rr_x, &Msg::f_wbc_rr_y, &Msg::f_wbc_rr_z,
     };
+    static const Field q_des_f[18] = {   // q_des = computePoseAccDes 输出 [线3; 角3; 关节12]
+        &Msg::q_des_lin_x, &Msg::q_des_lin_y, &Msg::q_des_lin_z,
+        &Msg::q_des_ang_x, &Msg::q_des_ang_y, &Msg::q_des_ang_z,
+        &Msg::q_des_joint_0,  &Msg::q_des_joint_1,  &Msg::q_des_joint_2,
+        &Msg::q_des_joint_3,  &Msg::q_des_joint_4,  &Msg::q_des_joint_5,
+        &Msg::q_des_joint_6,  &Msg::q_des_joint_7,  &Msg::q_des_joint_8,
+        &Msg::q_des_joint_9,  &Msg::q_des_joint_10, &Msg::q_des_joint_11,
+    };
 
     std::lock_guard<std::mutex> lock(state_msg_mutex_);
     telemetry_msg_.header.stamp = now();
@@ -510,6 +583,43 @@ void Go2ControlNode::fillTelemetryMessage(const Eigen::Matrix<double,4,3>& p_ref
             telemetry_msg_.*f_wbc_f[i] = f_wbc(i);
         }
     }
+
+    for (int i = 0; i < 18; i++)
+        telemetry_msg_.*q_des_f[i] = q_des(i);
+
+    // ===== 姿态诊断: 接触力合成力矩 Σ(r×f) 与摩擦锥利用率 =====
+    // r = 足端 − 机身 (世界系), 力取世界系 (z 向上, 与 MPC 模型一致)
+    // roll ≈ Σ(y·fz − z·fy), pitch ≈ Σ(z·fx − x·fz), yaw = Σ(x·fy − y·fx)
+    // 摩擦锥利用率 = |ft|/(μ·fz), >1 表示 WBC 要求的切向力超出摩擦锥 → 足端打滑
+    static const Field f_cone_f[4] = {&Msg::f_cone_fl, &Msg::f_cone_fr,
+                                      &Msg::f_cone_rl, &Msg::f_cone_rr};
+    constexpr double mu_cone = 0.5;  // 与 MPC QPConstraint 的 mu 一致
+    Eigen::Vector3d tau_mpc = Eigen::Vector3d::Zero();
+    Eigen::Vector3d tau_wbc = Eigen::Vector3d::Zero();
+    for (int leg = 0; leg < 4; leg++) {
+        Eigen::Vector3d r = p_act.row(leg).transpose() - state.position;
+        tau_mpc += r.cross(f_mpc.segment<3>(leg * 3));
+        tau_wbc += r.cross(f_wbc.segment<3>(leg * 3));
+
+        double fz = f_wbc(leg * 3 + 2);
+        double util = 0.0;
+        if (fz > 1e-6) {
+            double fx = f_wbc(leg * 3), fy = f_wbc(leg * 3 + 1);
+            util = std::sqrt(fx * fx + fy * fy) / (mu_cone * fz);
+        }
+        telemetry_msg_.*f_cone_f[leg] = util;
+    }
+    telemetry_msg_.tau_roll_mpc  = tau_mpc.x();
+    telemetry_msg_.tau_pitch_mpc = tau_mpc.y();
+    telemetry_msg_.tau_yaw_mpc   = tau_mpc.z();
+    telemetry_msg_.tau_roll_wbc  = tau_wbc.x();
+    telemetry_msg_.tau_pitch_wbc = tau_wbc.y();
+    telemetry_msg_.tau_yaw_wbc   = tau_wbc.z();
+
+    // WBC QP 解出的基座角加速度 (机体系), 供与 q_des_ang 逐段对比
+    telemetry_msg_.a_wbc_ang_x = a_wbc_ang.x();
+    telemetry_msg_.a_wbc_ang_y = a_wbc_ang.y();
+    telemetry_msg_.a_wbc_ang_z = a_wbc_ang.z();
 
     // 计划接触状态 (1=支撑, 0=摆动)
     telemetry_msg_.contact_fl = state.contact_states[0];

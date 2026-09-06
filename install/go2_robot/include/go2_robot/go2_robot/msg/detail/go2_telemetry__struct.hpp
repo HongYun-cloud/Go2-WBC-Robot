@@ -150,6 +150,37 @@ struct Go2Telemetry_
       this->body_z_v = 0.0;
       this->body_x_v_d = 0.0;
       this->body_z_v_d = 0.0;
+      this->q_des_lin_x = 0.0;
+      this->q_des_lin_y = 0.0;
+      this->q_des_lin_z = 0.0;
+      this->q_des_ang_x = 0.0;
+      this->q_des_ang_y = 0.0;
+      this->q_des_ang_z = 0.0;
+      this->q_des_joint_0 = 0.0;
+      this->q_des_joint_1 = 0.0;
+      this->q_des_joint_2 = 0.0;
+      this->q_des_joint_3 = 0.0;
+      this->q_des_joint_4 = 0.0;
+      this->q_des_joint_5 = 0.0;
+      this->q_des_joint_6 = 0.0;
+      this->q_des_joint_7 = 0.0;
+      this->q_des_joint_8 = 0.0;
+      this->q_des_joint_9 = 0.0;
+      this->q_des_joint_10 = 0.0;
+      this->q_des_joint_11 = 0.0;
+      this->tau_yaw_mpc = 0.0;
+      this->tau_yaw_wbc = 0.0;
+      this->f_cone_fl = 0.0;
+      this->f_cone_fr = 0.0;
+      this->f_cone_rl = 0.0;
+      this->f_cone_rr = 0.0;
+      this->tau_roll_mpc = 0.0;
+      this->tau_roll_wbc = 0.0;
+      this->tau_pitch_mpc = 0.0;
+      this->tau_pitch_wbc = 0.0;
+      this->a_wbc_ang_x = 0.0;
+      this->a_wbc_ang_y = 0.0;
+      this->a_wbc_ang_z = 0.0;
     }
   }
 
@@ -265,6 +296,37 @@ struct Go2Telemetry_
       this->body_z_v = 0.0;
       this->body_x_v_d = 0.0;
       this->body_z_v_d = 0.0;
+      this->q_des_lin_x = 0.0;
+      this->q_des_lin_y = 0.0;
+      this->q_des_lin_z = 0.0;
+      this->q_des_ang_x = 0.0;
+      this->q_des_ang_y = 0.0;
+      this->q_des_ang_z = 0.0;
+      this->q_des_joint_0 = 0.0;
+      this->q_des_joint_1 = 0.0;
+      this->q_des_joint_2 = 0.0;
+      this->q_des_joint_3 = 0.0;
+      this->q_des_joint_4 = 0.0;
+      this->q_des_joint_5 = 0.0;
+      this->q_des_joint_6 = 0.0;
+      this->q_des_joint_7 = 0.0;
+      this->q_des_joint_8 = 0.0;
+      this->q_des_joint_9 = 0.0;
+      this->q_des_joint_10 = 0.0;
+      this->q_des_joint_11 = 0.0;
+      this->tau_yaw_mpc = 0.0;
+      this->tau_yaw_wbc = 0.0;
+      this->f_cone_fl = 0.0;
+      this->f_cone_fr = 0.0;
+      this->f_cone_rl = 0.0;
+      this->f_cone_rr = 0.0;
+      this->tau_roll_mpc = 0.0;
+      this->tau_roll_wbc = 0.0;
+      this->tau_pitch_mpc = 0.0;
+      this->tau_pitch_wbc = 0.0;
+      this->a_wbc_ang_x = 0.0;
+      this->a_wbc_ang_y = 0.0;
+      this->a_wbc_ang_z = 0.0;
     }
   }
 
@@ -590,6 +652,99 @@ struct Go2Telemetry_
   using _body_z_v_d_type =
     double;
   _body_z_v_d_type body_z_v_d;
+  using _q_des_lin_x_type =
+    double;
+  _q_des_lin_x_type q_des_lin_x;
+  using _q_des_lin_y_type =
+    double;
+  _q_des_lin_y_type q_des_lin_y;
+  using _q_des_lin_z_type =
+    double;
+  _q_des_lin_z_type q_des_lin_z;
+  using _q_des_ang_x_type =
+    double;
+  _q_des_ang_x_type q_des_ang_x;
+  using _q_des_ang_y_type =
+    double;
+  _q_des_ang_y_type q_des_ang_y;
+  using _q_des_ang_z_type =
+    double;
+  _q_des_ang_z_type q_des_ang_z;
+  using _q_des_joint_0_type =
+    double;
+  _q_des_joint_0_type q_des_joint_0;
+  using _q_des_joint_1_type =
+    double;
+  _q_des_joint_1_type q_des_joint_1;
+  using _q_des_joint_2_type =
+    double;
+  _q_des_joint_2_type q_des_joint_2;
+  using _q_des_joint_3_type =
+    double;
+  _q_des_joint_3_type q_des_joint_3;
+  using _q_des_joint_4_type =
+    double;
+  _q_des_joint_4_type q_des_joint_4;
+  using _q_des_joint_5_type =
+    double;
+  _q_des_joint_5_type q_des_joint_5;
+  using _q_des_joint_6_type =
+    double;
+  _q_des_joint_6_type q_des_joint_6;
+  using _q_des_joint_7_type =
+    double;
+  _q_des_joint_7_type q_des_joint_7;
+  using _q_des_joint_8_type =
+    double;
+  _q_des_joint_8_type q_des_joint_8;
+  using _q_des_joint_9_type =
+    double;
+  _q_des_joint_9_type q_des_joint_9;
+  using _q_des_joint_10_type =
+    double;
+  _q_des_joint_10_type q_des_joint_10;
+  using _q_des_joint_11_type =
+    double;
+  _q_des_joint_11_type q_des_joint_11;
+  using _tau_yaw_mpc_type =
+    double;
+  _tau_yaw_mpc_type tau_yaw_mpc;
+  using _tau_yaw_wbc_type =
+    double;
+  _tau_yaw_wbc_type tau_yaw_wbc;
+  using _f_cone_fl_type =
+    double;
+  _f_cone_fl_type f_cone_fl;
+  using _f_cone_fr_type =
+    double;
+  _f_cone_fr_type f_cone_fr;
+  using _f_cone_rl_type =
+    double;
+  _f_cone_rl_type f_cone_rl;
+  using _f_cone_rr_type =
+    double;
+  _f_cone_rr_type f_cone_rr;
+  using _tau_roll_mpc_type =
+    double;
+  _tau_roll_mpc_type tau_roll_mpc;
+  using _tau_roll_wbc_type =
+    double;
+  _tau_roll_wbc_type tau_roll_wbc;
+  using _tau_pitch_mpc_type =
+    double;
+  _tau_pitch_mpc_type tau_pitch_mpc;
+  using _tau_pitch_wbc_type =
+    double;
+  _tau_pitch_wbc_type tau_pitch_wbc;
+  using _a_wbc_ang_x_type =
+    double;
+  _a_wbc_ang_x_type a_wbc_ang_x;
+  using _a_wbc_ang_y_type =
+    double;
+  _a_wbc_ang_y_type a_wbc_ang_y;
+  using _a_wbc_ang_z_type =
+    double;
+  _a_wbc_ang_z_type a_wbc_ang_z;
 
   // setters for named parameter idiom
   Type & set__header(
@@ -1234,6 +1389,192 @@ struct Go2Telemetry_
     this->body_z_v_d = _arg;
     return *this;
   }
+  Type & set__q_des_lin_x(
+    const double & _arg)
+  {
+    this->q_des_lin_x = _arg;
+    return *this;
+  }
+  Type & set__q_des_lin_y(
+    const double & _arg)
+  {
+    this->q_des_lin_y = _arg;
+    return *this;
+  }
+  Type & set__q_des_lin_z(
+    const double & _arg)
+  {
+    this->q_des_lin_z = _arg;
+    return *this;
+  }
+  Type & set__q_des_ang_x(
+    const double & _arg)
+  {
+    this->q_des_ang_x = _arg;
+    return *this;
+  }
+  Type & set__q_des_ang_y(
+    const double & _arg)
+  {
+    this->q_des_ang_y = _arg;
+    return *this;
+  }
+  Type & set__q_des_ang_z(
+    const double & _arg)
+  {
+    this->q_des_ang_z = _arg;
+    return *this;
+  }
+  Type & set__q_des_joint_0(
+    const double & _arg)
+  {
+    this->q_des_joint_0 = _arg;
+    return *this;
+  }
+  Type & set__q_des_joint_1(
+    const double & _arg)
+  {
+    this->q_des_joint_1 = _arg;
+    return *this;
+  }
+  Type & set__q_des_joint_2(
+    const double & _arg)
+  {
+    this->q_des_joint_2 = _arg;
+    return *this;
+  }
+  Type & set__q_des_joint_3(
+    const double & _arg)
+  {
+    this->q_des_joint_3 = _arg;
+    return *this;
+  }
+  Type & set__q_des_joint_4(
+    const double & _arg)
+  {
+    this->q_des_joint_4 = _arg;
+    return *this;
+  }
+  Type & set__q_des_joint_5(
+    const double & _arg)
+  {
+    this->q_des_joint_5 = _arg;
+    return *this;
+  }
+  Type & set__q_des_joint_6(
+    const double & _arg)
+  {
+    this->q_des_joint_6 = _arg;
+    return *this;
+  }
+  Type & set__q_des_joint_7(
+    const double & _arg)
+  {
+    this->q_des_joint_7 = _arg;
+    return *this;
+  }
+  Type & set__q_des_joint_8(
+    const double & _arg)
+  {
+    this->q_des_joint_8 = _arg;
+    return *this;
+  }
+  Type & set__q_des_joint_9(
+    const double & _arg)
+  {
+    this->q_des_joint_9 = _arg;
+    return *this;
+  }
+  Type & set__q_des_joint_10(
+    const double & _arg)
+  {
+    this->q_des_joint_10 = _arg;
+    return *this;
+  }
+  Type & set__q_des_joint_11(
+    const double & _arg)
+  {
+    this->q_des_joint_11 = _arg;
+    return *this;
+  }
+  Type & set__tau_yaw_mpc(
+    const double & _arg)
+  {
+    this->tau_yaw_mpc = _arg;
+    return *this;
+  }
+  Type & set__tau_yaw_wbc(
+    const double & _arg)
+  {
+    this->tau_yaw_wbc = _arg;
+    return *this;
+  }
+  Type & set__f_cone_fl(
+    const double & _arg)
+  {
+    this->f_cone_fl = _arg;
+    return *this;
+  }
+  Type & set__f_cone_fr(
+    const double & _arg)
+  {
+    this->f_cone_fr = _arg;
+    return *this;
+  }
+  Type & set__f_cone_rl(
+    const double & _arg)
+  {
+    this->f_cone_rl = _arg;
+    return *this;
+  }
+  Type & set__f_cone_rr(
+    const double & _arg)
+  {
+    this->f_cone_rr = _arg;
+    return *this;
+  }
+  Type & set__tau_roll_mpc(
+    const double & _arg)
+  {
+    this->tau_roll_mpc = _arg;
+    return *this;
+  }
+  Type & set__tau_roll_wbc(
+    const double & _arg)
+  {
+    this->tau_roll_wbc = _arg;
+    return *this;
+  }
+  Type & set__tau_pitch_mpc(
+    const double & _arg)
+  {
+    this->tau_pitch_mpc = _arg;
+    return *this;
+  }
+  Type & set__tau_pitch_wbc(
+    const double & _arg)
+  {
+    this->tau_pitch_wbc = _arg;
+    return *this;
+  }
+  Type & set__a_wbc_ang_x(
+    const double & _arg)
+  {
+    this->a_wbc_ang_x = _arg;
+    return *this;
+  }
+  Type & set__a_wbc_ang_y(
+    const double & _arg)
+  {
+    this->a_wbc_ang_y = _arg;
+    return *this;
+  }
+  Type & set__a_wbc_ang_z(
+    const double & _arg)
+  {
+    this->a_wbc_ang_z = _arg;
+    return *this;
+  }
 
   // constant declarations
 
@@ -1596,6 +1937,99 @@ struct Go2Telemetry_
       return false;
     }
     if (this->body_z_v_d != other.body_z_v_d) {
+      return false;
+    }
+    if (this->q_des_lin_x != other.q_des_lin_x) {
+      return false;
+    }
+    if (this->q_des_lin_y != other.q_des_lin_y) {
+      return false;
+    }
+    if (this->q_des_lin_z != other.q_des_lin_z) {
+      return false;
+    }
+    if (this->q_des_ang_x != other.q_des_ang_x) {
+      return false;
+    }
+    if (this->q_des_ang_y != other.q_des_ang_y) {
+      return false;
+    }
+    if (this->q_des_ang_z != other.q_des_ang_z) {
+      return false;
+    }
+    if (this->q_des_joint_0 != other.q_des_joint_0) {
+      return false;
+    }
+    if (this->q_des_joint_1 != other.q_des_joint_1) {
+      return false;
+    }
+    if (this->q_des_joint_2 != other.q_des_joint_2) {
+      return false;
+    }
+    if (this->q_des_joint_3 != other.q_des_joint_3) {
+      return false;
+    }
+    if (this->q_des_joint_4 != other.q_des_joint_4) {
+      return false;
+    }
+    if (this->q_des_joint_5 != other.q_des_joint_5) {
+      return false;
+    }
+    if (this->q_des_joint_6 != other.q_des_joint_6) {
+      return false;
+    }
+    if (this->q_des_joint_7 != other.q_des_joint_7) {
+      return false;
+    }
+    if (this->q_des_joint_8 != other.q_des_joint_8) {
+      return false;
+    }
+    if (this->q_des_joint_9 != other.q_des_joint_9) {
+      return false;
+    }
+    if (this->q_des_joint_10 != other.q_des_joint_10) {
+      return false;
+    }
+    if (this->q_des_joint_11 != other.q_des_joint_11) {
+      return false;
+    }
+    if (this->tau_yaw_mpc != other.tau_yaw_mpc) {
+      return false;
+    }
+    if (this->tau_yaw_wbc != other.tau_yaw_wbc) {
+      return false;
+    }
+    if (this->f_cone_fl != other.f_cone_fl) {
+      return false;
+    }
+    if (this->f_cone_fr != other.f_cone_fr) {
+      return false;
+    }
+    if (this->f_cone_rl != other.f_cone_rl) {
+      return false;
+    }
+    if (this->f_cone_rr != other.f_cone_rr) {
+      return false;
+    }
+    if (this->tau_roll_mpc != other.tau_roll_mpc) {
+      return false;
+    }
+    if (this->tau_roll_wbc != other.tau_roll_wbc) {
+      return false;
+    }
+    if (this->tau_pitch_mpc != other.tau_pitch_mpc) {
+      return false;
+    }
+    if (this->tau_pitch_wbc != other.tau_pitch_wbc) {
+      return false;
+    }
+    if (this->a_wbc_ang_x != other.a_wbc_ang_x) {
+      return false;
+    }
+    if (this->a_wbc_ang_y != other.a_wbc_ang_y) {
+      return false;
+    }
+    if (this->a_wbc_ang_z != other.a_wbc_ang_z) {
       return false;
     }
     return true;

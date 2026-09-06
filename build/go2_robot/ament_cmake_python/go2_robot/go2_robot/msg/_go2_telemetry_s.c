@@ -1019,6 +1019,285 @@ bool go2_robot__msg__go2_telemetry__convert_from_py(PyObject * _pymsg, void * _r
     ros_message->body_z_v_d = PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
+  {  // q_des_lin_x
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_lin_x");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_lin_x = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_lin_y
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_lin_y");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_lin_y = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_lin_z
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_lin_z");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_lin_z = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_ang_x
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_ang_x");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_ang_x = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_ang_y
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_ang_y");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_ang_y = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_ang_z
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_ang_z");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_ang_z = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_joint_0
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_joint_0");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_joint_0 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_joint_1
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_joint_1");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_joint_1 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_joint_2
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_joint_2");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_joint_2 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_joint_3
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_joint_3");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_joint_3 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_joint_4
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_joint_4");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_joint_4 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_joint_5
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_joint_5");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_joint_5 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_joint_6
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_joint_6");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_joint_6 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_joint_7
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_joint_7");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_joint_7 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_joint_8
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_joint_8");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_joint_8 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_joint_9
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_joint_9");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_joint_9 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_joint_10
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_joint_10");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_joint_10 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // q_des_joint_11
+    PyObject * field = PyObject_GetAttrString(_pymsg, "q_des_joint_11");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->q_des_joint_11 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_yaw_mpc
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_yaw_mpc");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_yaw_mpc = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_yaw_wbc
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_yaw_wbc");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_yaw_wbc = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // f_cone_fl
+    PyObject * field = PyObject_GetAttrString(_pymsg, "f_cone_fl");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->f_cone_fl = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // f_cone_fr
+    PyObject * field = PyObject_GetAttrString(_pymsg, "f_cone_fr");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->f_cone_fr = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // f_cone_rl
+    PyObject * field = PyObject_GetAttrString(_pymsg, "f_cone_rl");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->f_cone_rl = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // f_cone_rr
+    PyObject * field = PyObject_GetAttrString(_pymsg, "f_cone_rr");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->f_cone_rr = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_roll_mpc
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_roll_mpc");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_roll_mpc = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_roll_wbc
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_roll_wbc");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_roll_wbc = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_pitch_mpc
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_pitch_mpc");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_pitch_mpc = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_pitch_wbc
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_pitch_wbc");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_pitch_wbc = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // a_wbc_ang_x
+    PyObject * field = PyObject_GetAttrString(_pymsg, "a_wbc_ang_x");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->a_wbc_ang_x = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // a_wbc_ang_y
+    PyObject * field = PyObject_GetAttrString(_pymsg, "a_wbc_ang_y");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->a_wbc_ang_y = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // a_wbc_ang_z
+    PyObject * field = PyObject_GetAttrString(_pymsg, "a_wbc_ang_z");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->a_wbc_ang_z = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
 
   return true;
 }
@@ -2215,6 +2494,347 @@ PyObject * go2_robot__msg__go2_telemetry__convert_to_py(void * raw_ros_message)
     field = PyFloat_FromDouble(ros_message->body_z_v_d);
     {
       int rc = PyObject_SetAttrString(_pymessage, "body_z_v_d", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_lin_x
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_lin_x);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_lin_x", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_lin_y
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_lin_y);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_lin_y", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_lin_z
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_lin_z);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_lin_z", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_ang_x
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_ang_x);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_ang_x", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_ang_y
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_ang_y);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_ang_y", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_ang_z
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_ang_z);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_ang_z", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_joint_0
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_joint_0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_joint_0", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_joint_1
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_joint_1);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_joint_1", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_joint_2
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_joint_2);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_joint_2", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_joint_3
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_joint_3);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_joint_3", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_joint_4
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_joint_4);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_joint_4", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_joint_5
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_joint_5);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_joint_5", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_joint_6
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_joint_6);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_joint_6", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_joint_7
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_joint_7);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_joint_7", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_joint_8
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_joint_8);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_joint_8", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_joint_9
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_joint_9);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_joint_9", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_joint_10
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_joint_10);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_joint_10", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // q_des_joint_11
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->q_des_joint_11);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "q_des_joint_11", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_yaw_mpc
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_yaw_mpc);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_yaw_mpc", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_yaw_wbc
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_yaw_wbc);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_yaw_wbc", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // f_cone_fl
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->f_cone_fl);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "f_cone_fl", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // f_cone_fr
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->f_cone_fr);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "f_cone_fr", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // f_cone_rl
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->f_cone_rl);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "f_cone_rl", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // f_cone_rr
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->f_cone_rr);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "f_cone_rr", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_roll_mpc
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_roll_mpc);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_roll_mpc", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_roll_wbc
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_roll_wbc);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_roll_wbc", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_pitch_mpc
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_pitch_mpc);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_pitch_mpc", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_pitch_wbc
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_pitch_wbc);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_pitch_wbc", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // a_wbc_ang_x
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->a_wbc_ang_x);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "a_wbc_ang_x", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // a_wbc_ang_y
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->a_wbc_ang_y);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "a_wbc_ang_y", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // a_wbc_ang_z
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->a_wbc_ang_z);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "a_wbc_ang_z", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

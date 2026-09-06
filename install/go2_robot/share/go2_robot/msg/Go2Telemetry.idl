@@ -236,6 +236,76 @@ module go2_robot {
       double body_x_v_d;
 
       double body_z_v_d;
+
+      @verbatim (language="comment", text=
+        "WBC 期望加速度 q_des (computePoseAccDes 输出: 基座线3 + 角3 + 关节12)")
+      double q_des_lin_x;
+
+      double q_des_lin_y;
+
+      double q_des_lin_z;
+
+      double q_des_ang_x;
+
+      double q_des_ang_y;
+
+      double q_des_ang_z;
+
+      double q_des_joint_0;
+
+      double q_des_joint_1;
+
+      double q_des_joint_2;
+
+      double q_des_joint_3;
+
+      double q_des_joint_4;
+
+      double q_des_joint_5;
+
+      double q_des_joint_6;
+
+      double q_des_joint_7;
+
+      double q_des_joint_8;
+
+      double q_des_joint_9;
+
+      double q_des_joint_10;
+
+      double q_des_joint_11;
+
+      @verbatim (language="comment", text=
+        "诊断: 偏航力矩 Σ(x·fy − y·fx) (世界系, 足端相对机身) 与摩擦锥利用率 |ft|/(μ·fz), μ=0.5")
+      double tau_yaw_mpc;
+
+      double tau_yaw_wbc;
+
+      double f_cone_fl;
+
+      double f_cone_fr;
+
+      double f_cone_rl;
+
+      double f_cone_rr;
+
+      @verbatim (language="comment", text=
+        "诊断: roll/pitch 力矩 Σ(r × f) (世界系, 足端相对机身), 与 tau_yaw 配套")
+      double tau_roll_mpc;
+
+      double tau_roll_wbc;
+
+      double tau_pitch_mpc;
+
+      double tau_pitch_wbc;
+
+      @verbatim (language="comment", text=
+        "诊断: WBC QP 解出的基座角加速度 (机体系, sol.head(18) 第3~5维), 与 q_des_ang 对比用")
+      double a_wbc_ang_x;
+
+      double a_wbc_ang_y;
+
+      double a_wbc_ang_z;
     };
   };
 };

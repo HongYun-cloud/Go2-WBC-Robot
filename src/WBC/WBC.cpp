@@ -129,6 +129,36 @@ namespace WBC
                 qpconstraint->upper.segment<3>(row).setZero();
             }
         }
+
+        // ---- 摩擦锥约束 (行 30-49, 4腿×5行): 支撑腿 |fx|,|fy| ≤ μ·fz 且 fz ∈ [0, fz_max] ----
+        // 原本 WBC 的 QP 没有摩擦锥, 为了满足动力学项会编造物理上实现不了的接触力
+        // (切向力超出 μ·fz 或 fz<0), MuJoCo 里脚打滑/无法吸附 → QP 解出的基座加速度落不了地
+        // 系数每帧都写 (稀疏模式稳定), 只按接触状态改上下界
+        for (int leg = 0; leg < 4; leg++) {
+            int col = 18 + leg * 3;
+            int row = 30 + leg * 5;
+            double mu = qpconstraint->mu;
+
+            // |fx| ≤ μ·fz
+            qpconstraint->A(row,     col)     =  1.0;  qpconstraint->A(row,     col + 2) = -mu;
+            qpconstraint->A(row + 1, col)     = -1.0;  qpconstraint->A(row + 1, col + 2) = -mu;
+            // |fy| ≤ μ·fz
+            qpconstraint->A(row + 2, col + 1) =  1.0;  qpconstraint->A(row + 2, col + 2) = -mu;
+            qpconstraint->A(row + 3, col + 1) = -1.0;  qpconstraint->A(row + 3, col + 2) = -mu;
+            // fz
+            qpconstraint->A(row + 4, col + 2) =  1.0;
+
+            if (contact_states_[leg] == 1) {
+                qpconstraint->lower.segment<5>(row).setConstant(-1e10);
+                qpconstraint->lower(row + 4) = 0.0;
+                qpconstraint->upper.segment<5>(row).setZero();
+                qpconstraint->upper(row + 4) = qpconstraint->fz_max;
+            } else {
+                // 摆动腿 f 已被腿级等式约束钉在 0, 锥约束放开避免冲突
+                qpconstraint->lower.segment<5>(row).setConstant(-1e10);
+                qpconstraint->upper.segment<5>(row).setConstant(1e10);
+            }
+        }
     }
     
     void WBC::compuseHg(){
@@ -163,7 +193,7 @@ namespace WBC
         osqp_gradient_ = config->g;
         osqp_lower_ = qpconstraint->lower;
         osqp_upper_ = qpconstraint->upper;
-        int n_con = 30;
+        int n_con = 50;  // 18 保留 + 12 腿级 + 20 摩擦锥
         int n_var = 30;
         if (!_solver_initialized) {
             _solver.settings()->setVerbosity(false);
@@ -212,5 +242,14 @@ namespace WBC
 
     void WBC::GetSolution(SolutionVector& result){
         result = task_vec;
+    }
+
+    void WBC::GetForce(SolForce& f){
+        f = task_vec.tail(12);
+    }
+
+    void WBC::GetAcc(SolAcc& a){
+        a = task_vec.head(18);
+        // a[3] = -a[3];
     }
 } // namespace WBC

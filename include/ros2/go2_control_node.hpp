@@ -122,6 +122,7 @@ private:
     // 原循环内的功能段 (拆成私有函数便于阅读, 代码原样)
     void computeFootKinematics(RobotState& state);       // FK + 足端速度/加速度
     Eigen::Matrix<double, 12, 1> computeSwingAccDes(const RobotState& state,bool pd_open = true);  // 加速度层阻抗
+    Eigen::Matrix<double, 18, 1> computePoseAccDes(const RobotState& state, bool pd_open = true);
     void fillTelemetryMessage(const Eigen::Matrix<double,4,3>& p_ref,
                           const Eigen::Matrix<double,4,3>& p_act,
                           const Eigen::Matrix<double,4,3>& v_ref,
@@ -129,6 +130,8 @@ private:
                           const Eigen::Matrix<double,12,1>& a_des,
                           const Eigen::Matrix<double,12,1>& f_mpc,
                           const Eigen::Matrix<double,12,1>& f_wbc,
+                          const Eigen::Matrix<double,18,1>& q_des,
+                          const Eigen::Vector3d& a_wbc_ang,
                           const RobotState& state);    // Telemetry message filling
 };
 

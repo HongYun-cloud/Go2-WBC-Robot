@@ -24,13 +24,21 @@ namespace WBC
 
     using ContactJac =  Eigen::Matrix<double,18,12>;
     using SolutionVector = Eigen::Vector<double,30>;
+    using SolAcc = Eigen::Vector<double,18>;
+    using SolForce = Eigen::Vector<double,12>;
     using BounderVector = Eigen::Vector<double,30>;
+
+    // QP 约束总行数: 18(保留) + 12(腿级: 支撑不打滑/摆动 f=0) + 20(摩擦锥, 4腿×5行)
+    using QPAMat = Eigen::Matrix<double,50,30>;
+    using QPBVec = Eigen::Matrix<double,50,1>;
 
 
     struct QPConstraint {
-        Mat30d A;       // 约束矩阵
-        BounderVector lower;   // 下界 (lower bound)
-        BounderVector upper;   // 上界 (upper bound)
+        QPAMat A;       // 约束矩阵
+        QPBVec lower;   // 下界 (lower bound)
+        QPBVec upper;   // 上界 (upper bound)
+        double mu = 0.5;        // 摩擦系数 (与 MPC QPConstraint 一致)
+        double fz_max = 200.0;  // 支撑腿法向力上限 (与 MPC 一致)
     };
 
     struct CMD

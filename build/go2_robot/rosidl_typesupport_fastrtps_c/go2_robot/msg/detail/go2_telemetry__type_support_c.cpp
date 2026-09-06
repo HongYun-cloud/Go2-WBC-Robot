@@ -608,6 +608,161 @@ static bool _Go2Telemetry__cdr_serialize(
     cdr << ros_message->body_z_v_d;
   }
 
+  // Field name: q_des_lin_x
+  {
+    cdr << ros_message->q_des_lin_x;
+  }
+
+  // Field name: q_des_lin_y
+  {
+    cdr << ros_message->q_des_lin_y;
+  }
+
+  // Field name: q_des_lin_z
+  {
+    cdr << ros_message->q_des_lin_z;
+  }
+
+  // Field name: q_des_ang_x
+  {
+    cdr << ros_message->q_des_ang_x;
+  }
+
+  // Field name: q_des_ang_y
+  {
+    cdr << ros_message->q_des_ang_y;
+  }
+
+  // Field name: q_des_ang_z
+  {
+    cdr << ros_message->q_des_ang_z;
+  }
+
+  // Field name: q_des_joint_0
+  {
+    cdr << ros_message->q_des_joint_0;
+  }
+
+  // Field name: q_des_joint_1
+  {
+    cdr << ros_message->q_des_joint_1;
+  }
+
+  // Field name: q_des_joint_2
+  {
+    cdr << ros_message->q_des_joint_2;
+  }
+
+  // Field name: q_des_joint_3
+  {
+    cdr << ros_message->q_des_joint_3;
+  }
+
+  // Field name: q_des_joint_4
+  {
+    cdr << ros_message->q_des_joint_4;
+  }
+
+  // Field name: q_des_joint_5
+  {
+    cdr << ros_message->q_des_joint_5;
+  }
+
+  // Field name: q_des_joint_6
+  {
+    cdr << ros_message->q_des_joint_6;
+  }
+
+  // Field name: q_des_joint_7
+  {
+    cdr << ros_message->q_des_joint_7;
+  }
+
+  // Field name: q_des_joint_8
+  {
+    cdr << ros_message->q_des_joint_8;
+  }
+
+  // Field name: q_des_joint_9
+  {
+    cdr << ros_message->q_des_joint_9;
+  }
+
+  // Field name: q_des_joint_10
+  {
+    cdr << ros_message->q_des_joint_10;
+  }
+
+  // Field name: q_des_joint_11
+  {
+    cdr << ros_message->q_des_joint_11;
+  }
+
+  // Field name: tau_yaw_mpc
+  {
+    cdr << ros_message->tau_yaw_mpc;
+  }
+
+  // Field name: tau_yaw_wbc
+  {
+    cdr << ros_message->tau_yaw_wbc;
+  }
+
+  // Field name: f_cone_fl
+  {
+    cdr << ros_message->f_cone_fl;
+  }
+
+  // Field name: f_cone_fr
+  {
+    cdr << ros_message->f_cone_fr;
+  }
+
+  // Field name: f_cone_rl
+  {
+    cdr << ros_message->f_cone_rl;
+  }
+
+  // Field name: f_cone_rr
+  {
+    cdr << ros_message->f_cone_rr;
+  }
+
+  // Field name: tau_roll_mpc
+  {
+    cdr << ros_message->tau_roll_mpc;
+  }
+
+  // Field name: tau_roll_wbc
+  {
+    cdr << ros_message->tau_roll_wbc;
+  }
+
+  // Field name: tau_pitch_mpc
+  {
+    cdr << ros_message->tau_pitch_mpc;
+  }
+
+  // Field name: tau_pitch_wbc
+  {
+    cdr << ros_message->tau_pitch_wbc;
+  }
+
+  // Field name: a_wbc_ang_x
+  {
+    cdr << ros_message->a_wbc_ang_x;
+  }
+
+  // Field name: a_wbc_ang_y
+  {
+    cdr << ros_message->a_wbc_ang_y;
+  }
+
+  // Field name: a_wbc_ang_z
+  {
+    cdr << ros_message->a_wbc_ang_z;
+  }
+
   return true;
 }
 
@@ -1162,6 +1317,161 @@ static bool _Go2Telemetry__cdr_deserialize(
   // Field name: body_z_v_d
   {
     cdr >> ros_message->body_z_v_d;
+  }
+
+  // Field name: q_des_lin_x
+  {
+    cdr >> ros_message->q_des_lin_x;
+  }
+
+  // Field name: q_des_lin_y
+  {
+    cdr >> ros_message->q_des_lin_y;
+  }
+
+  // Field name: q_des_lin_z
+  {
+    cdr >> ros_message->q_des_lin_z;
+  }
+
+  // Field name: q_des_ang_x
+  {
+    cdr >> ros_message->q_des_ang_x;
+  }
+
+  // Field name: q_des_ang_y
+  {
+    cdr >> ros_message->q_des_ang_y;
+  }
+
+  // Field name: q_des_ang_z
+  {
+    cdr >> ros_message->q_des_ang_z;
+  }
+
+  // Field name: q_des_joint_0
+  {
+    cdr >> ros_message->q_des_joint_0;
+  }
+
+  // Field name: q_des_joint_1
+  {
+    cdr >> ros_message->q_des_joint_1;
+  }
+
+  // Field name: q_des_joint_2
+  {
+    cdr >> ros_message->q_des_joint_2;
+  }
+
+  // Field name: q_des_joint_3
+  {
+    cdr >> ros_message->q_des_joint_3;
+  }
+
+  // Field name: q_des_joint_4
+  {
+    cdr >> ros_message->q_des_joint_4;
+  }
+
+  // Field name: q_des_joint_5
+  {
+    cdr >> ros_message->q_des_joint_5;
+  }
+
+  // Field name: q_des_joint_6
+  {
+    cdr >> ros_message->q_des_joint_6;
+  }
+
+  // Field name: q_des_joint_7
+  {
+    cdr >> ros_message->q_des_joint_7;
+  }
+
+  // Field name: q_des_joint_8
+  {
+    cdr >> ros_message->q_des_joint_8;
+  }
+
+  // Field name: q_des_joint_9
+  {
+    cdr >> ros_message->q_des_joint_9;
+  }
+
+  // Field name: q_des_joint_10
+  {
+    cdr >> ros_message->q_des_joint_10;
+  }
+
+  // Field name: q_des_joint_11
+  {
+    cdr >> ros_message->q_des_joint_11;
+  }
+
+  // Field name: tau_yaw_mpc
+  {
+    cdr >> ros_message->tau_yaw_mpc;
+  }
+
+  // Field name: tau_yaw_wbc
+  {
+    cdr >> ros_message->tau_yaw_wbc;
+  }
+
+  // Field name: f_cone_fl
+  {
+    cdr >> ros_message->f_cone_fl;
+  }
+
+  // Field name: f_cone_fr
+  {
+    cdr >> ros_message->f_cone_fr;
+  }
+
+  // Field name: f_cone_rl
+  {
+    cdr >> ros_message->f_cone_rl;
+  }
+
+  // Field name: f_cone_rr
+  {
+    cdr >> ros_message->f_cone_rr;
+  }
+
+  // Field name: tau_roll_mpc
+  {
+    cdr >> ros_message->tau_roll_mpc;
+  }
+
+  // Field name: tau_roll_wbc
+  {
+    cdr >> ros_message->tau_roll_wbc;
+  }
+
+  // Field name: tau_pitch_mpc
+  {
+    cdr >> ros_message->tau_pitch_mpc;
+  }
+
+  // Field name: tau_pitch_wbc
+  {
+    cdr >> ros_message->tau_pitch_wbc;
+  }
+
+  // Field name: a_wbc_ang_x
+  {
+    cdr >> ros_message->a_wbc_ang_x;
+  }
+
+  // Field name: a_wbc_ang_y
+  {
+    cdr >> ros_message->a_wbc_ang_y;
+  }
+
+  // Field name: a_wbc_ang_z
+  {
+    cdr >> ros_message->a_wbc_ang_z;
   }
 
   return true;
@@ -1818,6 +2128,192 @@ size_t get_serialized_size_go2_robot__msg__Go2Telemetry(
   // field.name body_z_v_d
   {
     size_t item_size = sizeof(ros_message->body_z_v_d);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_lin_x
+  {
+    size_t item_size = sizeof(ros_message->q_des_lin_x);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_lin_y
+  {
+    size_t item_size = sizeof(ros_message->q_des_lin_y);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_lin_z
+  {
+    size_t item_size = sizeof(ros_message->q_des_lin_z);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_ang_x
+  {
+    size_t item_size = sizeof(ros_message->q_des_ang_x);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_ang_y
+  {
+    size_t item_size = sizeof(ros_message->q_des_ang_y);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_ang_z
+  {
+    size_t item_size = sizeof(ros_message->q_des_ang_z);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_joint_0
+  {
+    size_t item_size = sizeof(ros_message->q_des_joint_0);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_joint_1
+  {
+    size_t item_size = sizeof(ros_message->q_des_joint_1);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_joint_2
+  {
+    size_t item_size = sizeof(ros_message->q_des_joint_2);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_joint_3
+  {
+    size_t item_size = sizeof(ros_message->q_des_joint_3);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_joint_4
+  {
+    size_t item_size = sizeof(ros_message->q_des_joint_4);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_joint_5
+  {
+    size_t item_size = sizeof(ros_message->q_des_joint_5);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_joint_6
+  {
+    size_t item_size = sizeof(ros_message->q_des_joint_6);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_joint_7
+  {
+    size_t item_size = sizeof(ros_message->q_des_joint_7);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_joint_8
+  {
+    size_t item_size = sizeof(ros_message->q_des_joint_8);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_joint_9
+  {
+    size_t item_size = sizeof(ros_message->q_des_joint_9);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_joint_10
+  {
+    size_t item_size = sizeof(ros_message->q_des_joint_10);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name q_des_joint_11
+  {
+    size_t item_size = sizeof(ros_message->q_des_joint_11);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_yaw_mpc
+  {
+    size_t item_size = sizeof(ros_message->tau_yaw_mpc);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_yaw_wbc
+  {
+    size_t item_size = sizeof(ros_message->tau_yaw_wbc);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name f_cone_fl
+  {
+    size_t item_size = sizeof(ros_message->f_cone_fl);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name f_cone_fr
+  {
+    size_t item_size = sizeof(ros_message->f_cone_fr);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name f_cone_rl
+  {
+    size_t item_size = sizeof(ros_message->f_cone_rl);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name f_cone_rr
+  {
+    size_t item_size = sizeof(ros_message->f_cone_rr);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_roll_mpc
+  {
+    size_t item_size = sizeof(ros_message->tau_roll_mpc);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_roll_wbc
+  {
+    size_t item_size = sizeof(ros_message->tau_roll_wbc);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_pitch_mpc
+  {
+    size_t item_size = sizeof(ros_message->tau_pitch_mpc);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_pitch_wbc
+  {
+    size_t item_size = sizeof(ros_message->tau_pitch_wbc);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name a_wbc_ang_x
+  {
+    size_t item_size = sizeof(ros_message->a_wbc_ang_x);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name a_wbc_ang_y
+  {
+    size_t item_size = sizeof(ros_message->a_wbc_ang_y);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name a_wbc_ang_z
+  {
+    size_t item_size = sizeof(ros_message->a_wbc_ang_z);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -2717,6 +3213,254 @@ size_t max_serialized_size_go2_robot__msg__Go2Telemetry(
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
+  // member: q_des_lin_x
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_lin_y
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_lin_z
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_ang_x
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_ang_y
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_ang_z
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_joint_0
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_joint_1
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_joint_2
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_joint_3
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_joint_4
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_joint_5
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_joint_6
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_joint_7
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_joint_8
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_joint_9
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_joint_10
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: q_des_joint_11
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_yaw_mpc
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_yaw_wbc
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: f_cone_fl
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: f_cone_fr
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: f_cone_rl
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: f_cone_rr
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_roll_mpc
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_roll_wbc
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_pitch_mpc
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_pitch_wbc
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: a_wbc_ang_x
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: a_wbc_ang_y
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: a_wbc_ang_z
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
 
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
@@ -2726,7 +3470,7 @@ size_t max_serialized_size_go2_robot__msg__Go2Telemetry(
     using DataType = go2_robot__msg__Go2Telemetry;
     is_plain =
       (
-      offsetof(DataType, body_z_v_d) +
+      offsetof(DataType, a_wbc_ang_z) +
       last_member_size
       ) == ret_val;
   }

@@ -534,6 +534,153 @@ pub struct Go2Telemetry {
     #[allow(missing_docs)]
     pub body_z_v_d: f64,
 
+    /// WBC 期望加速度 q_des (computePoseAccDes 输出: 基座线3 + 角3 + 关节12)
+    pub q_des_lin_x: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_lin_y: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_lin_z: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_ang_x: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_ang_y: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_ang_z: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_joint_0: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_joint_1: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_joint_2: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_joint_3: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_joint_4: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_joint_5: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_joint_6: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_joint_7: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_joint_8: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_joint_9: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_joint_10: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub q_des_joint_11: f64,
+
+    /// 诊断: 偏航力矩 Σ(x·fy − y·fx) (世界系, 足端相对机身) 与摩擦锥利用率 |ft|/(μ·fz), μ=0.5
+    pub tau_yaw_mpc: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub tau_yaw_wbc: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub f_cone_fl: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub f_cone_fr: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub f_cone_rl: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub f_cone_rr: f64,
+
+    /// 诊断: roll/pitch 力矩 Σ(r × f) (世界系, 足端相对机身), 与 tau_yaw 配套
+    pub tau_roll_mpc: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub tau_roll_wbc: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub tau_pitch_mpc: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub tau_pitch_wbc: f64,
+
+    /// 诊断: WBC QP 解出的基座角加速度 (机体系, sol.head(18) 第3~5维), 与 q_des_ang 对比用
+    pub a_wbc_ang_x: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub a_wbc_ang_y: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub a_wbc_ang_z: f64,
+
 }
 
 
@@ -657,6 +804,37 @@ impl rosidl_runtime_rs::Message for Go2Telemetry {
         body_z_v: msg.body_z_v,
         body_x_v_d: msg.body_x_v_d,
         body_z_v_d: msg.body_z_v_d,
+        q_des_lin_x: msg.q_des_lin_x,
+        q_des_lin_y: msg.q_des_lin_y,
+        q_des_lin_z: msg.q_des_lin_z,
+        q_des_ang_x: msg.q_des_ang_x,
+        q_des_ang_y: msg.q_des_ang_y,
+        q_des_ang_z: msg.q_des_ang_z,
+        q_des_joint_0: msg.q_des_joint_0,
+        q_des_joint_1: msg.q_des_joint_1,
+        q_des_joint_2: msg.q_des_joint_2,
+        q_des_joint_3: msg.q_des_joint_3,
+        q_des_joint_4: msg.q_des_joint_4,
+        q_des_joint_5: msg.q_des_joint_5,
+        q_des_joint_6: msg.q_des_joint_6,
+        q_des_joint_7: msg.q_des_joint_7,
+        q_des_joint_8: msg.q_des_joint_8,
+        q_des_joint_9: msg.q_des_joint_9,
+        q_des_joint_10: msg.q_des_joint_10,
+        q_des_joint_11: msg.q_des_joint_11,
+        tau_yaw_mpc: msg.tau_yaw_mpc,
+        tau_yaw_wbc: msg.tau_yaw_wbc,
+        f_cone_fl: msg.f_cone_fl,
+        f_cone_fr: msg.f_cone_fr,
+        f_cone_rl: msg.f_cone_rl,
+        f_cone_rr: msg.f_cone_rr,
+        tau_roll_mpc: msg.tau_roll_mpc,
+        tau_roll_wbc: msg.tau_roll_wbc,
+        tau_pitch_mpc: msg.tau_pitch_mpc,
+        tau_pitch_wbc: msg.tau_pitch_wbc,
+        a_wbc_ang_x: msg.a_wbc_ang_x,
+        a_wbc_ang_y: msg.a_wbc_ang_y,
+        a_wbc_ang_z: msg.a_wbc_ang_z,
       }),
       std::borrow::Cow::Borrowed(msg) => std::borrow::Cow::Owned(Self::RmwMsg {
         header: std_msgs::msg::Header::into_rmw_message(std::borrow::Cow::Borrowed(&msg.header)).into_owned(),
@@ -766,6 +944,37 @@ impl rosidl_runtime_rs::Message for Go2Telemetry {
       body_z_v: msg.body_z_v,
       body_x_v_d: msg.body_x_v_d,
       body_z_v_d: msg.body_z_v_d,
+      q_des_lin_x: msg.q_des_lin_x,
+      q_des_lin_y: msg.q_des_lin_y,
+      q_des_lin_z: msg.q_des_lin_z,
+      q_des_ang_x: msg.q_des_ang_x,
+      q_des_ang_y: msg.q_des_ang_y,
+      q_des_ang_z: msg.q_des_ang_z,
+      q_des_joint_0: msg.q_des_joint_0,
+      q_des_joint_1: msg.q_des_joint_1,
+      q_des_joint_2: msg.q_des_joint_2,
+      q_des_joint_3: msg.q_des_joint_3,
+      q_des_joint_4: msg.q_des_joint_4,
+      q_des_joint_5: msg.q_des_joint_5,
+      q_des_joint_6: msg.q_des_joint_6,
+      q_des_joint_7: msg.q_des_joint_7,
+      q_des_joint_8: msg.q_des_joint_8,
+      q_des_joint_9: msg.q_des_joint_9,
+      q_des_joint_10: msg.q_des_joint_10,
+      q_des_joint_11: msg.q_des_joint_11,
+      tau_yaw_mpc: msg.tau_yaw_mpc,
+      tau_yaw_wbc: msg.tau_yaw_wbc,
+      f_cone_fl: msg.f_cone_fl,
+      f_cone_fr: msg.f_cone_fr,
+      f_cone_rl: msg.f_cone_rl,
+      f_cone_rr: msg.f_cone_rr,
+      tau_roll_mpc: msg.tau_roll_mpc,
+      tau_roll_wbc: msg.tau_roll_wbc,
+      tau_pitch_mpc: msg.tau_pitch_mpc,
+      tau_pitch_wbc: msg.tau_pitch_wbc,
+      a_wbc_ang_x: msg.a_wbc_ang_x,
+      a_wbc_ang_y: msg.a_wbc_ang_y,
+      a_wbc_ang_z: msg.a_wbc_ang_z,
       })
     }
   }
@@ -879,6 +1088,37 @@ impl rosidl_runtime_rs::Message for Go2Telemetry {
       body_z_v: msg.body_z_v,
       body_x_v_d: msg.body_x_v_d,
       body_z_v_d: msg.body_z_v_d,
+      q_des_lin_x: msg.q_des_lin_x,
+      q_des_lin_y: msg.q_des_lin_y,
+      q_des_lin_z: msg.q_des_lin_z,
+      q_des_ang_x: msg.q_des_ang_x,
+      q_des_ang_y: msg.q_des_ang_y,
+      q_des_ang_z: msg.q_des_ang_z,
+      q_des_joint_0: msg.q_des_joint_0,
+      q_des_joint_1: msg.q_des_joint_1,
+      q_des_joint_2: msg.q_des_joint_2,
+      q_des_joint_3: msg.q_des_joint_3,
+      q_des_joint_4: msg.q_des_joint_4,
+      q_des_joint_5: msg.q_des_joint_5,
+      q_des_joint_6: msg.q_des_joint_6,
+      q_des_joint_7: msg.q_des_joint_7,
+      q_des_joint_8: msg.q_des_joint_8,
+      q_des_joint_9: msg.q_des_joint_9,
+      q_des_joint_10: msg.q_des_joint_10,
+      q_des_joint_11: msg.q_des_joint_11,
+      tau_yaw_mpc: msg.tau_yaw_mpc,
+      tau_yaw_wbc: msg.tau_yaw_wbc,
+      f_cone_fl: msg.f_cone_fl,
+      f_cone_fr: msg.f_cone_fr,
+      f_cone_rl: msg.f_cone_rl,
+      f_cone_rr: msg.f_cone_rr,
+      tau_roll_mpc: msg.tau_roll_mpc,
+      tau_roll_wbc: msg.tau_roll_wbc,
+      tau_pitch_mpc: msg.tau_pitch_mpc,
+      tau_pitch_wbc: msg.tau_pitch_wbc,
+      a_wbc_ang_x: msg.a_wbc_ang_x,
+      a_wbc_ang_y: msg.a_wbc_ang_y,
+      a_wbc_ang_z: msg.a_wbc_ang_z,
     }
   }
 }

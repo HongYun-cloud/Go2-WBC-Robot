@@ -132,6 +132,37 @@ go2_robot__msg__Go2Telemetry__init(go2_robot__msg__Go2Telemetry * msg)
   // body_z_v
   // body_x_v_d
   // body_z_v_d
+  // q_des_lin_x
+  // q_des_lin_y
+  // q_des_lin_z
+  // q_des_ang_x
+  // q_des_ang_y
+  // q_des_ang_z
+  // q_des_joint_0
+  // q_des_joint_1
+  // q_des_joint_2
+  // q_des_joint_3
+  // q_des_joint_4
+  // q_des_joint_5
+  // q_des_joint_6
+  // q_des_joint_7
+  // q_des_joint_8
+  // q_des_joint_9
+  // q_des_joint_10
+  // q_des_joint_11
+  // tau_yaw_mpc
+  // tau_yaw_wbc
+  // f_cone_fl
+  // f_cone_fr
+  // f_cone_rl
+  // f_cone_rr
+  // tau_roll_mpc
+  // tau_roll_wbc
+  // tau_pitch_mpc
+  // tau_pitch_wbc
+  // a_wbc_ang_x
+  // a_wbc_ang_y
+  // a_wbc_ang_z
   return true;
 }
 
@@ -249,6 +280,37 @@ go2_robot__msg__Go2Telemetry__fini(go2_robot__msg__Go2Telemetry * msg)
   // body_z_v
   // body_x_v_d
   // body_z_v_d
+  // q_des_lin_x
+  // q_des_lin_y
+  // q_des_lin_z
+  // q_des_ang_x
+  // q_des_ang_y
+  // q_des_ang_z
+  // q_des_joint_0
+  // q_des_joint_1
+  // q_des_joint_2
+  // q_des_joint_3
+  // q_des_joint_4
+  // q_des_joint_5
+  // q_des_joint_6
+  // q_des_joint_7
+  // q_des_joint_8
+  // q_des_joint_9
+  // q_des_joint_10
+  // q_des_joint_11
+  // tau_yaw_mpc
+  // tau_yaw_wbc
+  // f_cone_fl
+  // f_cone_fr
+  // f_cone_rl
+  // f_cone_rr
+  // tau_roll_mpc
+  // tau_roll_wbc
+  // tau_pitch_mpc
+  // tau_pitch_wbc
+  // a_wbc_ang_x
+  // a_wbc_ang_y
+  // a_wbc_ang_z
 }
 
 bool
@@ -687,6 +749,130 @@ go2_robot__msg__Go2Telemetry__are_equal(const go2_robot__msg__Go2Telemetry * lhs
   if (lhs->body_z_v_d != rhs->body_z_v_d) {
     return false;
   }
+  // q_des_lin_x
+  if (lhs->q_des_lin_x != rhs->q_des_lin_x) {
+    return false;
+  }
+  // q_des_lin_y
+  if (lhs->q_des_lin_y != rhs->q_des_lin_y) {
+    return false;
+  }
+  // q_des_lin_z
+  if (lhs->q_des_lin_z != rhs->q_des_lin_z) {
+    return false;
+  }
+  // q_des_ang_x
+  if (lhs->q_des_ang_x != rhs->q_des_ang_x) {
+    return false;
+  }
+  // q_des_ang_y
+  if (lhs->q_des_ang_y != rhs->q_des_ang_y) {
+    return false;
+  }
+  // q_des_ang_z
+  if (lhs->q_des_ang_z != rhs->q_des_ang_z) {
+    return false;
+  }
+  // q_des_joint_0
+  if (lhs->q_des_joint_0 != rhs->q_des_joint_0) {
+    return false;
+  }
+  // q_des_joint_1
+  if (lhs->q_des_joint_1 != rhs->q_des_joint_1) {
+    return false;
+  }
+  // q_des_joint_2
+  if (lhs->q_des_joint_2 != rhs->q_des_joint_2) {
+    return false;
+  }
+  // q_des_joint_3
+  if (lhs->q_des_joint_3 != rhs->q_des_joint_3) {
+    return false;
+  }
+  // q_des_joint_4
+  if (lhs->q_des_joint_4 != rhs->q_des_joint_4) {
+    return false;
+  }
+  // q_des_joint_5
+  if (lhs->q_des_joint_5 != rhs->q_des_joint_5) {
+    return false;
+  }
+  // q_des_joint_6
+  if (lhs->q_des_joint_6 != rhs->q_des_joint_6) {
+    return false;
+  }
+  // q_des_joint_7
+  if (lhs->q_des_joint_7 != rhs->q_des_joint_7) {
+    return false;
+  }
+  // q_des_joint_8
+  if (lhs->q_des_joint_8 != rhs->q_des_joint_8) {
+    return false;
+  }
+  // q_des_joint_9
+  if (lhs->q_des_joint_9 != rhs->q_des_joint_9) {
+    return false;
+  }
+  // q_des_joint_10
+  if (lhs->q_des_joint_10 != rhs->q_des_joint_10) {
+    return false;
+  }
+  // q_des_joint_11
+  if (lhs->q_des_joint_11 != rhs->q_des_joint_11) {
+    return false;
+  }
+  // tau_yaw_mpc
+  if (lhs->tau_yaw_mpc != rhs->tau_yaw_mpc) {
+    return false;
+  }
+  // tau_yaw_wbc
+  if (lhs->tau_yaw_wbc != rhs->tau_yaw_wbc) {
+    return false;
+  }
+  // f_cone_fl
+  if (lhs->f_cone_fl != rhs->f_cone_fl) {
+    return false;
+  }
+  // f_cone_fr
+  if (lhs->f_cone_fr != rhs->f_cone_fr) {
+    return false;
+  }
+  // f_cone_rl
+  if (lhs->f_cone_rl != rhs->f_cone_rl) {
+    return false;
+  }
+  // f_cone_rr
+  if (lhs->f_cone_rr != rhs->f_cone_rr) {
+    return false;
+  }
+  // tau_roll_mpc
+  if (lhs->tau_roll_mpc != rhs->tau_roll_mpc) {
+    return false;
+  }
+  // tau_roll_wbc
+  if (lhs->tau_roll_wbc != rhs->tau_roll_wbc) {
+    return false;
+  }
+  // tau_pitch_mpc
+  if (lhs->tau_pitch_mpc != rhs->tau_pitch_mpc) {
+    return false;
+  }
+  // tau_pitch_wbc
+  if (lhs->tau_pitch_wbc != rhs->tau_pitch_wbc) {
+    return false;
+  }
+  // a_wbc_ang_x
+  if (lhs->a_wbc_ang_x != rhs->a_wbc_ang_x) {
+    return false;
+  }
+  // a_wbc_ang_y
+  if (lhs->a_wbc_ang_y != rhs->a_wbc_ang_y) {
+    return false;
+  }
+  // a_wbc_ang_z
+  if (lhs->a_wbc_ang_z != rhs->a_wbc_ang_z) {
+    return false;
+  }
   return true;
 }
 
@@ -916,6 +1102,68 @@ go2_robot__msg__Go2Telemetry__copy(
   output->body_x_v_d = input->body_x_v_d;
   // body_z_v_d
   output->body_z_v_d = input->body_z_v_d;
+  // q_des_lin_x
+  output->q_des_lin_x = input->q_des_lin_x;
+  // q_des_lin_y
+  output->q_des_lin_y = input->q_des_lin_y;
+  // q_des_lin_z
+  output->q_des_lin_z = input->q_des_lin_z;
+  // q_des_ang_x
+  output->q_des_ang_x = input->q_des_ang_x;
+  // q_des_ang_y
+  output->q_des_ang_y = input->q_des_ang_y;
+  // q_des_ang_z
+  output->q_des_ang_z = input->q_des_ang_z;
+  // q_des_joint_0
+  output->q_des_joint_0 = input->q_des_joint_0;
+  // q_des_joint_1
+  output->q_des_joint_1 = input->q_des_joint_1;
+  // q_des_joint_2
+  output->q_des_joint_2 = input->q_des_joint_2;
+  // q_des_joint_3
+  output->q_des_joint_3 = input->q_des_joint_3;
+  // q_des_joint_4
+  output->q_des_joint_4 = input->q_des_joint_4;
+  // q_des_joint_5
+  output->q_des_joint_5 = input->q_des_joint_5;
+  // q_des_joint_6
+  output->q_des_joint_6 = input->q_des_joint_6;
+  // q_des_joint_7
+  output->q_des_joint_7 = input->q_des_joint_7;
+  // q_des_joint_8
+  output->q_des_joint_8 = input->q_des_joint_8;
+  // q_des_joint_9
+  output->q_des_joint_9 = input->q_des_joint_9;
+  // q_des_joint_10
+  output->q_des_joint_10 = input->q_des_joint_10;
+  // q_des_joint_11
+  output->q_des_joint_11 = input->q_des_joint_11;
+  // tau_yaw_mpc
+  output->tau_yaw_mpc = input->tau_yaw_mpc;
+  // tau_yaw_wbc
+  output->tau_yaw_wbc = input->tau_yaw_wbc;
+  // f_cone_fl
+  output->f_cone_fl = input->f_cone_fl;
+  // f_cone_fr
+  output->f_cone_fr = input->f_cone_fr;
+  // f_cone_rl
+  output->f_cone_rl = input->f_cone_rl;
+  // f_cone_rr
+  output->f_cone_rr = input->f_cone_rr;
+  // tau_roll_mpc
+  output->tau_roll_mpc = input->tau_roll_mpc;
+  // tau_roll_wbc
+  output->tau_roll_wbc = input->tau_roll_wbc;
+  // tau_pitch_mpc
+  output->tau_pitch_mpc = input->tau_pitch_mpc;
+  // tau_pitch_wbc
+  output->tau_pitch_wbc = input->tau_pitch_wbc;
+  // a_wbc_ang_x
+  output->a_wbc_ang_x = input->a_wbc_ang_x;
+  // a_wbc_ang_y
+  output->a_wbc_ang_y = input->a_wbc_ang_y;
+  // a_wbc_ang_z
+  output->a_wbc_ang_z = input->a_wbc_ang_z;
   return true;
 }
 

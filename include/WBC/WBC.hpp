@@ -42,6 +42,8 @@ namespace WBC
         void solve();
         void update(Vec18d& q,Vec12d& f,Vec12d& a,RobotState state);
         void GetSolution(SolutionVector& result);
+        void GetForce(SolForce& f);
+        void GetAcc(SolAcc& a);
         /** 从 yaml 加载 W, FI, C 权重 */
         void loadConfig(const std::string& yaml_path);
         /** 设置 Pinocchio 运动学指针 (必须在 init 之前调用) */
