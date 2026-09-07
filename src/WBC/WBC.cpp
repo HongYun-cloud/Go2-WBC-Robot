@@ -33,10 +33,10 @@ namespace WBC
                 config->FI(i, i) = wbc["FI"][i].as<double>();
         }
 
-        // 读取 C (30 维对角向量 → 30×30)
-        if (wbc["C"] && wbc["C"].size() == 30) {
+        // 读取 C (12 维对角向量 → 12×12)
+        if (wbc["C"] && wbc["C"].size() == 12) {
             config->C.setZero();
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 12; i++)
                 config->C(i, i) = wbc["C"][i].as<double>();
         }
 
@@ -72,7 +72,8 @@ namespace WBC
         _pin->computeFloatingBaseDynamics();
 
         // 遍历 4 条腿，摆动腿 (contact_states[leg]==0) 做足端轨迹跟踪
-        int row = 0;
+        contact_num = 0;
+        
         for (int leg = 0; leg < 4; leg++) {
             if (state.contact_states[leg] == 1) continue;  // 支撑腿跳过
 
@@ -81,21 +82,11 @@ namespace WBC
             Eigen::Matrix<double, 3, 18> dJ = _pin->getFootJacobianTimeVariationFloatingBase(leg);
 
             // A_a: 前18维的摆动腿J
-            config->A_a.block<3, 18>(row * 3, 0) = J;
+            config->A_a.block<3, 18>(contact_num * 3, 0) = J;
             // b_a: 摆动腿加速度跟踪 a_d - d（J*q）
-            config->b_a.segment<3>(row * 3) = cmd.a_d.segment<3>(leg * 3) - dJ * v_full_;
-            row++;
+            config->b_a.segment<3>(contact_num * 3) = cmd.a_d.segment<3>(leg * 3) - dJ * v_full_;
+            contact_num++;
         }
-
-        // ---- 动力学软约束 (行 12-29): M*a - J^T*f + h ≈ 0 ----
-        auto M = _pin->getMassMatrix();       // 18×18
-        auto h = _pin->getBiasForces();       // 18×1
-        config->A_a.block<18, 18>(12, 0) = M;
-        for (int leg = 0; leg < 4; leg++) {
-            Eigen::Matrix<double, 3, 18> J = _pin->getFootJacobianFloatingBase(leg);
-            config->A_a.block<18, 3>(12, 18 + leg * 3) = -J.transpose();
-        }
-        config->b_a.segment<18>(12) = -h;
 
         updateconstraint();
         compuseHg();
@@ -117,24 +108,23 @@ namespace WBC
             Eigen::Matrix<double, 3, 18> J  = _pin->getFootJacobianFloatingBase(leg);
             Jc.block<3,18>(leg * 3,0) = J;
         }
-        // 第一个约束 动力学方程
+        // 第一个 等式约束 动力学方程
         {
         Eigen::Matrix<double, 6, 30> A_dyn;
         Eigen::Matrix<double, 6, 1> b_dyn;
         A_dyn.block<6, 18>(0, 0)  = M.topRows<6>();               // 前 18 列
-        A_dyn.block<18, 12>(0, 18) = -Jc.transpose();  // 最后 12 列
+        A_dyn.block<6, 12>(0, 18) = -Jc.leftCols<6>().transpose();    // Jc的前6列
         b_dyn = -h.head(6);
         qpconstraint->A.block<6, 30>(0, 0) = A_dyn;
         qpconstraint->lower.segment<6>(0) = b_dyn;
         qpconstraint->upper.segment<6>(0) = b_dyn;
         }
-
-        // ---- 腿级约束 (行 18-29): 支撑腿接触 / 摆动腿力为零 ----
+        
+        
         for (int leg = 0; leg < 4; leg++) {
             int row = 18 + leg * 3;
             int col_f = 18 + leg * 3;
-
-            // 第二个约束 接触足端无滑动
+            // 第二个 等式约束 接触足端无滑动
             if (contact_states_[leg] == 1) {
                 // 支撑腿: J_leg * a = -dJ_leg * v  (足端无滑动)
                 Eigen::Matrix<double, 3, 18> J  = _pin->getFootJacobianFloatingBase(leg);
@@ -144,15 +134,14 @@ namespace WBC
                 qpconstraint->lower.segment<3>(row) = rhs;
                 qpconstraint->upper.segment<3>(row) = rhs;
             } else {
-                // 第三个约束 摆动腿: f_leg = 0  (无地面接触力)
+                // 第三个 等式约束 摆动腿: f_leg = 0  (无地面接触力)
                 qpconstraint->A.block<3, 3>(row, col_f).setIdentity();
                 qpconstraint->lower.segment<3>(row).setZero();
                 qpconstraint->upper.segment<3>(row).setZero();
             }  
         }
 
-        // 第四个约束 摩擦锥约束 (行 30-49, 4腿×5行): 支撑腿 |fx|,|fy| ≤ μ·fz 且 fz ∈ [0, fz_max] ----
-        
+        // 第四个 不等式约束 摩擦锥约束 (行 30-49, 4腿×5行): 支撑腿 |fx|,|fy| ≤ μ·fz 且 fz ∈ [0, fz_max] ----
         for (int leg = 0; leg < 4; leg++) {
             int col = 18 + leg * 3;
             int row = 30 + leg * 5;
@@ -179,6 +168,9 @@ namespace WBC
             }
         }
 
+        // 第五个 不等式约束 力上限约束
+
+
         
     }
     
@@ -186,21 +178,42 @@ namespace WBC
         Mat30d H;
         Vec30d g;
 
-        auto H1 = config->A_q.transpose() * config->W  * config->A_q;
-        auto H2 = config->A_f.transpose() * config->FI * config->A_f;
-        auto H3 = config->A_a.transpose() * config->C  * config->A_a;
+        Mat30d H1 = config->A_q.transpose() * config->W  * config->A_q;
+        Mat30d H2 = config->A_f.transpose() * config->FI * config->A_f;
+        Mat30d H3 = config->A_a.transpose() * config->C  * config->A_a;
 
-        auto g1 = config->A_q.transpose() * config->W  * config->b_q;
-        auto g2 = config->A_f.transpose() * config->FI * config->b_f;
-        auto g3 = config->A_a.transpose() * config->C  * config->b_a;
+        Vec30d g1 = config->A_q.transpose() * config->W  * config->b_q;
+        Vec30d g2 = config->A_f.transpose() * config->FI * config->b_f;
+        Vec30d g3 = config->A_a.transpose() * config->C  * config->b_a;
+
+        // if (contact_num > 0) {
+        //     auto A_valid = config->A_a.topRows(row * 3); // 比如只有 2 条腿摆动，只取前 6 行
+        //     auto b_valid = config->b_a.head(row * 3);
+        //     auto C_valid = config->C.block(0, 0, row * 3, row * 3);
+
+        //     H3 = A_valid.transpose() * C_valid * A_valid;
+        //     g3 = A_valid.transpose() * C_valid * b_valid;
+        // } else {
+        //     // 4 条腿全站立，没有摆动腿任务
+        //     H3.setZero();
+        //     g3.setZero();
+        // }
+        
 
         H = H1 + H2 + H3;
         g = g1 + g2 + g3;
+        // double lambda = 1e-6;
+        // H.diagonal().array() += lambda;
 
-        double lambda = 1e-6;
-        H.diagonal().array() += lambda;
+
+        // H = H1;
+        // g = g1;
+        H.diagonal().segment<6>(0).array()   += 1e-4; // Base 加速度
+        H.diagonal().segment<12>(6).array()  += 1e-4; // 12 关节加速度 (防止关节狂甩)
+        H.diagonal().segment<12>(18).array() += 1e-3; // 12 接触力 (防止足端内力对抗)
         
-        config->H=  2 * H;
+
+        config->H= 2 * H;
         config->g= -2 * g;
 
     }
@@ -225,6 +238,7 @@ namespace WBC
             _solver.data()->setLinearConstraintsMatrix(A_sparse);
             _solver.data()->setLowerBound(osqp_lower_);
             _solver.data()->setUpperBound(osqp_upper_);
+            // solver.setVariableBounds(x_min, x_max);
             if (!_solver.initSolver()) {
                 std::cerr << "[WBC] OSQP 初始化失败 (H 非正定/KKT 非凸?), 本帧不求解" << std::endl;
                 _solver_initialized = false;

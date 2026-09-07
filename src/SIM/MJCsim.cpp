@@ -275,6 +275,7 @@ RobotState MJCSIM::SIM::getState(){
     for (int i = 0; i < 4; i++) {
         s.contact_states[i] = (d->sensordata[touch_id_[i]] > 0.0) ? 1 : 0;
     }
+    // s.angular_vel.setZero(); 
     return s;
 }
 

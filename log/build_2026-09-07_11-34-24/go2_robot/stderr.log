@@ -1,0 +1,14 @@
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:[m[K In member function ‘[01m[Kvoid WBC::WBC::solve()[m[K’:
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:236:13:[m[K [01;31m[Kerror: [m[K‘[01m[Ksolver[m[K’ was not declared in this scope; did you mean ‘[01m[K_solver[m[K’?
+  236 |             [01;31m[Ksolver[m[K.setVariableBounds(x_min, x_max);
+      |             [01;31m[K^~~~~~[m[K
+      |             [32m[K_solver[m[K
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:236:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kx_min[m[K’ was not declared in this scope
+  236 |             solver.setVariableBounds([01;31m[Kx_min[m[K, x_max);
+      |                                      [01;31m[K^~~~~[m[K
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:236:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kx_max[m[K’ was not declared in this scope
+  236 |             solver.setVariableBounds(x_min, [01;31m[Kx_max[m[K);
+      |                                             [01;31m[K^~~~~[m[K
+gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:118：CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:265：CMakeFiles/go2_core.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

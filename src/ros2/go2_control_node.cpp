@@ -216,7 +216,10 @@ void Go2ControlNode::mpcSolveLoop()
 // ============================================================
 
 void Go2ControlNode::wbcControlLoop()
-{
+{   
+    // for (int leg = 0; leg<4; leg++)
+    //     std::cout << "Footposition:" << leg << pin->getFootPositionInBase(leg) << std::endl;
+    
     // ===== 指令来源: /cmd_vel 替代原键盘 w/s =====
     {
         std::lock_guard<std::mutex> lk(cmd_mutex_);
@@ -230,6 +233,10 @@ void Go2ControlNode::wbcControlLoop()
     // ===== 计划接触 (步态相位): 摆动/支撑划分不能用实测接触 =====
     // 静止时四足全着地 → 实测接触全 1 → 摆动任务永远不触发 (死锁: 脚不抬就永远"支撑")
     // 覆写 state.contact_states 为计划接触, 后续 estimator/MPC/PD/WBC 全部按计划划分
+
+    // DEBUG: 设置强行全接触
+    // std::fill(state.contact_states.begin(), state.contact_states.end(), true);
+
     for (int leg = 0; leg < 4; leg++)
         state.contact_states[leg] = (scheduler->GetSwingPhases(leg) <= 0) ? 1 : 0;
 
@@ -291,7 +298,7 @@ void Go2ControlNode::wbcControlLoop()
     have_prev_v = true;
 
     Eigen::Matrix<double, 12, 1> a_des = computeSwingAccDes(state,true);
-
+    // std::cout << "a_des_z: " << a_des[2] << std::endl;
     wbc->update(q_des, f_mpc, a_des, state);
     wbc->solve();
 
@@ -382,23 +389,28 @@ Eigen::Matrix<double, 18, 1> Go2ControlNode::computePoseAccDes(
         Eigen::Vector3d e_v = v_des - est.v;
         a_lin = Kp_lin.cwiseProduct(e_p_z) + Kd_lin.cwiseProduct(e_v);
 
-        // 角加速度: rpy 位置 PD + 角速度 PD, 全在世界系计算, 末尾转机体系
-        // WBC QP 的基座角加速度是 Pinocchio free-flyer 机体系量, 而 rpy 误差是世界系;
-        // yaw 漂移时两系的 roll/pitch 轴不重合, 不转系则纠偏力矩方向歪 (表现为 roll 越纠越偏)
-        // 增益正值量级: 坐标系 bug 已修 (输出已转机体系), 无需负号补偿;
-        // 配合 FI=10 / C动力学=100, PD 输出已能传导到接触力
-        Eigen::Vector3d Kp_ang(10.0, 10.0, 10.0);
-        Eigen::Vector3d Kd_ang(1.0, 1.0, 2.0);
-        // 机体系角速度 → 世界系 (MuJoCo free joint 角速度是机体系)
-        Eigen::Matrix3d R =
-        (Eigen::AngleAxisd(est.q(2), Eigen::Vector3d::UnitZ()) *
-        Eigen::AngleAxisd(est.q(1), Eigen::Vector3d::UnitY()) *
-        Eigen::AngleAxisd(est.q(0), Eigen::Vector3d::UnitX())).toRotationMatrix();
+        // 目标姿态都是世界系
+        Eigen::Matrix3d R_des = (Eigen::AngleAxisd(rpy_des(2), Eigen::Vector3d::UnitZ()) *
+                         Eigen::AngleAxisd(rpy_des(1), Eigen::Vector3d::UnitY()) *
+                         Eigen::AngleAxisd(rpy_des(0), Eigen::Vector3d::UnitX())).toRotationMatrix();
+
+        Eigen::Matrix3d R_cur = (Eigen::AngleAxisd(est.q(2), Eigen::Vector3d::UnitZ()) *
+                         Eigen::AngleAxisd(est.q(1), Eigen::Vector3d::UnitY()) *
+                         Eigen::AngleAxisd(est.q(0), Eigen::Vector3d::UnitX())).toRotationMatrix();    
+        Eigen::Matrix3d R_err = R_cur.transpose() * R_des;
+        Eigen::Vector3d e_rpy;
+        e_rpy << 0.5 * (R_err(2, 1) - R_err(1, 2)),  // 机身系 Roll 轴需要扭多少度
+                0.5 * (R_err(0, 2) - R_err(2, 0)),  // 机身系 Pitch 轴需要抬头多少度
+                0.5 * (R_err(1, 0) - R_err(0, 1));  // 机身系 Yaw 轴需要转多少度   
+                
+        Eigen::Vector3d e_w = w_des - est.w; 
         
-        Eigen::Vector3d e_rpy = R.transpose() * (rpy_des - est.q);
-        Eigen::Vector3d e_w = w_des - est.w;
-        a_ang = Kp_ang.cwiseProduct(e_rpy) + Kd_ang.cwiseProduct(e_w);  // 机身系
-        a_ang = R.transpose() * a_ang;  // 世界系 → 机体系喂 WBC (忽略 ω×ω 小量)
+        Eigen::Vector3d Kp_ang(150.0, 100.0, 100.0);
+        Eigen::Vector3d Kd_ang(20.0, 20.0, 20.0);
+        Eigen::Vector3d a_ang_ref;
+        a_ang_ref.setZero();
+        a_ang = a_ang_ref + Kp_ang.cwiseProduct(e_rpy) + Kd_ang.cwiseProduct(e_w);
+        a_ang = -a_ang;
     }
 
     // 关节加速度: 暂无期望关节位置/速度参考 → 前馈直通。
@@ -446,8 +458,8 @@ Eigen::Matrix<double, 12, 1> Go2ControlNode::computeSwingAccDes(const RobotState
 
             Eigen::Vector3d e_p = p_ref.row(leg).transpose() - p_act.row(leg).transpose();
             Eigen::Vector3d e_v = v_ref.row(leg).transpose() - v_foot_act.segment<3>(leg * 3);
-            Eigen::Vector3d Kp_vec(50, 300, 1000);
-            Eigen::Vector3d Kd_vec(2, 10, 20);
+            Eigen::Vector3d Kp_vec(400, 300, 300);
+            Eigen::Vector3d Kd_vec(50, 50, 50);
             // 速度误差只取足端实际速度 (不缩放 v_ref), 避免摆动入地时阻抗主动对抗足端运动
             // blend 用于起落阶段平滑衰减阻抗, 避免接地瞬间冲击
             a_des.segment<3>(leg * 3) += blend * (Kp_vec.cwiseProduct(e_p) + Kd_vec.cwiseProduct(e_v));

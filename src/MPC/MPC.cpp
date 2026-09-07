@@ -110,7 +110,7 @@ namespace Regulator{
                         contact_expanded[j * 4 + i] = cs[i];
             }
         }
-        // DEBUG 全接触查看期望位置加速度波形
+        // DEBUG: 全接触查看期望位置加速度波形
         // std::fill(contact_expanded.begin(), contact_expanded.end(), 1);
         
         _qpconstraint->updateConstraints(contact_expanded);

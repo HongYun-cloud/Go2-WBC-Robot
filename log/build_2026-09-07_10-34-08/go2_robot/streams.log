@@ -1,0 +1,38 @@
+[0.008s] Invoking command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24
+[0.061s] [  6%] Built target go2_robot__rosidl_generator_c
+[0.061s] [  8%] Built target go2_robot__cpp
+[0.061s] [ 10%] Built target go2_robot__rs
+[0.069s] [ 10%] Built target ament_cmake_python_copy_go2_robot
+[0.071s] [ 20%] Built target OsqpEigen
+[0.083s] [ 26%] Built target go2_robot__rosidl_typesupport_c
+[0.084s] [ 32%] Built target go2_robot__rosidl_typesupport_introspection_cpp
+[0.086s] [ 38%] Built target go2_robot__rosidl_typesupport_introspection_c
+[0.086s] [ 44%] Built target go2_robot__rosidl_typesupport_cpp
+[0.088s] [ 51%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp
+[0.089s] [ 57%] Built target go2_robot__rosidl_typesupport_fastrtps_c
+[0.092s] [35m[1mConsolidate compiler generated dependencies of target go2_core[0m
+[0.107s] [ 57%] Built target go2_robot
+[0.124s] [ 59%] Built target go2_robot__py
+[0.130s] [ 61%] [32mBuilding CXX object CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o[0m
+[0.141s] [ 65%] Built target go2_robot__rosidl_generator_py
+[0.161s] [ 73%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext
+[0.162s] [ 73%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext
+[0.162s] [ 77%] Built target go2_robot__rosidl_typesupport_c__pyext
+[0.222s] running egg_info
+[0.222s] writing go2_robot.egg-info/PKG-INFO
+[0.222s] writing dependency_links to go2_robot.egg-info/dependency_links.txt
+[0.222s] writing top-level names to go2_robot.egg-info/top_level.txt
+[0.224s] reading manifest file 'go2_robot.egg-info/SOURCES.txt'
+[0.224s] writing manifest file 'go2_robot.egg-info/SOURCES.txt'
+[0.241s] [ 77%] Built target ament_cmake_python_build_go2_robot_egg
+[7.294s] [ 79%] [32m[1mLinking CXX static library libgo2_core.a[0m
+[7.349s] [ 93%] Built target go2_core
+[7.397s] [ 95%] [32mBuilding CXX object CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o[0m
+[12.201s] [01m[K/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:[m[K In member function ‘[01m[Kvoid go2::Go2ControlNode::wbcControlLoop()[m[K’:
+[12.201s] [01m[K/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:235:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontact_states[m[K’ was not declared in this scope
+[12.201s]   235 |     std::fill(state.contact_states.begin(), [01;31m[Kcontact_states[m[K.end(), true);
+[12.202s]       |                                             [01;31m[K^~~~~~~~~~~~~~[m[K
+[15.842s] gmake[2]: *** [CMakeFiles/go2_control_node.dir/build.make:76：CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o] 错误 1
+[15.842s] gmake[1]: *** [CMakeFiles/Makefile2:294：CMakeFiles/go2_control_node.dir/all] 错误 2
+[15.843s] gmake: *** [Makefile:146：all] 错误 2
+[15.847s] Invoked command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24

@@ -1,0 +1,36 @@
+[  6%] Built target go2_robot__rosidl_generator_c
+[  8%] Built target go2_robot__cpp
+[ 10%] Built target go2_robot__rs
+[ 10%] Built target ament_cmake_python_copy_go2_robot
+[ 20%] Built target OsqpEigen
+[ 26%] Built target go2_robot__rosidl_typesupport_c
+[ 32%] Built target go2_robot__rosidl_typesupport_introspection_cpp
+[ 38%] Built target go2_robot__rosidl_typesupport_introspection_c
+[ 44%] Built target go2_robot__rosidl_typesupport_cpp
+[ 51%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp
+[ 57%] Built target go2_robot__rosidl_typesupport_fastrtps_c
+[35m[1mConsolidate compiler generated dependencies of target go2_core[0m
+[ 57%] Built target go2_robot
+[ 59%] Built target go2_robot__py
+[ 61%] [32mBuilding CXX object CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o[0m
+[ 65%] Built target go2_robot__rosidl_generator_py
+[ 73%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext
+[ 73%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext
+[ 77%] Built target go2_robot__rosidl_typesupport_c__pyext
+running egg_info
+writing go2_robot.egg-info/PKG-INFO
+writing dependency_links to go2_robot.egg-info/dependency_links.txt
+writing top-level names to go2_robot.egg-info/top_level.txt
+reading manifest file 'go2_robot.egg-info/SOURCES.txt'
+writing manifest file 'go2_robot.egg-info/SOURCES.txt'
+[ 77%] Built target ament_cmake_python_build_go2_robot_egg
+[ 79%] [32m[1mLinking CXX static library libgo2_core.a[0m
+[ 93%] Built target go2_core
+[ 95%] [32mBuilding CXX object CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o[0m
+[01m[K/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:[m[K In member function ‘[01m[Kvoid go2::Go2ControlNode::wbcControlLoop()[m[K’:
+[01m[K/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:235:45:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontact_states[m[K’ was not declared in this scope
+  235 |     std::fill(state.contact_states.begin(), [01;31m[Kcontact_states[m[K.end(), true);
+      |                                             [01;31m[K^~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/go2_control_node.dir/build.make:76：CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:294：CMakeFiles/go2_control_node.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

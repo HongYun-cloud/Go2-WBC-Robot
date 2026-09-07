@@ -14,8 +14,8 @@ namespace WBC
     using WB = Eigen::Vector<double,18>;
     using BA = Eigen::Matrix<double,12,30>;   // f 跟踪: 12 行 = 4 腿 × 3 维力
     using BB = Eigen::Vector<double,12>;
-    using CA = Eigen::Matrix<double,30,30>;   // 摆动腿足端跟踪(行0-11) + 动力学软约束(行12-29)
-    using CB = Eigen::Vector<double,30>;      // 摆动腿 12 维 + 动力学 18 维
+    using CA = Eigen::Matrix<double,12,30>;   // 摆动腿足端跟踪(行0-11) 
+    using CB = Eigen::Vector<double,12>;      // 摆动腿 12 维 
 
     using Vec30d = Eigen::Vector<double,30>;
     using Vec18d = Eigen::Vector<double,18>;
@@ -62,7 +62,7 @@ namespace WBC
 
         Mat18d W;   // 跟踪关节加速度 (18×18)
         Mat12d FI;  // 跟踪 MPC 算出的力 (12×12)
-        Mat30d C;   // 摆动腿足端跟踪(12) + 动力学软约束(18) (30×30)
+        Mat12d C;   // 摆动腿足端跟踪(12)
         WBCConfig(){
             A_q.setZero();
             b_q.setZero();

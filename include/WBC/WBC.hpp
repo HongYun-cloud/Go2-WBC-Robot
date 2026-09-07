@@ -34,6 +34,7 @@ namespace WBC
         Eigen::VectorXd osqp_gradient_;
         Eigen::VectorXd osqp_lower_;
         Eigen::VectorXd osqp_upper_;
+        int contact_num = 0;
         void compuseHg();
         void updateconstraint();
     public:
