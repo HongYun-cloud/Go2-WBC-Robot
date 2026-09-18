@@ -405,7 +405,7 @@ Eigen::Matrix<double, 18, 1> Go2ControlNode::computePoseAccDes(
                 
         Eigen::Vector3d e_w = w_des - est.w; 
         
-        Eigen::Vector3d Kp_ang(150.0, 100.0, 100.0);
+        Eigen::Vector3d Kp_ang(500.0, 100.0, 100.0);
         Eigen::Vector3d Kd_ang(20.0, 20.0, 20.0);
         Eigen::Vector3d a_ang_ref;
         a_ang_ref.setZero();
@@ -458,8 +458,8 @@ Eigen::Matrix<double, 12, 1> Go2ControlNode::computeSwingAccDes(const RobotState
 
             Eigen::Vector3d e_p = p_ref.row(leg).transpose() - p_act.row(leg).transpose();
             Eigen::Vector3d e_v = v_ref.row(leg).transpose() - v_foot_act.segment<3>(leg * 3);
-            Eigen::Vector3d Kp_vec(400, 300, 300);
-            Eigen::Vector3d Kd_vec(50, 50, 50);
+            Eigen::Vector3d Kp_vec(400, 300, 500);
+            Eigen::Vector3d Kd_vec(50, 50, 1);
             // 速度误差只取足端实际速度 (不缩放 v_ref), 避免摆动入地时阻抗主动对抗足端运动
             // blend 用于起落阶段平滑衰减阻抗, 避免接地瞬间冲击
             a_des.segment<3>(leg * 3) += blend * (Kp_vec.cwiseProduct(e_p) + Kd_vec.cwiseProduct(e_v));

@@ -1,7 +1,0 @@
-[01m[K/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:[m[K In member function ‘[01m[Kvoid go2::Go2ControlNode::wbcControlLoop()[m[K’:
-[01m[K/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:300:71:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K.[m[K’ token
-  300 |     Eigen::Matrix<double, 18, 1> test_a = Eigen::Matrix<double, 18, 1>[01;31m[K.[m[KsetZero();
-      |                                                                       [01;31m[K^[m[K
-gmake[2]: *** [CMakeFiles/go2_control_node.dir/build.make:76：CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o] 错误 1
-gmake[1]: *** [CMakeFiles/Makefile2:294：CMakeFiles/go2_control_node.dir/all] 错误 2
-gmake: *** [Makefile:146：all] 错误 2

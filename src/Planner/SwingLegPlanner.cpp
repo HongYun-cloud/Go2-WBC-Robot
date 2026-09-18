@@ -87,9 +87,6 @@ void SwingLegPlanner::Generate(Velocity& v_des,std::function<double(size_t)> pha
 
     // phase_func(leg) 返回腿 leg 的摆动相位 [0, 1)
     // 支撑期返回 0, 摆动期 (0, 1)
-
-
-
     double T_stance = _scheduler->GetStanceTime();
     double T_swing  = _scheduler->GetSwingTime();
     // 自适应步高: z 为分段 min-jerk (前 0.5T 上升, 后 0.5T 下降),
