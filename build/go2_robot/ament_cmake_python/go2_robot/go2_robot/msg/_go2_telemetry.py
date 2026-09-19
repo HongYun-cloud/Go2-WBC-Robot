@@ -199,6 +199,18 @@ class Go2Telemetry(metaclass=Metaclass_Go2Telemetry):
         '_a_wbc_ang_x',
         '_a_wbc_ang_y',
         '_a_wbc_ang_z',
+        '_tau_joint_0',
+        '_tau_joint_1',
+        '_tau_joint_2',
+        '_tau_joint_3',
+        '_tau_joint_4',
+        '_tau_joint_5',
+        '_tau_joint_6',
+        '_tau_joint_7',
+        '_tau_joint_8',
+        '_tau_joint_9',
+        '_tau_joint_10',
+        '_tau_joint_11',
     ]
 
     _fields_and_field_types = {
@@ -340,10 +352,34 @@ class Go2Telemetry(metaclass=Metaclass_Go2Telemetry):
         'a_wbc_ang_x': 'double',
         'a_wbc_ang_y': 'double',
         'a_wbc_ang_z': 'double',
+        'tau_joint_0': 'double',
+        'tau_joint_1': 'double',
+        'tau_joint_2': 'double',
+        'tau_joint_3': 'double',
+        'tau_joint_4': 'double',
+        'tau_joint_5': 'double',
+        'tau_joint_6': 'double',
+        'tau_joint_7': 'double',
+        'tau_joint_8': 'double',
+        'tau_joint_9': 'double',
+        'tau_joint_10': 'double',
+        'tau_joint_11': 'double',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.NamespacedType(['std_msgs', 'msg'], 'Header'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
@@ -626,6 +662,18 @@ class Go2Telemetry(metaclass=Metaclass_Go2Telemetry):
         self.a_wbc_ang_x = kwargs.get('a_wbc_ang_x', float())
         self.a_wbc_ang_y = kwargs.get('a_wbc_ang_y', float())
         self.a_wbc_ang_z = kwargs.get('a_wbc_ang_z', float())
+        self.tau_joint_0 = kwargs.get('tau_joint_0', float())
+        self.tau_joint_1 = kwargs.get('tau_joint_1', float())
+        self.tau_joint_2 = kwargs.get('tau_joint_2', float())
+        self.tau_joint_3 = kwargs.get('tau_joint_3', float())
+        self.tau_joint_4 = kwargs.get('tau_joint_4', float())
+        self.tau_joint_5 = kwargs.get('tau_joint_5', float())
+        self.tau_joint_6 = kwargs.get('tau_joint_6', float())
+        self.tau_joint_7 = kwargs.get('tau_joint_7', float())
+        self.tau_joint_8 = kwargs.get('tau_joint_8', float())
+        self.tau_joint_9 = kwargs.get('tau_joint_9', float())
+        self.tau_joint_10 = kwargs.get('tau_joint_10', float())
+        self.tau_joint_11 = kwargs.get('tau_joint_11', float())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -931,6 +979,30 @@ class Go2Telemetry(metaclass=Metaclass_Go2Telemetry):
         if self.a_wbc_ang_y != other.a_wbc_ang_y:
             return False
         if self.a_wbc_ang_z != other.a_wbc_ang_z:
+            return False
+        if self.tau_joint_0 != other.tau_joint_0:
+            return False
+        if self.tau_joint_1 != other.tau_joint_1:
+            return False
+        if self.tau_joint_2 != other.tau_joint_2:
+            return False
+        if self.tau_joint_3 != other.tau_joint_3:
+            return False
+        if self.tau_joint_4 != other.tau_joint_4:
+            return False
+        if self.tau_joint_5 != other.tau_joint_5:
+            return False
+        if self.tau_joint_6 != other.tau_joint_6:
+            return False
+        if self.tau_joint_7 != other.tau_joint_7:
+            return False
+        if self.tau_joint_8 != other.tau_joint_8:
+            return False
+        if self.tau_joint_9 != other.tau_joint_9:
+            return False
+        if self.tau_joint_10 != other.tau_joint_10:
+            return False
+        if self.tau_joint_11 != other.tau_joint_11:
             return False
         return True
 
@@ -3007,3 +3079,183 @@ class Go2Telemetry(metaclass=Metaclass_Go2Telemetry):
             assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
                 "The 'a_wbc_ang_z' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
         self._a_wbc_ang_z = value
+
+    @builtins.property
+    def tau_joint_0(self):
+        """Message field 'tau_joint_0'."""
+        return self._tau_joint_0
+
+    @tau_joint_0.setter
+    def tau_joint_0(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_joint_0' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_joint_0' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_joint_0 = value
+
+    @builtins.property
+    def tau_joint_1(self):
+        """Message field 'tau_joint_1'."""
+        return self._tau_joint_1
+
+    @tau_joint_1.setter
+    def tau_joint_1(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_joint_1' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_joint_1' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_joint_1 = value
+
+    @builtins.property
+    def tau_joint_2(self):
+        """Message field 'tau_joint_2'."""
+        return self._tau_joint_2
+
+    @tau_joint_2.setter
+    def tau_joint_2(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_joint_2' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_joint_2' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_joint_2 = value
+
+    @builtins.property
+    def tau_joint_3(self):
+        """Message field 'tau_joint_3'."""
+        return self._tau_joint_3
+
+    @tau_joint_3.setter
+    def tau_joint_3(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_joint_3' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_joint_3' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_joint_3 = value
+
+    @builtins.property
+    def tau_joint_4(self):
+        """Message field 'tau_joint_4'."""
+        return self._tau_joint_4
+
+    @tau_joint_4.setter
+    def tau_joint_4(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_joint_4' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_joint_4' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_joint_4 = value
+
+    @builtins.property
+    def tau_joint_5(self):
+        """Message field 'tau_joint_5'."""
+        return self._tau_joint_5
+
+    @tau_joint_5.setter
+    def tau_joint_5(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_joint_5' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_joint_5' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_joint_5 = value
+
+    @builtins.property
+    def tau_joint_6(self):
+        """Message field 'tau_joint_6'."""
+        return self._tau_joint_6
+
+    @tau_joint_6.setter
+    def tau_joint_6(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_joint_6' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_joint_6' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_joint_6 = value
+
+    @builtins.property
+    def tau_joint_7(self):
+        """Message field 'tau_joint_7'."""
+        return self._tau_joint_7
+
+    @tau_joint_7.setter
+    def tau_joint_7(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_joint_7' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_joint_7' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_joint_7 = value
+
+    @builtins.property
+    def tau_joint_8(self):
+        """Message field 'tau_joint_8'."""
+        return self._tau_joint_8
+
+    @tau_joint_8.setter
+    def tau_joint_8(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_joint_8' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_joint_8' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_joint_8 = value
+
+    @builtins.property
+    def tau_joint_9(self):
+        """Message field 'tau_joint_9'."""
+        return self._tau_joint_9
+
+    @tau_joint_9.setter
+    def tau_joint_9(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_joint_9' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_joint_9' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_joint_9 = value
+
+    @builtins.property
+    def tau_joint_10(self):
+        """Message field 'tau_joint_10'."""
+        return self._tau_joint_10
+
+    @tau_joint_10.setter
+    def tau_joint_10(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_joint_10' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_joint_10' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_joint_10 = value
+
+    @builtins.property
+    def tau_joint_11(self):
+        """Message field 'tau_joint_11'."""
+        return self._tau_joint_11
+
+    @tau_joint_11.setter
+    def tau_joint_11(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'tau_joint_11' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'tau_joint_11' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._tau_joint_11 = value

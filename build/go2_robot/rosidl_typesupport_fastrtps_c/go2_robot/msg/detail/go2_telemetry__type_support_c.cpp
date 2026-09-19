@@ -763,6 +763,66 @@ static bool _Go2Telemetry__cdr_serialize(
     cdr << ros_message->a_wbc_ang_z;
   }
 
+  // Field name: tau_joint_0
+  {
+    cdr << ros_message->tau_joint_0;
+  }
+
+  // Field name: tau_joint_1
+  {
+    cdr << ros_message->tau_joint_1;
+  }
+
+  // Field name: tau_joint_2
+  {
+    cdr << ros_message->tau_joint_2;
+  }
+
+  // Field name: tau_joint_3
+  {
+    cdr << ros_message->tau_joint_3;
+  }
+
+  // Field name: tau_joint_4
+  {
+    cdr << ros_message->tau_joint_4;
+  }
+
+  // Field name: tau_joint_5
+  {
+    cdr << ros_message->tau_joint_5;
+  }
+
+  // Field name: tau_joint_6
+  {
+    cdr << ros_message->tau_joint_6;
+  }
+
+  // Field name: tau_joint_7
+  {
+    cdr << ros_message->tau_joint_7;
+  }
+
+  // Field name: tau_joint_8
+  {
+    cdr << ros_message->tau_joint_8;
+  }
+
+  // Field name: tau_joint_9
+  {
+    cdr << ros_message->tau_joint_9;
+  }
+
+  // Field name: tau_joint_10
+  {
+    cdr << ros_message->tau_joint_10;
+  }
+
+  // Field name: tau_joint_11
+  {
+    cdr << ros_message->tau_joint_11;
+  }
+
   return true;
 }
 
@@ -1472,6 +1532,66 @@ static bool _Go2Telemetry__cdr_deserialize(
   // Field name: a_wbc_ang_z
   {
     cdr >> ros_message->a_wbc_ang_z;
+  }
+
+  // Field name: tau_joint_0
+  {
+    cdr >> ros_message->tau_joint_0;
+  }
+
+  // Field name: tau_joint_1
+  {
+    cdr >> ros_message->tau_joint_1;
+  }
+
+  // Field name: tau_joint_2
+  {
+    cdr >> ros_message->tau_joint_2;
+  }
+
+  // Field name: tau_joint_3
+  {
+    cdr >> ros_message->tau_joint_3;
+  }
+
+  // Field name: tau_joint_4
+  {
+    cdr >> ros_message->tau_joint_4;
+  }
+
+  // Field name: tau_joint_5
+  {
+    cdr >> ros_message->tau_joint_5;
+  }
+
+  // Field name: tau_joint_6
+  {
+    cdr >> ros_message->tau_joint_6;
+  }
+
+  // Field name: tau_joint_7
+  {
+    cdr >> ros_message->tau_joint_7;
+  }
+
+  // Field name: tau_joint_8
+  {
+    cdr >> ros_message->tau_joint_8;
+  }
+
+  // Field name: tau_joint_9
+  {
+    cdr >> ros_message->tau_joint_9;
+  }
+
+  // Field name: tau_joint_10
+  {
+    cdr >> ros_message->tau_joint_10;
+  }
+
+  // Field name: tau_joint_11
+  {
+    cdr >> ros_message->tau_joint_11;
   }
 
   return true;
@@ -2314,6 +2434,78 @@ size_t get_serialized_size_go2_robot__msg__Go2Telemetry(
   // field.name a_wbc_ang_z
   {
     size_t item_size = sizeof(ros_message->a_wbc_ang_z);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_joint_0
+  {
+    size_t item_size = sizeof(ros_message->tau_joint_0);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_joint_1
+  {
+    size_t item_size = sizeof(ros_message->tau_joint_1);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_joint_2
+  {
+    size_t item_size = sizeof(ros_message->tau_joint_2);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_joint_3
+  {
+    size_t item_size = sizeof(ros_message->tau_joint_3);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_joint_4
+  {
+    size_t item_size = sizeof(ros_message->tau_joint_4);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_joint_5
+  {
+    size_t item_size = sizeof(ros_message->tau_joint_5);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_joint_6
+  {
+    size_t item_size = sizeof(ros_message->tau_joint_6);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_joint_7
+  {
+    size_t item_size = sizeof(ros_message->tau_joint_7);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_joint_8
+  {
+    size_t item_size = sizeof(ros_message->tau_joint_8);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_joint_9
+  {
+    size_t item_size = sizeof(ros_message->tau_joint_9);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_joint_10
+  {
+    size_t item_size = sizeof(ros_message->tau_joint_10);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name tau_joint_11
+  {
+    size_t item_size = sizeof(ros_message->tau_joint_11);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -3461,6 +3653,102 @@ size_t max_serialized_size_go2_robot__msg__Go2Telemetry(
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
+  // member: tau_joint_0
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_joint_1
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_joint_2
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_joint_3
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_joint_4
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_joint_5
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_joint_6
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_joint_7
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_joint_8
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_joint_9
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_joint_10
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: tau_joint_11
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
 
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
@@ -3470,7 +3758,7 @@ size_t max_serialized_size_go2_robot__msg__Go2Telemetry(
     using DataType = go2_robot__msg__Go2Telemetry;
     is_plain =
       (
-      offsetof(DataType, a_wbc_ang_z) +
+      offsetof(DataType, tau_joint_11) +
       last_member_size
       ) == ret_val;
   }

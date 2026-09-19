@@ -1298,6 +1298,114 @@ bool go2_robot__msg__go2_telemetry__convert_from_py(PyObject * _pymsg, void * _r
     ros_message->a_wbc_ang_z = PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
+  {  // tau_joint_0
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_joint_0");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_joint_0 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_joint_1
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_joint_1");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_joint_1 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_joint_2
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_joint_2");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_joint_2 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_joint_3
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_joint_3");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_joint_3 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_joint_4
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_joint_4");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_joint_4 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_joint_5
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_joint_5");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_joint_5 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_joint_6
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_joint_6");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_joint_6 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_joint_7
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_joint_7");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_joint_7 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_joint_8
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_joint_8");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_joint_8 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_joint_9
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_joint_9");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_joint_9 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_joint_10
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_joint_10");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_joint_10 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // tau_joint_11
+    PyObject * field = PyObject_GetAttrString(_pymsg, "tau_joint_11");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->tau_joint_11 = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
 
   return true;
 }
@@ -2835,6 +2943,138 @@ PyObject * go2_robot__msg__go2_telemetry__convert_to_py(void * raw_ros_message)
     field = PyFloat_FromDouble(ros_message->a_wbc_ang_z);
     {
       int rc = PyObject_SetAttrString(_pymessage, "a_wbc_ang_z", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_joint_0
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_joint_0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_joint_0", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_joint_1
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_joint_1);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_joint_1", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_joint_2
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_joint_2);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_joint_2", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_joint_3
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_joint_3);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_joint_3", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_joint_4
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_joint_4);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_joint_4", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_joint_5
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_joint_5);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_joint_5", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_joint_6
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_joint_6);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_joint_6", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_joint_7
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_joint_7);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_joint_7", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_joint_8
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_joint_8);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_joint_8", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_joint_9
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_joint_9);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_joint_9", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_joint_10
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_joint_10);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_joint_10", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // tau_joint_11
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->tau_joint_11);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "tau_joint_11", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

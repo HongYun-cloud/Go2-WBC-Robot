@@ -44,8 +44,8 @@ struct RobotState
 
     // 关节状态 (Go2: 8 个关节)
     // 顺序: FL_thigh, FL_calf, FR_thigh, FR_calf, RL_thigh, RL_calf, RR_thigh, RR_calf
-    Eigen::Matrix<double, 8, 1> joint_positions;
-    Eigen::Matrix<double, 8, 1> joint_velocities;
+    Eigen::Matrix<double, 12, 1> joint_positions;
+    Eigen::Matrix<double, 12, 1> joint_velocities;
 
     // 触地状态 (4 条腿: FL, FR, RL, RR)
     std::vector<int> contact_states;

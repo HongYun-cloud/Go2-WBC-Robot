@@ -306,6 +306,33 @@ module go2_robot {
       double a_wbc_ang_y;
 
       double a_wbc_ang_z;
+
+      @verbatim (language="comment", text=
+        "关节力矩 τ = M·a + h − Jᵀf (WBC 逆动力学, 即 mj->control(tau) 的输入)" "\n"
+        "顺序: FL_hip,FL_thigh,FL_calf, FR_hip,FR_thigh,FR_calf, RL_*, RR_* (12 维, 与 q_des_joint_* 同序)")
+      double tau_joint_0;
+
+      double tau_joint_1;
+
+      double tau_joint_2;
+
+      double tau_joint_3;
+
+      double tau_joint_4;
+
+      double tau_joint_5;
+
+      double tau_joint_6;
+
+      double tau_joint_7;
+
+      double tau_joint_8;
+
+      double tau_joint_9;
+
+      double tau_joint_10;
+
+      double tau_joint_11;
     };
   };
 };

@@ -162,3 +162,18 @@ float64 tau_pitch_wbc
 float64 a_wbc_ang_x
 float64 a_wbc_ang_y
 float64 a_wbc_ang_z
+
+# 关节力矩 τ = M·a + h − Jᵀf (WBC 逆动力学, 即 mj->control(tau) 的输入)
+# 顺序: FL_hip,FL_thigh,FL_calf, FR_hip,FR_thigh,FR_calf, RL_*, RR_* (12 维, 与 q_des_joint_* 同序)
+float64 tau_joint_0
+float64 tau_joint_1
+float64 tau_joint_2
+float64 tau_joint_3
+float64 tau_joint_4
+float64 tau_joint_5
+float64 tau_joint_6
+float64 tau_joint_7
+float64 tau_joint_8
+float64 tau_joint_9
+float64 tau_joint_10
+float64 tau_joint_11

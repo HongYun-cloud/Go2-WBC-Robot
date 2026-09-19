@@ -1,0 +1,8 @@
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:[m[K In member function ‘[01m[Kvoid WBC::WBC::compuseHg()[m[K’:
+[01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:183:11:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing Vec30d = Eigen::Vector<double, 30>[m[K’ {aka ‘[01m[Kclass Eigen::Matrix<double, 30, 1, 0, 30, 1>[m[K’} has no member named ‘[01m[KgetZero[m[K’; did you mean ‘[01m[KsetZero[m[K’?
+  183 |         g.[01;31m[KgetZero[m[K();
+      |           [01;31m[K^~~~~~~[m[K
+      |           [32m[KsetZero[m[K
+gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:118：CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:265：CMakeFiles/go2_core.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

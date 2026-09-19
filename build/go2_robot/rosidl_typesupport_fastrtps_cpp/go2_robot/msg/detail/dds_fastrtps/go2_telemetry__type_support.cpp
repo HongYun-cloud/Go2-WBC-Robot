@@ -334,6 +334,30 @@ cdr_serialize(
   cdr << ros_message.a_wbc_ang_y;
   // Member: a_wbc_ang_z
   cdr << ros_message.a_wbc_ang_z;
+  // Member: tau_joint_0
+  cdr << ros_message.tau_joint_0;
+  // Member: tau_joint_1
+  cdr << ros_message.tau_joint_1;
+  // Member: tau_joint_2
+  cdr << ros_message.tau_joint_2;
+  // Member: tau_joint_3
+  cdr << ros_message.tau_joint_3;
+  // Member: tau_joint_4
+  cdr << ros_message.tau_joint_4;
+  // Member: tau_joint_5
+  cdr << ros_message.tau_joint_5;
+  // Member: tau_joint_6
+  cdr << ros_message.tau_joint_6;
+  // Member: tau_joint_7
+  cdr << ros_message.tau_joint_7;
+  // Member: tau_joint_8
+  cdr << ros_message.tau_joint_8;
+  // Member: tau_joint_9
+  cdr << ros_message.tau_joint_9;
+  // Member: tau_joint_10
+  cdr << ros_message.tau_joint_10;
+  // Member: tau_joint_11
+  cdr << ros_message.tau_joint_11;
   return true;
 }
 
@@ -757,6 +781,42 @@ cdr_deserialize(
 
   // Member: a_wbc_ang_z
   cdr >> ros_message.a_wbc_ang_z;
+
+  // Member: tau_joint_0
+  cdr >> ros_message.tau_joint_0;
+
+  // Member: tau_joint_1
+  cdr >> ros_message.tau_joint_1;
+
+  // Member: tau_joint_2
+  cdr >> ros_message.tau_joint_2;
+
+  // Member: tau_joint_3
+  cdr >> ros_message.tau_joint_3;
+
+  // Member: tau_joint_4
+  cdr >> ros_message.tau_joint_4;
+
+  // Member: tau_joint_5
+  cdr >> ros_message.tau_joint_5;
+
+  // Member: tau_joint_6
+  cdr >> ros_message.tau_joint_6;
+
+  // Member: tau_joint_7
+  cdr >> ros_message.tau_joint_7;
+
+  // Member: tau_joint_8
+  cdr >> ros_message.tau_joint_8;
+
+  // Member: tau_joint_9
+  cdr >> ros_message.tau_joint_9;
+
+  // Member: tau_joint_10
+  cdr >> ros_message.tau_joint_10;
+
+  // Member: tau_joint_11
+  cdr >> ros_message.tau_joint_11;
 
   return true;
 }  // NOLINT(readability/fn_size)
@@ -1598,6 +1658,78 @@ get_serialized_size(
   // Member: a_wbc_ang_z
   {
     size_t item_size = sizeof(ros_message.a_wbc_ang_z);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: tau_joint_0
+  {
+    size_t item_size = sizeof(ros_message.tau_joint_0);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: tau_joint_1
+  {
+    size_t item_size = sizeof(ros_message.tau_joint_1);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: tau_joint_2
+  {
+    size_t item_size = sizeof(ros_message.tau_joint_2);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: tau_joint_3
+  {
+    size_t item_size = sizeof(ros_message.tau_joint_3);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: tau_joint_4
+  {
+    size_t item_size = sizeof(ros_message.tau_joint_4);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: tau_joint_5
+  {
+    size_t item_size = sizeof(ros_message.tau_joint_5);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: tau_joint_6
+  {
+    size_t item_size = sizeof(ros_message.tau_joint_6);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: tau_joint_7
+  {
+    size_t item_size = sizeof(ros_message.tau_joint_7);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: tau_joint_8
+  {
+    size_t item_size = sizeof(ros_message.tau_joint_8);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: tau_joint_9
+  {
+    size_t item_size = sizeof(ros_message.tau_joint_9);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: tau_joint_10
+  {
+    size_t item_size = sizeof(ros_message.tau_joint_10);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: tau_joint_11
+  {
+    size_t item_size = sizeof(ros_message.tau_joint_11);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -2877,6 +3009,114 @@ max_serialized_size_Go2Telemetry(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
 
+  // Member: tau_joint_0
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: tau_joint_1
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: tau_joint_2
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: tau_joint_3
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: tau_joint_4
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: tau_joint_5
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: tau_joint_6
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: tau_joint_7
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: tau_joint_8
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: tau_joint_9
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: tau_joint_10
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: tau_joint_11
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
     // All members are plain, and type is not empty.
@@ -2885,7 +3125,7 @@ max_serialized_size_Go2Telemetry(
     using DataType = go2_robot::msg::Go2Telemetry;
     is_plain =
       (
-      offsetof(DataType, a_wbc_ang_z) +
+      offsetof(DataType, tau_joint_11) +
       last_member_size
       ) == ret_val;
   }

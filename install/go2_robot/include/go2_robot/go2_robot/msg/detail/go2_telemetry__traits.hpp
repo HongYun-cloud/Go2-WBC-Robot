@@ -992,6 +992,90 @@ inline void to_flow_style_yaml(
   {
     out << "a_wbc_ang_z: ";
     rosidl_generator_traits::value_to_yaml(msg.a_wbc_ang_z, out);
+    out << ", ";
+  }
+
+  // member: tau_joint_0
+  {
+    out << "tau_joint_0: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_0, out);
+    out << ", ";
+  }
+
+  // member: tau_joint_1
+  {
+    out << "tau_joint_1: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_1, out);
+    out << ", ";
+  }
+
+  // member: tau_joint_2
+  {
+    out << "tau_joint_2: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_2, out);
+    out << ", ";
+  }
+
+  // member: tau_joint_3
+  {
+    out << "tau_joint_3: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_3, out);
+    out << ", ";
+  }
+
+  // member: tau_joint_4
+  {
+    out << "tau_joint_4: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_4, out);
+    out << ", ";
+  }
+
+  // member: tau_joint_5
+  {
+    out << "tau_joint_5: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_5, out);
+    out << ", ";
+  }
+
+  // member: tau_joint_6
+  {
+    out << "tau_joint_6: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_6, out);
+    out << ", ";
+  }
+
+  // member: tau_joint_7
+  {
+    out << "tau_joint_7: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_7, out);
+    out << ", ";
+  }
+
+  // member: tau_joint_8
+  {
+    out << "tau_joint_8: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_8, out);
+    out << ", ";
+  }
+
+  // member: tau_joint_9
+  {
+    out << "tau_joint_9: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_9, out);
+    out << ", ";
+  }
+
+  // member: tau_joint_10
+  {
+    out << "tau_joint_10: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_10, out);
+    out << ", ";
+  }
+
+  // member: tau_joint_11
+  {
+    out << "tau_joint_11: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_11, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -2376,6 +2460,126 @@ inline void to_block_style_yaml(
     }
     out << "a_wbc_ang_z: ";
     rosidl_generator_traits::value_to_yaml(msg.a_wbc_ang_z, out);
+    out << "\n";
+  }
+
+  // member: tau_joint_0
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "tau_joint_0: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_0, out);
+    out << "\n";
+  }
+
+  // member: tau_joint_1
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "tau_joint_1: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_1, out);
+    out << "\n";
+  }
+
+  // member: tau_joint_2
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "tau_joint_2: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_2, out);
+    out << "\n";
+  }
+
+  // member: tau_joint_3
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "tau_joint_3: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_3, out);
+    out << "\n";
+  }
+
+  // member: tau_joint_4
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "tau_joint_4: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_4, out);
+    out << "\n";
+  }
+
+  // member: tau_joint_5
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "tau_joint_5: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_5, out);
+    out << "\n";
+  }
+
+  // member: tau_joint_6
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "tau_joint_6: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_6, out);
+    out << "\n";
+  }
+
+  // member: tau_joint_7
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "tau_joint_7: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_7, out);
+    out << "\n";
+  }
+
+  // member: tau_joint_8
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "tau_joint_8: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_8, out);
+    out << "\n";
+  }
+
+  // member: tau_joint_9
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "tau_joint_9: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_9, out);
+    out << "\n";
+  }
+
+  // member: tau_joint_10
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "tau_joint_10: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_10, out);
+    out << "\n";
+  }
+
+  // member: tau_joint_11
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "tau_joint_11: ";
+    rosidl_generator_traits::value_to_yaml(msg.tau_joint_11, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

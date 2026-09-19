@@ -1,0 +1,111 @@
+[0.123s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'go2_robot']
+[0.123s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=24, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['go2_robot'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x795c5929bd00>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x795c594691b0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x795c594691b0>>)
+[0.227s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.227s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.227s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.227s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.227s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.227s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.227s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/hong/Movement_Control/Go2Robot'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.227s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.256s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_cmake' and name 'go2_robot'
+[0.256s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.256s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.256s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.256s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.256s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.269s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.269s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.270s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 380 installed packages in /opt/ros/humble
+[0.272s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.296s] Level 5:colcon.colcon_core.verb:set package 'go2_robot' build argument 'cmake_args' from command line to 'None'
+[0.296s] Level 5:colcon.colcon_core.verb:set package 'go2_robot' build argument 'cmake_target' from command line to 'None'
+[0.296s] Level 5:colcon.colcon_core.verb:set package 'go2_robot' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.296s] Level 5:colcon.colcon_core.verb:set package 'go2_robot' build argument 'cmake_clean_cache' from command line to 'False'
+[0.296s] Level 5:colcon.colcon_core.verb:set package 'go2_robot' build argument 'cmake_clean_first' from command line to 'False'
+[0.296s] Level 5:colcon.colcon_core.verb:set package 'go2_robot' build argument 'cmake_force_configure' from command line to 'False'
+[0.296s] Level 5:colcon.colcon_core.verb:set package 'go2_robot' build argument 'ament_cmake_args' from command line to 'None'
+[0.296s] Level 5:colcon.colcon_core.verb:set package 'go2_robot' build argument 'catkin_cmake_args' from command line to 'None'
+[0.296s] Level 5:colcon.colcon_core.verb:set package 'go2_robot' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.296s] DEBUG:colcon.colcon_core.verb:Building package 'go2_robot' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/hong/Movement_Control/Go2Robot/build/go2_robot', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/hong/Movement_Control/Go2Robot/install/go2_robot', 'merge_install': False, 'path': '/home/hong/Movement_Control/Go2Robot', 'symlink_install': False, 'test_result_base': None}
+[0.296s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.297s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.297s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/hong/Movement_Control/Go2Robot' with build type 'ament_cmake'
+[0.298s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/hong/Movement_Control/Go2Robot'
+[0.299s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.299s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.299s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.374s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24
+[41.125s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24
+[41.201s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/hong/Movement_Control/Go2Robot/build/go2_robot
+[43.334s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(go2_robot)
+[43.335s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/hong/Movement_Control/Go2Robot/build/go2_robot
+[43.355s] Level 1:colcon.colcon_core.environment:checking '/home/hong/Movement_Control/Go2Robot/install/go2_robot' for CMake module files
+[43.356s] Level 1:colcon.colcon_core.environment:checking '/home/hong/Movement_Control/Go2Robot/install/go2_robot' for CMake config files
+[43.358s] Level 1:colcon.colcon_core.shell:create_environment_hook('go2_robot', 'cmake_prefix_path')
+[43.358s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/hook/cmake_prefix_path.ps1'
+[43.359s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/hook/cmake_prefix_path.dsv'
+[43.359s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/hook/cmake_prefix_path.sh'
+[43.361s] Level 1:colcon.colcon_core.environment:checking '/home/hong/Movement_Control/Go2Robot/install/go2_robot/lib'
+[43.361s] Level 1:colcon.colcon_core.shell:create_environment_hook('go2_robot', 'ld_library_path_lib')
+[43.361s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/hook/ld_library_path_lib.ps1'
+[43.362s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/hook/ld_library_path_lib.dsv'
+[43.362s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/hook/ld_library_path_lib.sh'
+[43.363s] Level 1:colcon.colcon_core.environment:checking '/home/hong/Movement_Control/Go2Robot/install/go2_robot/bin'
+[43.363s] Level 1:colcon.colcon_core.environment:checking '/home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/pkgconfig/go2_robot.pc'
+[43.363s] Level 1:colcon.colcon_core.environment:checking '/home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/python3.10/site-packages'
+[43.363s] Level 1:colcon.colcon_core.environment:checking '/home/hong/Movement_Control/Go2Robot/install/go2_robot/bin'
+[43.364s] INFO:colcon.colcon_core.shell:Creating package script '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/package.ps1'
+[43.365s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/package.dsv'
+[43.366s] INFO:colcon.colcon_core.shell:Creating package script '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/package.sh'
+[43.367s] INFO:colcon.colcon_core.shell:Creating package script '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/package.bash'
+[43.368s] INFO:colcon.colcon_core.shell:Creating package script '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/package.zsh'
+[43.368s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/colcon-core/packages/go2_robot)
+[43.369s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(go2_robot)
+[43.369s] Level 1:colcon.colcon_core.environment:checking '/home/hong/Movement_Control/Go2Robot/install/go2_robot' for CMake module files
+[43.370s] Level 1:colcon.colcon_core.environment:checking '/home/hong/Movement_Control/Go2Robot/install/go2_robot' for CMake config files
+[43.370s] Level 1:colcon.colcon_core.shell:create_environment_hook('go2_robot', 'cmake_prefix_path')
+[43.370s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/hook/cmake_prefix_path.ps1'
+[43.371s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/hook/cmake_prefix_path.dsv'
+[43.371s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/hook/cmake_prefix_path.sh'
+[43.371s] Level 1:colcon.colcon_core.environment:checking '/home/hong/Movement_Control/Go2Robot/install/go2_robot/lib'
+[43.371s] Level 1:colcon.colcon_core.shell:create_environment_hook('go2_robot', 'ld_library_path_lib')
+[43.371s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/hook/ld_library_path_lib.ps1'
+[43.372s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/hook/ld_library_path_lib.dsv'
+[43.372s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/hook/ld_library_path_lib.sh'
+[43.372s] Level 1:colcon.colcon_core.environment:checking '/home/hong/Movement_Control/Go2Robot/install/go2_robot/bin'
+[43.372s] Level 1:colcon.colcon_core.environment:checking '/home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/pkgconfig/go2_robot.pc'
+[43.372s] Level 1:colcon.colcon_core.environment:checking '/home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/python3.10/site-packages'
+[43.373s] Level 1:colcon.colcon_core.environment:checking '/home/hong/Movement_Control/Go2Robot/install/go2_robot/bin'
+[43.373s] INFO:colcon.colcon_core.shell:Creating package script '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/package.ps1'
+[43.373s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/package.dsv'
+[43.374s] INFO:colcon.colcon_core.shell:Creating package script '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/package.sh'
+[43.374s] INFO:colcon.colcon_core.shell:Creating package script '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/package.bash'
+[43.377s] INFO:colcon.colcon_core.shell:Creating package script '/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/package.zsh'
+[43.377s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hong/Movement_Control/Go2Robot/install/go2_robot/share/colcon-core/packages/go2_robot)
+[43.377s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[43.377s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[43.377s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[43.377s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[43.868s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[43.869s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[43.869s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[43.882s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[43.883s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hong/Movement_Control/Go2Robot/install/local_setup.ps1'
+[43.884s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/hong/Movement_Control/Go2Robot/install/_local_setup_util_ps1.py'
+[43.885s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hong/Movement_Control/Go2Robot/install/setup.ps1'
+[43.886s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hong/Movement_Control/Go2Robot/install/local_setup.sh'
+[43.886s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/hong/Movement_Control/Go2Robot/install/_local_setup_util_sh.py'
+[43.887s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hong/Movement_Control/Go2Robot/install/setup.sh'
+[43.888s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hong/Movement_Control/Go2Robot/install/local_setup.bash'
+[43.888s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hong/Movement_Control/Go2Robot/install/setup.bash'
+[43.890s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hong/Movement_Control/Go2Robot/install/local_setup.zsh'
+[43.891s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hong/Movement_Control/Go2Robot/install/setup.zsh'

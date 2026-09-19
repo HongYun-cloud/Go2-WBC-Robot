@@ -87,9 +87,9 @@ void Go2ControlNode::initControlStack()
     {
         auto state = mj->getState();
         estimator->update(state);
-        pin->setJointVelocity(v8to12(state.joint_velocities));
+        pin->setJointVelocity(state.joint_velocities);
         pin->setBaseVelocity(state.linear_vel, state.angular_vel);
-        pin->forwardKinematics(q8toq12(state.joint_positions), state.position, state.quat.coeffs());
+        pin->forwardKinematics(state.joint_positions, state.position, state.quat.coeffs());
         trajectory->SetFootPositions(pin->getAllFootPositions());  // 用 FK 真值初始化足端位置, 避免默认 -0.25 污染首拍摆动
 
         mpc->update();
@@ -234,11 +234,13 @@ void Go2ControlNode::wbcControlLoop()
     // 静止时四足全着地 → 实测接触全 1 → 摆动任务永远不触发 (死锁: 脚不抬就永远"支撑")
     // 覆写 state.contact_states 为计划接触, 后续 estimator/MPC/PD/WBC 全部按计划划分
 
-    // DEBUG: 设置强行全接触
-    // std::fill(state.contact_states.begin(), state.contact_states.end(), true);
+
 
     for (int leg = 0; leg < 4; leg++)
         state.contact_states[leg] = (scheduler->GetSwingPhases(leg) <= 0) ? 1 : 0;
+
+    // DEBUG: 设置强行全接触
+    std::fill(state.contact_states.begin(), state.contact_states.end(), true);
 
     // ===== 估计器 + FK: 写共享数据, 与 MPC 线程互斥 =====
     {
@@ -248,9 +250,9 @@ void Go2ControlNode::wbcControlLoop()
     {
         // forwardKinematics 内部 _syncLegData 写 leg_data_ (MPC 经裸指针读) → 持锁
         std::lock_guard<std::mutex> lk_fk(fk_mpc_mutex_);
-        pin->setJointVelocity(v8to12(state.joint_velocities));
+        pin->setJointVelocity(state.joint_velocities);
         pin->setBaseVelocity(state.linear_vel, state.angular_vel);
-        pin->forwardKinematics(q8toq12(state.joint_positions), state.position, state.quat.coeffs());
+        pin->forwardKinematics(state.joint_positions, state.position, state.quat.coeffs());
     }
     trajectory->SetFootPositions(pin->getAllFootPositions());  // FK 足端位置反馈给摆动轨迹规划器
 
@@ -284,9 +286,17 @@ void Go2ControlNode::wbcControlLoop()
     Eigen::Matrix<double, 4, 3> v_ref = trajectory->GetSwingVel() / T_swing;   // 相位速度 → 时间速度 (m/s)
     Eigen::Matrix<double, 4, 3> p_act = pin->getAllFootPositions();
 
+    // static int count = 0;
+
+    // count++;
+
+    // if (count % 100 == 0) {
+    //     std::cout << "p_act:\n" << p_act << std::endl;
+    // }
+
     // 足端实际速度: J_floating × v_full (与 WBC 摆动任务同坐标系)
     Eigen::Matrix<double, 18, 1> v_full;
-    v_full << state.linear_vel, state.angular_vel, v8to12(state.joint_velocities);
+    v_full << state.linear_vel, state.angular_vel, state.joint_velocities;
     Eigen::Matrix<double, 12, 1> v_foot_act;
     for (int leg = 0; leg < 4; leg++)
         v_foot_act.segment<3>(leg * 3) = pin->getFootJacobianFloatingBase(leg) * v_full;
@@ -312,6 +322,7 @@ void Go2ControlNode::wbcControlLoop()
     // 关节力矩: τ = M·a + h − Jᵀf (WBC 逆动力学, 已包含 a_des 跟踪)
     auto tau = pin->getJointTorquesFromSolution(q_a_wbc, f_wbc);
     // auto tau = pin->getJointTorquesFromSolution(test_a, f_wbc);
+    // tau.setZero();
     mj->control(tau);
     mj->Step();
     mj->Render();
@@ -354,7 +365,7 @@ void Go2ControlNode::wbcControlLoop()
     // ===== Telemetry 缓存: 500Hz 纯内存拷贝, publishState (50Hz) 发布 =====
     // a_wbc_ang = WBC QP 解出的基座角加速度 (机体系), 与 q_des_ang 对比验证 PD 是否被执行
     fillTelemetryMessage(p_ref, p_act, v_ref, v_foot_act, a_des, f_mpc, f_wbc, q_des,
-                         sol.segment<3>(3), state);
+                         tau, sol.segment<3>(3), state);
 }
 
 // ============================================================
@@ -433,7 +444,7 @@ Eigen::Matrix<double, 12, 1> Go2ControlNode::computeSwingAccDes(const RobotState
     Eigen::Matrix<double, 4, 3> p_act = pin->getAllFootPositions();
 
     Eigen::Matrix<double, 18, 1> v_full;
-    v_full << state.linear_vel, state.angular_vel, v8to12(state.joint_velocities);
+    v_full << state.linear_vel, state.angular_vel, state.joint_velocities;
     Eigen::Matrix<double, 12, 1> v_foot_act;
     for (int leg = 0; leg < 4; leg++)
         v_foot_act.segment<3>(leg * 3) = pin->getFootJacobianFloatingBase(leg) * v_full;
@@ -516,6 +527,7 @@ void Go2ControlNode::fillTelemetryMessage(const Eigen::Matrix<double,4,3>& p_ref
                                         const Eigen::Matrix<double,12,1>& f_mpc,
                                         const Eigen::Matrix<double,12,1>& f_wbc,
                                         const Eigen::Matrix<double,18,1>& q_des,
+                                        const Eigen::VectorXd& tau,
                                         const Eigen::Vector3d& a_wbc_ang,
                                         const RobotState& state)
 {
@@ -578,6 +590,12 @@ void Go2ControlNode::fillTelemetryMessage(const Eigen::Matrix<double,4,3>& p_ref
         &Msg::q_des_joint_6,  &Msg::q_des_joint_7,  &Msg::q_des_joint_8,
         &Msg::q_des_joint_9,  &Msg::q_des_joint_10, &Msg::q_des_joint_11,
     };
+    static const Field tau_f[12] = {   // tau = mj->control(tau) 的输入, 顺序同 q_des_joint_*
+        &Msg::tau_joint_0,  &Msg::tau_joint_1,  &Msg::tau_joint_2,
+        &Msg::tau_joint_3,  &Msg::tau_joint_4,  &Msg::tau_joint_5,
+        &Msg::tau_joint_6,  &Msg::tau_joint_7,  &Msg::tau_joint_8,
+        &Msg::tau_joint_9,  &Msg::tau_joint_10, &Msg::tau_joint_11,
+    };
 
     std::lock_guard<std::mutex> lock(state_msg_mutex_);
     telemetry_msg_.header.stamp = now();
@@ -598,6 +616,10 @@ void Go2ControlNode::fillTelemetryMessage(const Eigen::Matrix<double,4,3>& p_ref
 
     for (int i = 0; i < 18; i++)
         telemetry_msg_.*q_des_f[i] = q_des(i);
+
+    // 关节力矩 (WBC 逆动力学输出)
+    for (int i = 0; i < 12; i++)
+        telemetry_msg_.*tau_f[i] = tau(i);
 
     // ===== 姿态诊断: 接触力合成力矩 Σ(r×f) 与摩擦锥利用率 =====
     // r = 足端 − 机身 (世界系), 力取世界系 (z 向上, 与 MPC 模型一致)

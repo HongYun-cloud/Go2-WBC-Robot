@@ -83,28 +83,28 @@ void MJCSIM::SIM::Render(){
  */
 void MJCSIM::SIM::control(Eigen::VectorXd &tau, bool hip_enabled){
 
-    double ft = 0, fc = 0, frt = 0, frc = 0;
-    double rlt = 0, rlc = 0, rrt = 0, rrc = 0;
+    double flh = 0, flt = 0, flc = 0,frh = 0, frt = 0, frc = 0;
+    double rlh = 0, rlt = 0, rlc = 0,rrh = 0, rrt = 0, rrc = 0;
 
-    if (hip_enabled && tau.size() >= 12) {
-        ft = tau(1);  fc = tau(2);    // FL
-        frt= tau(4);  frc= tau(5);    // FR
-        rlt= tau(7);  rlc= tau(8);    // RL
-        rrt= tau(10); rrc= tau(11);   // RR
-        d->ctrl[1] = ft;   d->ctrl[0] = fc;
-        d->ctrl[7] = frt;  d->ctrl[6] = frc;
-        d->ctrl[5] = rlt;  d->ctrl[4] = rlc;
-        d->ctrl[3] = rrt;  d->ctrl[2] = rrc;
-    } else {
-        ft = tau(0);  fc = tau(1);    // FL
-        frt= tau(2);  frc= tau(3);    // FR
-        rlt= tau(4);  rlc= tau(5);    // RL
-        rrt= tau(6);  rrc= tau(7);    // RR
-        d->ctrl[1] = ft;   d->ctrl[0] = fc;
-        d->ctrl[7] = frt;  d->ctrl[6] = frc;
-        d->ctrl[5] = rlt;  d->ctrl[4] = rlc;
-        d->ctrl[3] = rrt;  d->ctrl[2] = rrc;
-    }
+    flh = tau(0); flt = tau(1);  flc = tau(2);    // FL
+    frh = tau(3); frt= tau(4);   frc= tau(5);    // FR
+    rlh = tau(6); rlt= tau(7);   rlc= tau(8);    // RL
+    rrh = tau(9); rrt= tau(10);  rrc= tau(11);   // RR
+    d->ctrl[0] = flh;  d->ctrl[1] = flt;   d->ctrl[2] = flc;
+    d->ctrl[3] = frh;  d->ctrl[4] = frt;   d->ctrl[5] = frc;
+    d->ctrl[6] = rlh;  d->ctrl[7] = rlt;   d->ctrl[8] = rlc;
+    d->ctrl[9] = rrh;  d->ctrl[10] = rrt;  d->ctrl[11] = rrc;
+
+
+    //     flt = tau(0);  flc = tau(1);    // FL
+    //     frt= tau(2);  frc= tau(3);    // FR
+    //     rlt= tau(4);  rlc= tau(5);    // RL
+    //     rrt= tau(6);  rrc= tau(7);    // RR
+    //     d->ctrl[1] = flt;   d->ctrl[0] = flc;
+    //     d->ctrl[7] = frt;  d->ctrl[6] = frc;
+    //     d->ctrl[5] = rlt;  d->ctrl[4] = rlc;
+    //     d->ctrl[3] = rrt;  d->ctrl[2] = rrc;
+ 
 
    
 }
@@ -255,9 +255,9 @@ RobotState MJCSIM::SIM::getState(){
     s.linear_vel  = Eigen::Vector3d(d->qvel[0], d->qvel[1], d->qvel[2]);
     s.angular_vel = Eigen::Vector3d(d->qvel[3], d->qvel[4], d->qvel[5]);
 
-    // 关节角度和速度 (8 个关节, qpos[7..14], qvel[6..13])
+    // 关节角度和速度 (12 个关节, qpos[7..14], qvel[6..13])
     // 顺序: FL_thigh, FL_calf, FR_thigh, FR_calf, RL_thigh, RL_calf, RR_thigh, RR_calf
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < 12; i++) {
         s.joint_positions(i) = d->qpos[7 + i];
         s.joint_velocities(i) = d->qvel[6 + i];
     }

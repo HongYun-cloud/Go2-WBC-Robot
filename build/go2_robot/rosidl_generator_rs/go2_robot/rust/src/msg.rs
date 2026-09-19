@@ -681,6 +681,65 @@ pub struct Go2Telemetry {
     #[allow(missing_docs)]
     pub a_wbc_ang_z: f64,
 
+    /// 关节力矩 τ = M·a + h − Jᵀf (WBC 逆动力学, 即 mj->control(tau) 的输入)
+    /// 顺序: FL_hip,FL_thigh,FL_calf, FR_hip,FR_thigh,FR_calf, RL_*, RR_* (12 维, 与 q_des_joint_* 同序)
+    pub tau_joint_0: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub tau_joint_1: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub tau_joint_2: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub tau_joint_3: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub tau_joint_4: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub tau_joint_5: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub tau_joint_6: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub tau_joint_7: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub tau_joint_8: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub tau_joint_9: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub tau_joint_10: f64,
+
+
+    // This member is not documented.
+    #[allow(missing_docs)]
+    pub tau_joint_11: f64,
+
 }
 
 
@@ -835,6 +894,18 @@ impl rosidl_runtime_rs::Message for Go2Telemetry {
         a_wbc_ang_x: msg.a_wbc_ang_x,
         a_wbc_ang_y: msg.a_wbc_ang_y,
         a_wbc_ang_z: msg.a_wbc_ang_z,
+        tau_joint_0: msg.tau_joint_0,
+        tau_joint_1: msg.tau_joint_1,
+        tau_joint_2: msg.tau_joint_2,
+        tau_joint_3: msg.tau_joint_3,
+        tau_joint_4: msg.tau_joint_4,
+        tau_joint_5: msg.tau_joint_5,
+        tau_joint_6: msg.tau_joint_6,
+        tau_joint_7: msg.tau_joint_7,
+        tau_joint_8: msg.tau_joint_8,
+        tau_joint_9: msg.tau_joint_9,
+        tau_joint_10: msg.tau_joint_10,
+        tau_joint_11: msg.tau_joint_11,
       }),
       std::borrow::Cow::Borrowed(msg) => std::borrow::Cow::Owned(Self::RmwMsg {
         header: std_msgs::msg::Header::into_rmw_message(std::borrow::Cow::Borrowed(&msg.header)).into_owned(),
@@ -975,6 +1046,18 @@ impl rosidl_runtime_rs::Message for Go2Telemetry {
       a_wbc_ang_x: msg.a_wbc_ang_x,
       a_wbc_ang_y: msg.a_wbc_ang_y,
       a_wbc_ang_z: msg.a_wbc_ang_z,
+      tau_joint_0: msg.tau_joint_0,
+      tau_joint_1: msg.tau_joint_1,
+      tau_joint_2: msg.tau_joint_2,
+      tau_joint_3: msg.tau_joint_3,
+      tau_joint_4: msg.tau_joint_4,
+      tau_joint_5: msg.tau_joint_5,
+      tau_joint_6: msg.tau_joint_6,
+      tau_joint_7: msg.tau_joint_7,
+      tau_joint_8: msg.tau_joint_8,
+      tau_joint_9: msg.tau_joint_9,
+      tau_joint_10: msg.tau_joint_10,
+      tau_joint_11: msg.tau_joint_11,
       })
     }
   }
@@ -1119,6 +1202,18 @@ impl rosidl_runtime_rs::Message for Go2Telemetry {
       a_wbc_ang_x: msg.a_wbc_ang_x,
       a_wbc_ang_y: msg.a_wbc_ang_y,
       a_wbc_ang_z: msg.a_wbc_ang_z,
+      tau_joint_0: msg.tau_joint_0,
+      tau_joint_1: msg.tau_joint_1,
+      tau_joint_2: msg.tau_joint_2,
+      tau_joint_3: msg.tau_joint_3,
+      tau_joint_4: msg.tau_joint_4,
+      tau_joint_5: msg.tau_joint_5,
+      tau_joint_6: msg.tau_joint_6,
+      tau_joint_7: msg.tau_joint_7,
+      tau_joint_8: msg.tau_joint_8,
+      tau_joint_9: msg.tau_joint_9,
+      tau_joint_10: msg.tau_joint_10,
+      tau_joint_11: msg.tau_joint_11,
     }
   }
 }

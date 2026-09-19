@@ -64,7 +64,9 @@ namespace WBC
         // 缓存全状态速度和接触状态
         v_full_ << state.linear_vel, state.angular_vel, _pin->getJointVelocity();
         contact_states_ = state.contact_states;
-
+        
+        // DEBUG 设置为全接触
+        std::fill(contact_states_.begin(), contact_states_.end(), 1);
         // 设置基底姿态 (供动力学计算用)
         _pin->setBaseQuaternion(state.quat);
 
@@ -177,14 +179,15 @@ namespace WBC
     void WBC::compuseHg(){
         Mat30d H;
         Vec30d g;
+        H.setZero();
+        g.setZero();
+        // Mat30d H1 = config->A_q.transpose() * config->W  * config->A_q;
+        // Mat30d H2 = config->A_f.transpose() * config->FI * config->A_f;
+        // Mat30d H3 = config->A_a.transpose() * config->C  * config->A_a;
 
-        Mat30d H1 = config->A_q.transpose() * config->W  * config->A_q;
-        Mat30d H2 = config->A_f.transpose() * config->FI * config->A_f;
-        Mat30d H3 = config->A_a.transpose() * config->C  * config->A_a;
-
-        Vec30d g1 = config->A_q.transpose() * config->W  * config->b_q;
-        Vec30d g2 = config->A_f.transpose() * config->FI * config->b_f;
-        Vec30d g3 = config->A_a.transpose() * config->C  * config->b_a;
+        // Vec30d g1 = config->A_q.transpose() * config->W  * config->b_q;
+        // Vec30d g2 = config->A_f.transpose() * config->FI * config->b_f;
+        // Vec30d g3 = config->A_a.transpose() * config->C  * config->b_a;
 
         // if (contact_num > 0) {
         //     auto A_valid = config->A_a.topRows(row * 3); // 比如只有 2 条腿摆动，只取前 6 行
@@ -200,8 +203,8 @@ namespace WBC
         // }
         
 
-        H = H1 + H2 + H3;
-        g = g1 + g2 + g3;
+        // H = H1 + H2 + H3;
+        // g = g1 + g2 + g3;
         // double lambda = 1e-6;
         // H.diagonal().array() += lambda;
 
@@ -211,7 +214,12 @@ namespace WBC
         H.diagonal().segment<6>(0).array()   += 1e-4; // Base 加速度
         H.diagonal().segment<12>(6).array()  += 1e-4; // 12 关节加速度 (防止关节狂甩)
         H.diagonal().segment<12>(18).array() += 1e-3; // 12 接触力 (防止足端内力对抗)
-        
+        std::fill(g.begin(),g.end(),1e-4);
+
+        // 恢复 H2: 跟踪 MPC 力 f → f_d。站立所需的地面反力 (Σfz ≈ mg) 靠这一项进入 QP ——
+        // 缺它时 QP 只剩硬约束, 会在 12 维解空间里挑中"机身自由落体 + 接触力趋零"那个点
+        H += config->A_f.transpose() * config->FI * config->A_f;
+        g += config->A_f.transpose() * config->FI * config->b_f;
 
         config->H= 2 * H;
         config->g= -2 * g;

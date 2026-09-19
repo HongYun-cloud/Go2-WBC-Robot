@@ -21,16 +21,208 @@ namespace msg
 namespace builder
 {
 
+class Init_Go2Telemetry_tau_joint_11
+{
+public:
+  explicit Init_Go2Telemetry_tau_joint_11(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  ::go2_robot::msg::Go2Telemetry tau_joint_11(::go2_robot::msg::Go2Telemetry::_tau_joint_11_type arg)
+  {
+    msg_.tau_joint_11 = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_joint_10
+{
+public:
+  explicit Init_Go2Telemetry_tau_joint_10(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_joint_11 tau_joint_10(::go2_robot::msg::Go2Telemetry::_tau_joint_10_type arg)
+  {
+    msg_.tau_joint_10 = std::move(arg);
+    return Init_Go2Telemetry_tau_joint_11(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_joint_9
+{
+public:
+  explicit Init_Go2Telemetry_tau_joint_9(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_joint_10 tau_joint_9(::go2_robot::msg::Go2Telemetry::_tau_joint_9_type arg)
+  {
+    msg_.tau_joint_9 = std::move(arg);
+    return Init_Go2Telemetry_tau_joint_10(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_joint_8
+{
+public:
+  explicit Init_Go2Telemetry_tau_joint_8(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_joint_9 tau_joint_8(::go2_robot::msg::Go2Telemetry::_tau_joint_8_type arg)
+  {
+    msg_.tau_joint_8 = std::move(arg);
+    return Init_Go2Telemetry_tau_joint_9(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_joint_7
+{
+public:
+  explicit Init_Go2Telemetry_tau_joint_7(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_joint_8 tau_joint_7(::go2_robot::msg::Go2Telemetry::_tau_joint_7_type arg)
+  {
+    msg_.tau_joint_7 = std::move(arg);
+    return Init_Go2Telemetry_tau_joint_8(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_joint_6
+{
+public:
+  explicit Init_Go2Telemetry_tau_joint_6(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_joint_7 tau_joint_6(::go2_robot::msg::Go2Telemetry::_tau_joint_6_type arg)
+  {
+    msg_.tau_joint_6 = std::move(arg);
+    return Init_Go2Telemetry_tau_joint_7(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_joint_5
+{
+public:
+  explicit Init_Go2Telemetry_tau_joint_5(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_joint_6 tau_joint_5(::go2_robot::msg::Go2Telemetry::_tau_joint_5_type arg)
+  {
+    msg_.tau_joint_5 = std::move(arg);
+    return Init_Go2Telemetry_tau_joint_6(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_joint_4
+{
+public:
+  explicit Init_Go2Telemetry_tau_joint_4(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_joint_5 tau_joint_4(::go2_robot::msg::Go2Telemetry::_tau_joint_4_type arg)
+  {
+    msg_.tau_joint_4 = std::move(arg);
+    return Init_Go2Telemetry_tau_joint_5(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_joint_3
+{
+public:
+  explicit Init_Go2Telemetry_tau_joint_3(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_joint_4 tau_joint_3(::go2_robot::msg::Go2Telemetry::_tau_joint_3_type arg)
+  {
+    msg_.tau_joint_3 = std::move(arg);
+    return Init_Go2Telemetry_tau_joint_4(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_joint_2
+{
+public:
+  explicit Init_Go2Telemetry_tau_joint_2(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_joint_3 tau_joint_2(::go2_robot::msg::Go2Telemetry::_tau_joint_2_type arg)
+  {
+    msg_.tau_joint_2 = std::move(arg);
+    return Init_Go2Telemetry_tau_joint_3(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_joint_1
+{
+public:
+  explicit Init_Go2Telemetry_tau_joint_1(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_joint_2 tau_joint_1(::go2_robot::msg::Go2Telemetry::_tau_joint_1_type arg)
+  {
+    msg_.tau_joint_1 = std::move(arg);
+    return Init_Go2Telemetry_tau_joint_2(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
+class Init_Go2Telemetry_tau_joint_0
+{
+public:
+  explicit Init_Go2Telemetry_tau_joint_0(::go2_robot::msg::Go2Telemetry & msg)
+  : msg_(msg)
+  {}
+  Init_Go2Telemetry_tau_joint_1 tau_joint_0(::go2_robot::msg::Go2Telemetry::_tau_joint_0_type arg)
+  {
+    msg_.tau_joint_0 = std::move(arg);
+    return Init_Go2Telemetry_tau_joint_1(msg_);
+  }
+
+private:
+  ::go2_robot::msg::Go2Telemetry msg_;
+};
+
 class Init_Go2Telemetry_a_wbc_ang_z
 {
 public:
   explicit Init_Go2Telemetry_a_wbc_ang_z(::go2_robot::msg::Go2Telemetry & msg)
   : msg_(msg)
   {}
-  ::go2_robot::msg::Go2Telemetry a_wbc_ang_z(::go2_robot::msg::Go2Telemetry::_a_wbc_ang_z_type arg)
+  Init_Go2Telemetry_tau_joint_0 a_wbc_ang_z(::go2_robot::msg::Go2Telemetry::_a_wbc_ang_z_type arg)
   {
     msg_.a_wbc_ang_z = std::move(arg);
-    return std::move(msg_);
+    return Init_Go2Telemetry_tau_joint_0(msg_);
   }
 
 private:

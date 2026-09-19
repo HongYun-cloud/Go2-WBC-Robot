@@ -172,7 +172,24 @@ void PinocchioKinematics::getTotalMassInertia(double& mass, Eigen::Matrix3d& I_c
     mass = 0.0;
     Eigen::Matrix3d I_origin = Eigen::Matrix3d::Zero();
     Eigen::Vector3d com = Eigen::Vector3d::Zero();
-    for (size_t i = 1; i < (size_t)model_->njoints; i++) {   // i=0 是 universe (固定, 无惯量)
+
+    // std::cout << "njoints = " << model_->njoints << std::endl;
+    // std::cout << "nbodies = " << model_->nbodies << std::endl;
+
+    // for (size_t i = 0; i < model_->njoints; ++i) {
+    //     std::cout << i
+    //             << "  "
+    //             << model_->names[i]
+    //             << "  mass="
+    //             << model_->inertias[i].mass()
+    //             << std::endl;
+    // }
+
+    
+
+    // i 从 0 起: universe 槽位装的不是"世界", 而是整个机身组 —— 固定基座模型下 pinocchio
+    // 把 root link 及其所有 fixed-joint 子树合并进该 body (base 6.921 + 4×hip_rotor 0.089 + head 0.002 = 7.279)
+    for (size_t i = 1; i < (size_t)model_->njoints; i++) {
         const pinocchio::Inertia& Y = model_->inertias[i];
         double m = Y.mass();
         if (m <= 0.0) continue;
@@ -213,6 +230,7 @@ Eigen::Matrix<double, 4, 3> PinocchioKinematics::getAllFootPositions() const
     Eigen::Matrix<double, 4, 3> feet;
     for (int i = 0; i < 4; i++)
         feet.row(i) = getFootPosition(i);
+
     return feet;
 }
 
@@ -366,15 +384,15 @@ Eigen::VectorXd PinocchioKinematics::getJointTorquesFromSolution(const Eigen::Ma
     }
     Eigen::VectorXd tau_full = gen.tail(12);  // Pinocchio 顺序: FL_hip,FL_thigh,FL_calf, FR_hip,...
 
-    // 转换为 MuJoCo 8 维 (跳过 hip 关节: 索引 0,3,6,9), 与 getJointTorques 一致
-    Eigen::VectorXd tau_8(nv_ - 4);
-    int idx = 0;
-    for (int i = 0; i < nv_; i++) {
-        if (i % 3 != 0) {  // 跳过 hip (每 3 个关节的第 1 个)
-            tau_8(idx++) = tau_full(i);
-        }
-    }
-    return tau_8;
+    // // 转换为 MuJoCo 8 维 (跳过 hip 关节: 索引 0,3,6,9), 与 getJointTorques 一致
+    // Eigen::VectorXd tau_8(nv_ - 4);
+    // int idx = 0;
+    // for (int i = 0; i < nv_; i++) {
+    //     if (i % 3 != 0) {  // 跳过 hip (每 3 个关节的第 1 个)
+    //         tau_8(idx++) = tau_full(i);
+    //     }
+    // }
+    return tau_full;
 }
 
 // ========== 逆运动学 (阻尼最小二乘) ==========

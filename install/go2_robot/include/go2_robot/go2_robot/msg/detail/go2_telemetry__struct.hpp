@@ -181,6 +181,18 @@ struct Go2Telemetry_
       this->a_wbc_ang_x = 0.0;
       this->a_wbc_ang_y = 0.0;
       this->a_wbc_ang_z = 0.0;
+      this->tau_joint_0 = 0.0;
+      this->tau_joint_1 = 0.0;
+      this->tau_joint_2 = 0.0;
+      this->tau_joint_3 = 0.0;
+      this->tau_joint_4 = 0.0;
+      this->tau_joint_5 = 0.0;
+      this->tau_joint_6 = 0.0;
+      this->tau_joint_7 = 0.0;
+      this->tau_joint_8 = 0.0;
+      this->tau_joint_9 = 0.0;
+      this->tau_joint_10 = 0.0;
+      this->tau_joint_11 = 0.0;
     }
   }
 
@@ -327,6 +339,18 @@ struct Go2Telemetry_
       this->a_wbc_ang_x = 0.0;
       this->a_wbc_ang_y = 0.0;
       this->a_wbc_ang_z = 0.0;
+      this->tau_joint_0 = 0.0;
+      this->tau_joint_1 = 0.0;
+      this->tau_joint_2 = 0.0;
+      this->tau_joint_3 = 0.0;
+      this->tau_joint_4 = 0.0;
+      this->tau_joint_5 = 0.0;
+      this->tau_joint_6 = 0.0;
+      this->tau_joint_7 = 0.0;
+      this->tau_joint_8 = 0.0;
+      this->tau_joint_9 = 0.0;
+      this->tau_joint_10 = 0.0;
+      this->tau_joint_11 = 0.0;
     }
   }
 
@@ -745,6 +769,42 @@ struct Go2Telemetry_
   using _a_wbc_ang_z_type =
     double;
   _a_wbc_ang_z_type a_wbc_ang_z;
+  using _tau_joint_0_type =
+    double;
+  _tau_joint_0_type tau_joint_0;
+  using _tau_joint_1_type =
+    double;
+  _tau_joint_1_type tau_joint_1;
+  using _tau_joint_2_type =
+    double;
+  _tau_joint_2_type tau_joint_2;
+  using _tau_joint_3_type =
+    double;
+  _tau_joint_3_type tau_joint_3;
+  using _tau_joint_4_type =
+    double;
+  _tau_joint_4_type tau_joint_4;
+  using _tau_joint_5_type =
+    double;
+  _tau_joint_5_type tau_joint_5;
+  using _tau_joint_6_type =
+    double;
+  _tau_joint_6_type tau_joint_6;
+  using _tau_joint_7_type =
+    double;
+  _tau_joint_7_type tau_joint_7;
+  using _tau_joint_8_type =
+    double;
+  _tau_joint_8_type tau_joint_8;
+  using _tau_joint_9_type =
+    double;
+  _tau_joint_9_type tau_joint_9;
+  using _tau_joint_10_type =
+    double;
+  _tau_joint_10_type tau_joint_10;
+  using _tau_joint_11_type =
+    double;
+  _tau_joint_11_type tau_joint_11;
 
   // setters for named parameter idiom
   Type & set__header(
@@ -1575,6 +1635,78 @@ struct Go2Telemetry_
     this->a_wbc_ang_z = _arg;
     return *this;
   }
+  Type & set__tau_joint_0(
+    const double & _arg)
+  {
+    this->tau_joint_0 = _arg;
+    return *this;
+  }
+  Type & set__tau_joint_1(
+    const double & _arg)
+  {
+    this->tau_joint_1 = _arg;
+    return *this;
+  }
+  Type & set__tau_joint_2(
+    const double & _arg)
+  {
+    this->tau_joint_2 = _arg;
+    return *this;
+  }
+  Type & set__tau_joint_3(
+    const double & _arg)
+  {
+    this->tau_joint_3 = _arg;
+    return *this;
+  }
+  Type & set__tau_joint_4(
+    const double & _arg)
+  {
+    this->tau_joint_4 = _arg;
+    return *this;
+  }
+  Type & set__tau_joint_5(
+    const double & _arg)
+  {
+    this->tau_joint_5 = _arg;
+    return *this;
+  }
+  Type & set__tau_joint_6(
+    const double & _arg)
+  {
+    this->tau_joint_6 = _arg;
+    return *this;
+  }
+  Type & set__tau_joint_7(
+    const double & _arg)
+  {
+    this->tau_joint_7 = _arg;
+    return *this;
+  }
+  Type & set__tau_joint_8(
+    const double & _arg)
+  {
+    this->tau_joint_8 = _arg;
+    return *this;
+  }
+  Type & set__tau_joint_9(
+    const double & _arg)
+  {
+    this->tau_joint_9 = _arg;
+    return *this;
+  }
+  Type & set__tau_joint_10(
+    const double & _arg)
+  {
+    this->tau_joint_10 = _arg;
+    return *this;
+  }
+  Type & set__tau_joint_11(
+    const double & _arg)
+  {
+    this->tau_joint_11 = _arg;
+    return *this;
+  }
 
   // constant declarations
 
@@ -2030,6 +2162,42 @@ struct Go2Telemetry_
       return false;
     }
     if (this->a_wbc_ang_z != other.a_wbc_ang_z) {
+      return false;
+    }
+    if (this->tau_joint_0 != other.tau_joint_0) {
+      return false;
+    }
+    if (this->tau_joint_1 != other.tau_joint_1) {
+      return false;
+    }
+    if (this->tau_joint_2 != other.tau_joint_2) {
+      return false;
+    }
+    if (this->tau_joint_3 != other.tau_joint_3) {
+      return false;
+    }
+    if (this->tau_joint_4 != other.tau_joint_4) {
+      return false;
+    }
+    if (this->tau_joint_5 != other.tau_joint_5) {
+      return false;
+    }
+    if (this->tau_joint_6 != other.tau_joint_6) {
+      return false;
+    }
+    if (this->tau_joint_7 != other.tau_joint_7) {
+      return false;
+    }
+    if (this->tau_joint_8 != other.tau_joint_8) {
+      return false;
+    }
+    if (this->tau_joint_9 != other.tau_joint_9) {
+      return false;
+    }
+    if (this->tau_joint_10 != other.tau_joint_10) {
+      return false;
+    }
+    if (this->tau_joint_11 != other.tau_joint_11) {
       return false;
     }
     return true;

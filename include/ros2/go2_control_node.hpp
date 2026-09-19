@@ -131,6 +131,7 @@ private:
                           const Eigen::Matrix<double,12,1>& f_mpc,
                           const Eigen::Matrix<double,12,1>& f_wbc,
                           const Eigen::Matrix<double,18,1>& q_des,
+                          const Eigen::VectorXd& tau,
                           const Eigen::Vector3d& a_wbc_ang,
                           const RobotState& state);    // Telemetry message filling
 };

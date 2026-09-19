@@ -1,0 +1,36 @@
+[0.007s] Invoking command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24
+[0.051s] [  6%] Built target go2_robot__rosidl_generator_c
+[0.053s] [  8%] Built target go2_robot__cpp
+[0.054s] [ 10%] Built target go2_robot__rs
+[0.057s] [ 10%] Built target ament_cmake_python_copy_go2_robot
+[0.058s] [ 20%] Built target OsqpEigen
+[0.064s] [ 28%] Built target go2_robot__rosidl_typesupport_c
+[0.064s] [ 32%] Built target go2_robot__rosidl_typesupport_introspection_c
+[0.068s] [ 38%] Built target go2_robot__rosidl_typesupport_fastrtps_c
+[0.070s] [ 44%] Built target go2_robot__rosidl_typesupport_introspection_cpp
+[0.071s] [ 51%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp
+[0.072s] [ 57%] Built target go2_robot__rosidl_typesupport_cpp
+[0.081s] [35m[1mConsolidate compiler generated dependencies of target go2_core[0m
+[0.088s] [ 57%] Built target go2_robot
+[0.105s] [ 59%] Built target go2_robot__py
+[0.124s] [ 63%] Built target go2_robot__rosidl_generator_py
+[0.124s] [ 65%] [32mBuilding CXX object CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o[0m
+[0.142s] [ 69%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext
+[0.143s] [ 73%] Built target go2_robot__rosidl_typesupport_c__pyext
+[0.144s] [ 77%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext
+[0.191s] running egg_info
+[0.192s] writing go2_robot.egg-info/PKG-INFO
+[0.192s] writing dependency_links to go2_robot.egg-info/dependency_links.txt
+[0.192s] writing top-level names to go2_robot.egg-info/top_level.txt
+[0.193s] reading manifest file 'go2_robot.egg-info/SOURCES.txt'
+[0.193s] writing manifest file 'go2_robot.egg-info/SOURCES.txt'
+[0.212s] [ 77%] Built target ament_cmake_python_build_go2_robot_egg
+[3.660s] [01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:[m[K In member function ‘[01m[Kvoid WBC::WBC::compuseHg()[m[K’:
+[3.660s] [01m[K/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:183:11:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing Vec30d = Eigen::Vector<double, 30>[m[K’ {aka ‘[01m[Kclass Eigen::Matrix<double, 30, 1, 0, 30, 1>[m[K’} has no member named ‘[01m[KgetZero[m[K’; did you mean ‘[01m[KsetZero[m[K’?
+[3.660s]   183 |         g.[01;31m[KgetZero[m[K();
+[3.660s]       |           [01;31m[K^~~~~~~[m[K
+[3.660s]       |           [32m[KsetZero[m[K
+[5.274s] gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:118：CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o] 错误 1
+[5.275s] gmake[1]: *** [CMakeFiles/Makefile2:265：CMakeFiles/go2_core.dir/all] 错误 2
+[5.275s] gmake: *** [Makefile:146：all] 错误 2
+[5.277s] Invoked command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24

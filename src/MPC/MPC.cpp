@@ -110,8 +110,8 @@ namespace Regulator{
                         contact_expanded[j * 4 + i] = cs[i];
             }
         }
-        // DEBUG: 全接触查看期望位置加速度波形
-        // std::fill(contact_expanded.begin(), contact_expanded.end(), 1);
+        // DEBUG: 全接触
+        std::fill(contact_expanded.begin(), contact_expanded.end(), 1);
         
         _qpconstraint->updateConstraints(contact_expanded);
         Eigen::SparseMatrix<double> A_sparse = _qpconstraint->A_constraint.sparseView();
@@ -121,21 +121,6 @@ namespace Regulator{
 
         A_sparse.makeCompressed();
         H_sparse.makeCompressed();
-
-        // // ===== DEBUG: 打印OSQP输入参数 =====
-        // std::cout << "\n========== OSQP SOLVE ==========" << std::endl;
-        // std::cout << "[Gradient q] first 12 (head): " << gradient.head(12).transpose() << std::endl;
-        // std::cout << "[Gradient q] max_abs: " << gradient.lpNorm<Eigen::Infinity>() << std::endl;
-        // std::cout << "[State error] " << controller->data->state.transpose() << std::endl;
-        // std::cout << "[H diag] first 12: ";
-        // for (int i = 0; i < 12; i++)
-        //     std::cout << controller->config->H(i,i) << " ";
-        // std::cout << std::endl;
-        // std::cout << "[Constraint L] first 5: " << boundL.head(5).transpose() << std::endl;
-        // std::cout << "[Constraint U] first 5: " << boundU.head(5).transpose() << std::endl;
-        // std::cout << "[contact_states] size=" << controller->data->est_state.contact_states.size() << ": ";
-        // for (auto c : controller->data->est_state.contact_states) std::cout << c << " ";
-        // std::cout << std::endl;
 
         if (!_solver_initialized) {
             _solver.settings()->setVerbosity(false);
@@ -159,8 +144,7 @@ namespace Regulator{
         _solver.solveProblem();
         Eigen::VectorXd optimalU = _solver.getSolution();
         controller->data->control = optimalU.head(12).cast<double>();
-        // std::cout << "[OSQP] optimalU head(12): " << controller->data->control.transpose() << std::endl;
-        // std::cout << "================================\n" << std::endl;
+
     }
 
     void MPC::update_DesireStateCommand(Vec3d q,Vec3d p,Vec3d v,Vec3d w){
@@ -179,21 +163,6 @@ namespace Regulator{
         
         d.setZero();
 
-        // d(0) = e.q(0);
-        // d(1) = e.q(1);
-        // d(2) = e.q(2);
-
-        // d(3) = e.p(0) + c.v(0) * dt;
-        // d(4) = e.p(1) + c.v(0) * dt;
-        // d(5) = 0.25 + c.v(0) * dt;
-
-        // d(6) = c.w(0);
-        // d(7) = c.w(1);
-        // d(8) = c.w(2);
-
-        // d(9)  = c.v(0);
-        // d(10) = c.v(1);
-        // d(11) = c.v(2);
         d(12) = 9.81;
 
         d(0) = c.q(0);

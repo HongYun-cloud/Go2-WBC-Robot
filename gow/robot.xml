@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="generated_robot">
+  <compiler angle="radian" eulerseq="xyz" autolimits="true" balanceinertia="true" boundinertia="1e-8" />
+  <asset>
+    <mesh name="part_1" file="meshes/part_1.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_2" file="meshes/part_2.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_3" file="meshes/part_3.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_4" file="meshes/part_4.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_5" file="meshes/part_5.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_6" file="meshes/part_6.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_7" file="meshes/part_7.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_8" file="meshes/part_8.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_9" file="meshes/part_9.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_10" file="meshes/part_10.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_11" file="meshes/part_11.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_12" file="meshes/part_12.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_13" file="meshes/part_13.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_14" file="meshes/part_14.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_15" file="meshes/part_15.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_16" file="meshes/part_16.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_17" file="meshes/part_17.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_18" file="meshes/part_18.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_19" file="meshes/part_19.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_20" file="meshes/part_20.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_21" file="meshes/part_21.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_22" file="meshes/part_22.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_23" file="meshes/part_23.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_24" file="meshes/part_24.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_25" file="meshes/part_25.stl" scale="0.001 0.001 0.001" />
+    <mesh name="part_26" file="meshes/part_26.stl" scale="0.001 0.001 0.001" />
+  </asset>
+  <worldbody>
+    <body name="base_link" pos="0 0 0">
+      <inertial pos="0.00010366644 0 0" mass="8.8701847" quat="1 0 0 0" diaginertia="0.075344402 0.10493702 0.0463635" />
+      
+      <geom name="base_link_collision_1" type="mesh" mesh="part_2" pos="0 0 0" euler="0 0 0" group="3" />
+      <geom name="base_link_visual_1" type="mesh" mesh="part_1" pos="0 0 0" euler="0 0 0" group="2" contype="0" conaffinity="0" />
+      <body name="FR_link_hip" pos="0.07011731 0 -0.165">
+        <joint name="FR_hip" type="hinge" pos="0 0 0" axis="0 0 1" range="-0.52359878 1.5707963" limited="true" actuatorfrcrange="-10 10" actuatorfrclimited="true" />
+        <inertial pos="0 0 -0.041970174" mass="1.1554483" quat="0.99999103 3.3039148e-10 -2.9390156e-09 -0.0042360173" diaginertia="0.0025949213 0.0024612007 0.0012981329" />
+        <geom name="FR_link_hip_collision_1" type="mesh" mesh="part_4" pos="-0.07011731 0 0.165" euler="0 0 0" group="3" />
+        <geom name="FR_link_hip_visual_1" type="mesh" mesh="part_3" pos="-0.07011731 0 0.165" euler="0 0 0" group="2" contype="0" conaffinity="0" />
+        <body name="FR_link_thigh" pos="0.03873868 -0.00031983951 -0.07065" euler="-1.5707931 -1.5625402 3.2453823e-06">
+          <joint name="FR_thigh" type="hinge" pos="0 0 0" axis="0 0 1" range="-1.5707963 1.5707963" limited="true" actuatorfrcrange="-10 10" actuatorfrclimited="true" />
+          <inertial pos="-0.018024769 -0.051899324 -0.023021687" mass="0.67857644" quat="0.98595619 0.016962943 -0.0028157019 -0.16611662" diaginertia="0.0031807256 0.0004036869 0.0034449463" />
+          <geom name="FR_link_thigh_collision_1" type="mesh" mesh="part_6" pos="-0.00057889004 -0.23565 0.10885493" euler="1.5707963 0 -1.5625402" group="3" />
+          <geom name="FR_link_thigh_visual_1" type="mesh" mesh="part_5" pos="-0.00057889004 -0.23565 0.10885493" euler="1.5707963 0 -1.5625402" group="2" contype="0" conaffinity="0" />
+          <body name="FR_link_calf" pos="-0.077118946 -0.22194143 -0.0155">
+            <joint name="FR_calf" type="hinge" pos="0 0 0" axis="0 0 1" range="-0.34906585 1.2217305" limited="true" actuatorfrcrange="-10 10" actuatorfrclimited="true" />
+            <inertial pos="-0.067182084 0.10366206 -0.010999999" mass="0.12275047" quat="0.95895157 -7.5945125e-09 1.4860431e-08 0.28356991" diaginertia="0.00076517639 1.0412886e-05 0.00076967681" />
+            <geom name="FR_link_calf_collision_1" type="mesh" mesh="part_8" pos="0.076540056 -0.013708567 0.12435493" euler="1.5707963 0 -1.5625402" group="3" />
+            <geom name="FR_link_calf_visual_1" type="mesh" mesh="part_7" pos="0.076540056 -0.013708567 0.12435493" euler="1.5707963 0 -1.5625402" group="2" contype="0" conaffinity="0" />
+          </body>
+        </body>
+      </body>
+      <body name="FL_link_hip" pos="-0.06988269 0 -0.138">
+        <joint name="FL_hip" type="hinge" pos="0 0 0" axis="0 0 1" range="-1.5707963 0.52359878" limited="true" actuatorfrcrange="-10 10" actuatorfrclimited="true" />
+        <inertial pos="0 0 -0.068970175" mass="1.1554483" quat="0.99995454 9.6927749e-10 0 -0.0095349275" diaginertia="0.0025949213 0.0024612007 0.0012981329" />
+        <geom name="FL_link_hip_collision_1" type="mesh" mesh="part_10" pos="0.06988269 0 0.138" euler="0 0 0" group="3" />
+        <geom name="FL_link_hip_visual_1" type="mesh" mesh="part_9" pos="0.06988269 0 0.138" euler="0 0 0" group="2" contype="0" conaffinity="0" />
+        <body name="FL_link_thigh" pos="-0.038733114 0.00073037301 -0.09765" euler="1.5707949 1.551942 1.4209853e-06">
+          <joint name="FL_thigh" type="hinge" pos="0 0 0" axis="0 0 1" range="-1.5707963 1.5707963" limited="true" actuatorfrcrange="-10 10" actuatorfrclimited="true" />
+          <inertial pos="-0.020996574 0.050769839 -0.023021687" mass="0.67857644" quat="0.98065151 -0.016856666 -0.003394498 0.19500498" diaginertia="0.0031807257 0.0004036869 0.0034449465" />
+          <geom name="FL_link_thigh_collision_1" type="mesh" mesh="part_12" pos="0.0013175133 0.23565 0.10861028" euler="-1.5707963 0 -1.551942" group="3" />
+          <geom name="FL_link_thigh_visual_1" type="mesh" mesh="part_11" pos="0.0013175133 0.23565 0.10861028" euler="-1.5707963 0 -1.551942" group="2" contype="0" conaffinity="0" />
+          <body name="FL_link_calf" pos="-0.089760905 0.21713662 -0.035">
+            <joint name="FL_calf" type="hinge" pos="0 0 0" axis="0 0 1" range="-1.2217305 0.34906585" limited="true" actuatorfrcrange="-10 10" actuatorfrclimited="true" />
+            <inertial pos="-0.062287374 -0.10667492 0.0084999987" mass="0.1227505" quat="0.96528913 1.5017396e-08 6.7892499e-08 -0.26118363" diaginertia="0.00076517654 1.0412896e-05 0.00076967695" />
+            <geom name="FL_link_calf_collision_1" type="mesh" mesh="part_14" pos="0.091078418 0.018513377 0.14361028" euler="-1.5707963 0 -1.551942" group="3" />
+            <geom name="FL_link_calf_visual_1" type="mesh" mesh="part_13" pos="0.091078418 0.018513377 0.14361028" euler="-1.5707963 0 -1.551942" group="2" contype="0" conaffinity="0" />
+          </body>
+        </body>
+      </body>
+      <body name="RR_link_hip" pos="0.07011731 0 0.165" euler="-3.1415926 0 0">
+        <joint name="RR_hip" type="hinge" pos="0 0 0" axis="0 0 1" range="-1.5707963 0.52359878" limited="true" actuatorfrcrange="-10 10" actuatorfrclimited="true" />
+        <inertial pos="0 -3.3438403e-10 -0.041970175" mass="1.1554483" quat="0.99978089 1.0237617e-09 -2.1844594e-09 0.020932439" diaginertia="0.0025949213 0.0024612007 0.0012981329" />
+        <geom name="RR_link_hip_collision_1" type="mesh" mesh="part_16" pos="-0.07011731 7.6576841e-09 0.165" euler="3.1415926 0 0" group="3" />
+        <geom name="RR_link_hip_visual_1" type="mesh" mesh="part_15" pos="-0.07011731 7.6576841e-09 0.165" euler="3.1415926 0 0" group="2" contype="0" conaffinity="0" />
+        <body name="RR_link_thigh" pos="0.0387057 0.0016298388 -0.07065" euler="1.5707957 -1.5287127 -6.3633005e-07">
+          <joint name="RR_thigh" type="hinge" pos="0 0 0" axis="0 0 1" range="-1.5707963 1.5707963" limited="true" actuatorfrcrange="-10 10" actuatorfrclimited="true" />
+          <inertial pos="-0.024198387 -0.049324126 -0.023021687" mass="0.67857647" quat="0.97401484 0.01676007 -0.003843116 -0.2258305" diaginertia="0.0031807255 0.00040368696 0.0034449462" />
+          <geom name="RR_link_thigh_collision_1" type="mesh" mesh="part_18" pos="-0.0029499272 0.23565 0.10879523" euler="1.5707964 4.6369116e-08 -1.5287127" group="3" />
+          <geom name="RR_link_thigh_visual_1" type="mesh" mesh="part_17" pos="-0.0029499272 0.23565 0.10879523" euler="1.5707964 4.6369116e-08 -1.5287127" group="2" contype="0" conaffinity="0" />
+          <body name="RR_link_calf" pos="-0.10351944 -0.21092429 -0.035">
+            <joint name="RR_calf" type="hinge" pos="0 0 0" axis="0 0 1" range="-0.34906585 1.2217305" limited="true" actuatorfrcrange="-10 10" actuatorfrclimited="true" />
+            <inertial pos="-0.074519314 0.09851968 0.0085000014" mass="0.12275049" quat="0.94803667 -5.7372486e-09 1.0705979e-08 0.31816107" diaginertia="0.00076517645 1.0412893e-05 0.00076967686" />
+            <geom name="RR_link_calf_collision_1" type="mesh" mesh="part_20" pos="0.10056951 0.44657429 0.14379523" euler="1.5707964 4.6369116e-08 -1.5287127" group="3" />
+            <geom name="RR_link_calf_visual_1" type="mesh" mesh="part_19" pos="0.10056951 0.44657429 0.14379523" euler="1.5707964 4.6369116e-08 -1.5287127" group="2" contype="0" conaffinity="0" />
+          </body>
+        </body>
+      </body>
+      <body name="RL_link_hip" pos="-0.06988269 0 0.138" euler="-3.1415926 0 0">
+        <joint name="RL_hip" type="hinge" pos="0 0 0" axis="0 0 1" range="-1.57 1.5707963" limited="true" actuatorfrcrange="-10 10" actuatorfrclimited="true" />
+        <inertial pos="4.9975628e-10 0 -0.068970174" mass="1.1554483" quat="0.99984951 -1.600295e-09 -5.9843916e-10 -0.01734794" diaginertia="0.0025949213 0.0024612007 0.0012981329" />
+        <geom name="RL_link_hip_collision_1" type="mesh" mesh="part_22" pos="0.06988269 6.4046085e-09 0.138" euler="3.1415926 0 0" group="3" />
+        <geom name="RL_link_hip_visual_1" type="mesh" mesh="part_21" pos="0.06988269 6.4046085e-09 0.138" euler="3.1415926 0 0" group="2" contype="0" conaffinity="0" />
+        <body name="RL_link_thigh" pos="-0.038716972 0.0013355591 -0.09765" euler="1.5707955 1.5363146 -3.1415919">
+          <joint name="RL_thigh" type="hinge" pos="0 0 0" axis="0 0 1" range="-1.5707963 1.5707963" limited="true" actuatorfrcrange="-10 10" actuatorfrclimited="true" />
+          <inertial pos="-0.02524485 0.048796821 -0.023021687" mass="0.67857654" quat="0.97144723 -0.016696636 -0.0041099908 0.2366318" diaginertia="0.0031807259 0.00040368703 0.0034449468" />
+          <geom name="RL_link_thigh_collision_1" type="mesh" mesh="part_24" pos="-0.0024092081 -0.23565 0.10858116" euler="-1.5707964 4.6382619e-08 -1.6052781" group="3" />
+          <geom name="RL_link_thigh_visual_1" type="mesh" mesh="part_23" pos="-0.0024092081 -0.23565 0.10858116" euler="-1.5707964 4.6382619e-08 -1.6052781" group="2" contype="0" conaffinity="0" />
+          <body name="RL_link_calf" pos="-0.10793044 0.20870159 -0.035">
+            <joint name="RL_calf" type="hinge" pos="0 0 0" axis="0 0 1" range="-1.2217305 0.34906585" limited="true" actuatorfrcrange="-10 10" actuatorfrclimited="true" />
+            <inertial pos="-0.075705505 -0.097611129 0.0085000012" mass="0.12275048" quat="0.94609515 -1.8145694e-08 -6.5641092e-08 -0.32388883" diaginertia="0.00076517645 1.0412895e-05 0.00076967687" />
+            <geom name="RL_link_calf_collision_1" type="mesh" mesh="part_26" pos="0.10552123 -0.44435159 0.14358116" euler="-1.5707964 4.6382619e-08 -1.6052781" group="3" />
+            <geom name="RL_link_calf_visual_1" type="mesh" mesh="part_25" pos="0.10552123 -0.44435159 0.14358116" euler="-1.5707964 4.6382619e-08 -1.6052781" group="2" contype="0" conaffinity="0" />
+          </body>
+        </body>
+      </body>
+      <freejoint name="stackforce_free_root_0" />
+    </body>
+  </worldbody>
+  <keyframe>
+    <key name="home" qpos="0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" />
+  </keyframe>
+</mujoco>

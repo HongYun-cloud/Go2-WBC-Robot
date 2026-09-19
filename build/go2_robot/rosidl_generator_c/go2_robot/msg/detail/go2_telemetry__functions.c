@@ -163,6 +163,18 @@ go2_robot__msg__Go2Telemetry__init(go2_robot__msg__Go2Telemetry * msg)
   // a_wbc_ang_x
   // a_wbc_ang_y
   // a_wbc_ang_z
+  // tau_joint_0
+  // tau_joint_1
+  // tau_joint_2
+  // tau_joint_3
+  // tau_joint_4
+  // tau_joint_5
+  // tau_joint_6
+  // tau_joint_7
+  // tau_joint_8
+  // tau_joint_9
+  // tau_joint_10
+  // tau_joint_11
   return true;
 }
 
@@ -311,6 +323,18 @@ go2_robot__msg__Go2Telemetry__fini(go2_robot__msg__Go2Telemetry * msg)
   // a_wbc_ang_x
   // a_wbc_ang_y
   // a_wbc_ang_z
+  // tau_joint_0
+  // tau_joint_1
+  // tau_joint_2
+  // tau_joint_3
+  // tau_joint_4
+  // tau_joint_5
+  // tau_joint_6
+  // tau_joint_7
+  // tau_joint_8
+  // tau_joint_9
+  // tau_joint_10
+  // tau_joint_11
 }
 
 bool
@@ -873,6 +897,54 @@ go2_robot__msg__Go2Telemetry__are_equal(const go2_robot__msg__Go2Telemetry * lhs
   if (lhs->a_wbc_ang_z != rhs->a_wbc_ang_z) {
     return false;
   }
+  // tau_joint_0
+  if (lhs->tau_joint_0 != rhs->tau_joint_0) {
+    return false;
+  }
+  // tau_joint_1
+  if (lhs->tau_joint_1 != rhs->tau_joint_1) {
+    return false;
+  }
+  // tau_joint_2
+  if (lhs->tau_joint_2 != rhs->tau_joint_2) {
+    return false;
+  }
+  // tau_joint_3
+  if (lhs->tau_joint_3 != rhs->tau_joint_3) {
+    return false;
+  }
+  // tau_joint_4
+  if (lhs->tau_joint_4 != rhs->tau_joint_4) {
+    return false;
+  }
+  // tau_joint_5
+  if (lhs->tau_joint_5 != rhs->tau_joint_5) {
+    return false;
+  }
+  // tau_joint_6
+  if (lhs->tau_joint_6 != rhs->tau_joint_6) {
+    return false;
+  }
+  // tau_joint_7
+  if (lhs->tau_joint_7 != rhs->tau_joint_7) {
+    return false;
+  }
+  // tau_joint_8
+  if (lhs->tau_joint_8 != rhs->tau_joint_8) {
+    return false;
+  }
+  // tau_joint_9
+  if (lhs->tau_joint_9 != rhs->tau_joint_9) {
+    return false;
+  }
+  // tau_joint_10
+  if (lhs->tau_joint_10 != rhs->tau_joint_10) {
+    return false;
+  }
+  // tau_joint_11
+  if (lhs->tau_joint_11 != rhs->tau_joint_11) {
+    return false;
+  }
   return true;
 }
 
@@ -1164,6 +1236,30 @@ go2_robot__msg__Go2Telemetry__copy(
   output->a_wbc_ang_y = input->a_wbc_ang_y;
   // a_wbc_ang_z
   output->a_wbc_ang_z = input->a_wbc_ang_z;
+  // tau_joint_0
+  output->tau_joint_0 = input->tau_joint_0;
+  // tau_joint_1
+  output->tau_joint_1 = input->tau_joint_1;
+  // tau_joint_2
+  output->tau_joint_2 = input->tau_joint_2;
+  // tau_joint_3
+  output->tau_joint_3 = input->tau_joint_3;
+  // tau_joint_4
+  output->tau_joint_4 = input->tau_joint_4;
+  // tau_joint_5
+  output->tau_joint_5 = input->tau_joint_5;
+  // tau_joint_6
+  output->tau_joint_6 = input->tau_joint_6;
+  // tau_joint_7
+  output->tau_joint_7 = input->tau_joint_7;
+  // tau_joint_8
+  output->tau_joint_8 = input->tau_joint_8;
+  // tau_joint_9
+  output->tau_joint_9 = input->tau_joint_9;
+  // tau_joint_10
+  output->tau_joint_10 = input->tau_joint_10;
+  // tau_joint_11
+  output->tau_joint_11 = input->tau_joint_11;
   return true;
 }
 
