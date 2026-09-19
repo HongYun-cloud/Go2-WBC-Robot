@@ -83,7 +83,11 @@ void Go2ControlNode::initControlStack()
     mpc->loadConfig(mpc_yaml);
     mpc->update_reference_trajectory();
 
-    // WBC 首次 update + init (设置 cmd 并初始化固定矩阵)
+    // WBC 初始化必须先于首次 update (WBC.cpp 的 @warning):
+    // init() 里才设 A_q/A_f 的单位块, 顺序反了会让首帧的 H1/H2 全为零
+    wbc->init();
+
+    // WBC 首次 update (设置 cmd 并初始化固定矩阵)
     {
         auto state = mj->getState();
         estimator->update(state);
@@ -102,7 +106,6 @@ void Go2ControlNode::initControlStack()
         Eigen::Matrix<double, 12, 1> a_des = Eigen::Matrix<double, 12, 1>::Zero();
         wbc->update(q_des, f_mpc, a_des, state);
     }
-    wbc->init();
 
     // ===== MPC 模型参数: 用 URDF 真值替换硬编码 =====
     // 之前 m=12kg, I=(0.1,0.1,0.02) 是瞎猜的, I_zz 比真值小 ~20 倍 →
@@ -121,7 +124,8 @@ void Go2ControlNode::initControlStack()
         Gait::GaitType type = Gait::GaitType::TROT;
         if      (gait == "STAND") type = Gait::GaitType::STAND;
         else if (gait == "WALK")  type = Gait::GaitType::WALK;
-        fsm->SetCmd(type, v);
+        gait_type_ = type;
+        fsm->SetCmd(gait_type_, v);
     }
     fsm->SetState(fsm::FSM_State::GAIT_RUNNING);
 
@@ -224,6 +228,10 @@ void Go2ControlNode::wbcControlLoop()
     {
         std::lock_guard<std::mutex> lk(cmd_mutex_);
         mpc->update_DesireStateCommand(q, p, v, w);
+        // 每拍刷新步态速度指令: 否则 Gait_cmd.v 恒为初始化那一刻的值,
+        // 摆动规划器只会原地踏步, /cmd_vel 推不动步幅
+        // (FSM::run 内有 _last_gait_type 守卫, 重复 SetCmd 不会重置步态相位)
+        fsm->SetCmd(gait_type_, v);
     }
 
     fsm->run(sim_dt);
@@ -238,9 +246,6 @@ void Go2ControlNode::wbcControlLoop()
 
     for (int leg = 0; leg < 4; leg++)
         state.contact_states[leg] = (scheduler->GetSwingPhases(leg) <= 0) ? 1 : 0;
-
-    // DEBUG: 设置强行全接触
-    std::fill(state.contact_states.begin(), state.contact_states.end(), true);
 
     // ===== 估计器 + FK: 写共享数据, 与 MPC 线程互斥 =====
     {
@@ -420,8 +425,9 @@ Eigen::Matrix<double, 18, 1> Go2ControlNode::computePoseAccDes(
         Eigen::Vector3d Kd_ang(20.0, 20.0, 20.0);
         Eigen::Vector3d a_ang_ref;
         a_ang_ref.setZero();
+        // 这里不再取负: 原先的 a_ang = -a_ang 是给 getFootJacobianFloatingBase
+        // 角速度块符号写反 (Σ(r×f) 变成 -Σ(r×f)) 打的补丁, 那个根因已修
         a_ang = a_ang_ref + Kp_ang.cwiseProduct(e_rpy) + Kd_ang.cwiseProduct(e_w);
-        a_ang = -a_ang;
     }
 
     // 关节加速度: 暂无期望关节位置/速度参考 → 前馈直通。

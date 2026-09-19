@@ -289,10 +289,11 @@ Eigen::Matrix<double, 3, 18> PinocchioKinematics::getFootJacobianFloatingBase(in
     Eigen::Matrix<double, 3, 18> J;
     J.setZero();
     J.block<3, 3>(0, 0) = Eigen::Matrix3d::Identity();   // ∂v_foot/∂v_base
-    // -skew(r)
-    J(0, 4) = -r(2);   J(0, 5) =  r(1);
-    J(1, 3) =  r(2);   J(1, 5) = -r(0);
-    J(2, 3) = -r(1);   J(2, 4) =  r(0);
+    // -skew(r): ∂(ω×r)/∂ω = -skew(r), 之前写成 +skew(r) 整块取反 ——
+    // 站立时 ω≈0 不显形, 一摆动腿就把 2·|r|·a_ang 的假项注进无滑动约束
+    J(0, 4) =  r(2);   J(0, 5) = -r(1);
+    J(1, 3) = -r(2);   J(1, 5) =  r(0);
+    J(2, 3) =  r(1);   J(2, 4) = -r(0);
     J.block<3, 12>(0, 6) = J_joint.topRows(3);           // ∂v_foot/∂q̇_joint
 
     return J;
@@ -321,10 +322,10 @@ Eigen::Matrix<double, 3, 18> PinocchioKinematics::getFootJacobianTimeVariationFl
     Eigen::Matrix<double, 3, 18> dJ;
     dJ.setZero();
     // dJ_base_linear = 0₃ (I 是常量)
-    // dJ_base_angular = -skew(ṙ)
-    dJ(0, 4) = -r_dot(2);   dJ(0, 5) =  r_dot(1);
-    dJ(1, 3) =  r_dot(2);   dJ(1, 5) = -r_dot(0);
-    dJ(2, 3) = -r_dot(1);   dJ(2, 4) =  r_dot(0);
+    // dJ_base_angular = -skew(ṙ) (与上面 J 的角速度块同步取反)
+    dJ(0, 4) =  r_dot(2);   dJ(0, 5) = -r_dot(1);
+    dJ(1, 3) = -r_dot(2);   dJ(1, 5) =  r_dot(0);
+    dJ(2, 3) =  r_dot(1);   dJ(2, 4) = -r_dot(0);
     dJ.block<3, 12>(0, 6) = dJ_joint.topRows(3);
 
     return dJ;
@@ -584,36 +585,37 @@ void PinocchioKinematics::setBaseQuaternion(const Eigen::Quaterniond& quat)
 
 void PinocchioKinematics::computeFloatingBaseDynamics()
 {
-    // 使用固定基座模型，保证与 Jacobian 一致
-    // M(18×18) = blkdiag(m*I₃, I₃, M_joint), 耦合项暂置零
-    // h(18) = rnea 完整重力+科氏力
+    // 用已建好的自由飞轮模型算真实 18×18 浮动基座动力学。
+    // 之前是手拼 blkdiag(m·I₃, I₃, M_joint) 并"耦合项暂置零", 有两个后果:
+    //   1) 基座转动块写死 I₃ (真实 ≈ diag(0.24, 0.55, 0.54)) → WBC 的角加速度行变成
+    //      a_ang = Σ(r×f) 而不是 Σ(r×f) = I·a_ang, 姿态环实际增益差 1/I (roll 4.2 倍)
+    //   2) h 里缺重力对基座原点的力矩 c×(m·g) → 恒定 pitch 偏置
+    // pinocchio 的自由飞轮把基座速度表达在机体系, WBC/MPC 用世界系对齐
+    // → 前 6 行/列左右各乘一次 T = blockdiag(R, R, I₁₂) (T 正交)。
 
-    // 1. 关节空间质量矩阵 M_joint (12×12)
-    pinocchio::crba(*model_, *data_, q_);
-    data_->M.triangularView<Eigen::StrictlyLower>() =
-        data_->M.transpose().triangularView<Eigen::StrictlyLower>();
-    Eigen::MatrixXd M_joint = data_->M;
+    Eigen::VectorXd q_fb(model_fb_->nq), v_fb(model_fb_->nv);
+    q_fb.setZero();
+    q_fb.segment<4>(3) = base_quat_;      // pinocchio 约定 (x,y,z,w); 基座平移不影响 M/h
+    q_fb.tail(nv_)     = q_;
+    v_fb.setZero();
+    v_fb.head<3>()     = base_vel_;
+    v_fb.segment<3>(3) = base_ang_;
+    v_fb.tail(nv_)     = v_;
 
-    // 2. 总质量
-    double total_mass = 0.0;
-    for (const auto& inertia : model_->inertias)
-        total_mass += inertia.mass();
-    const double g = 9.81;
+    pinocchio::crba(*model_fb_, *data_fb_, q_fb);
+    data_fb_->M.triangularView<Eigen::StrictlyLower>() =
+        data_fb_->M.transpose().triangularView<Eigen::StrictlyLower>();
+    // 非线性格包括科氏/离心/重力 (之前传零速度只算了重力)
+    pinocchio::nonLinearEffects(*model_fb_, *data_fb_, q_fb, v_fb);
 
-    // 3. 组装 M(18×18)
-    M_fb_.setZero(18, 18);
-    M_fb_.topLeftCorner<3, 3>()      = total_mass * Eigen::Matrix3d::Identity();
-    M_fb_.block<3, 3>(3, 3)          = Eigen::Matrix3d::Identity();
-    M_fb_.bottomRightCorner<12, 12>() = M_joint;
+    Eigen::Quaterniond qb(base_quat_(3), base_quat_(0), base_quat_(1), base_quat_(2));  // (w,x,y,z)
+    Eigen::Matrix<double, 18, 18> T = Eigen::Matrix<double, 18, 18>::Identity();
+    T.block<3, 3>(0, 0) = qb.toRotationMatrix();
+    T.block<3, 3>(3, 3) = T.block<3, 3>(0, 0);
 
-    // 4. h(18) = 关节重力矩 (固定基座 rnea 直接算)
-    // 固定基座模型: q_ 是关节位置, rnea(q, 0, 0) → 保持当前姿态的关节重力矩
-    pinocchio::rnea(*model_, *data_, q_,
-                    Eigen::VectorXd::Zero(nv_),
-                    Eigen::VectorXd::Zero(nv_));
-    h_fb_.setZero(18);
-    h_fb_(2) = total_mass * g;  // 基底重力
-    h_fb_.tail(12) = data_->tau;  // 关节重力矩 (12维, 固定基座 RNEA 结果)
+    // x_world = T·x_local ⇒ M_world = T·M_local·Tᵀ, h_world = T·h_local
+    M_fb_ = T * data_fb_->M * T.transpose();
+    h_fb_ = T * data_fb_->nle;
 }
 
 Eigen::Matrix<double, 18, 18> PinocchioKinematics::getMassMatrix() const

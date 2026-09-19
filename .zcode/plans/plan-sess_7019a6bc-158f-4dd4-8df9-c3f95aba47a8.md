@@ -1,54 +1,53 @@
-## 目标
-把 go2/go2.xml 里 13 个 body 的惯量改成与 URDF 合并后完全一致，使 MuJoCo plant 的总质量从 15.2064 kg 变成 16.0870 kg，与控制器（pinocchio/URDF）对齐。
+## Part A —— 关掉全接触 + 恢复 H1/H3（你要的）
 
-## 背景
-- 控制器侧（URDF）：`getTotalMassInertia` 和 `computeFloatingBaseDynamics` 都读 URDF，总质量 16.0870 kg
-- plant 侧（MJCF）：CAD 显式惯量，总质量 15.2064 kg，少 0.8806 kg
-- 差的 0.88 kg 来自 URDF 里 12 个 rotor link（0.089×12）和 head；MJCF 没有这些
-- 结果：MPC 按 16.087 kg 出力 157.8 N，plant 只需 149.2 N → 净 +8.6 N → 上飘 0.56 m/s²（已数值验证）
+**1. 删掉三处全接触 override**
+- `src/ros2/go2_control_node.cpp:242-243` 的 `std::fill(state.contact_states..., true)`
+- `src/MPC/MPC.cpp:113-114` 的 `std::fill(contact_expanded..., 1)`
+- `src/WBC/WBC.cpp:68-69` 的 `std::fill(contact_states_..., 1)`
 
-## 逐 body 目标值（来自固定基座 pinocchio 模型的 model.inertias[i]，合计 16.0870）
+三处删掉后，接触统一来自 `scheduler->GetSwingPhases()`，node 写进 `state.contact_states`，MPC 用 `contact_sched_` 滚动预测，WBC 用同一份 —— 三层首次真正一致。
 
-| body | mass | CoM (body 系) | 主惯量 (kg·m²) |
-|---|---|---|---|
-| base_link | 7.279 | (0.02015, 0, −0.00511) | 0.02571, 0.10312, 0.11284 |
-| *_hip ×4 | 0.767 | (∓0.00477, ∓0.00170, −0.00009) | 0.000540, 0.000658, 0.000998 |
-| *_thigh ×4 | 1.241 | (−0.00347, ∓0.02302, −0.03035) | 0.000942, 0.006004, 0.006152 |
-| *_calf ×4 | 0.194 | (0.00435, ∓0.00077, −0.13521) | 0.0000434, 0.0013946, 0.0014156 |
+**2. `src/WBC/WBC.cpp` `compuseHg()` 恢复 H1 与 H3**
 
-## 实现
-只改 go2/go2.xml 里 13 个 `<inertial .../>` 块（base_link + 4×(hip/thigh/calf)），改成：
+`H = H1 + H2 + H3`，`g = g1 + g2 + g3`，保留现有对角正则。
 
-```xml
-<inertial pos="px py pz" mass="m" fullinertia="ixx iyy izz ixy ixz iyz" />
+两个必须处理的地方：
+
+- **原注释块里的 `row * 3` 编译不过** —— `row` 是未定义标识符（这正是它当初被整段注释掉的直接原因）。应改用 `contact_num * 3`。
+- **`C` 的 12 维权重是按腿排的，而 `A_a` 是按摆动计数紧凑打包的**，直接 `topRows(contact_num*3)` 会把权重错配。`C = [200,200,500, 200,200,500, 200,200,200, 200,200,200]` 本意是"前腿 z 权重 500"。TROT 的两组摆动腿是 FL+RR 和 FR+RL，打包后第一组拿到的永远是前 6 个权重，于是 RR 会拿到本该属于 FL 的 500（2.5 倍偏差）。
+  做法：在 `update()` 里记录打包顺序 `swing_row_leg_[contact_num] = leg`，`compuseHg()` 里按每条摆动腿取它自己的 `C.block<3,3>(leg*3, leg*3)` 累加，不再用 `topRows` 切片。
+
+**3. `wbc->init()` 提到第一次 `wbc->update()` 之前**
+`go2_control_node.cpp:103` 先 update、`105` 才 init，而 `WBC.cpp` 的 `@warning` 明确要求先 init。现在 `init()` 才设 `A_q`/`A_f` 的单位块，顺序反了会让首帧的 H1/H2 全为零。影响仅一帧，但既然 H1/H2 都启用了就该摆正。
+
+**4. `/cmd_vel` 接到步幅上**
+`fsm->SetCmd(type, v)` 现在只在 init 调一次，`Gait_cmd.v` 恒为 0 → 摆动规划器只会**原地踏步**，发 `/cmd_vel` 不会前进。把 `fsm->SetCmd` 移到循环里（与 `mpc->update_DesireStateCommand` 同一个 `cmd_mutex_` 锁段内）。`FSM::run()` 内部有 `_last_gait_type` 守卫，每拍调只更新速度和类型字段，不会重置相位，安全。
+
+**Part A 验证**：`contact_fl/fr/rl/rr` 应按 TROT 相位交替；`p_ref_*_z` 应抬起而 `p_act_*_z` 跟随；`f_mpc_*_z` 在支撑腿约 79 N（半身重）。
+
+## Part B —— 强烈建议同一轮做（姿态通道现在是错的，摆相必振）
+
+`src/Model/pinocchio.cpp` `computeFloatingBaseDynamics()` 里：
+
+```cpp
+M_fb_.block<3,3>(3, 3) = Eigen::Matrix3d::Identity();   // 基座转动块 = I₃
+h_fb_(2) = total_mass * g;                              // 只有平动重力
+h_fb_.tail(12) = data_->tau;                            // 关节重力矩
+                                                        // h_fb_(3:6) 恒为 0
 ```
 
-- 用 `fullinertia`（6 分量）而不是 `diaginertia`+`quat`，避免特征向量分解和四元数方向约定的风险
-- 不写 `quat`/`rpy` → `fullinertia` 就是 body 系下的惯量，与 pinocchio 的 `Inertia`（lever + 绕质心的 3×3）语义一致
-- 已验证 MJCF body 系与 URDF 关节系重合（FL_hip 的 MJCF `pos=-0.0054` 与 pinocchio `lever=-0.00477` 同系，差值正好由 thigh_rotor 的 0.089 kg 引起）
+两个后果，都会在迈步时直接显形：
+
+- **角加速度约束少了 1/I**。WBC 的行是 `a_ang = Σ(r×f)`，而物理是 `Σ(r×f) = I·a_ang`。真实 `I ≈ (0.24, 0.55, 0.54)`，于是姿态环实际增益是需求的 **4.2 倍（roll）/ 1.8 倍（pitch, yaw）** —— 站立时看不出来（目标是 0），一旦摆动腿产生反作用力矩就会振荡发散。
+- **重力对机身的力矩没进 h**。CoM 相对基座原点偏移 `c ≈ (0.0083, 0, -0.0285)`，`c × (m·g) ≈ +1.31 N·m`（pitch）。WBC 少算这份支撑力矩 → 恒定前倾偏置。
+
+修法：`M_fb_(3:6,3:6)` 用绕基座原点的复合惯量 `I_origin = I_com + m(cᵀc·I − c·cᵀ)`；补上线性-转动耦合 `M_fb_(0:3,3:6) = -m·skew(c)`、`M_fb_(3:6,0:3) = m·skew(c)`；`h_fb_(3:6) = c × (m·g)`。这些量在同一函数里从 `model_->inertias` 就能算出来。
+
+**验证方式**：项目里已经建好了自由飞轮模型 `model_fb_`，直接用 `pin.crba(model_fb_, data_fb_, q_fb)` 得到真实的 18×18 浮动基座质量矩阵（注意自由飞轮的基座速度是机体系，要转到世界系对齐），逐块对比我拼出来的 `M_fb_`。这样改完不是"看起来对"，而是能和 pinocchio 对上。
 
 ## 不改动
-- 4 个 `*_foot` body（本来就没有 inertial、质量 0；URDF 的 foot 0.040 kg 已并入 calf）
-- base_link 的 `pos="0 0 0.445"` 和 `childclass="go2"`
-- 任何控制器代码；URDF 视为准
+- `getTotalMassInertia`（上一轮已修好，16.087）
+- `go2.xml`（上一轮已对齐）
+- 约束矩阵布局（那 12 行零行仍留着，另案处理）
 
-## 配套改动（必须成对，否则会走向另一个极端）
-`src/Model/pinocchio.cpp:192` 的循环要从 `i = 1` 回到 `i = 0`。
-
-因为 getTotalMassInertia 决定 MPC 用的质量，三个取值给出三种结果（已数值验证）：
-
-| MPC 质量 | WBC 解出 Σfz | plant(16.087) 需要 157.8 N | 表现 |
-|---|---|---|---|
-| 8.808 (i=1) | 86.34 | −71.5 | 欠载下沉 |
-| **16.087 (i=0)** | **157.66** | **≈ 0** | **保持** |
-
-MJCF 改成 16.087 之后，只有 i=0 配对正确。这一步和 MJCF 改动是同一个修复的两半。
-
-## 验证
-1. `mj_getTotalmass` 应为 16.0870（现为 15.2064）
-2. 逐个 body 对比 MuJoCo 的 `body_mass` 和 `body_inertia` 特征值与 pinocchio —— 这一条同时能验出 `fullinertia` 的 6 分量顺序和 off-diagonal 符号是否写对
-3. 重跑站立力平衡：Σfz 应 ≈ 157.8 N，与 plant 需求净差 ≈ 0 → 保持
-4. `colcon build --packages-select go2_robot` 确认无编译问题
-
-## 顺带提请知悉
-改完后 plant 变重 0.88 kg，腿的摆动惯量也随之增加（thigh 的 0.0060 不变但 hip 的第三分量从 0.00048 升到 0.000998），摆动腿的响应会比现在略钝。这是让 plant 与控制器一致所必需的代价。
+如果你只想先看 Part A 的步态表现，告诉我，我把 Part B 留到下一轮。

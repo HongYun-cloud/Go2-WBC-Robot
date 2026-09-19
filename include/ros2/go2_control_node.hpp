@@ -69,6 +69,8 @@ private:
     Eigen::Vector3d v, w, q, p;
     double sim_dt;
     int count = 0;
+    // 当前步态类型 (初始化时由 initial_gait 参数决定, 循环里每拍连同 v 一起下发 FSM)
+    Gait::GaitType gait_type_ = Gait::GaitType::TROT;
 
     // 足端实际加速度 (世界系): v_foot_act 数值微分
     Eigen::Matrix<double, 12, 1> v_foot_prev = Eigen::Matrix<double, 12, 1>::Zero();

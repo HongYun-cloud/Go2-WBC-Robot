@@ -110,9 +110,7 @@ namespace Regulator{
                         contact_expanded[j * 4 + i] = cs[i];
             }
         }
-        // DEBUG: 全接触
-        std::fill(contact_expanded.begin(), contact_expanded.end(), 1);
-        
+
         _qpconstraint->updateConstraints(contact_expanded);
         Eigen::SparseMatrix<double> A_sparse = _qpconstraint->A_constraint.sparseView();
         // 注意: OsqpEigen 存裸指针, 必须用持久对象而非局部变量

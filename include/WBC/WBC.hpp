@@ -35,6 +35,9 @@ namespace WBC
         Eigen::VectorXd osqp_lower_;
         Eigen::VectorXd osqp_upper_;
         int contact_num = 0;
+        // A_a/b_a 按"摆动腿计数"紧凑打包, 而 config->C 的权重是按腿索引排的 (C = 4腿×3轴)
+        // → 记录每条打包行对应的腿号, compuseHg 里按腿取 3×3 权重块, 否则权重会张冠李戴
+        int swing_row_leg_[4] = {-1, -1, -1, -1};
         void compuseHg();
         void updateconstraint();
     public:

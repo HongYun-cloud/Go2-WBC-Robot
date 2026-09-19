@@ -64,9 +64,7 @@ namespace WBC
         // 缓存全状态速度和接触状态
         v_full_ << state.linear_vel, state.angular_vel, _pin->getJointVelocity();
         contact_states_ = state.contact_states;
-        
-        // DEBUG 设置为全接触
-        std::fill(contact_states_.begin(), contact_states_.end(), 1);
+
         // 设置基底姿态 (供动力学计算用)
         _pin->setBaseQuaternion(state.quat);
 
@@ -77,7 +75,7 @@ namespace WBC
         contact_num = 0;
         
         for (int leg = 0; leg < 4; leg++) {
-            if (state.contact_states[leg] == 1) continue;  // 支撑腿跳过
+            if (contact_states_[leg] == 1) continue;  // 支撑腿跳过
 
             // 浮动基座摆动腿雅可比 (3×18)
             Eigen::Matrix<double, 3, 18> J  = _pin->getFootJacobianFloatingBase(leg);
@@ -87,6 +85,7 @@ namespace WBC
             config->A_a.block<3, 18>(contact_num * 3, 0) = J;
             // b_a: 摆动腿加速度跟踪 a_d - d（J*q）
             config->b_a.segment<3>(contact_num * 3) = cmd.a_d.segment<3>(leg * 3) - dJ * v_full_;
+            swing_row_leg_[contact_num] = leg;   // 记录打包行→腿号, 供 compuseHg 取对应权重
             contact_num++;
         }
 
@@ -181,45 +180,39 @@ namespace WBC
         Vec30d g;
         H.setZero();
         g.setZero();
-        // Mat30d H1 = config->A_q.transpose() * config->W  * config->A_q;
-        // Mat30d H2 = config->A_f.transpose() * config->FI * config->A_f;
-        // Mat30d H3 = config->A_a.transpose() * config->C  * config->A_a;
 
-        // Vec30d g1 = config->A_q.transpose() * config->W  * config->b_q;
-        // Vec30d g2 = config->A_f.transpose() * config->FI * config->b_f;
-        // Vec30d g3 = config->A_a.transpose() * config->C  * config->b_a;
+        // ===== H1: 跟踪期望加速度 q_d (姿态 PD 的输出 computePoseAccDes 由此进入 QP) =====
+        Mat30d H1 = config->A_q.transpose() * config->W  * config->A_q;
+        Vec30d g1 = config->A_q.transpose() * config->W  * config->b_q;
 
-        // if (contact_num > 0) {
-        //     auto A_valid = config->A_a.topRows(row * 3); // 比如只有 2 条腿摆动，只取前 6 行
-        //     auto b_valid = config->b_a.head(row * 3);
-        //     auto C_valid = config->C.block(0, 0, row * 3, row * 3);
+        // ===== H2: 跟踪 MPC 力 f → f_d =====
+        // 站立/支撑所需的地面反力 (Σfz ≈ mg) 靠这一项进入 QP —— 缺它时 QP 只剩硬约束,
+        // 会在 12 维解空间里挑中"机身自由落体 + 接触力趋零"那个点
+        Mat30d H2 = config->A_f.transpose() * config->FI * config->A_f;
+        Vec30d g2 = config->A_f.transpose() * config->FI * config->b_f;
 
-        //     H3 = A_valid.transpose() * C_valid * A_valid;
-        //     g3 = A_valid.transpose() * C_valid * b_valid;
-        // } else {
-        //     // 4 条腿全站立，没有摆动腿任务
-        //     H3.setZero();
-        //     g3.setZero();
-        // }
-        
+        // ===== H3: 摆动腿足端加速度跟踪 =====
+        // A_a/b_a 按摆动计数紧凑打包 (行 0..contact_num*3), 而 C 的权重是按腿索引排的
+        // → 按 swing_row_leg_ 记录的腿号逐条取 3×3 权重块, 不能用 topRows 切片 (会张冠李戴)
+        Mat30d H3 = Mat30d::Zero();
+        Vec30d g3 = Vec30d::Zero();
+        for (int k = 0; k < contact_num; k++) {
+            const int leg = swing_row_leg_[k];
+            auto A_k = config->A_a.block<3, 30>(k * 3, 0);
+            Eigen::Vector3d b_k = config->b_a.segment<3>(k * 3);
+            Eigen::Matrix3d C_k = config->C.block<3, 3>(leg * 3, leg * 3);
+            H3 += A_k.transpose() * C_k * A_k;
+            g3 += A_k.transpose() * C_k * b_k;
+        }
 
-        // H = H1 + H2 + H3;
-        // g = g1 + g2 + g3;
-        // double lambda = 1e-6;
-        // H.diagonal().array() += lambda;
-
-
-        // H = H1;
-        // g = g1;
+        // 小幅正则: 给加速度一点向零的拉力, 保证 QP 严格凸、解唯一可复现
         H.diagonal().segment<6>(0).array()   += 1e-4; // Base 加速度
         H.diagonal().segment<12>(6).array()  += 1e-4; // 12 关节加速度 (防止关节狂甩)
         H.diagonal().segment<12>(18).array() += 1e-3; // 12 接触力 (防止足端内力对抗)
         std::fill(g.begin(),g.end(),1e-4);
 
-        // 恢复 H2: 跟踪 MPC 力 f → f_d。站立所需的地面反力 (Σfz ≈ mg) 靠这一项进入 QP ——
-        // 缺它时 QP 只剩硬约束, 会在 12 维解空间里挑中"机身自由落体 + 接触力趋零"那个点
-        H += config->A_f.transpose() * config->FI * config->A_f;
-        g += config->A_f.transpose() * config->FI * config->b_f;
+        H += H1 + H2 + H3;
+        g += g1 + g2 + g3;
 
         config->H= 2 * H;
         config->g= -2 * g;
