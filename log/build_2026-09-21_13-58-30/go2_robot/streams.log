@@ -1,0 +1,251 @@
+[0.039s] Invoking command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot': /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24
+[0.096s] [  2%] Built target go2_robot__cpp
+[0.096s] [ 10%] Built target go2_robot__rosidl_generator_c
+[0.096s] [ 10%] Built target go2_robot__rs
+[0.097s] [ 10%] Built target ament_cmake_python_copy_go2_robot
+[0.100s] [ 20%] Built target OsqpEigen
+[0.120s] [ 26%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp
+[0.120s] [ 32%] Built target go2_robot__rosidl_typesupport_introspection_cpp
+[0.123s] [ 38%] Built target go2_robot__rosidl_typesupport_introspection_c
+[0.123s] [ 44%] Built target go2_robot__rosidl_typesupport_fastrtps_c
+[0.124s] [ 51%] Built target go2_robot__rosidl_typesupport_c
+[0.125s] [ 57%] Built target go2_robot__rosidl_typesupport_cpp
+[0.141s] [ 57%] Built target go2_robot
+[0.149s] Consolidate compiler generated dependencies of target go2_core
+[0.156s] [ 59%] Built target go2_robot__py
+[0.171s] [ 61%] Building CXX object CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o
+[0.174s] [ 65%] Built target go2_robot__rosidl_generator_py
+[0.190s] [ 69%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext
+[0.191s] [ 77%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext
+[0.191s] [ 77%] Built target go2_robot__rosidl_typesupport_c__pyext
+[0.215s] running egg_info
+[0.215s] writing go2_robot.egg-info/PKG-INFO
+[0.215s] writing dependency_links to go2_robot.egg-info/dependency_links.txt
+[0.216s] writing top-level names to go2_robot.egg-info/top_level.txt
+[0.217s] reading manifest file 'go2_robot.egg-info/SOURCES.txt'
+[0.217s] writing manifest file 'go2_robot.egg-info/SOURCES.txt'
+[0.235s] [ 77%] Built target ament_cmake_python_build_go2_robot_egg
+[10.279s] [ 79%] Linking CXX static library libgo2_core.a
+[10.334s] [ 93%] Built target go2_core
+[10.380s] Consolidate compiler generated dependencies of target go2_control_node
+[10.408s] [ 95%] Building CXX object CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o
+[25.038s] [ 97%] Linking CXX executable go2_control_node
+[25.211s] [100%] Built target go2_control_node
+[25.221s] Invoked command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot' returned '0': /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24
+[25.229s] Invoking command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot': /usr/bin/cmake --install /home/hong/Movement_Control/Go2Robot/build/go2_robot
+[25.234s] -- Install configuration: "Release"
+[25.235s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/ament_index/resource_index/rosidl_interfaces/go2_robot
+[25.235s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot
+[25.235s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg
+[25.235s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/rosidl_generator_c__visibility_control.h
+[25.235s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/go2_telemetry.h
+[25.235s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail
+[25.235s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__functions.c
+[25.235s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__type_support.h
+[25.235s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__functions.h
+[25.235s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__struct.h
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/environment/library_path.sh
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/environment/library_path.dsv
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libgo2_robot__rosidl_generator_c.so
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__rosidl_typesupport_fastrtps_c.h
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libgo2_robot__rosidl_typesupport_fastrtps_c.so
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/rosidl_generator_cpp__visibility_control.hpp
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/go2_telemetry.hpp
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__builder.hpp
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__type_support.hpp
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__traits.hpp
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__struct.hpp
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__rosidl_typesupport_fastrtps_cpp.hpp
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/dds_fastrtps
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libgo2_robot__rosidl_typesupport_fastrtps_cpp.so
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot
+[25.236s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__type_support.c
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__rosidl_typesupport_introspection_c.h
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libgo2_robot__rosidl_typesupport_introspection_c.so
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libgo2_robot__rosidl_typesupport_c.so
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__rosidl_typesupport_introspection_cpp.hpp
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__type_support.cpp
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libgo2_robot__rosidl_typesupport_introspection_cpp.so
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libgo2_robot__rosidl_typesupport_cpp.so
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/environment/pythonpath.sh
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/environment/pythonpath.dsv
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot-0.1.0-py3.10.egg-info
+[25.237s] -- Installing: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot-0.1.0-py3.10.egg-info/SOURCES.txt
+[25.237s] -- Installing: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot-0.1.0-py3.10.egg-info/top_level.txt
+[25.237s] -- Installing: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot-0.1.0-py3.10.egg-info/PKG-INFO
+[25.237s] -- Installing: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot-0.1.0-py3.10.egg-info/dependency_links.txt
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/_go2_robot_s.ep.rosidl_typesupport_fastrtps_c.c
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/go2_robot_s__rosidl_typesupport_fastrtps_c..cpython-310-x86_64-linux-gnu.so
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/__init__.py
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/_go2_robot_s.ep.rosidl_typesupport_introspection_c.c
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/_go2_robot_s.ep.rosidl_typesupport_c.c
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/go2_robot_s__rosidl_typesupport_introspection_c..cpython-310-x86_64-linux-gnu.so
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/msg
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/msg/__init__.py
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/msg/_go2_telemetry.py
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/msg/_go2_telemetry_s.c
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/libgo2_robot__rosidl_generator_py.so
+[25.237s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/go2_robot_s__rosidl_typesupport_c..cpython-310-x86_64-linux-gnu.so
+[25.258s] Listing '/home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot'...
+[25.258s] Listing '/home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/msg'...
+[25.261s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/go2_robot_s__rosidl_typesupport_fastrtps_c..cpython-310-x86_64-linux-gnu.so
+[25.261s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/go2_robot_s__rosidl_typesupport_introspection_c..cpython-310-x86_64-linux-gnu.so
+[25.261s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/go2_robot_s__rosidl_typesupport_c..cpython-310-x86_64-linux-gnu.so
+[25.261s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libgo2_robot__rosidl_generator_py.so
+[25.261s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/ament_index/resource_index/rust_packages/go2_robot
+[25.261s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/rust
+[25.261s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/rust/Cargo.toml
+[25.262s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/rust/build.rs
+[25.262s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/rust/src
+[25.262s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/rust/src/msg
+[25.262s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/rust/src/msg/rmw.rs
+[25.262s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/rust/src/lib.rs
+[25.262s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/rust/src/msg.rs
+[25.262s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/msg/Go2Telemetry.idl
+[25.262s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/msg/Go2Telemetry.msg
+[25.262s] -- Installing: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/go2_robot/go2_control_node
+[25.264s] -- Set runtime path of "/home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/go2_robot/go2_control_node" to ""
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/config
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/config/go2_params.yaml
+[25.265s] -- Installing: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/config/control.yaml
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/launch
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/launch/go2_sim.launch.py
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/launch/__pycache__
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/launch/__pycache__/go2_sim.launch.cpython-310.pyc
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/my_bot.xml
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/scene.xml
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/height_field.png
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/go2.xml
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/scene_terrain.xml
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/dae
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/dae/thigh.dae
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/dae/foot.dae
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/dae/calf_mirror.dae
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/dae/thigh_mirror.dae
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/dae/base.dae
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/dae/calf.dae
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/dae/hip.dae
+[25.265s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/mjmodel.xml
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/go2_description.urdf
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/estiandtruth.xml
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/thigh_mirror_0.obj
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/calf_mirror_1.obj
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_1.obj
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/calf_1.stl
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_0.obj
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/thigh_mirror_1.obj
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/calf_mirror_1.stl
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/thigh_mirror_0.stl
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/foot.obj
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_3.stl
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/hip_1.obj
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/hip_1.stl
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/thigh_0.obj
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/thigh_0.stl
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_3.obj
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/hip_0.obj
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/calf_1.obj
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_4.stl
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/calf_mirror_0.stl
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_1.stl
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_2.stl
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/calf_mirror_0.obj
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/foot.stl
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/calf_0.obj
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/thigh_mirror_1.stl
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/hip_0.stl
+[25.266s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/calf_0.stl
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_4.obj
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_0.stl
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/thigh_1.stl
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/thigh_1.obj
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_2.obj
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/RR_knee_Link.STL
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/FL_elbow_Link.STL
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/FR_elbow_Link.STL
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/RL_elbow_Link.STL
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/FL_knee_Link.STL
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/base_link.STL
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/FR_knee_Link.STL
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/RR_elbow_Link.STL
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/RL_knee_Link.STL
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/unitree_hfield.png
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/ament_index/resource_index/package_run_dependencies/go2_robot
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/ament_index/resource_index/parent_prefix_path/go2_robot
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/environment/ament_prefix_path.sh
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/environment/ament_prefix_path.dsv
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/environment/path.sh
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/environment/path.dsv
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/local_setup.bash
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/local_setup.sh
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/local_setup.zsh
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/local_setup.dsv
+[25.267s] -- Installing: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/package.dsv
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/ament_index/resource_index/packages/go2_robot
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_generator_cExport.cmake
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_generator_cExport-release.cmake
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_typesupport_fastrtps_cExport.cmake
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_typesupport_fastrtps_cExport-release.cmake
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_generator_cppExport.cmake
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_typesupport_fastrtps_cppExport.cmake
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_typesupport_fastrtps_cppExport-release.cmake
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robot__rosidl_typesupport_introspection_cExport.cmake
+[25.267s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robot__rosidl_typesupport_introspection_cExport-release.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robot__rosidl_typesupport_cExport.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robot__rosidl_typesupport_cExport-release.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robot__rosidl_typesupport_introspection_cppExport.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robot__rosidl_typesupport_introspection_cppExport-release.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robot__rosidl_typesupport_cppExport.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robot__rosidl_typesupport_cppExport-release.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_generator_pyExport.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_generator_pyExport-release.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/rosidl_cmake-extras.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/ament_cmake_export_dependencies-extras.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/ament_cmake_export_include_directories-extras.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/ament_cmake_export_libraries-extras.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/ament_cmake_export_targets-extras.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robotConfig.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robotConfig-version.cmake
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/package.xml
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libOsqpEigen.so.0.11.0
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libOsqpEigen.so
+[25.268s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/OsqpEigen.h
+[25.269s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/Constants.hpp
+[25.269s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/SparseMatrixHelper.hpp
+[25.269s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/SparseMatrixHelper.tpp
+[25.269s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/Data.hpp
+[25.269s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/Data.tpp
+[25.269s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/Settings.hpp
+[25.269s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/Solver.hpp
+[25.269s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/Solver.tpp
+[25.269s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/Compat.hpp
+[25.269s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/Debug.hpp
+[25.269s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/cmake/OsqpEigen/OsqpEigenConfigVersion.cmake
+[25.269s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/cmake/OsqpEigen/OsqpEigenConfig.cmake
+[25.269s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/cmake/OsqpEigen/OsqpEigenTargets.cmake
+[25.269s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/cmake/OsqpEigen/OsqpEigenTargets-release.cmake
+[25.269s] -- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/cmake/osqp-eigen/package.xml
+[25.269s] Invoked command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot' returned '0': /usr/bin/cmake --install /home/hong/Movement_Control/Go2Robot/build/go2_robot

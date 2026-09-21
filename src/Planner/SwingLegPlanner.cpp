@@ -11,6 +11,29 @@ const std::array<Point,4> HIP_OFFSET = {
     Point{-0.1934, -0.1420, 0.0}    // RR
 };
 
+// ===== 摆动期足端横向名义位置 =====
+// 定义: **机体系**下 髋部 y 再向同侧外扩 FOOT_Y_OUTSIDE。
+// 外扩而不是对齐髋部: 落脚点在髋外侧 → 支撑多边形横向更宽, 抗侧倾力矩臂更大。
+//
+// 原来 _swing_y = 抬腿前的实测足端 y: 摆动期不修正 y, 支撑期的参考点又在落地那一刻
+// 按实测重锚 (go2_control_node.cpp 的 stance_ref_) → 横向位置上没有任何绝对参考,
+// 每步的微小误差只累积不被纠正, 表现为"越迈步越往内走"。所以钉到名义值上。
+//
+// 【必须是机体系相对量, 不能是世界系绝对值】机器人横向偏移 y_b 后, 若四足仍被钉在
+// 世界 y = ±名义值, 支撑中心就停在世界 0 而 CoM 到了 y_b → 重力矩把机身继续往同侧推,
+// y_b 越大矩越大 → 正反馈侧翻。写成"机身中心 + R·(髋部 y ± 外扩)"再经 R 旋转,
+// 落脚点才始终跟着髋部走, 横向误差每步被纠正而不是被放大。
+//
+// 【调参旋钮】想要更宽的站姿就加大 FOOT_Y_OUTSIDE (0.003 → 0.008 = 外扩 8mm),
+// 改这一个数即可, 三处使用点 (构造函数 / Reset / 抬腿边沿) 都走 nominal_foot_y()。
+constexpr double FOOT_Y_OUTSIDE = 0.003;
+
+// 腿 leg 在**机体系**下的横向名义足端位置: 髋部 y 向同侧外扩 FOOT_Y_OUTSIDE
+inline double nominal_foot_y(size_t leg) {
+    const double hip_y = HIP_OFFSET[leg].y();
+    return hip_y + (hip_y > 0.0 ? 1.0 : -1.0) * FOOT_Y_OUTSIDE;
+}
+
 SwingLegPlanner::SwingLegPlanner(std::shared_ptr<Gait::GaitScheduler> scheduler,
                 std::shared_ptr<Estimator::PositionVelocityEstimator> estimator)
                 : _scheduler(scheduler), _estimator(estimator)
@@ -22,7 +45,8 @@ SwingLegPlanner::SwingLegPlanner(std::shared_ptr<Gait::GaitScheduler> scheduler,
     for (int leg = 0; leg < 4; leg++) {
         offset[leg].setZero();
         _last_phase[leg] = 0.0;
-        _swing_y[leg] = 0.0;
+        // 名义横向位置 (机身 y=0 时的世界值); 每次抬腿边沿会按当时机身位姿重算
+        _swing_y[leg] = nominal_foot_y(leg);
         // 默认站立足端: 髋正下方 0.25 m (与仿真初始机身高度对应, 后续被 FK 覆盖)
         _foot_pos.row(leg) = (HIP_OFFSET[leg] + Point{0,0,-0.25}).transpose();
         // 初始站立轨迹: 停留在原地的一条抬腿曲线
@@ -59,7 +83,9 @@ void SwingLegPlanner::Reset(){
     // 步态切换时重置: 控制点退回当前足端位置, 相位记录清零
     for (int leg = 0; leg < 4; leg++) {
         _last_phase[leg] = 0.0;
-        _swing_y[leg] = _foot_pos.row(leg).transpose().y();
+        // 名义默认值 (机身 y=0 时的世界值)。真正使用的值由 Generate 在每次抬腿
+        // 边沿按当时的机身位姿重算 —— 摆动期读 _swing_y 之前必定已经被赋值
+        _swing_y[leg] = nominal_foot_y(leg);
         control_point_x[leg].Start_Point = _foot_pos.row(leg).transpose().x();
         control_point_x[leg].End_Point   = control_point_x[leg].Start_Point;
         control_point_x[leg].Mid_Point.assign({control_point_x[leg].Start_Point + offset[leg].x(),
@@ -104,7 +130,7 @@ void SwingLegPlanner::Generate(Velocity& v_des,std::function<double(size_t)> pha
 
     for (int leg = 0; leg < 4; leg++) {
         double t = phase_func(leg);
-
+        Point p_hip = est.p + R * HIP_OFFSET[leg];  // 髋部世界系位置
         // 抬腿边沿: 只在此刻一次性算好落脚点,
         bool lift_off = (_last_phase[leg] == 0.0 && t > 0.0);
         if (lift_off) {
@@ -128,16 +154,22 @@ void SwingLegPlanner::Generate(Velocity& v_des,std::function<double(size_t)> pha
             control_point_z_down[leg].Mid_Point.push_back(0.023);
             control_point_z_down[leg].End_Point   = 0.023;
 
-            Point p_hip = est.p + R * HIP_OFFSET[leg];  // 髋部世界系位置
-            control_point_x[leg].End_Point = p_hip[0] + (T_stance / 2) * v_actual.x() + k * (v_actual.x() - v_des.x());
+            
+
+            // Point r_hip   = R * HIP_OFFSET[leg];
+            // Point w_world = R * est.w;
+            // Point v_hip   = v_actual + w_world.cross(r_hip);
+
+            control_point_x[leg].End_Point = p_hip[0] + (T_stance / 2) * v_actual.x()
+                                           + k * (v_actual.x() - v_des.x());
 
             // 落脚点 x 不下于髋部, 防止起步时 v_actual≈0 落脚点在髋后 → 前倾摔倒
             if (control_point_x[leg].End_Point < p_hip(0))
                 control_point_x[leg].End_Point = p_hip(0);
             control_point_x[leg].Mid_Point.push_back(control_point_x[leg].End_Point + offset[leg].x());
 
-            // y 全程保持抬腿前的足端位置
-            _swing_y[leg] = _foot_pos.row(leg).transpose().y();
+            // y 全程保持名义横向位置: 机体系 "髋部 y 向同侧外扩" 旋到世界系
+            _swing_y[leg] = est.p[1] + (R * Point{0.0, nominal_foot_y(leg), 0.0})[1];
         }
 
         // x: 三阶贝塞尔, 时间 0~T

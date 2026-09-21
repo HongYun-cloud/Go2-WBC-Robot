@@ -48,7 +48,12 @@ struct RobotState
     Eigen::Matrix<double, 12, 1> joint_velocities;
 
     // 触地状态 (4 条腿: FL, FR, RL, RR)
+    // 注意: 这只是"几何上有接触", 控制器实际用的接触状态由 FSM 按足端力阈值判定
     std::vector<int> contact_states;
+
+    // 足端法向力 (N), 顺序 FL, FR, RL, RR — 足端碰撞球与地面接触力的法向分量之和。
+    // 触地检测的原始信号: 相位切到支撑但这里还是 0 就说明足端没落地
+    Eigen::Matrix<double, 4, 1> foot_forces;
 
     RobotState()
     {
@@ -59,6 +64,7 @@ struct RobotState
         joint_positions.setZero();
         joint_velocities.setZero();
         contact_states = {1, 1, 1, 1};
+        foot_forces.setZero();
     }
 };
 

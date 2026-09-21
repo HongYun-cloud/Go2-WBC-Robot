@@ -58,17 +58,17 @@ def generate_launch_description():
                 'MUJOCO_HOME': mujoco_home,
                 'LD_LIBRARY_PATH': ':'.join(ld_library_paths),
             },
-            parameters=[
-                # 频率/步态/限幅等参数来自 config/go2_params.yaml
-                os.path.join(pkg_root, 'config', 'go2_params.yaml'),
-                {
-                    # 路径参数用绝对路径覆盖: 节点里的默认值相对运行目录,
-                    # 而 ros2 launch 时节点 cwd 取决于启动位置, 不可靠
-                    'mujoco_model': os.path.join(pkg_root, 'go2', 'scene.xml'),
-                    'urdf_path': os.path.join(pkg_root, 'go2', 'go2_description.urdf'),
-                    'mpc_config': os.path.join(pkg_root, 'config', 'mpc.yaml'),
-                    'initial_gait': LaunchConfiguration('gait'),
-                },
-            ],
+            # parameters=[
+            #     # 频率/步态/限幅等参数来自 config/go2_params.yaml
+            #     os.path.join(pkg_root, 'config', 'go2_params.yaml'),
+            #     {
+            #         # 路径参数用绝对路径覆盖: 节点里的默认值相对运行目录,
+            #         # 而 ros2 launch 时节点 cwd 取决于启动位置, 不可靠
+            #         'mujoco_model': os.path.join(pkg_root, 'go2', 'scene.xml'),
+            #         'urdf_path': os.path.join(pkg_root, 'go2', 'go2_description.urdf'),
+            #         'control_config': os.path.join(pkg_root, 'config', 'control.yaml'),
+            #         'initial_gait': LaunchConfiguration('gait'),
+            #     },
+            # ],
         ),
     ])

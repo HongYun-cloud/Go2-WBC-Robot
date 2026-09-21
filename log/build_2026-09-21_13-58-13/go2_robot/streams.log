@@ -1,0 +1,1000 @@
+[0.007s] Invoking command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot': /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24
+[0.047s] [  6%] Built target go2_robot__rosidl_generator_c
+[0.048s] [  8%] Built target go2_robot__cpp
+[0.050s] [ 10%] Built target go2_robot__rs
+[0.054s] [ 20%] Built target OsqpEigen
+[0.057s] [ 20%] Built target ament_cmake_python_copy_go2_robot
+[0.060s] [ 26%] Built target go2_robot__rosidl_typesupport_c
+[0.061s] [ 32%] Built target go2_robot__rosidl_typesupport_introspection_cpp
+[0.061s] [ 38%] Built target go2_robot__rosidl_typesupport_introspection_c
+[0.062s] [ 51%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp
+[0.062s] [ 51%] Built target go2_robot__rosidl_typesupport_fastrtps_c
+[0.063s] [ 57%] Built target go2_robot__rosidl_typesupport_cpp
+[0.080s] [ 57%] Built target go2_robot
+[0.082s] Consolidate compiler generated dependencies of target go2_core
+[0.097s] [ 59%] Built target go2_robot__py
+[0.101s] [ 61%] Building CXX object CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o
+[0.114s] [ 65%] Built target go2_robot__rosidl_generator_py
+[0.131s] [ 69%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext
+[0.132s] [ 73%] Built target go2_robot__rosidl_typesupport_c__pyext
+[0.132s] [ 77%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext
+[0.166s] running egg_info
+[0.167s] writing go2_robot.egg-info/PKG-INFO
+[0.167s] writing dependency_links to go2_robot.egg-info/dependency_links.txt
+[0.167s] writing top-level names to go2_robot.egg-info/top_level.txt
+[0.168s] reading manifest file 'go2_robot.egg-info/SOURCES.txt'
+[0.168s] writing manifest file 'go2_robot.egg-info/SOURCES.txt'
+[0.187s] [ 77%] Built target ament_cmake_python_build_go2_robot_egg
+[3.900s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp: In member function ‘void WBC::WBC::solve()’:
+[3.900s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:52: error: no match for ‘operator<<’ (operand types are ‘std::basic_ostream<char>’ and ‘OsqpEigen::ErrorExitFlag’)
+[3.902s]   270 |                 std::cout << "[QP] status: solved=" << cnt[static_cast<int>(St::Solved)]
+[3.902s]       |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.902s]   271 |                           << " solved_inacc=" << cnt[static_cast<int>(St::SolvedInaccurate)]
+[3.902s]       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.902s]   272 |                           << " maxiter=" << cnt[static_cast<int>(St::MaxIterReached)]
+[3.902s]       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.903s]   273 |                           << " primal_infeas=" << cnt[static_cast<int>(St::PrimalInfeasible)]
+[3.903s]       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.903s]   274 |                           << " primal_infeas_inacc=" << cnt[static_cast<int>(St::PrimalInfeasibleInaccurate)]
+[3.903s]       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.903s]   275 |                           << " dual_infeas=" << cnt[static_cast<int>(St::DualInfeasible)]
+[3.903s]       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.903s]   276 |                           << " noncvx=" << cnt[static_cast<int>(St::NonCvx)]
+[3.903s]       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.903s]   277 |                           << " unsolved=" << cnt[static_cast<int>(St::Unsolved)]
+[3.903s]       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.903s]   278 |                           << " | solveProblem()->" << flag
+[3.903s]       |                           ~~~~~~~~~~~~~~~~~~~~~~~~ ^~ ~~~~
+[3.903s]       |                           |                           |
+[3.903s]       |                           std::basic_ostream<char>    OsqpEigen::ErrorExitFlag
+[3.903s] In file included from /usr/include/c++/11/iostream:39,
+[3.903s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.904s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.904s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.904s] /usr/include/c++/11/ostream:108:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+[3.904s]   108 |       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+[3.904s]       |       ^~~~~~~~
+[3.904s] /usr/include/c++/11/ostream:108:36: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&)’ {aka ‘std::basic_ostream<char>& (*)(std::basic_ostream<char>&)’}
+[3.904s]   108 |       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+[3.904s]       |                  ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+[3.904s] /usr/include/c++/11/ostream:117:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]’
+[3.904s]   117 |       operator<<(__ios_type& (*__pf)(__ios_type&))
+[3.904s]       |       ^~~~~~~~
+[3.904s] /usr/include/c++/11/ostream:117:32: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&)’ {aka ‘std::basic_ios<char>& (*)(std::basic_ios<char>&)’}
+[3.904s]   117 |       operator<<(__ios_type& (*__pf)(__ios_type&))
+[3.904s]       |                  ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+[3.904s] /usr/include/c++/11/ostream:127:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+[3.904s]   127 |       operator<<(ios_base& (*__pf) (ios_base&))
+[3.905s]       |       ^~~~~~~~
+[3.905s] /usr/include/c++/11/ostream:127:30: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘std::ios_base& (*)(std::ios_base&)’
+[3.905s]   127 |       operator<<(ios_base& (*__pf) (ios_base&))
+[3.905s]       |                  ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+[3.905s] /usr/include/c++/11/ostream:166:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+[3.905s]   166 |       operator<<(long __n)
+[3.905s]       |       ^~~~~~~~
+[3.905s] /usr/include/c++/11/ostream:166:23: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘long int’
+[3.905s]   166 |       operator<<(long __n)
+[3.905s]       |                  ~~~~~^~~
+[3.905s] /usr/include/c++/11/ostream:170:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+[3.905s]   170 |       operator<<(unsigned long __n)
+[3.905s]       |       ^~~~~~~~
+[3.905s] /usr/include/c++/11/ostream:170:32: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘long unsigned int’
+[3.905s]   170 |       operator<<(unsigned long __n)
+[3.905s]       |                  ~~~~~~~~~~~~~~^~~
+[3.905s] /usr/include/c++/11/ostream:174:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+[3.905s]   174 |       operator<<(bool __n)
+[3.905s]       |       ^~~~~~~~
+[3.905s] /usr/include/c++/11/ostream:174:23: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘bool’
+[3.905s]   174 |       operator<<(bool __n)
+[3.905s]       |                  ~~~~~^~~
+[3.905s] In file included from /usr/include/c++/11/ostream:829,
+[3.905s]                  from /usr/include/c++/11/iostream:39,
+[3.905s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.905s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.905s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.905s] /usr/include/c++/11/bits/ostream.tcc:91:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]’
+[3.905s]    91 |     basic_ostream<_CharT, _Traits>::
+[3.905s]       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.905s] /usr/include/c++/11/bits/ostream.tcc:92:22: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘short int’
+[3.905s]    92 |     operator<<(short __n)
+[3.906s]       |                ~~~~~~^~~
+[3.906s] In file included from /usr/include/c++/11/iostream:39,
+[3.906s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.906s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.906s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.906s] /usr/include/c++/11/ostream:181:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+[3.906s]   181 |       operator<<(unsigned short __n)
+[3.906s]       |       ^~~~~~~~
+[3.906s] /usr/include/c++/11/ostream:181:33: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘short unsigned int’
+[3.906s]   181 |       operator<<(unsigned short __n)
+[3.906s]       |                  ~~~~~~~~~~~~~~~^~~
+[3.906s] In file included from /usr/include/c++/11/ostream:829,
+[3.906s]                  from /usr/include/c++/11/iostream:39,
+[3.906s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.906s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.906s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.906s] /usr/include/c++/11/bits/ostream.tcc:105:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]’
+[3.906s]   105 |     basic_ostream<_CharT, _Traits>::
+[3.906s]       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.906s] /usr/include/c++/11/bits/ostream.tcc:106:20: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘int’
+[3.906s]   106 |     operator<<(int __n)
+[3.906s]       |                ~~~~^~~
+[3.906s] In file included from /usr/include/c++/11/iostream:39,
+[3.906s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.906s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.906s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.906s] /usr/include/c++/11/ostream:192:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+[3.906s]   192 |       operator<<(unsigned int __n)
+[3.906s]       |       ^~~~~~~~
+[3.906s] /usr/include/c++/11/ostream:192:31: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘unsigned int’
+[3.906s]   192 |       operator<<(unsigned int __n)
+[3.906s]       |                  ~~~~~~~~~~~~~^~~
+[3.906s] /usr/include/c++/11/ostream:201:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+[3.906s]   201 |       operator<<(long long __n)
+[3.906s]       |       ^~~~~~~~
+[3.906s] /usr/include/c++/11/ostream:201:28: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘long long int’
+[3.906s]   201 |       operator<<(long long __n)
+[3.906s]       |                  ~~~~~~~~~~^~~
+[3.906s] /usr/include/c++/11/ostream:205:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+[3.907s]   205 |       operator<<(unsigned long long __n)
+[3.907s]       |       ^~~~~~~~
+[3.907s] /usr/include/c++/11/ostream:205:37: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘long long unsigned int’
+[3.907s]   205 |       operator<<(unsigned long long __n)
+[3.907s]       |                  ~~~~~~~~~~~~~~~~~~~^~~
+[3.907s] /usr/include/c++/11/ostream:220:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+[3.907s]   220 |       operator<<(double __f)
+[3.907s]       |       ^~~~~~~~
+[3.907s] /usr/include/c++/11/ostream:220:25: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘double’
+[3.907s]   220 |       operator<<(double __f)
+[3.907s]       |                  ~~~~~~~^~~
+[3.907s] /usr/include/c++/11/ostream:224:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+[3.907s]   224 |       operator<<(float __f)
+[3.907s]       |       ^~~~~~~~
+[3.907s] /usr/include/c++/11/ostream:224:24: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘float’
+[3.907s]   224 |       operator<<(float __f)
+[3.907s]       |                  ~~~~~~^~~
+[3.907s] /usr/include/c++/11/ostream:232:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+[3.907s]   232 |       operator<<(long double __f)
+[3.907s]       |       ^~~~~~~~
+[3.907s] /usr/include/c++/11/ostream:232:30: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘long double’
+[3.907s]   232 |       operator<<(long double __f)
+[3.907s]       |                  ~~~~~~~~~~~~^~~
+[3.907s] /usr/include/c++/11/ostream:245:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+[3.907s]   245 |       operator<<(const void* __p)
+[3.907s]       |       ^~~~~~~~
+[3.907s] /usr/include/c++/11/ostream:245:30: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘const void*’
+[3.907s]   245 |       operator<<(const void* __p)
+[3.907s]       |                  ~~~~~~~~~~~~^~~
+[3.907s] /usr/include/c++/11/ostream:250:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::nullptr_t) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::nullptr_t = std::nullptr_t]’
+[3.907s]   250 |       operator<<(nullptr_t)
+[3.907s]       |       ^~~~~~~~
+[3.907s] /usr/include/c++/11/ostream:250:18: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘std::nullptr_t’
+[3.907s]   250 |       operator<<(nullptr_t)
+[3.907s]       |                  ^~~~~~~~~
+[3.907s] In file included from /usr/include/c++/11/ostream:829,
+[3.907s]                  from /usr/include/c++/11/iostream:39,
+[3.907s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.908s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.908s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.908s] /usr/include/c++/11/bits/ostream.tcc:119:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]’
+[3.908s]   119 |     basic_ostream<_CharT, _Traits>::
+[3.908s]       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.908s] /usr/include/c++/11/bits/ostream.tcc:120:34: note:   no known conversion for argument 1 from ‘OsqpEigen::ErrorExitFlag’ to ‘std::basic_ostream<char>::__streambuf_type*’ {aka ‘std::basic_streambuf<char>*’}
+[3.908s]   120 |     operator<<(__streambuf_type* __sbin)
+[3.908s]       |                ~~~~~~~~~~~~~~~~~~^~~~~~
+[3.908s] In file included from /usr/include/c++/11/bits/basic_string.h:48,
+[3.908s]                  from /usr/include/c++/11/string:55,
+[3.908s]                  from /usr/include/c++/11/bits/locale_classes.h:40,
+[3.908s]                  from /usr/include/c++/11/bits/ios_base.h:41,
+[3.908s]                  from /usr/include/c++/11/ios:42,
+[3.908s]                  from /usr/include/c++/11/ostream:38,
+[3.908s]                  from /usr/include/c++/11/iostream:39,
+[3.908s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.908s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.908s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.908s] /usr/include/c++/11/string_view:667:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::basic_string_view<_CharT, _Traits>)’
+[3.908s]   667 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+[3.908s]       |     ^~~~~~~~
+[3.908s] /usr/include/c++/11/string_view:667:5: note:   template argument deduction/substitution failed:
+[3.908s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘std::basic_string_view<_CharT, _Traits>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.908s]   278 |                           << " | solveProblem()->" << flag
+[3.908s]       |                                                       ^~~~
+[3.908s] In file included from /usr/include/c++/11/string:55,
+[3.908s]                  from /usr/include/c++/11/bits/locale_classes.h:40,
+[3.908s]                  from /usr/include/c++/11/bits/ios_base.h:41,
+[3.908s]                  from /usr/include/c++/11/ios:42,
+[3.908s]                  from /usr/include/c++/11/ostream:38,
+[3.908s]                  from /usr/include/c++/11/iostream:39,
+[3.908s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.908s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.908s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.908s] /usr/include/c++/11/bits/basic_string.h:6531:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)’
+[3.908s]  6531 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+[3.908s]       |     ^~~~~~~~
+[3.908s] /usr/include/c++/11/bits/basic_string.h:6531:5: note:   template argument deduction/substitution failed:
+[3.908s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.908s]   278 |                           << " | solveProblem()->" << flag
+[3.909s]       |                                                       ^~~~
+[3.909s] In file included from /usr/include/c++/11/bits/ios_base.h:46,
+[3.909s]                  from /usr/include/c++/11/ios:42,
+[3.909s]                  from /usr/include/c++/11/ostream:38,
+[3.909s]                  from /usr/include/c++/11/iostream:39,
+[3.909s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.909s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.909s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.909s] /usr/include/c++/11/system_error:279:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::error_code&)’
+[3.909s]   279 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+[3.909s]       |     ^~~~~~~~
+[3.909s] /usr/include/c++/11/system_error:279:5: note:   template argument deduction/substitution failed:
+[3.909s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert ‘flag’ (type ‘OsqpEigen::ErrorExitFlag’) to type ‘const std::error_code&’
+[3.909s]   278 |                           << " | solveProblem()->" << flag
+[3.909s]       |                                                       ^~~~
+[3.909s] In file included from /usr/include/c++/11/iostream:39,
+[3.909s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.909s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.909s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.909s] /usr/include/c++/11/ostream:513:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)’
+[3.909s]   513 |     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+[3.909s]       |     ^~~~~~~~
+[3.909s] /usr/include/c++/11/ostream:513:5: note:   template argument deduction/substitution failed:
+[3.909s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   deduced conflicting types for parameter ‘_CharT’ (‘char’ and ‘OsqpEigen::ErrorExitFlag’)
+[3.909s]   278 |                           << " | solveProblem()->" << flag
+[3.909s]       |                                                       ^~~~
+[3.909s] In file included from /usr/include/c++/11/iostream:39,
+[3.909s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.909s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.909s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.909s] /usr/include/c++/11/ostream:518:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)’
+[3.909s]   518 |     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+[3.909s]       |     ^~~~~~~~
+[3.909s] /usr/include/c++/11/ostream:518:5: note:   template argument deduction/substitution failed:
+[3.909s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert ‘flag’ (type ‘OsqpEigen::ErrorExitFlag’) to type ‘char’
+[3.909s]   278 |                           << " | solveProblem()->" << flag
+[3.909s]       |                                                       ^~~~
+[3.909s] In file included from /usr/include/c++/11/iostream:39,
+[3.909s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.910s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.910s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.910s] /usr/include/c++/11/ostream:524:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)’
+[3.910s]   524 |     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+[3.910s]       |     ^~~~~~~~
+[3.910s] /usr/include/c++/11/ostream:524:5: note:   template argument deduction/substitution failed:
+[3.910s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert ‘flag’ (type ‘OsqpEigen::ErrorExitFlag’) to type ‘char’
+[3.910s]   278 |                           << " | solveProblem()->" << flag
+[3.910s]       |                                                       ^~~~
+[3.910s] In file included from /usr/include/c++/11/iostream:39,
+[3.910s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.910s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.910s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.910s] /usr/include/c++/11/ostream:530:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)’
+[3.910s]   530 |     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+[3.910s]       |     ^~~~~~~~
+[3.910s] /usr/include/c++/11/ostream:530:5: note:   template argument deduction/substitution failed:
+[3.910s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert ‘flag’ (type ‘OsqpEigen::ErrorExitFlag’) to type ‘signed char’
+[3.910s]   278 |                           << " | solveProblem()->" << flag
+[3.910s]       |                                                       ^~~~
+[3.910s] In file included from /usr/include/c++/11/iostream:39,
+[3.910s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.910s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.910s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.910s] /usr/include/c++/11/ostream:535:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)’
+[3.910s]   535 |     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+[3.910s]       |     ^~~~~~~~
+[3.910s] /usr/include/c++/11/ostream:535:5: note:   template argument deduction/substitution failed:
+[3.910s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert ‘flag’ (type ‘OsqpEigen::ErrorExitFlag’) to type ‘unsigned char’
+[3.910s]   278 |                           << " | solveProblem()->" << flag
+[3.910s]       |                                                       ^~~~
+[3.910s] In file included from /usr/include/c++/11/iostream:39,
+[3.910s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.910s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.910s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.910s] /usr/include/c++/11/ostream:594:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)’
+[3.910s]   594 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+[3.910s]       |     ^~~~~~~~
+[3.911s] /usr/include/c++/11/ostream:594:5: note:   template argument deduction/substitution failed:
+[3.911s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const _CharT*’ and ‘OsqpEigen::ErrorExitFlag’
+[3.911s]   278 |                           << " | solveProblem()->" << flag
+[3.911s]       |                                                       ^~~~
+[3.911s] In file included from /usr/include/c++/11/ostream:829,
+[3.911s]                  from /usr/include/c++/11/iostream:39,
+[3.911s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.911s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.911s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.911s] /usr/include/c++/11/bits/ostream.tcc:321:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)’
+[3.911s]   321 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+[3.911s]       |     ^~~~~~~~
+[3.911s] /usr/include/c++/11/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+[3.911s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert ‘flag’ (type ‘OsqpEigen::ErrorExitFlag’) to type ‘const char*’
+[3.911s]   278 |                           << " | solveProblem()->" << flag
+[3.911s]       |                                                       ^~~~
+[3.911s] In file included from /usr/include/c++/11/iostream:39,
+[3.911s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.911s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.911s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.911s] /usr/include/c++/11/ostream:611:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)’
+[3.911s]   611 |     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+[3.911s]       |     ^~~~~~~~
+[3.911s] /usr/include/c++/11/ostream:611:5: note:   template argument deduction/substitution failed:
+[3.911s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert ‘flag’ (type ‘OsqpEigen::ErrorExitFlag’) to type ‘const char*’
+[3.911s]   278 |                           << " | solveProblem()->" << flag
+[3.911s]       |                                                       ^~~~
+[3.911s] In file included from /usr/include/c++/11/iostream:39,
+[3.911s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.911s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.911s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.911s] /usr/include/c++/11/ostream:624:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)’
+[3.911s]   624 |     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+[3.911s]       |     ^~~~~~~~
+[3.911s] /usr/include/c++/11/ostream:624:5: note:   template argument deduction/substitution failed:
+[3.911s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert ‘flag’ (type ‘OsqpEigen::ErrorExitFlag’) to type ‘const signed char*’
+[3.911s]   278 |                           << " | solveProblem()->" << flag
+[3.911s]       |                                                       ^~~~
+[3.911s] In file included from /usr/include/c++/11/iostream:39,
+[3.912s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.912s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.912s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.912s] /usr/include/c++/11/ostream:629:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)’
+[3.912s]   629 |     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+[3.912s]       |     ^~~~~~~~
+[3.912s] /usr/include/c++/11/ostream:629:5: note:   template argument deduction/substitution failed:
+[3.912s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert ‘flag’ (type ‘OsqpEigen::ErrorExitFlag’) to type ‘const unsigned char*’
+[3.912s]   278 |                           << " | solveProblem()->" << flag
+[3.912s]       |                                                       ^~~~
+[3.912s] In file included from /usr/include/c++/11/iostream:39,
+[3.912s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,
+[3.912s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.912s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.912s] /usr/include/c++/11/ostream:750:5: note: candidate: ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&)’
+[3.912s]   750 |     operator<<(_Ostream&& __os, const _Tp& __x)
+[3.912s]       |     ^~~~~~~~
+[3.912s] /usr/include/c++/11/ostream:750:5: note:   template argument deduction/substitution failed:
+[3.912s] /usr/include/c++/11/ostream: In substitution of ‘template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ostream<char>&; _Tp = OsqpEigen::ErrorExitFlag]’:
+[3.912s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55:   required from here
+[3.912s] /usr/include/c++/11/ostream:750:5: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+[3.912s] In file included from /usr/include/eigen3/Eigen/Core:50,
+[3.912s]                  from /usr/include/eigen3/Eigen/Dense:1,
+[3.912s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:5,
+[3.912s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.912s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.912s] /usr/include/c++/11/complex:555:5: note: candidate: ‘template<class _Tp, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::complex<_Tp>&)’
+[3.912s]   555 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const complex<_Tp>& __x)
+[3.912s]       |     ^~~~~~~~
+[3.912s] /usr/include/c++/11/complex:555:5: note:   template argument deduction/substitution failed:
+[3.912s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::complex<_Tp>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.912s]   278 |                           << " | solveProblem()->" << flag
+[3.912s]       |                                                       ^~~~
+[3.912s] In file included from /usr/include/eigen3/Eigen/Core:81,
+[3.912s]                  from /usr/include/eigen3/Eigen/Dense:1,
+[3.912s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:5,
+[3.912s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,
+[3.912s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.912s] /usr/include/c++/11/cstddef:126:5: note: candidate: ‘template<class _IntegerType> constexpr std::__byte_op_t<_IntegerType> std::operator<<(std::byte, _IntegerType)’
+[3.913s]   126 |     operator<<(byte __b, _IntegerType __shift) noexcept
+[3.913s]       |     ^~~~~~~~
+[3.913s] /usr/include/c++/11/cstddef:126:5: note:   template argument deduction/substitution failed:
+[3.913s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:27: note:   cannot convert ‘std::operator<< <std::char_traits<char> >((* &(& std::operator<< <std::char_traits<char> >((* &(& std::operator<< <std::char_traits<char> >((* &(& std::operator<< <std::char_traits<char> >((* &(& std::operator<< <std::char_traits<char> >((* &(& std::operator<< <std::char_traits<char> >((* &(& std::operator<< <std::char_traits<char> >((* &(& std::operator<< <std::char_traits<char> >((* &(& std::operator<< <std::char_traits<char> >(std::cout, ((const char*)"[QP] status: solved=")))->std::basic_ostream<char>::operator<<(cnt[1])), ((const char*)" solved_inacc=")))->std::basic_ostream<char>::operator<<(cnt[2])), ((const char*)" maxiter=")))->std::basic_ostream<char>::operator<<(cnt[7])), ((const char*)" primal_infeas=")))->std::basic_ostream<char>::operator<<(cnt[3])), ((const char*)" primal_infeas_inacc=")))->std::basic_ostream<char>::operator<<(cnt[4])), ((const char*)" dual_infeas=")))->std::basic_ostream<char>::operator<<(cnt[5])), ((const char*)" noncvx=")))->std::basic_ostream<char>::operator<<(cnt[9])), ((const char*)" unsolved=")))->std::basic_ostream<char>::operator<<(cnt[11])), ((const char*)" | solveProblem()->"))’ (type ‘std::basic_ostream<char>’) to type ‘std::byte’
+[3.913s]   270 |                 std::cout << "[QP] status: solved=" << cnt[static_cast<int>(St::Solved)]
+[3.913s]       |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.913s]   271 |                           << " solved_inacc=" << cnt[static_cast<int>(St::SolvedInaccurate)]
+[3.913s]       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.913s]   272 |                           << " maxiter=" << cnt[static_cast<int>(St::MaxIterReached)]
+[3.913s]       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.913s]   273 |                           << " primal_infeas=" << cnt[static_cast<int>(St::PrimalInfeasible)]
+[3.913s]       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.913s]   274 |                           << " primal_infeas_inacc=" << cnt[static_cast<int>(St::PrimalInfeasibleInaccurate)]
+[3.913s]       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.913s]   275 |                           << " dual_infeas=" << cnt[static_cast<int>(St::DualInfeasible)]
+[3.913s]       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.913s]   276 |                           << " noncvx=" << cnt[static_cast<int>(St::NonCvx)]
+[3.913s]       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.913s]   277 |                           << " unsolved=" << cnt[static_cast<int>(St::Unsolved)]
+[3.913s]       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[3.913s]   278 |                           << " | solveProblem()->" << flag
+[3.913s]       |                           ^~~~~~~~~~~~~~~~~~~~~~~~
+[3.913s] In file included from /usr/include/c++/11/memory:77,
+[3.913s]                  from /home/hong/Movement_Control/Go2Robot/third_party/osqp-eigen/include/OsqpEigen/Solver.hpp:11,
+[3.913s]                  from /home/hong/Movement_Control/Go2Robot/third_party/osqp-eigen/include/OsqpEigen/OsqpEigen.h:13,
+[3.913s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:6,
+[3.913s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.913s] /usr/include/c++/11/bits/shared_ptr.h:70:5: note: candidate: ‘template<class _Ch, class _Tr, class _Tp, __gnu_cxx::_Lock_policy _Lp> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__shared_ptr<_Tp, _Lp>&)’
+[3.913s]    70 |     operator<<(std::basic_ostream<_Ch, _Tr>& __os,
+[3.913s]       |     ^~~~~~~~
+[3.913s] /usr/include/c++/11/bits/shared_ptr.h:70:5: note:   template argument deduction/substitution failed:
+[3.913s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::__shared_ptr<_Tp, _Lp>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.913s]   278 |                           << " | solveProblem()->" << flag
+[3.913s]       |                                                       ^~~~
+[3.913s] In file included from /usr/include/c++/11/random:49,
+[3.913s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.913s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.913s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.914s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.914s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.914s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.914s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.914s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.914s] /usr/include/c++/11/bits/random.h:1309:5: note: candidate: ‘template<class _RandomNumberEngine, long unsigned int __w, class _UIntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::independent_bits_engine<_RandomNumberEngine, __w, _UIntType>&)’
+[3.914s]  1309 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.914s]       |     ^~~~~~~~
+[3.914s] /usr/include/c++/11/bits/random.h:1309:5: note:   template argument deduction/substitution failed:
+[3.914s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::independent_bits_engine<_RandomNumberEngine, __w, _UIntType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.914s]   278 |                           << " | solveProblem()->" << flag
+[3.914s]       |                                                       ^~~~
+[3.914s] In file included from /usr/include/c++/11/random:51,
+[3.914s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.914s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.914s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.914s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.914s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.914s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.914s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.914s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.914s] /usr/include/c++/11/bits/random.tcc:901:5: note: candidate: ‘template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::uniform_int_distribution<_IntType>&)’
+[3.914s]   901 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.914s]       |     ^~~~~~~~
+[3.914s] /usr/include/c++/11/bits/random.tcc:901:5: note:   template argument deduction/substitution failed:
+[3.914s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::uniform_int_distribution<_IntType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.914s]   278 |                           << " | solveProblem()->" << flag
+[3.914s]       |                                                       ^~~~
+[3.914s] In file included from /usr/include/c++/11/random:51,
+[3.914s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.914s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.914s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.914s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.914s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.914s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.914s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.914s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.914s] /usr/include/c++/11/bits/random.tcc:959:5: note: candidate: ‘template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::uniform_real_distribution<_IntType>&)’
+[3.914s]   959 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.915s]       |     ^~~~~~~~
+[3.915s] /usr/include/c++/11/bits/random.tcc:959:5: note:   template argument deduction/substitution failed:
+[3.915s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::uniform_real_distribution<_IntType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.915s]   278 |                           << " | solveProblem()->" << flag
+[3.915s]       |                                                       ^~~~
+[3.915s] In file included from /usr/include/c++/11/random:51,
+[3.915s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.915s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.915s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.915s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.915s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.915s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.915s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.915s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.915s] /usr/include/c++/11/bits/random.tcc:2144:5: note: candidate: ‘template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::cauchy_distribution<_RealType>&)’
+[3.915s]  2144 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.915s]       |     ^~~~~~~~
+[3.915s] /usr/include/c++/11/bits/random.tcc:2144:5: note:   template argument deduction/substitution failed:
+[3.915s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::cauchy_distribution<_RealType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.915s]   278 |                           << " | solveProblem()->" << flag
+[3.915s]       |                                                       ^~~~
+[3.915s] In file included from /usr/include/c++/11/random:51,
+[3.915s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.915s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.915s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.915s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.915s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.915s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.915s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.915s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.915s] /usr/include/c++/11/bits/random.tcc:1020:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::bernoulli_distribution&)’
+[3.915s]  1020 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.915s]       |     ^~~~~~~~
+[3.915s] /usr/include/c++/11/bits/random.tcc:1020:5: note:   template argument deduction/substitution failed:
+[3.915s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert ‘flag’ (type ‘OsqpEigen::ErrorExitFlag’) to type ‘const std::bernoulli_distribution&’
+[3.915s]   278 |                           << " | solveProblem()->" << flag
+[3.915s]       |                                                       ^~~~
+[3.915s] In file included from /usr/include/c++/11/random:51,
+[3.915s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.916s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.916s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.916s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.916s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.916s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.916s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.916s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.916s] /usr/include/c++/11/bits/random.tcc:1101:5: note: candidate: ‘template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::geometric_distribution<_IntType>&)’
+[3.916s]  1101 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.916s]       |     ^~~~~~~~
+[3.916s] /usr/include/c++/11/bits/random.tcc:1101:5: note:   template argument deduction/substitution failed:
+[3.916s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::geometric_distribution<_IntType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.916s]   278 |                           << " | solveProblem()->" << flag
+[3.916s]       |                                                       ^~~~
+[3.916s] In file included from /usr/include/c++/11/random:51,
+[3.916s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.916s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.916s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.916s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.916s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.916s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.916s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.916s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.916s] /usr/include/c++/11/bits/random.tcc:1753:5: note: candidate: ‘template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::exponential_distribution<_RealType>&)’
+[3.916s]  1753 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.916s]       |     ^~~~~~~~
+[3.916s] /usr/include/c++/11/bits/random.tcc:1753:5: note:   template argument deduction/substitution failed:
+[3.916s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::exponential_distribution<_RealType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.916s]   278 |                           << " | solveProblem()->" << flag
+[3.916s]       |                                                       ^~~~
+[3.916s] In file included from /usr/include/c++/11/random:51,
+[3.916s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.916s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.916s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.916s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.916s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.916s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.916s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.916s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.917s] /usr/include/c++/11/bits/random.tcc:2538:5: note: candidate: ‘template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::weibull_distribution<_RealType>&)’
+[3.917s]  2538 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.917s]       |     ^~~~~~~~
+[3.917s] /usr/include/c++/11/bits/random.tcc:2538:5: note:   template argument deduction/substitution failed:
+[3.917s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::weibull_distribution<_RealType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.917s]   278 |                           << " | solveProblem()->" << flag
+[3.917s]       |                                                       ^~~~
+[3.917s] In file included from /usr/include/c++/11/random:51,
+[3.917s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.917s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.917s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.917s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.917s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.917s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.917s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.917s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.917s] /usr/include/c++/11/bits/random.tcc:2612:5: note: candidate: ‘template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::extreme_value_distribution<_RealType>&)’
+[3.917s]  2612 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.917s]       |     ^~~~~~~~
+[3.917s] /usr/include/c++/11/bits/random.tcc:2612:5: note:   template argument deduction/substitution failed:
+[3.917s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::extreme_value_distribution<_RealType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.917s]   278 |                           << " | solveProblem()->" << flag
+[3.917s]       |                                                       ^~~~
+[3.917s] In file included from /usr/include/c++/11/random:51,
+[3.917s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.917s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.917s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.917s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.917s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.917s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.917s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.917s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.917s] /usr/include/c++/11/bits/random.tcc:154:5: note: candidate: ‘template<class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::linear_congruential_engine<_UIntType, __a, __c, __m>&)’
+[3.917s]   154 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.917s]       |     ^~~~~~~~
+[3.917s] /usr/include/c++/11/bits/random.tcc:154:5: note:   template argument deduction/substitution failed:
+[3.917s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::linear_congruential_engine<_UIntType, __a, __c, __m>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.917s]   278 |                           << " | solveProblem()->" << flag
+[3.917s]       |                                                       ^~~~
+[3.918s] In file included from /usr/include/c++/11/random:51,
+[3.918s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.918s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.918s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.918s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.918s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.918s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.918s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.918s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.918s] /usr/include/c++/11/bits/random.tcc:474:5: note: candidate: ‘template<class _UIntType1, long unsigned int __w1, long unsigned int __n1, long unsigned int __m1, long unsigned int __r1, _UIntType1 __a1, long unsigned int __u1, _UIntType1 __d1, long unsigned int __s1, _UIntType1 __b1, long unsigned int __t1, _UIntType1 __c1, long unsigned int __l1, _UIntType1 __f1, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>&)’
+[3.918s]   474 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.918s]       |     ^~~~~~~~
+[3.918s] /usr/include/c++/11/bits/random.tcc:474:5: note:   template argument deduction/substitution failed:
+[3.918s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.918s]   278 |                           << " | solveProblem()->" << flag
+[3.918s]       |                                                       ^~~~
+[3.918s] In file included from /usr/include/c++/11/random:51,
+[3.918s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.918s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.918s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.918s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.918s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.918s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.918s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.918s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.918s] /usr/include/c++/11/bits/random.tcc:628:5: note: candidate: ‘template<class _UIntType, long unsigned int __w, long unsigned int __s, long unsigned int __r, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::subtract_with_carry_engine<_UIntType, __w, __s, __r>&)’
+[3.918s]   628 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.918s]       |     ^~~~~~~~
+[3.918s] /usr/include/c++/11/bits/random.tcc:628:5: note:   template argument deduction/substitution failed:
+[3.918s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::subtract_with_carry_engine<_UIntType, __w, __s, __r>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.918s]   278 |                           << " | solveProblem()->" << flag
+[3.918s]       |                                                       ^~~~
+[3.918s] In file included from /usr/include/c++/11/random:51,
+[3.918s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.918s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.918s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.918s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.918s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.918s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.918s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.919s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.919s] /usr/include/c++/11/bits/random.tcc:696:5: note: candidate: ‘template<class _RandomNumberEngine, long unsigned int __p, long unsigned int __r, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::discard_block_engine<_RandomNumberEngine, __p, __r>&)’
+[3.919s]   696 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.919s]       |     ^~~~~~~~
+[3.919s] /usr/include/c++/11/bits/random.tcc:696:5: note:   template argument deduction/substitution failed:
+[3.919s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::discard_block_engine<_RandomNumberEngine, __p, __r>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.919s]   278 |                           << " | solveProblem()->" << flag
+[3.919s]       |                                                       ^~~~
+[3.919s] In file included from /usr/include/c++/11/random:51,
+[3.919s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.919s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.919s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.919s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.919s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.919s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.919s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.919s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.919s] /usr/include/c++/11/bits/random.tcc:857:5: note: candidate: ‘template<class _RandomNumberEngine, long unsigned int __k, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::shuffle_order_engine<_RandomNumberEngine, __k>&)’
+[3.919s]   857 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.919s]       |     ^~~~~~~~
+[3.919s] /usr/include/c++/11/bits/random.tcc:857:5: note:   template argument deduction/substitution failed:
+[3.919s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::shuffle_order_engine<_RandomNumberEngine, __k>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.919s]   278 |                           << " | solveProblem()->" << flag
+[3.919s]       |                                                       ^~~~
+[3.919s] In file included from /usr/include/c++/11/random:51,
+[3.919s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.919s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.919s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.919s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.919s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.919s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.919s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.919s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.919s] /usr/include/c++/11/bits/random.tcc:1215:5: note: candidate: ‘template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::negative_binomial_distribution<_IntType>&)’
+[3.919s]  1215 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.919s]       |     ^~~~~~~~
+[3.919s] /usr/include/c++/11/bits/random.tcc:1215:5: note:   template argument deduction/substitution failed:
+[3.919s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::negative_binomial_distribution<_IntType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.920s]   278 |                           << " | solveProblem()->" << flag
+[3.920s]       |                                                       ^~~~
+[3.920s] In file included from /usr/include/c++/11/random:51,
+[3.920s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.920s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.920s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.920s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.920s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.920s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.920s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.920s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.920s] /usr/include/c++/11/bits/random.tcc:1425:5: note: candidate: ‘template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::poisson_distribution<_IntType>&)’
+[3.920s]  1425 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.920s]       |     ^~~~~~~~
+[3.920s] /usr/include/c++/11/bits/random.tcc:1425:5: note:   template argument deduction/substitution failed:
+[3.920s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::poisson_distribution<_IntType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.920s]   278 |                           << " | solveProblem()->" << flag
+[3.920s]       |                                                       ^~~~
+[3.920s] In file included from /usr/include/c++/11/random:51,
+[3.920s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.920s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.920s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.920s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.920s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.920s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.920s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.920s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.920s] /usr/include/c++/11/bits/random.tcc:1691:5: note: candidate: ‘template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::binomial_distribution<_IntType>&)’
+[3.920s]  1691 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.920s]       |     ^~~~~~~~
+[3.920s] /usr/include/c++/11/bits/random.tcc:1691:5: note:   template argument deduction/substitution failed:
+[3.920s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::binomial_distribution<_IntType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.920s]   278 |                           << " | solveProblem()->" << flag
+[3.920s]       |                                                       ^~~~
+[3.920s] In file included from /usr/include/c++/11/random:51,
+[3.920s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.920s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.920s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.920s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.920s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.921s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.921s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.921s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.921s] /usr/include/c++/11/bits/random.tcc:1919:5: note: candidate: ‘template<class _RealType1, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::normal_distribution<_RealType>&)’
+[3.921s]  1919 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.921s]       |     ^~~~~~~~
+[3.921s] /usr/include/c++/11/bits/random.tcc:1919:5: note:   template argument deduction/substitution failed:
+[3.921s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::normal_distribution<_RealType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.921s]   278 |                           << " | solveProblem()->" << flag
+[3.921s]       |                                                       ^~~~
+[3.921s] In file included from /usr/include/c++/11/random:51,
+[3.921s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.921s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.921s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.921s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.921s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.921s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.921s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.921s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.921s] /usr/include/c++/11/bits/random.tcc:1986:5: note: candidate: ‘template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::lognormal_distribution<_RealType>&)’
+[3.921s]  1986 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.921s]       |     ^~~~~~~~
+[3.921s] /usr/include/c++/11/bits/random.tcc:1986:5: note:   template argument deduction/substitution failed:
+[3.921s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::lognormal_distribution<_RealType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.921s]   278 |                           << " | solveProblem()->" << flag
+[3.921s]       |                                                       ^~~~
+[3.921s] In file included from /usr/include/c++/11/random:51,
+[3.921s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.921s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.921s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.921s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.921s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.921s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.921s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.921s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.921s] /usr/include/c++/11/bits/random.tcc:2058:5: note: candidate: ‘template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::chi_squared_distribution<_RealType>&)’
+[3.921s]  2058 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.921s]       |     ^~~~~~~~
+[3.921s] /usr/include/c++/11/bits/random.tcc:2058:5: note:   template argument deduction/substitution failed:
+[3.922s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::chi_squared_distribution<_RealType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.922s]   278 |                           << " | solveProblem()->" << flag
+[3.922s]       |                                                       ^~~~
+[3.922s] In file included from /usr/include/c++/11/random:51,
+[3.922s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.922s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.922s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.922s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.922s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.922s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.922s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.922s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.922s] /usr/include/c++/11/bits/random.tcc:2219:5: note: candidate: ‘template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::fisher_f_distribution<_RealType>&)’
+[3.922s]  2219 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.922s]       |     ^~~~~~~~
+[3.922s] /usr/include/c++/11/bits/random.tcc:2219:5: note:   template argument deduction/substitution failed:
+[3.922s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::fisher_f_distribution<_RealType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.922s]   278 |                           << " | solveProblem()->" << flag
+[3.922s]       |                                                       ^~~~
+[3.922s] In file included from /usr/include/c++/11/random:51,
+[3.922s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.922s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.922s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.922s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.922s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.922s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.922s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.922s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.922s] /usr/include/c++/11/bits/random.tcc:2293:5: note: candidate: ‘template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::student_t_distribution<_RealType>&)’
+[3.922s]  2293 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.922s]       |     ^~~~~~~~
+[3.922s] /usr/include/c++/11/bits/random.tcc:2293:5: note:   template argument deduction/substitution failed:
+[3.922s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::student_t_distribution<_RealType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.922s]   278 |                           << " | solveProblem()->" << flag
+[3.922s]       |                                                       ^~~~
+[3.922s] In file included from /usr/include/c++/11/random:51,
+[3.922s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.922s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.922s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.923s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.923s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.923s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.923s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.923s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.923s] /usr/include/c++/11/bits/random.tcc:2462:5: note: candidate: ‘template<class _RealType1, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::gamma_distribution<_RealType>&)’
+[3.923s]  2462 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.923s]       |     ^~~~~~~~
+[3.923s] /usr/include/c++/11/bits/random.tcc:2462:5: note:   template argument deduction/substitution failed:
+[3.923s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::gamma_distribution<_RealType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.923s]   278 |                           << " | solveProblem()->" << flag
+[3.923s]       |                                                       ^~~~
+[3.923s] In file included from /usr/include/c++/11/random:51,
+[3.923s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.923s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.923s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.923s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.923s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.923s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.923s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.923s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.923s] /usr/include/c++/11/bits/random.tcc:2748:5: note: candidate: ‘template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::discrete_distribution<_IntType>&)’
+[3.923s]  2748 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.923s]       |     ^~~~~~~~
+[3.923s] /usr/include/c++/11/bits/random.tcc:2748:5: note:   template argument deduction/substitution failed:
+[3.923s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::discrete_distribution<_IntType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.923s]   278 |                           << " | solveProblem()->" << flag
+[3.923s]       |                                                       ^~~~
+[3.923s] In file included from /usr/include/c++/11/random:51,
+[3.923s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.923s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.923s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.923s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.923s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.923s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.923s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.923s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.923s] /usr/include/c++/11/bits/random.tcc:2970:5: note: candidate: ‘template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::piecewise_constant_distribution<_RealType>&)’
+[3.923s]  2970 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.924s]       |     ^~~~~~~~
+[3.924s] /usr/include/c++/11/bits/random.tcc:2970:5: note:   template argument deduction/substitution failed:
+[3.924s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::piecewise_constant_distribution<_RealType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.924s]   278 |                           << " | solveProblem()->" << flag
+[3.924s]       |                                                       ^~~~
+[3.924s] In file included from /usr/include/c++/11/random:51,
+[3.924s]                  from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,
+[3.924s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.924s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.924s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.924s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.924s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.924s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.924s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.924s] /usr/include/c++/11/bits/random.tcc:3176:5: note: candidate: ‘template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::piecewise_linear_distribution<_RealType>&)’
+[3.924s]  3176 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+[3.924s]       |     ^~~~~~~~
+[3.924s] /usr/include/c++/11/bits/random.tcc:3176:5: note:   template argument deduction/substitution failed:
+[3.924s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘const std::piecewise_linear_distribution<_RealType>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.924s]   278 |                           << " | solveProblem()->" << flag
+[3.924s]       |                                                       ^~~~
+[3.924s] In file included from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:42,
+[3.924s]                  from /opt/ros/humble/include/pinocchio/fwd.hpp:57,
+[3.924s]                  from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,
+[3.924s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,
+[3.924s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.924s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.924s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.924s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.924s] /usr/include/c++/11/thread:92:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::thread::id)’
+[3.924s]    92 |     operator<<(basic_ostream<_CharT, _Traits>& __out, thread::id __id)
+[3.924s]       |     ^~~~~~~~
+[3.924s] /usr/include/c++/11/thread:92:5: note:   template argument deduction/substitution failed:
+[3.924s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert ‘flag’ (type ‘OsqpEigen::ErrorExitFlag’) to type ‘std::thread::id’
+[3.924s]   278 |                           << " | solveProblem()->" << flag
+[3.924s]       |                                                       ^~~~
+[3.924s] In file included from /usr/include/boost/math/policies/error_handling.hpp:12,
+[3.924s]                  from /usr/include/boost/math/special_functions/trunc.hpp:15,
+[3.924s]                  from /usr/include/boost/math/constants/calculate_constants.hpp:11,
+[3.925s]                  from /usr/include/boost/math/constants/constants.hpp:336,
+[3.925s]                  from /opt/ros/humble/include/pinocchio/math/fwd.hpp:10,
+[3.925s]                  from /opt/ros/humble/include/pinocchio/math/quaternion.hpp:12,
+[3.925s]                  from /opt/ros/humble/include/pinocchio/spatial/se3-tpl.hpp:12,
+[3.925s]                  from /opt/ros/humble/include/pinocchio/spatial/se3.hpp:47,
+[3.925s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:10,
+[3.925s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.925s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.925s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.925s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.925s] /usr/include/c++/11/iomanip:79:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Resetiosflags)’
+[3.925s]    79 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Resetiosflags __f)
+[3.925s]       |     ^~~~~~~~
+[3.925s] /usr/include/c++/11/iomanip:79:5: note:   template argument deduction/substitution failed:
+[3.925s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert ‘flag’ (type ‘OsqpEigen::ErrorExitFlag’) to type ‘std::_Resetiosflags’
+[3.925s]   278 |                           << " | solveProblem()->" << flag
+[3.925s]       |                                                       ^~~~
+[3.925s] In file included from /usr/include/boost/math/policies/error_handling.hpp:12,
+[3.925s]                  from /usr/include/boost/math/special_functions/trunc.hpp:15,
+[3.925s]                  from /usr/include/boost/math/constants/calculate_constants.hpp:11,
+[3.925s]                  from /usr/include/boost/math/constants/constants.hpp:336,
+[3.925s]                  from /opt/ros/humble/include/pinocchio/math/fwd.hpp:10,
+[3.925s]                  from /opt/ros/humble/include/pinocchio/math/quaternion.hpp:12,
+[3.925s]                  from /opt/ros/humble/include/pinocchio/spatial/se3-tpl.hpp:12,
+[3.925s]                  from /opt/ros/humble/include/pinocchio/spatial/se3.hpp:47,
+[3.925s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:10,
+[3.925s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.925s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.925s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.925s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.925s] /usr/include/c++/11/iomanip:109:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setiosflags)’
+[3.925s]   109 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setiosflags __f)
+[3.925s]       |     ^~~~~~~~
+[3.925s] /usr/include/c++/11/iomanip:109:5: note:   template argument deduction/substitution failed:
+[3.925s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert ‘flag’ (type ‘OsqpEigen::ErrorExitFlag’) to type ‘std::_Setiosflags’
+[3.925s]   278 |                           << " | solveProblem()->" << flag
+[3.925s]       |                                                       ^~~~
+[3.925s] In file included from /usr/include/boost/math/policies/error_handling.hpp:12,
+[3.925s]                  from /usr/include/boost/math/special_functions/trunc.hpp:15,
+[3.926s]                  from /usr/include/boost/math/constants/calculate_constants.hpp:11,
+[3.926s]                  from /usr/include/boost/math/constants/constants.hpp:336,
+[3.926s]                  from /opt/ros/humble/include/pinocchio/math/fwd.hpp:10,
+[3.926s]                  from /opt/ros/humble/include/pinocchio/math/quaternion.hpp:12,
+[3.926s]                  from /opt/ros/humble/include/pinocchio/spatial/se3-tpl.hpp:12,
+[3.926s]                  from /opt/ros/humble/include/pinocchio/spatial/se3.hpp:47,
+[3.926s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:10,
+[3.926s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.926s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.926s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.926s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.926s] /usr/include/c++/11/iomanip:143:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setbase)’
+[3.926s]   143 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setbase __f)
+[3.926s]       |     ^~~~~~~~
+[3.926s] /usr/include/c++/11/iomanip:143:5: note:   template argument deduction/substitution failed:
+[3.926s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert ‘flag’ (type ‘OsqpEigen::ErrorExitFlag’) to type ‘std::_Setbase’
+[3.926s]   278 |                           << " | solveProblem()->" << flag
+[3.926s]       |                                                       ^~~~
+[3.926s] In file included from /usr/include/boost/math/policies/error_handling.hpp:12,
+[3.926s]                  from /usr/include/boost/math/special_functions/trunc.hpp:15,
+[3.926s]                  from /usr/include/boost/math/constants/calculate_constants.hpp:11,
+[3.926s]                  from /usr/include/boost/math/constants/constants.hpp:336,
+[3.926s]                  from /opt/ros/humble/include/pinocchio/math/fwd.hpp:10,
+[3.926s]                  from /opt/ros/humble/include/pinocchio/math/quaternion.hpp:12,
+[3.926s]                  from /opt/ros/humble/include/pinocchio/spatial/se3-tpl.hpp:12,
+[3.926s]                  from /opt/ros/humble/include/pinocchio/spatial/se3.hpp:47,
+[3.926s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:10,
+[3.926s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.926s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.926s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.926s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.926s] /usr/include/c++/11/iomanip:178:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setfill<_CharT>)’
+[3.926s]   178 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setfill<_CharT> __f)
+[3.926s]       |     ^~~~~~~~
+[3.926s] /usr/include/c++/11/iomanip:178:5: note:   template argument deduction/substitution failed:
+[3.926s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘std::_Setfill<_CharT>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.926s]   278 |                           << " | solveProblem()->" << flag
+[3.926s]       |                                                       ^~~~
+[3.926s] In file included from /usr/include/boost/math/policies/error_handling.hpp:12,
+[3.926s]                  from /usr/include/boost/math/special_functions/trunc.hpp:15,
+[3.927s]                  from /usr/include/boost/math/constants/calculate_constants.hpp:11,
+[3.927s]                  from /usr/include/boost/math/constants/constants.hpp:336,
+[3.927s]                  from /opt/ros/humble/include/pinocchio/math/fwd.hpp:10,
+[3.927s]                  from /opt/ros/humble/include/pinocchio/math/quaternion.hpp:12,
+[3.927s]                  from /opt/ros/humble/include/pinocchio/spatial/se3-tpl.hpp:12,
+[3.927s]                  from /opt/ros/humble/include/pinocchio/spatial/se3.hpp:47,
+[3.927s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:10,
+[3.927s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.927s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.927s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.927s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.927s] /usr/include/c++/11/iomanip:208:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setprecision)’
+[3.927s]   208 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setprecision __f)
+[3.927s]       |     ^~~~~~~~
+[3.927s] /usr/include/c++/11/iomanip:208:5: note:   template argument deduction/substitution failed:
+[3.927s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert ‘flag’ (type ‘OsqpEigen::ErrorExitFlag’) to type ‘std::_Setprecision’
+[3.927s]   278 |                           << " | solveProblem()->" << flag
+[3.927s]       |                                                       ^~~~
+[3.927s] In file included from /usr/include/boost/math/policies/error_handling.hpp:12,
+[3.927s]                  from /usr/include/boost/math/special_functions/trunc.hpp:15,
+[3.927s]                  from /usr/include/boost/math/constants/calculate_constants.hpp:11,
+[3.927s]                  from /usr/include/boost/math/constants/constants.hpp:336,
+[3.927s]                  from /opt/ros/humble/include/pinocchio/math/fwd.hpp:10,
+[3.927s]                  from /opt/ros/humble/include/pinocchio/math/quaternion.hpp:12,
+[3.927s]                  from /opt/ros/humble/include/pinocchio/spatial/se3-tpl.hpp:12,
+[3.927s]                  from /opt/ros/humble/include/pinocchio/spatial/se3.hpp:47,
+[3.927s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:10,
+[3.927s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.927s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.927s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.927s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.927s] /usr/include/c++/11/iomanip:238:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setw)’
+[3.927s]   238 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setw __f)
+[3.927s]       |     ^~~~~~~~
+[3.927s] /usr/include/c++/11/iomanip:238:5: note:   template argument deduction/substitution failed:
+[3.927s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert ‘flag’ (type ‘OsqpEigen::ErrorExitFlag’) to type ‘std::_Setw’
+[3.927s]   278 |                           << " | solveProblem()->" << flag
+[3.927s]       |                                                       ^~~~
+[3.927s] In file included from /usr/include/boost/math/policies/error_handling.hpp:12,
+[3.928s]                  from /usr/include/boost/math/special_functions/trunc.hpp:15,
+[3.928s]                  from /usr/include/boost/math/constants/calculate_constants.hpp:11,
+[3.928s]                  from /usr/include/boost/math/constants/constants.hpp:336,
+[3.928s]                  from /opt/ros/humble/include/pinocchio/math/fwd.hpp:10,
+[3.928s]                  from /opt/ros/humble/include/pinocchio/math/quaternion.hpp:12,
+[3.928s]                  from /opt/ros/humble/include/pinocchio/spatial/se3-tpl.hpp:12,
+[3.928s]                  from /opt/ros/humble/include/pinocchio/spatial/se3.hpp:47,
+[3.928s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:10,
+[3.928s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.928s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.928s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.928s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.928s] /usr/include/c++/11/iomanip:311:5: note: candidate: ‘template<class _CharT, class _Traits, class _MoneyT> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Put_money<_MoneyT>)’
+[3.928s]   311 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_money<_MoneyT> __f)
+[3.928s]       |     ^~~~~~~~
+[3.928s] /usr/include/c++/11/iomanip:311:5: note:   template argument deduction/substitution failed:
+[3.928s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘std::_Put_money<_MoneyT>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.928s]   278 |                           << " | solveProblem()->" << flag
+[3.928s]       |                                                       ^~~~
+[3.928s] In file included from /usr/include/boost/math/policies/error_handling.hpp:12,
+[3.928s]                  from /usr/include/boost/math/special_functions/trunc.hpp:15,
+[3.928s]                  from /usr/include/boost/math/constants/calculate_constants.hpp:11,
+[3.928s]                  from /usr/include/boost/math/constants/constants.hpp:336,
+[3.928s]                  from /opt/ros/humble/include/pinocchio/math/fwd.hpp:10,
+[3.928s]                  from /opt/ros/humble/include/pinocchio/math/quaternion.hpp:12,
+[3.928s]                  from /opt/ros/humble/include/pinocchio/spatial/se3-tpl.hpp:12,
+[3.928s]                  from /opt/ros/humble/include/pinocchio/spatial/se3.hpp:47,
+[3.928s]                  from /opt/ros/humble/include/pinocchio/multibody/model.hpp:10,
+[3.928s]                  from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,
+[3.928s]                  from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,
+[3.928s]                  from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,
+[3.928s]                  from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:
+[3.928s] /usr/include/c++/11/iomanip:363:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Put_time<_CharT>)’
+[3.928s]   363 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_time<_CharT> __f)
+[3.928s]       |     ^~~~~~~~
+[3.928s] /usr/include/c++/11/iomanip:363:5: note:   template argument deduction/substitution failed:
+[3.928s] /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types ‘std::_Put_time<_CharT>’ and ‘OsqpEigen::ErrorExitFlag’
+[3.928s]   278 |                           << " | solveProblem()->" << flag
+[3.928s]       |                                                       ^~~~
+[7.475s] gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:118：CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o] 错误 1
+[7.475s] gmake[1]: *** [CMakeFiles/Makefile2:265：CMakeFiles/go2_core.dir/all] 错误 2
+[7.476s] gmake: *** [Makefile:146：all] 错误 2
+[7.479s] Invoked command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot' returned '2': /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24

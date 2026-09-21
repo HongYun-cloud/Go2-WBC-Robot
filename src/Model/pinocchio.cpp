@@ -200,6 +200,7 @@ void PinocchioKinematics::getTotalMassInertia(double& mass, Eigen::Matrix3d& I_c
         I_origin += R * Y.inertia().matrix() * R.transpose()
                   + m * (r.dot(r) * Eigen::Matrix3d::Identity() - r * r.transpose());
     }
+    mass += 1.0;
     com /= mass;
 
     // I_origin = I_com + m·(cᵀc·I − c·cᵀ)  ⇒  I_com = I_origin − m·(cᵀc·I − c·cᵀ)

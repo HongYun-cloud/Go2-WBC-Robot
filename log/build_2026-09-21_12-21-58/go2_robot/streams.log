@@ -1,0 +1,53 @@
+[0.079s] Invoking command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24
+[0.831s] [  2%] Built target go2_robot__rs
+[0.840s] [  4%] Built target go2_robot__cpp
+[0.934s] [ 10%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp
+[0.939s] [ 16%] Built target go2_robot__rosidl_generator_c
+[0.968s] [ 22%] Built target go2_robot__rosidl_typesupport_introspection_cpp
+[0.975s] [ 28%] Built target go2_robot__rosidl_typesupport_c
+[0.985s] [ 34%] Built target go2_robot__rosidl_typesupport_cpp
+[1.050s] [ 40%] Built target go2_robot__rosidl_typesupport_fastrtps_c
+[1.056s] [ 46%] Built target go2_robot__rosidl_typesupport_introspection_c
+[1.077s] [ 46%] Built target ament_cmake_python_copy_go2_robot
+[1.084s] [ 46%] Built target go2_robot
+[1.103s] [ 59%] Built target go2_robot__py
+[1.103s] [ 59%] Built target OsqpEigen
+[1.173s] [ 63%] Built target go2_robot__rosidl_generator_py
+[1.224s] [ 67%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext
+[1.257s] [ 71%] Built target go2_robot__rosidl_typesupport_c__pyext
+[1.271s] [ 75%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext
+[1.359s] running egg_info
+[1.360s] writing go2_robot.egg-info/PKG-INFO
+[1.360s] writing dependency_links to go2_robot.egg-info/dependency_links.txt
+[1.360s] writing top-level names to go2_robot.egg-info/top_level.txt
+[1.362s] [ 77%] Building CXX object CMakeFiles/go2_core.dir/src/MPC/MPC.cpp.o
+[1.362s] [ 79%] Building CXX object CMakeFiles/go2_core.dir/src/SIM/MJCsim.cpp.o
+[1.365s] [ 81%] Building CXX object CMakeFiles/go2_core.dir/src/Planner/GaitScheduler.cpp.o
+[1.365s] [ 83%] Building CXX object CMakeFiles/go2_core.dir/src/fsm/ControlFSM.cpp.o
+[1.366s] [ 85%] Building CXX object CMakeFiles/go2_core.dir/src/Estimator/PositionVelocityEstimator.cpp.o
+[1.366s] [ 87%] Building CXX object CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o
+[1.368s] [ 89%] Building CXX object CMakeFiles/go2_core.dir/src/Planner/SwingLegPlanner.cpp.o
+[1.388s] reading manifest file 'go2_robot.egg-info/SOURCES.txt'
+[1.389s] writing manifest file 'go2_robot.egg-info/SOURCES.txt'
+[1.416s] [ 89%] Built target ament_cmake_python_build_go2_robot_egg
+[13.063s] [ 91%] Linking CXX static library libgo2_core.a
+[13.532s] [ 93%] Built target go2_core
+[13.656s] Consolidate compiler generated dependencies of target go2_control_node
+[13.678s] [ 95%] Building CXX object CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o
+[13.678s] [ 97%] Building CXX object CMakeFiles/go2_control_node.dir/src/ros2/main.cpp.o
+[20.237s] /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp: In member function ‘void go2::Go2ControlNode::loadTaskPdConfig(const string&)’:
+[20.237s] /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:426:11: error: ‘Nodshie’ is not a member of ‘YAML’; did you mean ‘Node’?
+[20.237s]   426 |     YAML::Nodshie root;
+[20.237s]       |           ^~~~~~~
+[20.237s]       |           Node
+[20.246s] /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:428:9: error: ‘root’ was not declared in this scope
+[20.246s]   428 |         root = YAML::LoadFile(yaml_path);
+[20.246s]       |         ^~~~
+[20.254s] /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:436:30: error: ‘root’ was not declared in this scope; did you mean ‘croot’?
+[20.254s]   436 |     const YAML::Node croot = root;
+[20.254s]       |                              ^~~~
+[20.254s]       |                              croot
+[23.748s] gmake[2]: *** [CMakeFiles/go2_control_node.dir/build.make:76：CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o] 错误 1
+[23.748s] gmake[1]: *** [CMakeFiles/Makefile2:294：CMakeFiles/go2_control_node.dir/all] 错误 2
+[23.749s] gmake: *** [Makefile:146：all] 错误 2
+[23.754s] Invoked command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24

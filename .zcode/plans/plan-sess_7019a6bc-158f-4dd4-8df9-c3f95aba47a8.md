@@ -1,53 +1,42 @@
-## Part A —— 关掉全接触 + 恢复 H1/H3（你要的）
+## 目标
+全接触站立，WBC 只用 H1（姿态/高度 PD 经 `q_d` 驱动），不用 MPC 的力跟踪，也不做摆动腿跟踪。
 
-**1. 删掉三处全接触 override**
-- `src/ros2/go2_control_node.cpp:242-243` 的 `std::fill(state.contact_states..., true)`
-- `src/MPC/MPC.cpp:113-114` 的 `std::fill(contact_expanded..., 1)`
-- `src/WBC/WBC.cpp:68-69` 的 `std::fill(contact_states_..., 1)`
+## 已完成（plan mode 生效前已落盘，尚未编译）
+1. `src/WBC/WBC.cpp` `compuseHg()`：`H += H1; g += g1;`，H2/H3 连同代码注释保留（含 `swing_row_leg_` 逐腿取权重的 H3 循环，便于以后再启用）
+2. `src/WBC/WBC.cpp` `update()`：恢复 `std::fill(contact_states_, ..., 1)`
 
-三处删掉后，接触统一来自 `scheduler->GetSwingPhases()`，node 写进 `state.contact_states`，MPC 用 `contact_sched_` 滚动预测，WBC 用同一份 —— 三层首次真正一致。
+## 剩余改动
 
-**2. `src/WBC/WBC.cpp` `compuseHg()` 恢复 H1 与 H3**
+**3. `src/MPC/MPC.cpp`** — 在 `contact_expanded` 组装完成后恢复 `std::fill(contact_expanded..., 1)`（位置在 `_qpconstraint->updateConstraints(...)` 之前）
 
-`H = H1 + H2 + H3`，`g = g1 + g2 + g3`，保留现有对角正则。
+**4. `src/ros2/go2_control_node.cpp`** — 在 `state.contact_states[leg] = (scheduler->GetSwingPhases(leg) <= 0) ? 1 : 0;` 之后恢复 `std::fill(state.contact_states..., true)`
 
-两个必须处理的地方：
+**5. 步态切 STAND（关闭迈步）**
+- `launch/go2_sim.launch.py:47` 的 `'gait'` 默认值 `TROT` → `STAND`
+- `config/go2_params.yaml:17` 的 `initial_gait: "TROT"` → `"STAND"`（保持一致，不经过 launch 直接跑时也对）
+- `Preset::STAND {duty=1.0}`，相位恒不超过 duty → `GetSwingPhases` 永不返回摆动 → 调度器本身就给出全接触；所以第 3、4 条的强制全接触在这个模式下是冗余的，但按你的要求一并恢复（也防着手滑改回 TROT）
 
-- **原注释块里的 `row * 3` 编译不过** —— `row` 是未定义标识符（这正是它当初被整段注释掉的直接原因）。应改用 `contact_num * 3`。
-- **`C` 的 12 维权重是按腿排的，而 `A_a` 是按摆动计数紧凑打包的**，直接 `topRows(contact_num*3)` 会把权重错配。`C = [200,200,500, 200,200,500, 200,200,200, 200,200,200]` 本意是"前腿 z 权重 500"。TROT 的两组摆动腿是 FL+RR 和 FR+RL，打包后第一组拿到的永远是前 6 个权重，于是 RR 会拿到本该属于 FL 的 500（2.5 倍偏差）。
-  做法：在 `update()` 里记录打包顺序 `swing_row_leg_[contact_num] = leg`，`compuseHg()` 里按每条摆动腿取它自己的 `C.block<3,3>(leg*3, leg*3)` 累加，不再用 `topRows` 切片。
+**6. 编译**：`colcon build --packages-select go2_robot`
 
-**3. `wbc->init()` 提到第一次 `wbc->update()` 之前**
-`go2_control_node.cpp:103` 先 update、`105` 才 init，而 `WBC.cpp` 的 `@warning` 明确要求先 init。现在 `init()` 才设 `A_q`/`A_f` 的单位块，顺序反了会让首帧的 H1/H2 全为零。影响仅一帧，但既然 H1/H2 都启用了就该摆正。
+## 为什么只用 H1 能站住
 
-**4. `/cmd_vel` 接到步幅上**
-`fsm->SetCmd(type, v)` 现在只在 init 调一次，`Gait_cmd.v` 恒为 0 → 摆动规划器只会**原地踏步**，发 `/cmd_vel` 不会前进。把 `fsm->SetCmd` 移到循环里（与 `mpc->update_DesireStateCommand` 同一个 `cmd_mutex_` 锁段内）。`FSM::run()` 内部有 `_last_gait_type` 守卫，每拍调只更新速度和类型字段，不会重置相位，安全。
+H1 是 `A_qᵀ W A_q` 配 `b_q = q_d`，即把决策变量里的加速度 `a` 拉向 `q_d`。而 `q_d` 来自 `computePoseAccDes` 的高度/姿态 PD：
+- `a_lin = Kp_lin(0,0,50)·e_p_z + Kd_lin(10,10,10)·e_v`（位置只管 z）
+- `a_ang = Kp_ang(500,100,100)·e_rpy + Kd_ang(20,20,20)·e_w`
 
-**Part A 验证**：`contact_fl/fr/rl/rr` 应按 TROT 相位交替；`p_ref_*_z` 应抬起而 `p_act_*_z` 跟随；`f_mpc_*_z` 在支撑腿约 79 N（半身重）。
+高度到位、速度为零时 `q_d_z = 0`，于是 QP 把 `a_z` 钉在 0，**接触力由硬约束的动力学方程解出来**：`m·a_z + m·g = Σfz` ⇒ `Σfz = 157.8 N = mg`。这跟 H2 走的是两条路 —— H2 是"跟踪 MPC 给的力"，H1 是"钉住加速度、让动力学反解出力"。后者完全不依赖 MPC，也不需要 MPC 的质量参数准确。
 
-## Part B —— 强烈建议同一轮做（姿态通道现在是错的，摆相必振）
+H2/H3 关掉后接触力的代价项只剩 1e-3 的对角正则，所以四足力分配接近最小范数解；站立是对称的，摩擦锥余量充足。
 
-`src/Model/pinocchio.cpp` `computeFloatingBaseDynamics()` 里：
+## 起来后重点看
+- `body_z` 稳在 0.25 m（不再是 0.27 起步后漂）
+- `f_wbc_*_z` 四条约 39.4 N，且四腿基本均匀
+- `a_wbc_ang_*` 与 `q_des_ang_*` **符号应同向** —— 这是本轮修掉雅可比符号后第一次能对上的地方，之前必然反号
 
-```cpp
-M_fb_.block<3,3>(3, 3) = Eigen::Matrix3d::Identity();   // 基座转动块 = I₃
-h_fb_(2) = total_mass * g;                              // 只有平动重力
-h_fb_.tail(12) = data_->tau;                            // 关节重力矩
-                                                        // h_fb_(3:6) 恒为 0
-```
+## 切回迈步时需要做的（三处）
+1. 取消 `compuseHg()` 里 H2/H3 的注释
+2. 删掉三处 `std::fill(...)` 全接触
+3. `gait:=TROT`
 
-两个后果，都会在迈步时直接显形：
-
-- **角加速度约束少了 1/I**。WBC 的行是 `a_ang = Σ(r×f)`，而物理是 `Σ(r×f) = I·a_ang`。真实 `I ≈ (0.24, 0.55, 0.54)`，于是姿态环实际增益是需求的 **4.2 倍（roll）/ 1.8 倍（pitch, yaw）** —— 站立时看不出来（目标是 0），一旦摆动腿产生反作用力矩就会振荡发散。
-- **重力对机身的力矩没进 h**。CoM 相对基座原点偏移 `c ≈ (0.0083, 0, -0.0285)`，`c × (m·g) ≈ +1.31 N·m`（pitch）。WBC 少算这份支撑力矩 → 恒定前倾偏置。
-
-修法：`M_fb_(3:6,3:6)` 用绕基座原点的复合惯量 `I_origin = I_com + m(cᵀc·I − c·cᵀ)`；补上线性-转动耦合 `M_fb_(0:3,3:6) = -m·skew(c)`、`M_fb_(3:6,0:3) = m·skew(c)`；`h_fb_(3:6) = c × (m·g)`。这些量在同一函数里从 `model_->inertias` 就能算出来。
-
-**验证方式**：项目里已经建好了自由飞轮模型 `model_fb_`，直接用 `pin.crba(model_fb_, data_fb_, q_fb)` 得到真实的 18×18 浮动基座质量矩阵（注意自由飞轮的基座速度是机体系，要转到世界系对齐），逐块对比我拼出来的 `M_fb_`。这样改完不是"看起来对"，而是能和 pinocchio 对上。
-
-## 不改动
-- `getTotalMassInertia`（上一轮已修好，16.087）
-- `go2.xml`（上一轮已对齐）
-- 约束矩阵布局（那 12 行零行仍留着，另案处理）
-
-如果你只想先看 Part A 的步态表现，告诉我，我把 Part B 留到下一轮。
+## 仍在的已知问题（本轮不动）
+`state.angular_vel` 是机体系（已用 MuJoCo 实测确认），而 WBC 的 `v_full_` 配的是世界系雅可比，角速度项存在 `(Rᵀ−I)ω×r` 的二阶失配；`setBaseVelocity` 的语义也需要一起理清。属独立问题，trot 时约百分之几量级。

@@ -262,19 +262,39 @@ RobotState MJCSIM::SIM::getState(){
         s.joint_velocities(i) = d->qvel[6 + i];
     }
 
-    // 触地状态 (4 条腿: FL, FR, RL, RR)
-    // 缓存 touch sensor id，避免每帧 mj_name2id 字符串查找
-    if (!touch_id_cached_) {
-        touch_id_[0] = mj_name2id(m, mjOBJ_SENSOR, "FL_touch");
-        touch_id_[1] = mj_name2id(m, mjOBJ_SENSOR, "FR_touch");
-        touch_id_[2] = mj_name2id(m, mjOBJ_SENSOR, "RL_touch");
-        touch_id_[3] = mj_name2id(m, mjOBJ_SENSOR, "RR_touch");
-        touch_id_cached_ = true;
+    // 足端接触力 (4 条腿: FL, FR, RL, RR)
+    // 不用 MuJoCo 的 <touch> sensor: 3.9.0 里 mjSENS_TOUCH 是空壳 —— XML 能解析、
+    // sensor dim 也是 1, 但读数恒为 0 (实测: 盒子的 site 就压在接触点上依然读到 0,
+    // 同一时刻 mj_contactForce 给出 19.6 N)。所以直接从 d->contact 取足端碰撞球的法向力。
+    if (!foot_geom_id_cached_) {
+        const char* names[4] = {"FL", "FR", "RL", "RR"};
+        for (int i = 0; i < 4; i++) {
+            foot_geom_id_[i] = mj_name2id(m, mjOBJ_GEOM, names[i]);
+            if (foot_geom_id_[i] < 0)
+                std::cout << "[MJCsim] 警告: 模型里没有 geom \"" << names[i]
+                          << "\", 该腿触地检测失效 (按悬空处理)" << std::endl;
+        }
+        foot_geom_id_cached_ = true;
     }
+
+    s.foot_forces.setZero();
+    for (int ci = 0; ci < (int)d->ncon; ci++) {
+        const mjContact& con = d->contact[ci];
+        for (int leg = 0; leg < 4; leg++) {
+            if (foot_geom_id_[leg] < 0) continue;
+            if (con.geom1 != foot_geom_id_[leg] && con.geom2 != foot_geom_id_[leg])
+                continue;
+            double f[6];                       // 接触系 6 维力: f[0]=法向, f[1..5]=切向/扭矩
+            mj_contactForce(m, d, ci, f);
+            if (f[0] > 0.0) s.foot_forces(leg) += f[0];   // 负值=吸附, 不计入触地
+        }
+    }
+
+    // 接触状态只表示"几何上有接触"(力 > 0); 真正的触地判定在 FSM 里按阈值做,
+    // 阈值属于控制策略, 不该埋在仿真里
     s.contact_states.resize(4);
-    for (int i = 0; i < 4; i++) {
-        s.contact_states[i] = (d->sensordata[touch_id_[i]] > 0.0) ? 1 : 0;
-    }
+    for (int i = 0; i < 4; i++)
+        s.contact_states[i] = (s.foot_forces(i) > 0.0) ? 1 : 0;
     // s.angular_vel.setZero(); 
     return s;
 }

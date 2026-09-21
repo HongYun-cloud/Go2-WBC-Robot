@@ -1,0 +1,51 @@
+[  2%] Built target go2_robot__rs
+[  4%] Built target go2_robot__cpp
+[ 10%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp
+[ 16%] Built target go2_robot__rosidl_generator_c
+[ 22%] Built target go2_robot__rosidl_typesupport_introspection_cpp
+[ 28%] Built target go2_robot__rosidl_typesupport_c
+[ 34%] Built target go2_robot__rosidl_typesupport_cpp
+[ 40%] Built target go2_robot__rosidl_typesupport_fastrtps_c
+[ 46%] Built target go2_robot__rosidl_typesupport_introspection_c
+[ 46%] Built target ament_cmake_python_copy_go2_robot
+[ 46%] Built target go2_robot
+[ 59%] Built target go2_robot__py
+[ 59%] Built target OsqpEigen
+[ 63%] Built target go2_robot__rosidl_generator_py
+[ 67%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext
+[ 71%] Built target go2_robot__rosidl_typesupport_c__pyext
+[ 75%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext
+running egg_info
+writing go2_robot.egg-info/PKG-INFO
+writing dependency_links to go2_robot.egg-info/dependency_links.txt
+writing top-level names to go2_robot.egg-info/top_level.txt
+[ 77%] Building CXX object CMakeFiles/go2_core.dir/src/MPC/MPC.cpp.o
+[ 79%] Building CXX object CMakeFiles/go2_core.dir/src/SIM/MJCsim.cpp.o
+[ 81%] Building CXX object CMakeFiles/go2_core.dir/src/Planner/GaitScheduler.cpp.o
+[ 83%] Building CXX object CMakeFiles/go2_core.dir/src/fsm/ControlFSM.cpp.o
+[ 85%] Building CXX object CMakeFiles/go2_core.dir/src/Estimator/PositionVelocityEstimator.cpp.o
+[ 87%] Building CXX object CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o
+[ 89%] Building CXX object CMakeFiles/go2_core.dir/src/Planner/SwingLegPlanner.cpp.o
+reading manifest file 'go2_robot.egg-info/SOURCES.txt'
+writing manifest file 'go2_robot.egg-info/SOURCES.txt'
+[ 89%] Built target ament_cmake_python_build_go2_robot_egg
+[ 91%] Linking CXX static library libgo2_core.a
+[ 93%] Built target go2_core
+Consolidate compiler generated dependencies of target go2_control_node
+[ 95%] Building CXX object CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o
+[ 97%] Building CXX object CMakeFiles/go2_control_node.dir/src/ros2/main.cpp.o
+/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp: In member function ‘void go2::Go2ControlNode::loadTaskPdConfig(const string&)’:
+/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:426:11: error: ‘Nodshie’ is not a member of ‘YAML’; did you mean ‘Node’?
+  426 |     YAML::Nodshie root;
+      |           ^~~~~~~
+      |           Node
+/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:428:9: error: ‘root’ was not declared in this scope
+  428 |         root = YAML::LoadFile(yaml_path);
+      |         ^~~~
+/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:436:30: error: ‘root’ was not declared in this scope; did you mean ‘croot’?
+  436 |     const YAML::Node croot = root;
+      |                              ^~~~
+      |                              croot
+gmake[2]: *** [CMakeFiles/go2_control_node.dir/build.make:76：CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:294：CMakeFiles/go2_control_node.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

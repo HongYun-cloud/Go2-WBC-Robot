@@ -182,18 +182,18 @@ namespace WBC
         g.setZero();
 
         // ===== H1: 跟踪期望加速度 q_d (姿态 PD 的输出 computePoseAccDes 由此进入 QP) =====
+        // 当前只用 H1: 平衡完全由姿态/高度 PD 经 H1 驱动 a → q_d, 接触力由硬约束的动力学
+        // 方程解出 (a_z = 0 ⇒ Σfz = mg), 既不依赖 MPC 的 f_d, 也不含摆动腿跟踪
         Mat30d H1 = config->A_q.transpose() * config->W  * config->A_q;
         Vec30d g1 = config->A_q.transpose() * config->W  * config->b_q;
 
-        // ===== H2: 跟踪 MPC 力 f → f_d =====
-        // 站立/支撑所需的地面反力 (Σfz ≈ mg) 靠这一项进入 QP —— 缺它时 QP 只剩硬约束,
-        // 会在 12 维解空间里挑中"机身自由落体 + 接触力趋零"那个点
+
+        // H2: 跟踪 MPC 力 f → f_d。站立时它让 Σfz ≈ mg 靠"跟踪目标"进入 QP;
+
         Mat30d H2 = config->A_f.transpose() * config->FI * config->A_f;
         Vec30d g2 = config->A_f.transpose() * config->FI * config->b_f;
+        // H3: 摆动腿足端加速度跟踪。A_a/b_a 按摆动计数紧凑打包 (行 0..contact_num*3),
 
-        // ===== H3: 摆动腿足端加速度跟踪 =====
-        // A_a/b_a 按摆动计数紧凑打包 (行 0..contact_num*3), 而 C 的权重是按腿索引排的
-        // → 按 swing_row_leg_ 记录的腿号逐条取 3×3 权重块, 不能用 topRows 切片 (会张冠李戴)
         Mat30d H3 = Mat30d::Zero();
         Vec30d g3 = Vec30d::Zero();
         for (int k = 0; k < contact_num; k++) {
@@ -256,8 +256,81 @@ namespace WBC
 
         // 平动3+转动3+关节12+力矩12
         auto flag = _solver.solveProblem();
-        Eigen::VectorXd solution = _solver.getSolution();
-        task_vec = solution.head(30).cast<double>();
+
+        // ===== 返回值守卫 =====
+        // flag 只报 OSQP 的 API 级错误 (数据校验/内存等), 真正的求解结果在 getStatus():
+        // MaxIterReached / PrimalInfeasible / DualInfeasible / Unsolved 时 getSolution()
+        // 返回的是**最后一步迭代值**, 不是可行解 —— 直接当控制量用会给出无界加速度/力
+        // (一拍的暴力冲击就够摔倒), 而这条路径原先完全没被检查过。
+        // 兜底策略: 沿用上一拍的有效解 (500Hz 下 2ms 的滞后远好于一个垃圾解);
+        // 连一个有效解都还没有时置零。连续失败会打印, 便于发现"一直在失败"。
+        const auto status = _solver.getStatus();
+        const bool solved = (flag == OsqpEigen::ErrorExitFlag::NoError) &&
+                            (status == OsqpEigen::Status::Solved ||
+                             status == OsqpEigen::Status::SolvedInaccurate);
+
+        if (solved) {
+            Eigen::VectorXd solution = _solver.getSolution();
+            SolutionVector cand = solution.head(30).cast<double>();
+            if (cand.allFinite()) {
+                task_vec = cand;
+                task_vec_last_valid_ = cand;
+                has_valid_solution_ = true;
+                if (solve_fail_streak_ > 0) {
+                    std::cout << "[WBC] QP 恢复求解 (之前连续失败 " << solve_fail_streak_ << " 拍)" << std::endl;
+                    solve_fail_streak_ = 0;
+                }
+            } else {
+                task_vec = has_valid_solution_ ? task_vec_last_valid_ : SolutionVector::Zero();
+                if (solve_fail_streak_++ % 100 == 0)
+                    std::cerr << "[WBC] QP 解含 NaN/Inf, 沿用上一拍 (连续 " << solve_fail_streak_ << " 拍)" << std::endl;
+            }
+        } else {
+            task_vec = has_valid_solution_ ? task_vec_last_valid_ : SolutionVector::Zero();
+            if (solve_fail_streak_++ % 100 == 0)
+                std::cerr << "[WBC] QP 未求解成功 status=" << static_cast<int>(status)
+                          << " exit=" << static_cast<int>(flag)
+                          << ", 沿用上一拍 (连续 " << solve_fail_streak_ << " 拍)" << std::endl;
+        }
+
+        // ===== 临时诊断: 垂直力预算 vs 需求 =====
+        // 目的: 判断"掉下去"是力不够(饱和)还是力乱给(振荡)
+        //   需求 fz_need = m*(a_z_des + g)   期望加速度 q_d 要求的支撑力
+        //   上限 fz_cap  = fz_max * 支撑腿数
+        //   q_d_z 与 a_z 的差 = QP 有没有能力兑现高度环的期望
+        // {
+        //     static int tick = 0;
+        //     const double g = 9.81;
+        //     const double m = 16.087;              // pinocchio 总质量
+        //     const double a_z_des = cmd.q_d(2);    // 高度环期望的基座 z 加速度
+        //     const double a_z     = task_vec(2);   // QP 解出的基座 z 加速度
+
+        //     double fz[4], sum_fz = 0.0;
+        //     int n_st = 0;
+        //     for (int l = 0; l < 4; l++) {
+        //         fz[l] = task_vec(18 + l * 3 + 2);
+        //         sum_fz += fz[l];
+        //         n_st += contact_states_[l];
+        //     }
+        //     const double fz_need = m * (a_z_des + g);
+        //     const double fz_cap  = qpconstraint->fz_max * n_st;
+
+        //     const bool sat = (n_st > 0) && (fz_need > fz_cap);
+        //     static int n_sat = 0, n_tot = 0;
+        //     n_sat += sat; n_tot++;
+
+        //     if (++tick % 100 == 0) {   // 0.2 s
+        //         std::cout << "[QP] c=" << contact_states_[0] << contact_states_[1]
+        //                   << contact_states_[2] << contact_states_[3]
+        //                   << " qd_z=" << a_z_des << " a_z=" << a_z
+        //                   << " | fz=" << fz[0] << "," << fz[1] << "," << fz[2] << "," << fz[3]
+        //                   << " sum=" << sum_fz
+        //                   << " need=" << fz_need << " cap=" << fz_cap
+        //                   << (sat ? " SAT" : "")
+        //                   << " | SAT率=" << (100.0 * n_sat / n_tot) << "%"
+        //                   << std::endl;
+        //     }
+        // }
 
         // static int dbg = 0;
         // if (dbg++ % 100 == 0) {

@@ -1,0 +1,323 @@
+[0.000000] (-) TimerEvent: {}
+[0.000299] (go2_robot) JobQueued: {'identifier': 'go2_robot', 'dependencies': OrderedDict()}
+[0.000337] (go2_robot) JobStarted: {'identifier': 'go2_robot'}
+[0.062813] (go2_robot) JobProgress: {'identifier': 'go2_robot', 'progress': 'cmake'}
+[0.074450] (go2_robot) JobProgress: {'identifier': 'go2_robot', 'progress': 'build'}
+[0.077360] (go2_robot) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/hong/Movement_Control/Go2Robot/build/go2_robot', '--', '-j24', '-l24'], 'cwd': '/home/hong/Movement_Control/Go2Robot/build/go2_robot', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('VSCODE_CWD', '/home/hong'), ('ANTHROPIC_MODEL', 'deepseek-flash'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('AI_AGENT', 'claude-code_2-1-278_agent'), ('LANGUAGE', 'zh_CN:zh:en_US:en'), ('USER', 'hong'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/hong/.config/Code/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","messagesFile":"/home/hong/.config/Code/clp/75539731208fa508a5b042c8fe051beb.zh-cn/6a49527b96e326fe62fbdb56f60e16877c9aa724/nls.messages.json","corruptMarkerFile":"/home/hong/.config/Code/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"75539731208fa508a5b042c8fe051beb.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/hong/.config/Code/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","_cacheRoot":"/home/hong/.config/Code/clp/75539731208fa508a5b042c8fe051beb.zh-cn","_resolvedLanguagePackCoreLocation":"/home/hong/.config/Code/clp/75539731208fa508a5b042c8fe051beb.zh-cn/6a49527b96e326fe62fbdb56f60e16877c9aa724","_corruptedFile":"/home/hong/.config/Code/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"}'), ('GIT_EDITOR', 'true'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('CLAUDE_AGENT_SDK_VERSION', '0.3.278'), ('CLAUDE_CODE_SESSION_ATTENDED', '1'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('CLAUDE_CODE_MESSAGING_TOKEN', '8a6176aaae335f2a80a7636a6f7961f0'), ('INPUT_METHOD', 'fcitx'), ('HOME', '/home/hong'), ('CHROME_DESKTOP', 'code.desktop'), ('DESKTOP_SESSION', 'ubuntu'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-2085e3a6-1.12-main.sock'), ('ANTHROPIC_DEFAULT_SONNET_MODEL', 'deepseek-flash'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SDL_IM_MODULE', 'fcitx'), ('CLAUDE_CODE_CHILD_SESSION', '1'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('MANAGERPID', '2205'), ('GLFW_IM_MODULE', 'ibus'), ('SYSTEMD_EXEC_PID', '2448'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '5267'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('VSCODE_L10N_BUNDLE_LOCATION', 'file:///home/hong/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.131.2026090407/translations/extensions/vscode.json-language-features.i18n.json'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'hong'), ('JOURNAL_STREAM', '8:15465'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'hong'), ('ANTHROPIC_BASE_URL', 'https://api.deepseek.com/anthropic'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('ANTHROPIC_DEFAULT_OPUS_MODEL', 'deepseek-flash'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/home/hong/miniconda3/envs/rl_env/bin:/home/hong/.local/bin:/opt/ros/humble/bin:/usr/local/cuda-12.1/bin:/home/hong/miniconda3/condabin:/home/hong/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/hong/.mujoco/mujoco-3.9.0/bin'), ('SESSION_MANAGER', 'local/hong:@/tmp/.ICE-unix/2425,unix/hong:/tmp/.ICE-unix/2425'), ('INVOCATION_ID', 'c491288875eb4684a604aa139880b1f5'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('CLAUDE_EFFORT', 'high'), ('DISPLAY', ':1'), ('CLAUDE_PID', '8460'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('ANTHROPIC_DEFAULT_HAIKU_MODEL', 'deepseek-flash'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ANTHROPIC_AUTH_TOKEN', 'sk-25a00b0ff79d413fab76564438ce05c8'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('CLAUDE_CODE_SESSION_ID', '8747aed9-8d7b-4749-8cd8-b210ba1f3814'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VIRTUAL_ENV', '/home/hong/miniconda3/envs/rl_env'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/hong/Movement_Control/Go2Robot/build/go2_robot'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('VSCODE_CODE_CACHE_PATH', '/home/hong/.config/Code/CachedData/6a49527b96e326fe62fbdb56f60e16877c9aa724'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/hong/.vscode/extensions/anthropic.claude-code-2.1.278-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('CLAUDE_CODE_ENABLE_TASKS', '0'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CLAUDE_CODE_MESSAGING_SOCKET', '/run/user/1000/cc-socks/8460.sock'), ('VSCODE_PID', '5267'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.099537] (-) TimerEvent: {}
+[0.199883] (-) TimerEvent: {}
+[0.300274] (-) TimerEvent: {}
+[0.400628] (-) TimerEvent: {}
+[0.500904] (-) TimerEvent: {}
+[0.601195] (-) TimerEvent: {}
+[0.701417] (-) TimerEvent: {}
+[0.801598] (-) TimerEvent: {}
+[0.831242] (go2_robot) StdoutLine: {'line': b'[  2%] Built target go2_robot__rs\n'}
+[0.840325] (go2_robot) StdoutLine: {'line': b'[  4%] Built target go2_robot__cpp\n'}
+[0.901771] (-) TimerEvent: {}
+[0.934228] (go2_robot) StdoutLine: {'line': b'[ 10%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp\n'}
+[0.939223] (go2_robot) StdoutLine: {'line': b'[ 16%] Built target go2_robot__rosidl_generator_c\n'}
+[0.968608] (go2_robot) StdoutLine: {'line': b'[ 22%] Built target go2_robot__rosidl_typesupport_introspection_cpp\n'}
+[0.975482] (go2_robot) StdoutLine: {'line': b'[ 28%] Built target go2_robot__rosidl_typesupport_c\n'}
+[0.984937] (go2_robot) StdoutLine: {'line': b'[ 34%] Built target go2_robot__rosidl_typesupport_cpp\n'}
+[1.001936] (-) TimerEvent: {}
+[1.049794] (go2_robot) StdoutLine: {'line': b'[ 40%] Built target go2_robot__rosidl_typesupport_fastrtps_c\n'}
+[1.055787] (go2_robot) StdoutLine: {'line': b'[ 46%] Built target go2_robot__rosidl_typesupport_introspection_c\n'}
+[1.077473] (go2_robot) StdoutLine: {'line': b'[ 46%] Built target ament_cmake_python_copy_go2_robot\n'}
+[1.083932] (go2_robot) StdoutLine: {'line': b'[ 46%] Built target go2_robot\n'}
+[1.102100] (-) TimerEvent: {}
+[1.103316] (go2_robot) StdoutLine: {'line': b'[ 59%] Built target go2_robot__py\n'}
+[1.103410] (go2_robot) StdoutLine: {'line': b'[ 59%] Built target OsqpEigen\n'}
+[1.173604] (go2_robot) StdoutLine: {'line': b'[ 63%] Built target go2_robot__rosidl_generator_py\n'}
+[1.202240] (-) TimerEvent: {}
+[1.224183] (go2_robot) StdoutLine: {'line': b'[ 67%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext\n'}
+[1.256770] (go2_robot) StdoutLine: {'line': b'[ 71%] Built target go2_robot__rosidl_typesupport_c__pyext\n'}
+[1.271123] (go2_robot) StdoutLine: {'line': b'[ 75%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext\n'}
+[1.302364] (-) TimerEvent: {}
+[1.358897] (go2_robot) StdoutLine: {'line': b'running egg_info\n'}
+[1.359970] (go2_robot) StdoutLine: {'line': b'writing go2_robot.egg-info/PKG-INFO\n'}
+[1.360392] (go2_robot) StdoutLine: {'line': b'writing dependency_links to go2_robot.egg-info/dependency_links.txt\n'}
+[1.360540] (go2_robot) StdoutLine: {'line': b'writing top-level names to go2_robot.egg-info/top_level.txt\n'}
+[1.362286] (go2_robot) StdoutLine: {'line': b'[ 77%] Building CXX object CMakeFiles/go2_core.dir/src/MPC/MPC.cpp.o\n'}
+[1.362673] (go2_robot) StdoutLine: {'line': b'[ 79%] Building CXX object CMakeFiles/go2_core.dir/src/SIM/MJCsim.cpp.o\n'}
+[1.365175] (go2_robot) StdoutLine: {'line': b'[ 81%] Building CXX object CMakeFiles/go2_core.dir/src/Planner/GaitScheduler.cpp.o\n'}
+[1.365411] (go2_robot) StdoutLine: {'line': b'[ 83%] Building CXX object CMakeFiles/go2_core.dir/src/fsm/ControlFSM.cpp.o\n'}
+[1.366307] (go2_robot) StdoutLine: {'line': b'[ 85%] Building CXX object CMakeFiles/go2_core.dir/src/Estimator/PositionVelocityEstimator.cpp.o\n'}
+[1.366681] (go2_robot) StdoutLine: {'line': b'[ 87%] Building CXX object CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o\n'}
+[1.368673] (go2_robot) StdoutLine: {'line': b'[ 89%] Building CXX object CMakeFiles/go2_core.dir/src/Planner/SwingLegPlanner.cpp.o\n'}
+[1.388230] (go2_robot) StdoutLine: {'line': b"reading manifest file 'go2_robot.egg-info/SOURCES.txt'\n"}
+[1.389350] (go2_robot) StdoutLine: {'line': b"writing manifest file 'go2_robot.egg-info/SOURCES.txt'\n"}
+[1.402549] (-) TimerEvent: {}
+[1.416582] (go2_robot) StdoutLine: {'line': b'[ 89%] Built target ament_cmake_python_build_go2_robot_egg\n'}
+[1.502772] (-) TimerEvent: {}
+[1.603071] (-) TimerEvent: {}
+[1.703278] (-) TimerEvent: {}
+[1.803465] (-) TimerEvent: {}
+[1.903735] (-) TimerEvent: {}
+[2.004038] (-) TimerEvent: {}
+[2.104258] (-) TimerEvent: {}
+[2.204465] (-) TimerEvent: {}
+[2.304676] (-) TimerEvent: {}
+[2.404946] (-) TimerEvent: {}
+[2.505198] (-) TimerEvent: {}
+[2.605347] (-) TimerEvent: {}
+[2.705514] (-) TimerEvent: {}
+[2.805699] (-) TimerEvent: {}
+[2.905897] (-) TimerEvent: {}
+[3.006153] (-) TimerEvent: {}
+[3.106320] (-) TimerEvent: {}
+[3.206485] (-) TimerEvent: {}
+[3.306720] (-) TimerEvent: {}
+[3.406962] (-) TimerEvent: {}
+[3.507136] (-) TimerEvent: {}
+[3.607300] (-) TimerEvent: {}
+[3.707464] (-) TimerEvent: {}
+[3.807645] (-) TimerEvent: {}
+[3.907903] (-) TimerEvent: {}
+[4.008157] (-) TimerEvent: {}
+[4.108313] (-) TimerEvent: {}
+[4.208491] (-) TimerEvent: {}
+[4.308738] (-) TimerEvent: {}
+[4.408985] (-) TimerEvent: {}
+[4.509223] (-) TimerEvent: {}
+[4.609382] (-) TimerEvent: {}
+[4.709568] (-) TimerEvent: {}
+[4.809759] (-) TimerEvent: {}
+[4.910010] (-) TimerEvent: {}
+[5.010155] (-) TimerEvent: {}
+[5.110317] (-) TimerEvent: {}
+[5.210478] (-) TimerEvent: {}
+[5.310633] (-) TimerEvent: {}
+[5.410956] (-) TimerEvent: {}
+[5.511266] (-) TimerEvent: {}
+[5.611510] (-) TimerEvent: {}
+[5.711767] (-) TimerEvent: {}
+[5.812014] (-) TimerEvent: {}
+[5.912282] (-) TimerEvent: {}
+[6.012497] (-) TimerEvent: {}
+[6.112657] (-) TimerEvent: {}
+[6.212808] (-) TimerEvent: {}
+[6.313126] (-) TimerEvent: {}
+[6.413366] (-) TimerEvent: {}
+[6.513602] (-) TimerEvent: {}
+[6.613847] (-) TimerEvent: {}
+[6.714100] (-) TimerEvent: {}
+[6.814267] (-) TimerEvent: {}
+[6.914522] (-) TimerEvent: {}
+[7.014716] (-) TimerEvent: {}
+[7.115005] (-) TimerEvent: {}
+[7.215126] (-) TimerEvent: {}
+[7.315277] (-) TimerEvent: {}
+[7.415423] (-) TimerEvent: {}
+[7.515571] (-) TimerEvent: {}
+[7.615721] (-) TimerEvent: {}
+[7.715946] (-) TimerEvent: {}
+[7.816195] (-) TimerEvent: {}
+[7.916439] (-) TimerEvent: {}
+[8.016644] (-) TimerEvent: {}
+[8.116805] (-) TimerEvent: {}
+[8.217059] (-) TimerEvent: {}
+[8.317215] (-) TimerEvent: {}
+[8.417377] (-) TimerEvent: {}
+[8.517557] (-) TimerEvent: {}
+[8.617794] (-) TimerEvent: {}
+[8.718026] (-) TimerEvent: {}
+[8.818155] (-) TimerEvent: {}
+[8.918305] (-) TimerEvent: {}
+[9.018482] (-) TimerEvent: {}
+[9.118728] (-) TimerEvent: {}
+[9.218967] (-) TimerEvent: {}
+[9.319226] (-) TimerEvent: {}
+[9.419383] (-) TimerEvent: {}
+[9.519568] (-) TimerEvent: {}
+[9.619827] (-) TimerEvent: {}
+[9.720112] (-) TimerEvent: {}
+[9.820376] (-) TimerEvent: {}
+[9.920641] (-) TimerEvent: {}
+[10.020887] (-) TimerEvent: {}
+[10.121148] (-) TimerEvent: {}
+[10.221304] (-) TimerEvent: {}
+[10.321466] (-) TimerEvent: {}
+[10.421724] (-) TimerEvent: {}
+[10.521974] (-) TimerEvent: {}
+[10.622237] (-) TimerEvent: {}
+[10.722398] (-) TimerEvent: {}
+[10.822656] (-) TimerEvent: {}
+[10.922895] (-) TimerEvent: {}
+[11.023161] (-) TimerEvent: {}
+[11.123407] (-) TimerEvent: {}
+[11.223640] (-) TimerEvent: {}
+[11.323891] (-) TimerEvent: {}
+[11.424152] (-) TimerEvent: {}
+[11.524305] (-) TimerEvent: {}
+[11.624511] (-) TimerEvent: {}
+[11.724772] (-) TimerEvent: {}
+[11.825008] (-) TimerEvent: {}
+[11.925244] (-) TimerEvent: {}
+[12.025392] (-) TimerEvent: {}
+[12.125634] (-) TimerEvent: {}
+[12.225911] (-) TimerEvent: {}
+[12.326313] (-) TimerEvent: {}
+[12.426690] (-) TimerEvent: {}
+[12.527256] (-) TimerEvent: {}
+[12.627585] (-) TimerEvent: {}
+[12.727830] (-) TimerEvent: {}
+[12.828085] (-) TimerEvent: {}
+[12.928239] (-) TimerEvent: {}
+[13.028497] (-) TimerEvent: {}
+[13.063340] (go2_robot) StdoutLine: {'line': b'[ 91%] Linking CXX static library libgo2_core.a\n'}
+[13.128673] (-) TimerEvent: {}
+[13.228963] (-) TimerEvent: {}
+[13.329269] (-) TimerEvent: {}
+[13.429431] (-) TimerEvent: {}
+[13.529678] (-) TimerEvent: {}
+[13.532307] (go2_robot) StdoutLine: {'line': b'[ 93%] Built target go2_core\n'}
+[13.629775] (-) TimerEvent: {}
+[13.656608] (go2_robot) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target go2_control_node\n'}
+[13.678136] (go2_robot) StdoutLine: {'line': b'[ 95%] Building CXX object CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o\n'}
+[13.678268] (go2_robot) StdoutLine: {'line': b'[ 97%] Building CXX object CMakeFiles/go2_control_node.dir/src/ros2/main.cpp.o\n'}
+[13.729871] (-) TimerEvent: {}
+[13.830048] (-) TimerEvent: {}
+[13.930301] (-) TimerEvent: {}
+[14.030451] (-) TimerEvent: {}
+[14.130622] (-) TimerEvent: {}
+[14.230761] (-) TimerEvent: {}
+[14.330922] (-) TimerEvent: {}
+[14.431173] (-) TimerEvent: {}
+[14.531411] (-) TimerEvent: {}
+[14.631586] (-) TimerEvent: {}
+[14.731833] (-) TimerEvent: {}
+[14.832075] (-) TimerEvent: {}
+[14.932342] (-) TimerEvent: {}
+[15.032517] (-) TimerEvent: {}
+[15.132755] (-) TimerEvent: {}
+[15.232996] (-) TimerEvent: {}
+[15.333230] (-) TimerEvent: {}
+[15.433478] (-) TimerEvent: {}
+[15.533724] (-) TimerEvent: {}
+[15.633970] (-) TimerEvent: {}
+[15.734226] (-) TimerEvent: {}
+[15.834464] (-) TimerEvent: {}
+[15.934712] (-) TimerEvent: {}
+[16.034965] (-) TimerEvent: {}
+[16.135211] (-) TimerEvent: {}
+[16.235459] (-) TimerEvent: {}
+[16.335710] (-) TimerEvent: {}
+[16.435951] (-) TimerEvent: {}
+[16.536197] (-) TimerEvent: {}
+[16.636378] (-) TimerEvent: {}
+[16.736617] (-) TimerEvent: {}
+[16.836952] (-) TimerEvent: {}
+[16.937201] (-) TimerEvent: {}
+[17.037440] (-) TimerEvent: {}
+[17.137690] (-) TimerEvent: {}
+[17.237933] (-) TimerEvent: {}
+[17.338186] (-) TimerEvent: {}
+[17.438439] (-) TimerEvent: {}
+[17.538685] (-) TimerEvent: {}
+[17.638939] (-) TimerEvent: {}
+[17.739193] (-) TimerEvent: {}
+[17.839445] (-) TimerEvent: {}
+[17.939611] (-) TimerEvent: {}
+[18.039867] (-) TimerEvent: {}
+[18.140156] (-) TimerEvent: {}
+[18.240401] (-) TimerEvent: {}
+[18.340596] (-) TimerEvent: {}
+[18.440837] (-) TimerEvent: {}
+[18.541102] (-) TimerEvent: {}
+[18.641360] (-) TimerEvent: {}
+[18.741551] (-) TimerEvent: {}
+[18.841792] (-) TimerEvent: {}
+[18.942048] (-) TimerEvent: {}
+[19.042229] (-) TimerEvent: {}
+[19.142477] (-) TimerEvent: {}
+[19.242719] (-) TimerEvent: {}
+[19.342911] (-) TimerEvent: {}
+[19.443161] (-) TimerEvent: {}
+[19.543423] (-) TimerEvent: {}
+[19.643720] (-) TimerEvent: {}
+[19.743975] (-) TimerEvent: {}
+[19.844246] (-) TimerEvent: {}
+[19.944522] (-) TimerEvent: {}
+[20.044782] (-) TimerEvent: {}
+[20.145050] (-) TimerEvent: {}
+[20.236905] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp: In member function \xe2\x80\x98void go2::Go2ControlNode::loadTaskPdConfig(const string&)\xe2\x80\x99:\n'}
+[20.237602] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:426:11: error: \xe2\x80\x98Nodshie\xe2\x80\x99 is not a member of \xe2\x80\x98YAML\xe2\x80\x99; did you mean \xe2\x80\x98Node\xe2\x80\x99?\n'}
+[20.237648] (go2_robot) StderrLine: {'line': b'  426 |     YAML::Nodshie root;\n'}
+[20.237680] (go2_robot) StderrLine: {'line': b'      |           ^~~~~~~\n'}
+[20.237710] (go2_robot) StderrLine: {'line': b'      |           Node\n'}
+[20.245209] (-) TimerEvent: {}
+[20.246215] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:428:9: error: \xe2\x80\x98root\xe2\x80\x99 was not declared in this scope\n'}
+[20.246306] (go2_robot) StderrLine: {'line': b'  428 |         root = YAML::LoadFile(yaml_path);\n'}
+[20.246342] (go2_robot) StderrLine: {'line': b'      |         ^~~~\n'}
+[20.254014] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:436:30: error: \xe2\x80\x98root\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98croot\xe2\x80\x99?\n'}
+[20.254103] (go2_robot) StderrLine: {'line': b'  436 |     const YAML::Node croot = root;\n'}
+[20.254140] (go2_robot) StderrLine: {'line': b'      |                              ^~~~\n'}
+[20.254169] (go2_robot) StderrLine: {'line': b'      |                              croot\n'}
+[20.345400] (-) TimerEvent: {}
+[20.445594] (-) TimerEvent: {}
+[20.545876] (-) TimerEvent: {}
+[20.646171] (-) TimerEvent: {}
+[20.746328] (-) TimerEvent: {}
+[20.846501] (-) TimerEvent: {}
+[20.946695] (-) TimerEvent: {}
+[21.046853] (-) TimerEvent: {}
+[21.147033] (-) TimerEvent: {}
+[21.247207] (-) TimerEvent: {}
+[21.347355] (-) TimerEvent: {}
+[21.447505] (-) TimerEvent: {}
+[21.547686] (-) TimerEvent: {}
+[21.647868] (-) TimerEvent: {}
+[21.748050] (-) TimerEvent: {}
+[21.848325] (-) TimerEvent: {}
+[21.948597] (-) TimerEvent: {}
+[22.048859] (-) TimerEvent: {}
+[22.149153] (-) TimerEvent: {}
+[22.249415] (-) TimerEvent: {}
+[22.349681] (-) TimerEvent: {}
+[22.449941] (-) TimerEvent: {}
+[22.550197] (-) TimerEvent: {}
+[22.650367] (-) TimerEvent: {}
+[22.750556] (-) TimerEvent: {}
+[22.850722] (-) TimerEvent: {}
+[22.950956] (-) TimerEvent: {}
+[23.051225] (-) TimerEvent: {}
+[23.151389] (-) TimerEvent: {}
+[23.251602] (-) TimerEvent: {}
+[23.351870] (-) TimerEvent: {}
+[23.452210] (-) TimerEvent: {}
+[23.552467] (-) TimerEvent: {}
+[23.652725] (-) TimerEvent: {}
+[23.747962] (go2_robot) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/go2_control_node.dir/build.make:76\xef\xbc\x9aCMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[23.748622] (go2_robot) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:294\xef\xbc\x9aCMakeFiles/go2_control_node.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[23.749312] (go2_robot) StderrLine: {'line': b'gmake: *** [Makefile:146\xef\xbc\x9aall] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[23.752857] (-) TimerEvent: {}
+[23.753863] (go2_robot) CommandEnded: {'returncode': 2}
+[23.853107] (-) TimerEvent: {}
+[23.953367] (-) TimerEvent: {}
+[24.053593] (-) TimerEvent: {}
+[24.153881] (-) TimerEvent: {}
+[24.254250] (-) TimerEvent: {}
+[24.354515] (-) TimerEvent: {}
+[24.454760] (-) TimerEvent: {}
+[24.555009] (-) TimerEvent: {}
+[24.655265] (-) TimerEvent: {}
+[24.755429] (-) TimerEvent: {}
+[24.855713] (-) TimerEvent: {}
+[24.955879] (-) TimerEvent: {}
+[25.056090] (-) TimerEvent: {}
+[25.156243] (-) TimerEvent: {}
+[25.256576] (-) TimerEvent: {}
+[25.356941] (-) TimerEvent: {}
+[25.457258] (-) TimerEvent: {}
+[25.557505] (-) TimerEvent: {}
+[25.657761] (-) TimerEvent: {}
+[25.758139] (-) TimerEvent: {}
+[25.858729] (-) TimerEvent: {}
+[25.959127] (-) TimerEvent: {}
+[26.059425] (-) TimerEvent: {}
+[26.159823] (-) TimerEvent: {}
+[26.260184] (-) TimerEvent: {}
+[26.329708] (go2_robot) JobEnded: {'identifier': 'go2_robot', 'rc': 2}
+[26.388057] (-) TimerEvent: {}
+[26.388161] (-) EventReactorShutdown: {}

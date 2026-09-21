@@ -18,6 +18,10 @@ namespace WBC
     {
     private:
         SolutionVector task_vec; // 求解的目标向量{q,f}
+        // QP 求解失败 (不可行 / 迭代上限 / NaN) 时的兜底解
+        SolutionVector task_vec_last_valid_;
+        bool has_valid_solution_ = false;   // 是否已经拿到过至少一个有效解
+        int solve_fail_streak_ = 0;         // 连续失败拍数 (诊断, 只在状态翻转时打印)
         // OSQP 求解器缓存 (避免每帧重建)
         OsqpEigen::Solver _solver;
         bool _solver_initialized = false;

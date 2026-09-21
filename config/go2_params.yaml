@@ -4,9 +4,9 @@
 go2_control_node:
   ros__parameters:
     # ===== 模型/配置文件路径 =====
-    mujoco_model: "go2/scene.xml"          # 原 ../go2/scene.xml
+    mujoco_model: "go2/scene_flat.xml"          # 原 ../go2/scene.xml
     urdf_path:    "go2/go2_description.urdf"
-    mpc_config:   "config/mpc.yaml"        # MPC/WBC 权重 (原 yaml 原样使用)
+    control_config: "config/control.yaml"  # MPC/WBC 权重 + 任务空间 PD (原 mpc.yaml)
 
     # ===== 频率 (Hz) =====
     control_frequency: 500.0    # WBC 主控循环; 必须等于 1/mujoco_timestep (0.002), 节点会校验告警
@@ -17,3 +17,13 @@ go2_control_node:
     initial_gait: "TROT"        # TROT / WALK / STAND
     desired_height: 0.25        # MPC 期望机身高度 (原 p[2]=0.25)
     max_cmd_vel: 0.05           # /cmd_vel linear.x 限幅 (原键盘 w/s 为 ±0.05)
+
+    # ===== 触地检测 (摆动→支撑不再纯按相位, 见 src/fsm/ControlFSM.cpp) =====
+    # 计划相位切到支撑时, 足端可能还在半空; 该腿若立刻当支撑就会失去足端跟踪
+    # (WBC 支撑腿不建摆动任务) → 悬空越抬越高, 同时支撑腿过载导致机身下沉。
+    # 判据: 足端法向力 > touchdown_force 才算落地, 否则继续当摆动下压。
+    touchdown_force: 5.0        # 落地判定阈值 (N)。整机约 16kg, TROT 下单腿支撑相约 80N,
+                                # 取 5N 可避开轻擦/噪声又不至于漏判软着陆
+    airborne_hold_ratio: 0.5    # 悬空强制下压的最长时间 = ratio × T_stance。
+                                # 相位说支撑但一直没压到地面时的兜底: 到点退回按相位划分,
+                                # 避免该腿永远不给支撑 → 整机缺支撑摔倒

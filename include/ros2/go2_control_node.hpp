@@ -33,6 +33,7 @@
 #include <mutex>
 #include <atomic>
 #include <memory>
+#include <array>
 
 #include "common.h"
 #include "SIM/MJCsim.hpp"
@@ -77,6 +78,39 @@ private:
     Eigen::Matrix<double, 12, 1> a_foot_act  = Eigen::Matrix<double, 12, 1>::Zero();
     bool have_prev_v = false;
 
+    // ===== 任务空间 PD 增益 (config/control.yaml 的 TaskPD 段) =====
+    // 构造函数里 (startTimersAndThreads 之前) 一次加载完, 控制循环只读 → 无需加锁
+    // 成员默认值 == 原先写死在 compute* 函数里的数, yaml 缺项时行为与改动前一致
+    struct TaskPdGains {
+        // computePoseAccDes: 基座位置/姿态 PD, 输出 WBC 期望加速度 q_d
+        Eigen::Vector3d pose_Kp_lin{0.0,   0.0,   50.0};   // [x, y, z]
+        Eigen::Vector3d pose_Kd_lin{10.0,  10.0,  10.0};
+        Eigen::Vector3d pose_Kp_ang{600.0, 200.0, 100.0};  // [roll, pitch, yaw] 机身系
+        Eigen::Vector3d pose_Kd_ang{20.0,  20.0,  20.0};
+        // computeFootAccDes: 摆动足端加速度层阻抗, 基座系 [x, y, z]
+        Eigen::Vector3d swing_Kp{300.0, 600.0, 500.0};
+        Eigen::Vector3d swing_Kd{50.0,  60.0,  10.0};
+        // computeFootAccDes: 支撑足端加速度层阻抗 (参考点 = 落地瞬间的实际足端位置)
+        // 支撑腿在 WBC 里只有 no-slip **等式** (约束加速度), 位置上是双积分 →
+        // 没有关节刚度, 模型误差(frictionloss/damping)直接变成不会恢复的 hip 偏移。
+        // 这一项给支撑腿补上有权威的位置/速度反馈。默认值 == control.yaml 推荐起始值,
+        // yaml 缺项时不会静默退化成"没有刚度"。
+        // Kp 调大增加刚度; 调过头会和 no-slip 等式较劲 → 振荡
+        Eigen::Vector3d stance_Kp{150.0, 150.0, 150.0};
+        Eigen::Vector3d stance_Kd{25.0,  25.0,  25.0};
+    };
+    TaskPdGains pd_;
+
+    // ===== 支撑腿位置环状态 (computeFootAccDes 维护) =====
+    // 摆动→支撑 上升沿记录足端世界系位置作为整段支撑期的位置参考
+    // ("脚踩住不动" 的物理含义)。上升沿赋值 ⇒ e_p 在落地那一刻恒为 0,
+    // 该项天然连续, 不需要额外的斜坡/混合
+    Eigen::Matrix<double, 4, 3> stance_ref_ = Eigen::Matrix<double, 4, 3>::Zero();
+    std::array<bool, 4> stance_ref_valid_{{false, false, false, false}};
+    // 上一拍接触状态, 用于上升沿检测。初值全 1: 起步时四足视为已在支撑,
+    // 第一拍就走 !valid 兜底分支记参考, 不依赖不存在的上升沿
+    std::array<int, 4> prev_stance_{{1, 1, 1, 1}};
+
     // ===== MPC ↔ WBC 交换 (双缓冲, 原子指针交换) =====
     // MPC 线程产出一个不可变快照, WBC 线程原子取走, 无锁
     struct FmpcSnapshot {
@@ -113,6 +147,7 @@ private:
 
     // ===== 原初始化段 (构造函数里按原顺序调用) =====
     void initControlStack();        // 对应 main() 的对象创建 + 首帧初始化
+    void loadTaskPdConfig(const std::string& yaml_path);   // TaskPD 段 → pd_
     void startTimersAndThreads();
 
     // ===== 核心函数: 原 while(1) 体拆分, 内部算法逻辑零修改 =====
@@ -123,7 +158,8 @@ private:
 
     // 原循环内的功能段 (拆成私有函数便于阅读, 代码原样)
     void computeFootKinematics(RobotState& state);       // FK + 足端速度/加速度
-    Eigen::Matrix<double, 12, 1> computeSwingAccDes(const RobotState& state,bool pd_open = true);  // 加速度层阻抗
+    /** 加速度层足端阻抗: 摆动腿跟踪轨迹, 支撑腿以落地点为参考保持不动 */
+    Eigen::Matrix<double, 12, 1> computeFootAccDes(const RobotState& state, bool pd_open = true);
     Eigen::Matrix<double, 18, 1> computePoseAccDes(const RobotState& state, bool pd_open = true);
     void fillTelemetryMessage(const Eigen::Matrix<double,4,3>& p_ref,
                           const Eigen::Matrix<double,4,3>& p_act,

@@ -47,7 +47,7 @@ namespace SwingPlanner
         Bezier_Math::Control_Point control_point_z_up[4];
         Bezier_Math::Control_Point control_point_z_down[4];
         std::array<double,4> _last_phase;             // 上一周期的摆动相位, 用于抬腿边沿检测
-        std::array<double,4> _swing_y;                // 抬腿边沿记录的足端 y, 整个摆动期保持不变
+        std::array<double,4> _swing_y;                // 摆动期的足端 y (世界系, 由 nominal_foot_y() 经 R 旋转得到)
         DesPoint _foot_pos;          // 当前足端位置 (世界系, 行序 FL,FR,RL,RR)
         DesPoint _foot_vel;
         DesPoint _foot_acc;

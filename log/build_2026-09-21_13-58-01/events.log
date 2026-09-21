@@ -1,0 +1,1081 @@
+[0.000000] (-) TimerEvent: {}
+[0.000322] (go2_robot) JobQueued: {'identifier': 'go2_robot', 'dependencies': OrderedDict()}
+[0.001087] (go2_robot) JobStarted: {'identifier': 'go2_robot'}
+[0.005145] (go2_robot) JobProgress: {'identifier': 'go2_robot', 'progress': 'cmake'}
+[0.005887] (go2_robot) JobProgress: {'identifier': 'go2_robot', 'progress': 'build'}
+[0.006754] (go2_robot) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/hong/Movement_Control/Go2Robot/build/go2_robot', '--', '-j24', '-l24'], 'cwd': '/home/hong/Movement_Control/Go2Robot/build/go2_robot', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('VSCODE_CWD', '/home/hong'), ('ANTHROPIC_MODEL', 'deepseek-flash'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('AI_AGENT', 'claude-code_2-1-278_agent'), ('LANGUAGE', 'zh_CN:zh:en_US:en'), ('USER', 'hong'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/hong/.config/Code/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","messagesFile":"/home/hong/.config/Code/clp/75539731208fa508a5b042c8fe051beb.zh-cn/6a49527b96e326fe62fbdb56f60e16877c9aa724/nls.messages.json","corruptMarkerFile":"/home/hong/.config/Code/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"75539731208fa508a5b042c8fe051beb.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/hong/.config/Code/clp/75539731208fa508a5b042c8fe051beb.zh-cn/tcf.json","_cacheRoot":"/home/hong/.config/Code/clp/75539731208fa508a5b042c8fe051beb.zh-cn","_resolvedLanguagePackCoreLocation":"/home/hong/.config/Code/clp/75539731208fa508a5b042c8fe051beb.zh-cn/6a49527b96e326fe62fbdb56f60e16877c9aa724","_corruptedFile":"/home/hong/.config/Code/clp/75539731208fa508a5b042c8fe051beb.zh-cn/corrupted.info"}'), ('GIT_EDITOR', 'true'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('CLAUDE_AGENT_SDK_VERSION', '0.3.278'), ('CLAUDE_CODE_SESSION_ATTENDED', '1'), ('SHLVL', '0'), ('CLAUDE_CODE_MESSAGING_TOKEN', 'b55cb7b526b83c99c891822d27a49246'), ('INPUT_METHOD', 'fcitx'), ('HOME', '/home/hong'), ('CHROME_DESKTOP', 'code.desktop'), ('DESKTOP_SESSION', 'ubuntu'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-2085e3a6-1.12-main.sock'), ('ANTHROPIC_DEFAULT_SONNET_MODEL', 'deepseek-flash'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SDL_IM_MODULE', 'fcitx'), ('CLAUDE_CODE_CHILD_SESSION', '1'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('MANAGERPID', '2205'), ('GLFW_IM_MODULE', 'ibus'), ('SYSTEMD_EXEC_PID', '2448'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '5267'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('VSCODE_L10N_BUNDLE_LOCATION', 'file:///home/hong/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.131.2026090407/translations/extensions/vscode.markdown-language-features.i18n.json'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'hong'), ('JOURNAL_STREAM', '8:15465'), ('_', '/usr/bin/colcon'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'hong'), ('ANTHROPIC_BASE_URL', 'https://api.deepseek.com/anthropic'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('WINDOWPATH', '2'), ('ANTHROPIC_DEFAULT_OPUS_MODEL', 'deepseek-flash'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/home/hong/miniconda3/envs/rl_env/bin:/home/hong/.local/bin:/opt/ros/humble/bin:/usr/local/cuda-12.1/bin:/home/hong/miniconda3/condabin:/home/hong/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/hong/.mujoco/mujoco-3.9.0/bin'), ('SESSION_MANAGER', 'local/hong:@/tmp/.ICE-unix/2425,unix/hong:/tmp/.ICE-unix/2425'), ('INVOCATION_ID', 'c491288875eb4684a604aa139880b1f5'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('CLAUDE_EFFORT', 'high'), ('DISPLAY', ':1'), ('CLAUDE_PID', '16429'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('ANTHROPIC_DEFAULT_HAIKU_MODEL', 'deepseek-flash'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ANTHROPIC_AUTH_TOKEN', 'sk-25a00b0ff79d413fab76564438ce05c8'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('CLAUDE_CODE_SESSION_ID', '8747aed9-8d7b-4749-8cd8-b210ba1f3814'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VIRTUAL_ENV', '/home/hong/miniconda3/envs/rl_env'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/hong/Movement_Control/Go2Robot/build/go2_robot'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('VSCODE_CODE_CACHE_PATH', '/home/hong/.config/Code/CachedData/6a49527b96e326fe62fbdb56f60e16877c9aa724'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/hong/.vscode/extensions/anthropic.claude-code-2.1.278-linux-x64/resources/native-binary/claude'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('CLAUDE_CODE_ENABLE_TASKS', '0'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CLAUDE_CODE_MESSAGING_SOCKET', '/run/user/1000/cc-socks/16429.sock'), ('VSCODE_PID', '5267')]), 'shell': False}
+[0.047974] (go2_robot) StdoutLine: {'line': b'[  2%] Built target go2_robot__cpp\n'}
+[0.049597] (go2_robot) StdoutLine: {'line': b'[  4%] Built target go2_robot__rs\n'}
+[0.050487] (go2_robot) StdoutLine: {'line': b'[ 10%] Built target go2_robot__rosidl_generator_c\n'}
+[0.052189] (go2_robot) StdoutLine: {'line': b'[ 10%] Built target ament_cmake_python_copy_go2_robot\n'}
+[0.053571] (go2_robot) StdoutLine: {'line': b'[ 20%] Built target OsqpEigen\n'}
+[0.061385] (go2_robot) StdoutLine: {'line': b'[ 26%] Built target go2_robot__rosidl_typesupport_cpp\n'}
+[0.061567] (go2_robot) StdoutLine: {'line': b'[ 32%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp\n'}
+[0.063512] (go2_robot) StdoutLine: {'line': b'[ 38%] Built target go2_robot__rosidl_typesupport_introspection_cpp\n'}
+[0.065334] (go2_robot) StdoutLine: {'line': b'[ 44%] Built target go2_robot__rosidl_typesupport_introspection_c\n'}
+[0.065588] (go2_robot) StdoutLine: {'line': b'[ 51%] Built target go2_robot__rosidl_typesupport_fastrtps_c\n'}
+[0.066665] (go2_robot) StdoutLine: {'line': b'[ 57%] Built target go2_robot__rosidl_typesupport_c\n'}
+[0.083405] (go2_robot) StdoutLine: {'line': b'[ 57%] Built target go2_robot\n'}
+[0.091515] (go2_robot) StdoutLine: {'line': b'[ 59%] Building CXX object CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o\n'}
+[0.098620] (go2_robot) StdoutLine: {'line': b'[ 61%] Built target go2_robot__py\n'}
+[0.099979] (-) TimerEvent: {}
+[0.118366] (go2_robot) StdoutLine: {'line': b'[ 65%] Built target go2_robot__rosidl_generator_py\n'}
+[0.134938] (go2_robot) StdoutLine: {'line': b'[ 69%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.136799] (go2_robot) StdoutLine: {'line': b'[ 73%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext\n'}
+[0.136879] (go2_robot) StdoutLine: {'line': b'[ 77%] Built target go2_robot__rosidl_typesupport_c__pyext\n'}
+[0.160955] (go2_robot) StdoutLine: {'line': b'running egg_info\n'}
+[0.161372] (go2_robot) StdoutLine: {'line': b'writing go2_robot.egg-info/PKG-INFO\n'}
+[0.161604] (go2_robot) StdoutLine: {'line': b'writing dependency_links to go2_robot.egg-info/dependency_links.txt\n'}
+[0.161654] (go2_robot) StdoutLine: {'line': b'writing top-level names to go2_robot.egg-info/top_level.txt\n'}
+[0.162837] (go2_robot) StdoutLine: {'line': b"reading manifest file 'go2_robot.egg-info/SOURCES.txt'\n"}
+[0.163028] (go2_robot) StdoutLine: {'line': b"writing manifest file 'go2_robot.egg-info/SOURCES.txt'\n"}
+[0.181424] (go2_robot) StdoutLine: {'line': b'[ 77%] Built target ament_cmake_python_build_go2_robot_egg\n'}
+[0.200039] (-) TimerEvent: {}
+[0.300177] (-) TimerEvent: {}
+[0.400371] (-) TimerEvent: {}
+[0.500554] (-) TimerEvent: {}
+[0.600795] (-) TimerEvent: {}
+[0.701091] (-) TimerEvent: {}
+[0.801331] (-) TimerEvent: {}
+[0.901537] (-) TimerEvent: {}
+[1.001760] (-) TimerEvent: {}
+[1.101967] (-) TimerEvent: {}
+[1.202161] (-) TimerEvent: {}
+[1.302364] (-) TimerEvent: {}
+[1.402600] (-) TimerEvent: {}
+[1.502879] (-) TimerEvent: {}
+[1.603082] (-) TimerEvent: {}
+[1.703273] (-) TimerEvent: {}
+[1.803493] (-) TimerEvent: {}
+[1.903783] (-) TimerEvent: {}
+[2.004116] (-) TimerEvent: {}
+[2.104302] (-) TimerEvent: {}
+[2.204617] (-) TimerEvent: {}
+[2.304922] (-) TimerEvent: {}
+[2.405166] (-) TimerEvent: {}
+[2.505357] (-) TimerEvent: {}
+[2.605614] (-) TimerEvent: {}
+[2.705922] (-) TimerEvent: {}
+[2.806267] (-) TimerEvent: {}
+[2.906434] (-) TimerEvent: {}
+[3.006693] (-) TimerEvent: {}
+[3.106962] (-) TimerEvent: {}
+[3.207214] (-) TimerEvent: {}
+[3.307471] (-) TimerEvent: {}
+[3.407724] (-) TimerEvent: {}
+[3.507995] (-) TimerEvent: {}
+[3.608260] (-) TimerEvent: {}
+[3.708521] (-) TimerEvent: {}
+[3.808762] (-) TimerEvent: {}
+[3.909021] (-) TimerEvent: {}
+[3.928742] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp: In member function \xe2\x80\x98void WBC::WBC::solve()\xe2\x80\x99:\n'}
+[3.930183] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:52: error: no match for \xe2\x80\x98operator<<\xe2\x80\x99 (operand types are \xe2\x80\x98std::basic_ostream<char>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99)\n'}
+[3.930230] (go2_robot) StderrLine: {'line': b'  270 |                 std::cout << "[QP] status: solved=" << cnt[static_cast<int>(St::Solved)]\n'}
+[3.930683] (go2_robot) StderrLine: {'line': b'      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.930717] (go2_robot) StderrLine: {'line': b'  271 |                           << " solved_inacc=" << cnt[static_cast<int>(St::SolvedInaccurate)]\n'}
+[3.930750] (go2_robot) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.930781] (go2_robot) StderrLine: {'line': b'  272 |                           << " maxiter=" << cnt[static_cast<int>(St::MaxIterReached)]\n'}
+[3.930814] (go2_robot) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.930843] (go2_robot) StderrLine: {'line': b'  273 |                           << " primal_infeas=" << cnt[static_cast<int>(St::PrimalInfeasible)]\n'}
+[3.930873] (go2_robot) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.930905] (go2_robot) StderrLine: {'line': b'  274 |                           << " primal_infeas_inacc=" << cnt[static_cast<int>(St::PrimalInfeasibleInaccurate)]\n'}
+[3.930936] (go2_robot) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.930966] (go2_robot) StderrLine: {'line': b'  275 |                           << " dual_infeas=" << cnt[static_cast<int>(St::DualInfeasible)]\n'}
+[3.930995] (go2_robot) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.931024] (go2_robot) StderrLine: {'line': b'  276 |                           << " noncvx=" << cnt[static_cast<int>(St::NonCvx)]\n'}
+[3.931053] (go2_robot) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.931083] (go2_robot) StderrLine: {'line': b'  277 |                           << " unsolved=" << cnt[static_cast<int>(St::Unsolved)]\n'}
+[3.931115] (go2_robot) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.931144] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.931174] (go2_robot) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~ ^~ ~~~~\n'}
+[3.931202] (go2_robot) StderrLine: {'line': b'      |                           |                           |\n'}
+[3.931230] (go2_robot) StderrLine: {'line': b'      |                           std::basic_ostream<char>    OsqpEigen::ErrorExitFlag\n'}
+[3.931258] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/iostream:39,\n'}
+[3.931290] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.931317] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.931345] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.931372] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:108:7: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]\xe2\x80\x99\n'}
+[3.931405] (go2_robot) StderrLine: {'line': b'  108 |       operator<<(__ostream_type& (*__pf)(__ostream_type&))\n'}
+[3.931434] (go2_robot) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[3.931462] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:108:36: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&)\xe2\x80\x99 {aka \xe2\x80\x98std::basic_ostream<char>& (*)(std::basic_ostream<char>&)\xe2\x80\x99}\n'}
+[3.931494] (go2_robot) StderrLine: {'line': b'  108 |       operator<<(__ostream_type& (*__pf)(__ostream_type&))\n'}
+[3.931522] (go2_robot) StderrLine: {'line': b'      |                  ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.931550] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:117:7: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]\xe2\x80\x99\n'}
+[3.931580] (go2_robot) StderrLine: {'line': b'  117 |       operator<<(__ios_type& (*__pf)(__ios_type&))\n'}
+[3.931608] (go2_robot) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[3.931636] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:117:32: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&)\xe2\x80\x99 {aka \xe2\x80\x98std::basic_ios<char>& (*)(std::basic_ios<char>&)\xe2\x80\x99}\n'}
+[3.931667] (go2_robot) StderrLine: {'line': b'  117 |       operator<<(__ios_type& (*__pf)(__ios_type&))\n'}
+[3.931693] (go2_robot) StderrLine: {'line': b'      |                  ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~\n'}
+[3.931720] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:127:7: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]\xe2\x80\x99\n'}
+[3.931748] (go2_robot) StderrLine: {'line': b'  127 |       operator<<(ios_base& (*__pf) (ios_base&))\n'}
+[3.931775] (go2_robot) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[3.931802] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:127:30: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98std::ios_base& (*)(std::ios_base&)\xe2\x80\x99\n'}
+[3.931830] (go2_robot) StderrLine: {'line': b'  127 |       operator<<(ios_base& (*__pf) (ios_base&))\n'}
+[3.931855] (go2_robot) StderrLine: {'line': b'      |                  ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~\n'}
+[3.931881] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:166:7: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]\xe2\x80\x99\n'}
+[3.931914] (go2_robot) StderrLine: {'line': b'  166 |       operator<<(long __n)\n'}
+[3.931942] (go2_robot) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[3.931968] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:166:23: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98long int\xe2\x80\x99\n'}
+[3.931996] (go2_robot) StderrLine: {'line': b'  166 |       operator<<(long __n)\n'}
+[3.932022] (go2_robot) StderrLine: {'line': b'      |                  ~~~~~^~~\n'}
+[3.932048] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:170:7: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]\xe2\x80\x99\n'}
+[3.932076] (go2_robot) StderrLine: {'line': b'  170 |       operator<<(unsigned long __n)\n'}
+[3.932103] (go2_robot) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[3.932130] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:170:32: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98long unsigned int\xe2\x80\x99\n'}
+[3.932173] (go2_robot) StderrLine: {'line': b'  170 |       operator<<(unsigned long __n)\n'}
+[3.932200] (go2_robot) StderrLine: {'line': b'      |                  ~~~~~~~~~~~~~~^~~\n'}
+[3.932227] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:174:7: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]\xe2\x80\x99\n'}
+[3.932255] (go2_robot) StderrLine: {'line': b'  174 |       operator<<(bool __n)\n'}
+[3.932281] (go2_robot) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[3.932308] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:174:23: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98bool\xe2\x80\x99\n'}
+[3.932335] (go2_robot) StderrLine: {'line': b'  174 |       operator<<(bool __n)\n'}
+[3.932361] (go2_robot) StderrLine: {'line': b'      |                  ~~~~~^~~\n'}
+[3.932387] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/ostream:829,\n'}
+[3.932414] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/iostream:39,\n'}
+[3.932441] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.932470] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.932498] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.932526] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/ostream.tcc:91:5: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]\xe2\x80\x99\n'}
+[3.932553] (go2_robot) StderrLine: {'line': b'   91 |     basic_ostream<_CharT, _Traits>::\n'}
+[3.932580] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.932607] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/ostream.tcc:92:22: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98short int\xe2\x80\x99\n'}
+[3.932634] (go2_robot) StderrLine: {'line': b'   92 |     operator<<(short __n)\n'}
+[3.932661] (go2_robot) StderrLine: {'line': b'      |                ~~~~~~^~~\n'}
+[3.932687] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/iostream:39,\n'}
+[3.932718] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.932747] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.932774] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.932802] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:181:7: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]\xe2\x80\x99\n'}
+[3.932831] (go2_robot) StderrLine: {'line': b'  181 |       operator<<(unsigned short __n)\n'}
+[3.932858] (go2_robot) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[3.932884] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:181:33: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98short unsigned int\xe2\x80\x99\n'}
+[3.932916] (go2_robot) StderrLine: {'line': b'  181 |       operator<<(unsigned short __n)\n'}
+[3.932942] (go2_robot) StderrLine: {'line': b'      |                  ~~~~~~~~~~~~~~~^~~\n'}
+[3.932968] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/ostream:829,\n'}
+[3.932994] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/iostream:39,\n'}
+[3.933021] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.933050] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.933078] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.933104] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/ostream.tcc:105:5: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]\xe2\x80\x99\n'}
+[3.933132] (go2_robot) StderrLine: {'line': b'  105 |     basic_ostream<_CharT, _Traits>::\n'}
+[3.933159] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.933185] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/ostream.tcc:106:20: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98int\xe2\x80\x99\n'}
+[3.933211] (go2_robot) StderrLine: {'line': b'  106 |     operator<<(int __n)\n'}
+[3.933238] (go2_robot) StderrLine: {'line': b'      |                ~~~~^~~\n'}
+[3.933264] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/iostream:39,\n'}
+[3.933290] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.933320] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.933347] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.933374] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:192:7: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]\xe2\x80\x99\n'}
+[3.933403] (go2_robot) StderrLine: {'line': b'  192 |       operator<<(unsigned int __n)\n'}
+[3.933428] (go2_robot) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[3.933454] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:192:31: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98unsigned int\xe2\x80\x99\n'}
+[3.933479] (go2_robot) StderrLine: {'line': b'  192 |       operator<<(unsigned int __n)\n'}
+[3.933504] (go2_robot) StderrLine: {'line': b'      |                  ~~~~~~~~~~~~~^~~\n'}
+[3.933529] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:201:7: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]\xe2\x80\x99\n'}
+[3.933556] (go2_robot) StderrLine: {'line': b'  201 |       operator<<(long long __n)\n'}
+[3.933582] (go2_robot) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[3.933607] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:201:28: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98long long int\xe2\x80\x99\n'}
+[3.933633] (go2_robot) StderrLine: {'line': b'  201 |       operator<<(long long __n)\n'}
+[3.933658] (go2_robot) StderrLine: {'line': b'      |                  ~~~~~~~~~~^~~\n'}
+[3.933683] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:205:7: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]\xe2\x80\x99\n'}
+[3.933713] (go2_robot) StderrLine: {'line': b'  205 |       operator<<(unsigned long long __n)\n'}
+[3.933738] (go2_robot) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[3.933764] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:205:37: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98long long unsigned int\xe2\x80\x99\n'}
+[3.933789] (go2_robot) StderrLine: {'line': b'  205 |       operator<<(unsigned long long __n)\n'}
+[3.933815] (go2_robot) StderrLine: {'line': b'      |                  ~~~~~~~~~~~~~~~~~~~^~~\n'}
+[3.933841] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:220:7: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]\xe2\x80\x99\n'}
+[3.933867] (go2_robot) StderrLine: {'line': b'  220 |       operator<<(double __f)\n'}
+[3.933893] (go2_robot) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[3.933921] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:220:25: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98double\xe2\x80\x99\n'}
+[3.933946] (go2_robot) StderrLine: {'line': b'  220 |       operator<<(double __f)\n'}
+[3.933972] (go2_robot) StderrLine: {'line': b'      |                  ~~~~~~~^~~\n'}
+[3.933997] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:224:7: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]\xe2\x80\x99\n'}
+[3.934026] (go2_robot) StderrLine: {'line': b'  224 |       operator<<(float __f)\n'}
+[3.934052] (go2_robot) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[3.934077] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:224:24: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98float\xe2\x80\x99\n'}
+[3.934103] (go2_robot) StderrLine: {'line': b'  224 |       operator<<(float __f)\n'}
+[3.934128] (go2_robot) StderrLine: {'line': b'      |                  ~~~~~~^~~\n'}
+[3.934153] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:232:7: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]\xe2\x80\x99\n'}
+[3.934180] (go2_robot) StderrLine: {'line': b'  232 |       operator<<(long double __f)\n'}
+[3.934206] (go2_robot) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[3.934232] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:232:30: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98long double\xe2\x80\x99\n'}
+[3.934258] (go2_robot) StderrLine: {'line': b'  232 |       operator<<(long double __f)\n'}
+[3.934284] (go2_robot) StderrLine: {'line': b'      |                  ~~~~~~~~~~~~^~~\n'}
+[3.934309] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:245:7: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]\xe2\x80\x99\n'}
+[3.934336] (go2_robot) StderrLine: {'line': b'  245 |       operator<<(const void* __p)\n'}
+[3.934363] (go2_robot) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[3.934390] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:245:30: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98const void*\xe2\x80\x99\n'}
+[3.934416] (go2_robot) StderrLine: {'line': b'  245 |       operator<<(const void* __p)\n'}
+[3.934442] (go2_robot) StderrLine: {'line': b'      |                  ~~~~~~~~~~~~^~~\n'}
+[3.934466] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:250:7: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::nullptr_t) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::nullptr_t = std::nullptr_t]\xe2\x80\x99\n'}
+[3.934494] (go2_robot) StderrLine: {'line': b'  250 |       operator<<(nullptr_t)\n'}
+[3.934519] (go2_robot) StderrLine: {'line': b'      |       ^~~~~~~~\n'}
+[3.934544] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:250:18: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98std::nullptr_t\xe2\x80\x99\n'}
+[3.934570] (go2_robot) StderrLine: {'line': b'  250 |       operator<<(nullptr_t)\n'}
+[3.934595] (go2_robot) StderrLine: {'line': b'      |                  ^~~~~~~~~\n'}
+[3.934620] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/ostream:829,\n'}
+[3.934646] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/iostream:39,\n'}
+[3.934671] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.934698] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.934724] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.934749] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/ostream.tcc:119:5: note: candidate: \xe2\x80\x98std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]\xe2\x80\x99\n'}
+[3.934776] (go2_robot) StderrLine: {'line': b'  119 |     basic_ostream<_CharT, _Traits>::\n'}
+[3.934802] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.934828] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/ostream.tcc:120:34: note:   no known conversion for argument 1 from \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99 to \xe2\x80\x98std::basic_ostream<char>::__streambuf_type*\xe2\x80\x99 {aka \xe2\x80\x98std::basic_streambuf<char>*\xe2\x80\x99}\n'}
+[3.934854] (go2_robot) StderrLine: {'line': b'  120 |     operator<<(__streambuf_type* __sbin)\n'}
+[3.934880] (go2_robot) StderrLine: {'line': b'      |                ~~~~~~~~~~~~~~~~~~^~~~~~\n'}
+[3.934907] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/bits/basic_string.h:48,\n'}
+[3.934934] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/string:55,\n'}
+[3.934960] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/bits/locale_classes.h:40,\n'}
+[3.934986] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/bits/ios_base.h:41,\n'}
+[3.935011] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/ios:42,\n'}
+[3.935036] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/ostream:38,\n'}
+[3.935061] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/iostream:39,\n'}
+[3.935086] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.935111] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.935136] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.935162] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/string_view:667:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::basic_string_view<_CharT, _Traits>)\xe2\x80\x99\n'}
+[3.935189] (go2_robot) StderrLine: {'line': b'  667 |     operator<<(basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.935219] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.935244] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/string_view:667:5: note:   template argument deduction/substitution failed:\n'}
+[3.935270] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98std::basic_string_view<_CharT, _Traits>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.935297] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.935323] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.935349] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/string:55,\n'}
+[3.935374] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/bits/locale_classes.h:40,\n'}
+[3.935399] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/bits/ios_base.h:41,\n'}
+[3.935424] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/ios:42,\n'}
+[3.935450] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/ostream:38,\n'}
+[3.935476] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/iostream:39,\n'}
+[3.935502] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.935528] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.935553] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.935578] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/basic_string.h:6531:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)\xe2\x80\x99\n'}
+[3.935605] (go2_robot) StderrLine: {'line': b' 6531 |     operator<<(basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.935630] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.935656] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/basic_string.h:6531:5: note:   template argument deduction/substitution failed:\n'}
+[3.935682] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.935709] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.935734] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.935759] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/bits/ios_base.h:46,\n'}
+[3.935785] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/ios:42,\n'}
+[3.935811] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/ostream:38,\n'}
+[3.935836] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/iostream:39,\n'}
+[3.935861] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.935887] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.935915] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.935941] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/system_error:279:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::error_code&)\xe2\x80\x99\n'}
+[3.935967] (go2_robot) StderrLine: {'line': b'  279 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)\n'}
+[3.935992] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.936017] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/system_error:279:5: note:   template argument deduction/substitution failed:\n'}
+[3.936043] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert \xe2\x80\x98flag\xe2\x80\x99 (type \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99) to type \xe2\x80\x98const std::error_code&\xe2\x80\x99\n'}
+[3.936070] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.936096] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.936124] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/iostream:39,\n'}
+[3.936149] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.936174] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.936204] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.936230] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:513:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)\xe2\x80\x99\n'}
+[3.936256] (go2_robot) StderrLine: {'line': b'  513 |     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)\n'}
+[3.936282] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.936306] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:513:5: note:   template argument deduction/substitution failed:\n'}
+[3.936333] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   deduced conflicting types for parameter \xe2\x80\x98_CharT\xe2\x80\x99 (\xe2\x80\x98char\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99)\n'}
+[3.936359] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.936384] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.936410] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/iostream:39,\n'}
+[3.936434] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.936461] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.936487] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.936513] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:518:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)\xe2\x80\x99\n'}
+[3.936539] (go2_robot) StderrLine: {'line': b'  518 |     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)\n'}
+[3.936566] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.936592] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:518:5: note:   template argument deduction/substitution failed:\n'}
+[3.936617] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert \xe2\x80\x98flag\xe2\x80\x99 (type \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99) to type \xe2\x80\x98char\xe2\x80\x99\n'}
+[3.936644] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.936669] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.936693] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/iostream:39,\n'}
+[3.936719] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.936745] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.936771] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.936797] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:524:5: note: candidate: \xe2\x80\x98template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)\xe2\x80\x99\n'}
+[3.936823] (go2_robot) StderrLine: {'line': b'  524 |     operator<<(basic_ostream<char, _Traits>& __out, char __c)\n'}
+[3.936848] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.936873] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:524:5: note:   template argument deduction/substitution failed:\n'}
+[3.936900] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert \xe2\x80\x98flag\xe2\x80\x99 (type \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99) to type \xe2\x80\x98char\xe2\x80\x99\n'}
+[3.936929] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.936954] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.936980] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/iostream:39,\n'}
+[3.937005] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.937030] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.937055] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.937081] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:530:5: note: candidate: \xe2\x80\x98template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)\xe2\x80\x99\n'}
+[3.937106] (go2_robot) StderrLine: {'line': b'  530 |     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)\n'}
+[3.937132] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.937157] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:530:5: note:   template argument deduction/substitution failed:\n'}
+[3.937183] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert \xe2\x80\x98flag\xe2\x80\x99 (type \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99) to type \xe2\x80\x98signed char\xe2\x80\x99\n'}
+[3.937208] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.937235] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.937261] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/iostream:39,\n'}
+[3.937287] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.937313] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.937338] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.937364] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:535:5: note: candidate: \xe2\x80\x98template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)\xe2\x80\x99\n'}
+[3.937389] (go2_robot) StderrLine: {'line': b'  535 |     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)\n'}
+[3.937415] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.937440] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:535:5: note:   template argument deduction/substitution failed:\n'}
+[3.937466] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert \xe2\x80\x98flag\xe2\x80\x99 (type \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99) to type \xe2\x80\x98unsigned char\xe2\x80\x99\n'}
+[3.937492] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.937516] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.937542] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/iostream:39,\n'}
+[3.937567] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.937593] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.937619] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.937644] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:594:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)\xe2\x80\x99\n'}
+[3.937673] (go2_robot) StderrLine: {'line': b'  594 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)\n'}
+[3.937699] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.937723] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:594:5: note:   template argument deduction/substitution failed:\n'}
+[3.937748] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const _CharT*\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.937774] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.937799] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.937824] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/ostream:829,\n'}
+[3.937850] (go2_robot) StderrLine: {'line': b'                 from /usr/include/c++/11/iostream:39,\n'}
+[3.937874] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.937902] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.937929] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.937954] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/ostream.tcc:321:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)\xe2\x80\x99\n'}
+[3.937981] (go2_robot) StderrLine: {'line': b'  321 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)\n'}
+[3.938006] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.938031] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:\n'}
+[3.938056] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert \xe2\x80\x98flag\xe2\x80\x99 (type \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99) to type \xe2\x80\x98const char*\xe2\x80\x99\n'}
+[3.938082] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.938106] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.938132] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/iostream:39,\n'}
+[3.938157] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.938182] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.938207] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.938232] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:611:5: note: candidate: \xe2\x80\x98template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)\xe2\x80\x99\n'}
+[3.938258] (go2_robot) StderrLine: {'line': b'  611 |     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)\n'}
+[3.938283] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.938309] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:611:5: note:   template argument deduction/substitution failed:\n'}
+[3.938334] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert \xe2\x80\x98flag\xe2\x80\x99 (type \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99) to type \xe2\x80\x98const char*\xe2\x80\x99\n'}
+[3.938360] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.938387] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.938413] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/iostream:39,\n'}
+[3.938438] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.938464] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.938490] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.938515] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:624:5: note: candidate: \xe2\x80\x98template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)\xe2\x80\x99\n'}
+[3.938540] (go2_robot) StderrLine: {'line': b'  624 |     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)\n'}
+[3.938566] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.938591] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:624:5: note:   template argument deduction/substitution failed:\n'}
+[3.938617] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert \xe2\x80\x98flag\xe2\x80\x99 (type \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99) to type \xe2\x80\x98const signed char*\xe2\x80\x99\n'}
+[3.938647] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.938674] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.938699] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/iostream:39,\n'}
+[3.938725] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.938752] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.938777] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.938803] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:629:5: note: candidate: \xe2\x80\x98template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)\xe2\x80\x99\n'}
+[3.938830] (go2_robot) StderrLine: {'line': b'  629 |     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)\n'}
+[3.938855] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.938881] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:629:5: note:   template argument deduction/substitution failed:\n'}
+[3.938910] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert \xe2\x80\x98flag\xe2\x80\x99 (type \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99) to type \xe2\x80\x98const unsigned char*\xe2\x80\x99\n'}
+[3.938941] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.938969] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.938996] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/iostream:39,\n'}
+[3.939022] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:4,\n'}
+[3.939048] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.939073] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.939099] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:750:5: note: candidate: \xe2\x80\x98template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&)\xe2\x80\x99\n'}
+[3.939128] (go2_robot) StderrLine: {'line': b'  750 |     operator<<(_Ostream&& __os, const _Tp& __x)\n'}
+[3.939154] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.939181] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:750:5: note:   template argument deduction/substitution failed:\n'}
+[3.939207] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream: In substitution of \xe2\x80\x98template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ostream<char>&; _Tp = OsqpEigen::ErrorExitFlag]\xe2\x80\x99:\n'}
+[3.939234] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55:   required from here\n'}
+[3.939260] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/ostream:750:5: error: no type named \xe2\x80\x98type\xe2\x80\x99 in \xe2\x80\x98struct std::enable_if<false, void>\xe2\x80\x99\n'}
+[3.939286] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/eigen3/Eigen/Core:50,\n'}
+[3.939311] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/Eigen/Dense:1,\n'}
+[3.939337] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:5,\n'}
+[3.939361] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.939387] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.939411] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/complex:555:5: note: candidate: \xe2\x80\x98template<class _Tp, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::complex<_Tp>&)\xe2\x80\x99\n'}
+[3.939436] (go2_robot) StderrLine: {'line': b'  555 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const complex<_Tp>& __x)\n'}
+[3.939460] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.939485] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/complex:555:5: note:   template argument deduction/substitution failed:\n'}
+[3.939509] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::complex<_Tp>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.939534] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.939558] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.939582] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/eigen3/Eigen/Core:81,\n'}
+[3.939607] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/Eigen/Dense:1,\n'}
+[3.939631] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC_Base.h:5,\n'}
+[3.939658] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:5,\n'}
+[3.939683] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.939708] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/cstddef:126:5: note: candidate: \xe2\x80\x98template<class _IntegerType> constexpr std::__byte_op_t<_IntegerType> std::operator<<(std::byte, _IntegerType)\xe2\x80\x99\n'}
+[3.939733] (go2_robot) StderrLine: {'line': b'  126 |     operator<<(byte __b, _IntegerType __shift) noexcept\n'}
+[3.939758] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.939783] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/cstddef:126:5: note:   template argument deduction/substitution failed:\n'}
+[3.939807] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:27: note:   cannot convert \xe2\x80\x98std::operator<< <std::char_traits<char> >((* &(& std::operator<< <std::char_traits<char> >((* &(& std::operator<< <std::char_traits<char> >((* &(& std::operator<< <std::char_traits<char> >((* &(& std::operator<< <std::char_traits<char> >((* &(& std::operator<< <std::char_traits<char> >((* &(& std::operator<< <std::char_traits<char> >((* &(& std::operator<< <std::char_traits<char> >((* &(& std::operator<< <std::char_traits<char> >(std::cout, ((const char*)"[QP] status: solved=")))->std::basic_ostream<char>::operator<<(cnt[1])), ((const char*)" solved_inacc=")))->std::basic_ostream<char>::operator<<(cnt[2])), ((const char*)" maxiter=")))->std::basic_ostream<char>::operator<<(cnt[7])), ((const char*)" primal_infeas=")))->std::basic_ostream<char>::operator<<(cnt[3])), ((const char*)" primal_infeas_inacc=")))->std::basic_ostream<char>::operator<<(cnt[4])), ((const char*)" dual_infeas=")))->std::basic_ostream<char>::operator<<(cnt[5])), ((const char*)" noncvx=")))->std::basic_ostream<char>::operator<<(cnt[9])), ((const char*)" unsolved=")))->std::basic_ostream<char>::operator<<(cnt[11])), ((const char*)" | solveProblem()->"))\xe2\x80\x99 (type \xe2\x80\x98std::basic_ostream<char>\xe2\x80\x99) to type \xe2\x80\x98std::byte\xe2\x80\x99\n'}
+[3.939844] (go2_robot) StderrLine: {'line': b'  270 |                 std::cout << "[QP] status: solved=" << cnt[static_cast<int>(St::Solved)]\n'}
+[3.939869] (go2_robot) StderrLine: {'line': b'      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.939896] (go2_robot) StderrLine: {'line': b'  271 |                           << " solved_inacc=" << cnt[static_cast<int>(St::SolvedInaccurate)]\n'}
+[3.939923] (go2_robot) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.939947] (go2_robot) StderrLine: {'line': b'  272 |                           << " maxiter=" << cnt[static_cast<int>(St::MaxIterReached)]\n'}
+[3.939972] (go2_robot) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.939997] (go2_robot) StderrLine: {'line': b'  273 |                           << " primal_infeas=" << cnt[static_cast<int>(St::PrimalInfeasible)]\n'}
+[3.940022] (go2_robot) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.940047] (go2_robot) StderrLine: {'line': b'  274 |                           << " primal_infeas_inacc=" << cnt[static_cast<int>(St::PrimalInfeasibleInaccurate)]\n'}
+[3.940072] (go2_robot) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.940096] (go2_robot) StderrLine: {'line': b'  275 |                           << " dual_infeas=" << cnt[static_cast<int>(St::DualInfeasible)]\n'}
+[3.940120] (go2_robot) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.940145] (go2_robot) StderrLine: {'line': b'  276 |                           << " noncvx=" << cnt[static_cast<int>(St::NonCvx)]\n'}
+[3.940169] (go2_robot) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.940193] (go2_robot) StderrLine: {'line': b'  277 |                           << " unsolved=" << cnt[static_cast<int>(St::Unsolved)]\n'}
+[3.940218] (go2_robot) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.940242] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.940267] (go2_robot) StderrLine: {'line': b'      |                           ^~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[3.940291] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/memory:77,\n'}
+[3.940315] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/third_party/osqp-eigen/include/OsqpEigen/Solver.hpp:11,\n'}
+[3.940340] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/third_party/osqp-eigen/include/OsqpEigen/OsqpEigen.h:13,\n'}
+[3.940367] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:6,\n'}
+[3.940391] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.940415] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/shared_ptr.h:70:5: note: candidate: \xe2\x80\x98template<class _Ch, class _Tr, class _Tp, __gnu_cxx::_Lock_policy _Lp> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__shared_ptr<_Tp, _Lp>&)\xe2\x80\x99\n'}
+[3.940442] (go2_robot) StderrLine: {'line': b'   70 |     operator<<(std::basic_ostream<_Ch, _Tr>& __os,\n'}
+[3.940466] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.940492] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/shared_ptr.h:70:5: note:   template argument deduction/substitution failed:\n'}
+[3.940516] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::__shared_ptr<_Tp, _Lp>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.940542] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.940568] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.940592] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:49,\n'}
+[3.940617] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.940641] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.940665] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.940690] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.940714] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.940738] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.940763] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.940787] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.940811] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.h:1309:5: note: candidate: \xe2\x80\x98template<class _RandomNumberEngine, long unsigned int __w, class _UIntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::independent_bits_engine<_RandomNumberEngine, __w, _UIntType>&)\xe2\x80\x99\n'}
+[3.940840] (go2_robot) StderrLine: {'line': b' 1309 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.940865] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.940890] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.h:1309:5: note:   template argument deduction/substitution failed:\n'}
+[3.940918] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::independent_bits_engine<_RandomNumberEngine, __w, _UIntType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.940943] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.940967] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.940992] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.941017] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.941042] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.941067] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.941092] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.941117] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.941142] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.941166] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.941191] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.941215] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:901:5: note: candidate: \xe2\x80\x98template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::uniform_int_distribution<_IntType>&)\xe2\x80\x99\n'}
+[3.941240] (go2_robot) StderrLine: {'line': b'  901 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.941266] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.941290] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:901:5: note:   template argument deduction/substitution failed:\n'}
+[3.941315] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::uniform_int_distribution<_IntType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.941340] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.941365] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.941389] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.941414] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.941438] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.941462] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.941487] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.941511] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.941536] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.941561] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.941587] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.941611] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:959:5: note: candidate: \xe2\x80\x98template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::uniform_real_distribution<_IntType>&)\xe2\x80\x99\n'}
+[3.941636] (go2_robot) StderrLine: {'line': b'  959 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.941661] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.941685] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:959:5: note:   template argument deduction/substitution failed:\n'}
+[3.941710] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::uniform_real_distribution<_IntType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.941736] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.941760] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.941785] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.941809] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.941835] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.941859] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.941884] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.941911] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.941937] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.941961] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.941986] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.942010] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2144:5: note: candidate: \xe2\x80\x98template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::cauchy_distribution<_RealType>&)\xe2\x80\x99\n'}
+[3.942036] (go2_robot) StderrLine: {'line': b' 2144 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.942060] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.942085] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2144:5: note:   template argument deduction/substitution failed:\n'}
+[3.942111] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::cauchy_distribution<_RealType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.942135] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.942159] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.942183] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.942208] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.942232] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.942257] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.942281] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.942305] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.942330] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.942355] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.942380] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.942405] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:1020:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::bernoulli_distribution&)\xe2\x80\x99\n'}
+[3.942430] (go2_robot) StderrLine: {'line': b' 1020 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.942455] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.942480] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:1020:5: note:   template argument deduction/substitution failed:\n'}
+[3.942505] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert \xe2\x80\x98flag\xe2\x80\x99 (type \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99) to type \xe2\x80\x98const std::bernoulli_distribution&\xe2\x80\x99\n'}
+[3.942529] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.942555] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.942579] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.942604] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.942629] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.942654] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.942678] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.942703] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.942728] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.942752] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.942777] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.942802] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:1101:5: note: candidate: \xe2\x80\x98template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::geometric_distribution<_IntType>&)\xe2\x80\x99\n'}
+[3.942826] (go2_robot) StderrLine: {'line': b' 1101 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.942851] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.942876] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:1101:5: note:   template argument deduction/substitution failed:\n'}
+[3.942903] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::geometric_distribution<_IntType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.942930] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.942955] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.942980] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.943005] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.943031] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.943056] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.943082] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.943108] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.943132] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.943157] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.943181] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.943206] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:1753:5: note: candidate: \xe2\x80\x98template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::exponential_distribution<_RealType>&)\xe2\x80\x99\n'}
+[3.943232] (go2_robot) StderrLine: {'line': b' 1753 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.943256] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.943281] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:1753:5: note:   template argument deduction/substitution failed:\n'}
+[3.943305] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::exponential_distribution<_RealType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.943330] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.943354] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.943378] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.943402] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.943426] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.943453] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.943476] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.943501] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.943525] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.943550] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.943574] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.943598] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2538:5: note: candidate: \xe2\x80\x98template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::weibull_distribution<_RealType>&)\xe2\x80\x99\n'}
+[3.943625] (go2_robot) StderrLine: {'line': b' 2538 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.943649] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.943673] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2538:5: note:   template argument deduction/substitution failed:\n'}
+[3.943698] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::weibull_distribution<_RealType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.943724] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.943748] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.943772] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.943796] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.943820] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.943846] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.943869] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.943897] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.943924] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.943949] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.943974] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.943998] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2612:5: note: candidate: \xe2\x80\x98template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::extreme_value_distribution<_RealType>&)\xe2\x80\x99\n'}
+[3.944024] (go2_robot) StderrLine: {'line': b' 2612 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.944049] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.944073] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2612:5: note:   template argument deduction/substitution failed:\n'}
+[3.944098] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::extreme_value_distribution<_RealType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.944123] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.944148] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.944173] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.944199] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.944223] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.944247] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.944272] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.944296] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.944320] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.944344] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.944369] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.944394] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:154:5: note: candidate: \xe2\x80\x98template<class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::linear_congruential_engine<_UIntType, __a, __c, __m>&)\xe2\x80\x99\n'}
+[3.944420] (go2_robot) StderrLine: {'line': b'  154 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.944445] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.944469] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:154:5: note:   template argument deduction/substitution failed:\n'}
+[3.944494] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::linear_congruential_engine<_UIntType, __a, __c, __m>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.944519] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.944544] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.944569] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.944596] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.944622] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.944646] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.944671] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.944695] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.944720] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.944745] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.944770] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.944794] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:474:5: note: candidate: \xe2\x80\x98template<class _UIntType1, long unsigned int __w1, long unsigned int __n1, long unsigned int __m1, long unsigned int __r1, _UIntType1 __a1, long unsigned int __u1, _UIntType1 __d1, long unsigned int __s1, _UIntType1 __b1, long unsigned int __t1, _UIntType1 __c1, long unsigned int __l1, _UIntType1 __f1, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>&)\xe2\x80\x99\n'}
+[3.944822] (go2_robot) StderrLine: {'line': b'  474 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.944850] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.944874] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:474:5: note:   template argument deduction/substitution failed:\n'}
+[3.944900] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.944928] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.944953] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.944977] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.945001] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.945026] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.945050] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.945074] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.945098] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.945123] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.945148] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.945172] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.945195] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:628:5: note: candidate: \xe2\x80\x98template<class _UIntType, long unsigned int __w, long unsigned int __s, long unsigned int __r, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::subtract_with_carry_engine<_UIntType, __w, __s, __r>&)\xe2\x80\x99\n'}
+[3.945224] (go2_robot) StderrLine: {'line': b'  628 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.945248] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.945272] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:628:5: note:   template argument deduction/substitution failed:\n'}
+[3.945296] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::subtract_with_carry_engine<_UIntType, __w, __s, __r>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.945321] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.945345] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.945370] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.945394] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.945418] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.945443] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.945467] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.945492] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.945517] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.945543] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.945568] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.945592] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:696:5: note: candidate: \xe2\x80\x98template<class _RandomNumberEngine, long unsigned int __p, long unsigned int __r, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::discard_block_engine<_RandomNumberEngine, __p, __r>&)\xe2\x80\x99\n'}
+[3.945618] (go2_robot) StderrLine: {'line': b'  696 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.945642] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.945667] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:696:5: note:   template argument deduction/substitution failed:\n'}
+[3.945692] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::discard_block_engine<_RandomNumberEngine, __p, __r>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.945716] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.945741] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.945765] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.945789] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.945814] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.945839] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.945862] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.945887] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.945914] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.945946] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.945970] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.945995] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:857:5: note: candidate: \xe2\x80\x98template<class _RandomNumberEngine, long unsigned int __k, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::shuffle_order_engine<_RandomNumberEngine, __k>&)\xe2\x80\x99\n'}
+[3.946020] (go2_robot) StderrLine: {'line': b'  857 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.946044] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.946068] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:857:5: note:   template argument deduction/substitution failed:\n'}
+[3.946093] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::shuffle_order_engine<_RandomNumberEngine, __k>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.946118] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.946142] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.946167] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.946191] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.946215] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.946240] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.946265] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.946290] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.946315] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.946340] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.946364] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.946388] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:1215:5: note: candidate: \xe2\x80\x98template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::negative_binomial_distribution<_IntType>&)\xe2\x80\x99\n'}
+[3.946413] (go2_robot) StderrLine: {'line': b' 1215 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.946438] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.946463] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:1215:5: note:   template argument deduction/substitution failed:\n'}
+[3.946488] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::negative_binomial_distribution<_IntType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.946514] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.946539] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.946564] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.946588] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.946614] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.946639] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.946664] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.946687] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.946711] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.946736] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.946760] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.946784] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:1425:5: note: candidate: \xe2\x80\x98template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::poisson_distribution<_IntType>&)\xe2\x80\x99\n'}
+[3.946809] (go2_robot) StderrLine: {'line': b' 1425 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.946834] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.946859] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:1425:5: note:   template argument deduction/substitution failed:\n'}
+[3.946883] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::poisson_distribution<_IntType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.946911] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.946935] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.946960] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.946984] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.947008] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.947032] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.947058] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.947082] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.947106] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.947131] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.947155] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.947180] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:1691:5: note: candidate: \xe2\x80\x98template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::binomial_distribution<_IntType>&)\xe2\x80\x99\n'}
+[3.947206] (go2_robot) StderrLine: {'line': b' 1691 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.947231] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.947255] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:1691:5: note:   template argument deduction/substitution failed:\n'}
+[3.947280] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::binomial_distribution<_IntType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.947306] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.947330] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.947354] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.947378] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.947404] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.947429] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.947454] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.947478] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.947502] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.947527] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.947551] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.947577] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:1919:5: note: candidate: \xe2\x80\x98template<class _RealType1, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::normal_distribution<_RealType>&)\xe2\x80\x99\n'}
+[3.947603] (go2_robot) StderrLine: {'line': b' 1919 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.947627] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.947651] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:1919:5: note:   template argument deduction/substitution failed:\n'}
+[3.947675] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::normal_distribution<_RealType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.947700] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.947725] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.947749] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.947774] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.947798] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.947822] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.947847] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.947871] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.947897] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.947923] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.947947] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.947972] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:1986:5: note: candidate: \xe2\x80\x98template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::lognormal_distribution<_RealType>&)\xe2\x80\x99\n'}
+[3.947997] (go2_robot) StderrLine: {'line': b' 1986 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.948023] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.948047] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:1986:5: note:   template argument deduction/substitution failed:\n'}
+[3.948073] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::lognormal_distribution<_RealType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.948098] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.948122] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.948146] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.948172] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.948197] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.948222] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.948246] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.948270] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.948294] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.948318] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.948343] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.948367] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2058:5: note: candidate: \xe2\x80\x98template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::chi_squared_distribution<_RealType>&)\xe2\x80\x99\n'}
+[3.948393] (go2_robot) StderrLine: {'line': b' 2058 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.948417] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.948441] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2058:5: note:   template argument deduction/substitution failed:\n'}
+[3.948465] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::chi_squared_distribution<_RealType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.948490] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.948516] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.948541] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.948565] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.948591] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.948615] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.948640] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.948665] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.948689] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.948714] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.948738] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.948764] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2219:5: note: candidate: \xe2\x80\x98template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::fisher_f_distribution<_RealType>&)\xe2\x80\x99\n'}
+[3.948789] (go2_robot) StderrLine: {'line': b' 2219 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.948814] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.948838] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2219:5: note:   template argument deduction/substitution failed:\n'}
+[3.948863] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::fisher_f_distribution<_RealType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.948889] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.948917] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.948944] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.948969] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.948994] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.949020] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.949044] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.949069] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.949093] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.949118] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.949144] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.949168] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2293:5: note: candidate: \xe2\x80\x98template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::student_t_distribution<_RealType>&)\xe2\x80\x99\n'}
+[3.949193] (go2_robot) StderrLine: {'line': b' 2293 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.949218] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.949243] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2293:5: note:   template argument deduction/substitution failed:\n'}
+[3.949267] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::student_t_distribution<_RealType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.949293] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.949317] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.949342] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.949366] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.949390] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.949413] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.949438] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.949466] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.949492] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.949516] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.949541] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.949565] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2462:5: note: candidate: \xe2\x80\x98template<class _RealType1, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::gamma_distribution<_RealType>&)\xe2\x80\x99\n'}
+[3.949590] (go2_robot) StderrLine: {'line': b' 2462 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.949616] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.949640] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2462:5: note:   template argument deduction/substitution failed:\n'}
+[3.949666] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::gamma_distribution<_RealType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.949690] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.949715] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.949740] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.949764] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.949788] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.949813] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.949837] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.949861] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.949886] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.949912] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.949937] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.949961] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2748:5: note: candidate: \xe2\x80\x98template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::discrete_distribution<_IntType>&)\xe2\x80\x99\n'}
+[3.949987] (go2_robot) StderrLine: {'line': b' 2748 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.950012] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.950036] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2748:5: note:   template argument deduction/substitution failed:\n'}
+[3.950062] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::discrete_distribution<_IntType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.950087] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.950111] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.950136] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.950160] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.950186] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.950210] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.950234] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.950258] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.950282] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.950307] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.950331] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.950355] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2970:5: note: candidate: \xe2\x80\x98template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::piecewise_constant_distribution<_RealType>&)\xe2\x80\x99\n'}
+[3.950380] (go2_robot) StderrLine: {'line': b' 2970 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.950404] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.950428] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:2970:5: note:   template argument deduction/substitution failed:\n'}
+[3.950454] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::piecewise_constant_distribution<_RealType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.950479] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.950503] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.950528] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/c++/11/random:51,\n'}
+[3.950552] (go2_robot) StderrLine: {'line': b'                 from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:41,\n'}
+[3.950577] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.950601] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.950626] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.950652] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.950677] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.950701] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.950726] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.950751] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:3176:5: note: candidate: \xe2\x80\x98template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::piecewise_linear_distribution<_RealType>&)\xe2\x80\x99\n'}
+[3.950778] (go2_robot) StderrLine: {'line': b' 3176 |     operator<<(std::basic_ostream<_CharT, _Traits>& __os,\n'}
+[3.950802] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.950827] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/bits/random.tcc:3176:5: note:   template argument deduction/substitution failed:\n'}
+[3.950852] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98const std::piecewise_linear_distribution<_RealType>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.950878] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.950903] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.950929] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/eigen3/unsupported/Eigen/CXX11/Tensor:42,\n'}
+[3.950954] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/fwd.hpp:57,\n'}
+[3.950980] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/fwd.hpp:9,\n'}
+[3.951005] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:9,\n'}
+[3.951030] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.951054] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.951078] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.951103] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.951127] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/thread:92:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::thread::id)\xe2\x80\x99\n'}
+[3.951152] (go2_robot) StderrLine: {'line': b'   92 |     operator<<(basic_ostream<_CharT, _Traits>& __out, thread::id __id)\n'}
+[3.951176] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.951200] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/thread:92:5: note:   template argument deduction/substitution failed:\n'}
+[3.951224] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert \xe2\x80\x98flag\xe2\x80\x99 (type \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99) to type \xe2\x80\x98std::thread::id\xe2\x80\x99\n'}
+[3.951250] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.951275] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.951299] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/boost/math/policies/error_handling.hpp:12,\n'}
+[3.951323] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/special_functions/trunc.hpp:15,\n'}
+[3.951347] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/constants/calculate_constants.hpp:11,\n'}
+[3.951372] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/constants/constants.hpp:336,\n'}
+[3.951396] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/math/fwd.hpp:10,\n'}
+[3.951421] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/math/quaternion.hpp:12,\n'}
+[3.951446] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/se3-tpl.hpp:12,\n'}
+[3.951471] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/se3.hpp:47,\n'}
+[3.951495] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:10,\n'}
+[3.951521] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.951546] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.951569] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.951595] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.951621] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/iomanip:79:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Resetiosflags)\xe2\x80\x99\n'}
+[3.951645] (go2_robot) StderrLine: {'line': b'   79 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Resetiosflags __f)\n'}
+[3.951671] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.951695] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/iomanip:79:5: note:   template argument deduction/substitution failed:\n'}
+[3.951720] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert \xe2\x80\x98flag\xe2\x80\x99 (type \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99) to type \xe2\x80\x98std::_Resetiosflags\xe2\x80\x99\n'}
+[3.951745] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.951770] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.951794] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/boost/math/policies/error_handling.hpp:12,\n'}
+[3.951818] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/special_functions/trunc.hpp:15,\n'}
+[3.951842] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/constants/calculate_constants.hpp:11,\n'}
+[3.951867] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/constants/constants.hpp:336,\n'}
+[3.951892] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/math/fwd.hpp:10,\n'}
+[3.951920] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/math/quaternion.hpp:12,\n'}
+[3.951944] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/se3-tpl.hpp:12,\n'}
+[3.951970] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/se3.hpp:47,\n'}
+[3.951994] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:10,\n'}
+[3.952019] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.952044] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.952068] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.952093] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.952117] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/iomanip:109:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setiosflags)\xe2\x80\x99\n'}
+[3.952142] (go2_robot) StderrLine: {'line': b'  109 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setiosflags __f)\n'}
+[3.952166] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.952190] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/iomanip:109:5: note:   template argument deduction/substitution failed:\n'}
+[3.952215] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert \xe2\x80\x98flag\xe2\x80\x99 (type \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99) to type \xe2\x80\x98std::_Setiosflags\xe2\x80\x99\n'}
+[3.952239] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.952263] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.952289] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/boost/math/policies/error_handling.hpp:12,\n'}
+[3.952315] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/special_functions/trunc.hpp:15,\n'}
+[3.952341] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/constants/calculate_constants.hpp:11,\n'}
+[3.952367] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/constants/constants.hpp:336,\n'}
+[3.952392] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/math/fwd.hpp:10,\n'}
+[3.952416] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/math/quaternion.hpp:12,\n'}
+[3.952441] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/se3-tpl.hpp:12,\n'}
+[3.952465] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/se3.hpp:47,\n'}
+[3.952492] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:10,\n'}
+[3.952517] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.952542] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.952565] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.952588] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.952613] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/iomanip:143:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setbase)\xe2\x80\x99\n'}
+[3.952637] (go2_robot) StderrLine: {'line': b'  143 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setbase __f)\n'}
+[3.952661] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.952685] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/iomanip:143:5: note:   template argument deduction/substitution failed:\n'}
+[3.952709] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert \xe2\x80\x98flag\xe2\x80\x99 (type \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99) to type \xe2\x80\x98std::_Setbase\xe2\x80\x99\n'}
+[3.952737] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.952760] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.952785] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/boost/math/policies/error_handling.hpp:12,\n'}
+[3.952809] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/special_functions/trunc.hpp:15,\n'}
+[3.952834] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/constants/calculate_constants.hpp:11,\n'}
+[3.952858] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/constants/constants.hpp:336,\n'}
+[3.952881] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/math/fwd.hpp:10,\n'}
+[3.952908] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/math/quaternion.hpp:12,\n'}
+[3.952933] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/se3-tpl.hpp:12,\n'}
+[3.952958] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/se3.hpp:47,\n'}
+[3.952983] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:10,\n'}
+[3.953008] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.953032] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.953060] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.953084] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.953109] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/iomanip:178:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setfill<_CharT>)\xe2\x80\x99\n'}
+[3.953136] (go2_robot) StderrLine: {'line': b'  178 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setfill<_CharT> __f)\n'}
+[3.953160] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.953185] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/iomanip:178:5: note:   template argument deduction/substitution failed:\n'}
+[3.953209] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98std::_Setfill<_CharT>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.953233] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.953259] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.953285] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/boost/math/policies/error_handling.hpp:12,\n'}
+[3.953310] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/special_functions/trunc.hpp:15,\n'}
+[3.953335] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/constants/calculate_constants.hpp:11,\n'}
+[3.953360] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/constants/constants.hpp:336,\n'}
+[3.953385] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/math/fwd.hpp:10,\n'}
+[3.953410] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/math/quaternion.hpp:12,\n'}
+[3.953435] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/se3-tpl.hpp:12,\n'}
+[3.953461] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/se3.hpp:47,\n'}
+[3.953486] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:10,\n'}
+[3.953511] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.953535] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.953560] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.953585] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.953609] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/iomanip:208:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setprecision)\xe2\x80\x99\n'}
+[3.953635] (go2_robot) StderrLine: {'line': b'  208 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setprecision __f)\n'}
+[3.953659] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.953684] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/iomanip:208:5: note:   template argument deduction/substitution failed:\n'}
+[3.953709] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert \xe2\x80\x98flag\xe2\x80\x99 (type \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99) to type \xe2\x80\x98std::_Setprecision\xe2\x80\x99\n'}
+[3.953734] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.953759] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.953785] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/boost/math/policies/error_handling.hpp:12,\n'}
+[3.953810] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/special_functions/trunc.hpp:15,\n'}
+[3.953838] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/constants/calculate_constants.hpp:11,\n'}
+[3.953864] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/constants/constants.hpp:336,\n'}
+[3.953888] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/math/fwd.hpp:10,\n'}
+[3.953915] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/math/quaternion.hpp:12,\n'}
+[3.953940] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/se3-tpl.hpp:12,\n'}
+[3.953966] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/se3.hpp:47,\n'}
+[3.953991] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:10,\n'}
+[3.954016] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.954041] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.954065] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.954090] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.954114] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/iomanip:238:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setw)\xe2\x80\x99\n'}
+[3.954140] (go2_robot) StderrLine: {'line': b'  238 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setw __f)\n'}
+[3.954164] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.954189] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/iomanip:238:5: note:   template argument deduction/substitution failed:\n'}
+[3.954213] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   cannot convert \xe2\x80\x98flag\xe2\x80\x99 (type \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99) to type \xe2\x80\x98std::_Setw\xe2\x80\x99\n'}
+[3.954238] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.954263] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.954288] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/boost/math/policies/error_handling.hpp:12,\n'}
+[3.954313] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/special_functions/trunc.hpp:15,\n'}
+[3.954339] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/constants/calculate_constants.hpp:11,\n'}
+[3.954364] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/constants/constants.hpp:336,\n'}
+[3.954389] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/math/fwd.hpp:10,\n'}
+[3.954415] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/math/quaternion.hpp:12,\n'}
+[3.954440] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/se3-tpl.hpp:12,\n'}
+[3.954465] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/se3.hpp:47,\n'}
+[3.954489] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:10,\n'}
+[3.954514] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.954539] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.954564] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.954589] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.954613] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/iomanip:311:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits, class _MoneyT> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Put_money<_MoneyT>)\xe2\x80\x99\n'}
+[3.954639] (go2_robot) StderrLine: {'line': b'  311 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_money<_MoneyT> __f)\n'}
+[3.954665] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.954690] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/iomanip:311:5: note:   template argument deduction/substitution failed:\n'}
+[3.954714] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98std::_Put_money<_MoneyT>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.954740] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.954764] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[3.954789] (go2_robot) StderrLine: {'line': b'In file included from /usr/include/boost/math/policies/error_handling.hpp:12,\n'}
+[3.954814] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/special_functions/trunc.hpp:15,\n'}
+[3.954839] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/constants/calculate_constants.hpp:11,\n'}
+[3.954863] (go2_robot) StderrLine: {'line': b'                 from /usr/include/boost/math/constants/constants.hpp:336,\n'}
+[3.954891] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/math/fwd.hpp:10,\n'}
+[3.954934] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/math/quaternion.hpp:12,\n'}
+[3.954965] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/se3-tpl.hpp:12,\n'}
+[3.954993] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/spatial/se3.hpp:47,\n'}
+[3.955020] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/multibody/model.hpp:10,\n'}
+[3.955046] (go2_robot) StderrLine: {'line': b'                 from /opt/ros/humble/include/pinocchio/parsers/urdf.hpp:9,\n'}
+[3.955071] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp:10,\n'}
+[3.955097] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/include/WBC/WBC.hpp:8,\n'}
+[3.955122] (go2_robot) StderrLine: {'line': b'                 from /home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:1:\n'}
+[3.955147] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/iomanip:363:5: note: candidate: \xe2\x80\x98template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Put_time<_CharT>)\xe2\x80\x99\n'}
+[3.955173] (go2_robot) StderrLine: {'line': b'  363 |     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_time<_CharT> __f)\n'}
+[3.955198] (go2_robot) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[3.955223] (go2_robot) StderrLine: {'line': b'/usr/include/c++/11/iomanip:363:5: note:   template argument deduction/substitution failed:\n'}
+[3.955249] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp:278:55: note:   mismatched types \xe2\x80\x98std::_Put_time<_CharT>\xe2\x80\x99 and \xe2\x80\x98OsqpEigen::ErrorExitFlag\xe2\x80\x99\n'}
+[3.955274] (go2_robot) StderrLine: {'line': b'  278 |                           << " | solveProblem()->" << flag\n'}
+[3.955299] (go2_robot) StderrLine: {'line': b'      |                                                       ^~~~\n'}
+[4.009225] (-) TimerEvent: {}
+[4.109483] (-) TimerEvent: {}
+[4.209722] (-) TimerEvent: {}
+[4.309966] (-) TimerEvent: {}
+[4.410253] (-) TimerEvent: {}
+[4.510537] (-) TimerEvent: {}
+[4.610795] (-) TimerEvent: {}
+[4.711074] (-) TimerEvent: {}
+[4.811235] (-) TimerEvent: {}
+[4.911392] (-) TimerEvent: {}
+[5.011643] (-) TimerEvent: {}
+[5.111914] (-) TimerEvent: {}
+[5.212182] (-) TimerEvent: {}
+[5.312442] (-) TimerEvent: {}
+[5.412697] (-) TimerEvent: {}
+[5.512958] (-) TimerEvent: {}
+[5.613279] (-) TimerEvent: {}
+[5.713554] (-) TimerEvent: {}
+[5.813835] (-) TimerEvent: {}
+[5.914088] (-) TimerEvent: {}
+[6.014338] (-) TimerEvent: {}
+[6.114606] (-) TimerEvent: {}
+[6.214864] (-) TimerEvent: {}
+[6.315136] (-) TimerEvent: {}
+[6.415404] (-) TimerEvent: {}
+[6.515662] (-) TimerEvent: {}
+[6.615938] (-) TimerEvent: {}
+[6.716105] (-) TimerEvent: {}
+[6.816359] (-) TimerEvent: {}
+[6.916621] (-) TimerEvent: {}
+[7.016875] (-) TimerEvent: {}
+[7.117060] (-) TimerEvent: {}
+[7.217239] (-) TimerEvent: {}
+[7.317434] (-) TimerEvent: {}
+[7.417600] (-) TimerEvent: {}
+[7.517789] (-) TimerEvent: {}
+[7.523909] (go2_robot) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:118\xef\xbc\x9aCMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[7.524139] (go2_robot) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:265\xef\xbc\x9aCMakeFiles/go2_core.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[7.524418] (go2_robot) StderrLine: {'line': b'gmake: *** [Makefile:146\xef\xbc\x9aall] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[7.526171] (go2_robot) CommandEnded: {'returncode': 2}
+[7.584652] (go2_robot) JobEnded: {'identifier': 'go2_robot', 'rc': 2}
+[7.595312] (-) EventReactorShutdown: {}
