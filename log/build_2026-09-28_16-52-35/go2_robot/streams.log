@@ -1,0 +1,130 @@
+[0.008s] Invoking command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24
+[1.375s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[2.882s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[3.356s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[3.833s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[3.859s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[3.883s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[3.949s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[3.975s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.162s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[4.198s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[4.610s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[4.905s] -- Found geometry_msgs: 4.9.2 (/opt/ros/humble/share/geometry_msgs/cmake)
+[4.972s] -- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+[5.002s] -- Found nav_msgs: 4.9.1 (/opt/ros/humble/share/nav_msgs/cmake)
+[5.053s] -- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[5.199s] [33mCMake Warning (dev) at /usr/share/cmake-3.22/Modules/FindOpenGL.cmake:315 (message):
+[5.199s]   Policy CMP0072 is not set: FindOpenGL prefers GLVND by default when
+[5.199s]   available.  Run "cmake --help-policy CMP0072" for policy details.  Use the
+[5.199s]   cmake_policy command to set the policy and suppress this warning.
+[5.200s] 
+[5.200s]   FindOpenGL found both a legacy GL library:
+[5.200s] 
+[5.200s]     OPENGL_gl_LIBRARY: /usr/lib/x86_64-linux-gnu/libGL.so
+[5.200s] 
+[5.200s]   and GLVND libraries for OpenGL and GLX:
+[5.200s] 
+[5.200s]     OPENGL_opengl_LIBRARY: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+[5.200s]     OPENGL_glx_LIBRARY: /usr/lib/x86_64-linux-gnu/libGLX.so
+[5.200s] 
+[5.200s]   OpenGL_GL_PREFERENCE has not been set to "GLVND" or "LEGACY", so for
+[5.200s]   compatibility with CMake 3.10 and below the legacy GL library will be used.
+[5.200s] Call Stack (most recent call first):
+[5.200s]   CMakeLists.txt:29 (find_package)
+[5.200s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[5.200s] [0m
+[5.384s] -- pinocchio_default FOUND. pinocchio_default at /opt/ros/humble/lib/x86_64-linux-gnu/libpinocchio_default.so
+[5.384s] -- pinocchio_parsers FOUND. pinocchio_parsers at /opt/ros/humble/lib/x86_64-linux-gnu/libpinocchio_parsers.so
+[5.386s] -- boost_filesystem FOUND. boost_filesystem at /lib/x86_64-linux-gnu/libboost_filesystem.so
+[5.447s] -- Found Boost: /usr/include (found version "1.74.0") found components: filesystem serialization 
+[5.461s] -- eigenpy FOUND. eigenpy at /opt/ros/humble/lib/x86_64-linux-gnu/libeigenpy.so
+[5.488s] -- Checking for NumPy
+[6.245s] --   NUMPY_INCLUDE_DIRS=/home/hong/.local/lib/python3.10/site-packages/numpy/_core/include
+[6.317s] --   NUMPY_VERSION=2.2.6
+[6.523s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter Development.Module NumPy 
+[6.523s] -- PythonLibraryDirs: 
+[6.523s] -- PythonLibVersionString: 3.10.12
+[6.537s] -- Python site lib: lib/python3.10/site-packages
+[6.537s] -- Python include dirs: /usr/include/python3.10
+[6.562s] -- Checking for NumPy
+[6.633s] --   NUMPY_INCLUDE_DIRS=/home/hong/.local/lib/python3.10/site-packages/numpy/_core/include
+[6.717s] --   NUMPY_VERSION=2.2.6
+[6.717s] -- NumPy include dir: /home/hong/.local/lib/python3.10/site-packages/numpy/_core/include
+[6.722s] [33mCMake Warning at /usr/share/cmake-3.22/Modules/FindBoost.cmake:2201 (message):
+[6.722s]   No header defined for python310; skipping header check (note: header-only
+[6.722s]   libraries have no designated component)
+[6.722s] Call Stack (most recent call first):
+[6.722s]   /opt/ros/humble/lib/x86_64-linux-gnu/cmake/eigenpy/boost.cmake:148 (find_package)
+[6.722s]   /opt/ros/humble/lib/x86_64-linux-gnu/cmake/eigenpy/eigenpyConfig.cmake:149 (SEARCH_FOR_BOOST_PYTHON)
+[6.722s]   /usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+[6.722s]   /opt/ros/humble/lib/x86_64-linux-gnu/cmake/pinocchio/pinocchioConfig.cmake:161 (find_dependency)
+[6.722s]   CMakeLists.txt:41 (find_package)
+[6.722s] 
+[6.722s] [0m
+[6.722s] -- Found Boost: /usr/include (found version "1.74.0") found components: python310 
+[7.155s] -- Default C++ standard: 201703
+[7.156s] -- C++ standard sufficient: Minimal required 11, currently defined: 17
+[7.540s] -- hpp-fcl FOUND. hpp-fcl at /opt/ros/humble/lib/x86_64-linux-gnu/libhpp-fcl.so
+[7.554s] -- Found Boost: /usr/include (found version "1.74.0") found components: chrono serialization filesystem 
+[7.870s] -- C++ standard sufficient: Minimal required 11, currently defined: 17
+[8.019s] -- C++ standard sufficient: Minimal required 11, currently defined: 17
+[8.090s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[8.447s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[8.828s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[8.928s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[8.977s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[9.011s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[9.011s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[9.011s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[9.335s] -- Configuring done
+[9.469s] -- Generating done
+[9.495s] -- Build files have been written to: /home/hong/Movement_Control/Go2Robot/build/go2_robot
+[9.525s] [35m[1mConsolidate compiler generated dependencies of target OsqpEigen[0m
+[9.527s] [35m[1mConsolidate compiler generated dependencies of target go2_robot__rosidl_generator_c[0m
+[9.535s] [  6%] Built target go2_robot__rosidl_generator_c
+[9.535s] [  8%] Built target go2_robot__cpp
+[9.536s] [ 10%] Built target go2_robot__rs
+[9.539s] [ 20%] Built target OsqpEigen
+[9.543s] [35m[1mConsolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_introspection_c[0m
+[9.543s] [35m[1mConsolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_c[0m
+[9.543s] [35m[1mConsolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_introspection_cpp[0m
+[9.545s] [35m[1mConsolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_fastrtps_cpp[0m
+[9.547s] [35m[1mConsolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_fastrtps_c[0m
+[9.547s] [ 20%] Built target ament_cmake_python_symlink_go2_robot
+[9.550s] [35m[1mConsolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_cpp[0m
+[9.553s] [ 26%] Built target go2_robot__rosidl_typesupport_c
+[9.554s] [ 32%] Built target go2_robot__rosidl_typesupport_introspection_c
+[9.555s] [ 38%] Built target go2_robot__rosidl_typesupport_introspection_cpp
+[9.559s] [ 44%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp
+[9.561s] [ 51%] Built target go2_robot__rosidl_typesupport_fastrtps_c
+[9.563s] [35m[1mConsolidate compiler generated dependencies of target go2_core[0m
+[9.564s] [ 57%] Built target go2_robot__rosidl_typesupport_cpp
+[9.582s] [ 57%] Built target go2_robot
+[9.596s] [ 59%] [32mBuilding CXX object CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.o[0m
+[9.598s] [ 61%] Built target go2_robot__py
+[9.599s] [ 63%] [32mBuilding CXX object CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o[0m
+[9.606s] [35m[1mConsolidate compiler generated dependencies of target go2_robot__rosidl_generator_py[0m
+[9.616s] [ 67%] Built target go2_robot__rosidl_generator_py
+[9.622s] [35m[1mConsolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_fastrtps_c__pyext[0m
+[9.625s] [35m[1mConsolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_c__pyext[0m
+[9.625s] [35m[1mConsolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_introspection_c__pyext[0m
+[9.633s] [ 71%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext
+[9.634s] [ 75%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext
+[9.636s] [ 79%] Built target go2_robot__rosidl_typesupport_c__pyext
+[9.666s] [01m[K/home/hong/Movement_Control/Go2Robot/src/Dynamic/pinocchio.cpp:1:10:[m[K [01;31m[Kfatal error: [m[KModel/pinocchio.hpp: 没有那个文件或目录
+[9.667s]     1 | #include [01;31m[K"Model/pinocchio.hpp"[m[K
+[9.667s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[9.667s] compilation terminated.
+[9.668s] gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:104：CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.o] 错误 1
+[9.668s] gmake[2]: *** 正在等待未完成的任务....
+[9.691s] running egg_info
+[9.691s] writing go2_robot.egg-info/PKG-INFO
+[9.691s] writing dependency_links to go2_robot.egg-info/dependency_links.txt
+[9.692s] writing top-level names to go2_robot.egg-info/top_level.txt
+[9.693s] reading manifest file 'go2_robot.egg-info/SOURCES.txt'
+[9.693s] writing manifest file 'go2_robot.egg-info/SOURCES.txt'
+[9.711s] [ 79%] Built target ament_cmake_python_build_go2_robot_egg
+[19.344s] gmake[1]: *** [CMakeFiles/Makefile2:265：CMakeFiles/go2_core.dir/all] 错误 2
+[19.344s] gmake: *** [Makefile:146：all] 错误 2
+[19.347s] Invoked command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24

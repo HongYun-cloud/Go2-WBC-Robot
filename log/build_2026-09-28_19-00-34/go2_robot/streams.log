@@ -1,0 +1,82 @@
+[0.116s] Invoking command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24
+[0.183s] [  1%] Built target go2_robot__cpp
+[0.184s] [  3%] Built target go2_robot__rs
+[0.187s] [  9%] Built target go2_robot__rosidl_generator_c
+[0.191s] [  9%] Built target ament_cmake_python_symlink_go2_robot
+[0.196s] [ 19%] Built target OsqpEigen
+[0.209s] [ 25%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp
+[0.209s] [ 36%] Built target go2_robot__rosidl_typesupport_introspection_c
+[0.210s] [ 34%] Built target go2_robot__rosidl_typesupport_fastrtps_c
+[0.213s] [ 42%] Built target go2_robot__rosidl_typesupport_cpp
+[0.214s] [ 48%] Built target go2_robot__rosidl_typesupport_introspection_cpp
+[0.215s] [ 53%] Built target go2_robot__rosidl_typesupport_c
+[0.229s] [ 53%] Built target go2_robot
+[0.253s] [ 55%] Built target go2_robot__py
+[0.274s] [ 59%] Built target go2_robot__rosidl_generator_py
+[0.280s] Consolidate compiler generated dependencies of target go2_core
+[0.291s] [ 63%] Built target go2_robot__rosidl_typesupport_c__pyext
+[0.292s] [ 67%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext
+[0.292s] [ 71%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext
+[0.302s] [ 73%] Building CXX object CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o
+[0.489s] running egg_info
+[0.490s] writing go2_robot.egg-info/PKG-INFO
+[0.490s] writing dependency_links to go2_robot.egg-info/dependency_links.txt
+[0.490s] writing top-level names to go2_robot.egg-info/top_level.txt
+[0.535s] reading manifest file 'go2_robot.egg-info/SOURCES.txt'
+[0.535s] writing manifest file 'go2_robot.egg-info/SOURCES.txt'
+[0.556s] [ 73%] Built target ament_cmake_python_build_go2_robot_egg
+[2.901s] [ 75%] Linking CXX static library libgo2_core.a
+[4.792s] [ 94%] Built target go2_core
+[4.906s] Consolidate compiler generated dependencies of target go2_control_node
+[4.935s] [ 96%] Building CXX object CMakeFiles/go2_control_node.dir/src/ros2/main.cpp.o
+[4.935s] [ 98%] Building CXX object CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o
+[8.473s] /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp: In member function ‘RobotInterface::RobotInterfacePtr go2::Go2ControlNode::createRobotInterface(const string&)’:
+[8.473s] /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:112:32: error: ‘createMujocoRobotInterface’ is not a member of ‘RobotInterface’
+[8.473s]   112 |         return RobotInterface::createMujocoRobotInterface(mujoco_model, urdf_path);
+[8.474s]       |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[8.474s] /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:115:32: error: ‘createMujocoRobotInterface’ is not a member of ‘RobotInterface’
+[8.474s]   115 |         return RobotInterface::createMujocoRobotInterface(mujoco_model, urdf_path);
+[8.474s]       |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[8.475s] /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp: In member function ‘Controller::ControllerPtr go2::Go2ControlNode::createController(const string&)’:
+[8.475s] /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:125:45: error: ‘TraditionalController’ is not a member of ‘Controller’
+[8.475s]   125 |         return std::make_shared<Controller::TraditionalController>();
+[8.475s]       |                                             ^~~~~~~~~~~~~~~~~~~~~
+[8.475s] /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:125:67: error: no matching function for call to ‘make_shared<<expression error> >()’
+[8.475s]   125 |         return std::make_shared<Controller::TraditionalController>();
+[8.476s]       |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+[8.476s] In file included from /usr/include/c++/11/memory:77,
+[8.476s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153,
+[8.476s]                  from /home/hong/Movement_Control/Go2Robot/include/ros2/go2_control_node.hpp:19,
+[8.476s]                  from /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:1:
+[8.476s] /usr/include/c++/11/bits/shared_ptr.h:875:5: note: candidate: ‘template<class _Tp, class ... _Args> std::shared_ptr<_Tp> std::make_shared(_Args&& ...)’
+[8.476s]   875 |     make_shared(_Args&&... __args)
+[8.476s]       |     ^~~~~~~~~~~
+[8.476s] /usr/include/c++/11/bits/shared_ptr.h:875:5: note:   template argument deduction/substitution failed:
+[8.476s] /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:125:67: error: template argument 1 is invalid
+[8.476s]   125 |         return std::make_shared<Controller::TraditionalController>();
+[8.476s]       |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+[8.476s] /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:127:45: error: ‘RLController’ is not a member of ‘Controller’
+[8.477s]   127 |         return std::make_shared<Controller::RLController>();
+[8.477s]       |                                             ^~~~~~~~~~~~
+[8.477s] /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:127:58: error: no matching function for call to ‘make_shared<<expression error> >()’
+[8.477s]   127 |         return std::make_shared<Controller::RLController>();
+[8.477s]       |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+[8.477s] In file included from /usr/include/c++/11/memory:77,
+[8.477s]                  from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153,
+[8.477s]                  from /home/hong/Movement_Control/Go2Robot/include/ros2/go2_control_node.hpp:19,
+[8.477s]                  from /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:1:
+[8.477s] /usr/include/c++/11/bits/shared_ptr.h:875:5: note: candidate: ‘template<class _Tp, class ... _Args> std::shared_ptr<_Tp> std::make_shared(_Args&& ...)’
+[8.477s]   875 |     make_shared(_Args&&... __args)
+[8.477s]       |     ^~~~~~~~~~~
+[8.477s] /usr/include/c++/11/bits/shared_ptr.h:875:5: note:   template argument deduction/substitution failed:
+[8.478s] /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:127:58: error: template argument 1 is invalid
+[8.478s]   127 |         return std::make_shared<Controller::RLController>();
+[8.478s]       |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+[8.490s] /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp: In member function ‘void go2::Go2ControlNode::publishState()’:
+[8.490s] /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:244:22: error: ‘using element_type = class Controller::ControllerBase’ {aka ‘class Controller::ControllerBase’} has no member named ‘fillTelemetry’
+[8.490s]   244 |         controller_->fillTelemetry(telemetry, state);
+[8.490s]       |                      ^~~~~~~~~~~~~
+[10.353s] gmake[2]: *** [CMakeFiles/go2_control_node.dir/build.make:76：CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o] 错误 1
+[10.353s] gmake[1]: *** [CMakeFiles/Makefile2:294：CMakeFiles/go2_control_node.dir/all] 错误 2
+[10.353s] gmake: *** [Makefile:146：all] 错误 2
+[10.355s] Invoked command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24

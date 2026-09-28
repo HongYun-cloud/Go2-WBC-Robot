@@ -8,11 +8,14 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp" "CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o" "gcc" "CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o.d"
+  "/home/hong/Movement_Control/Go2Robot/src/Controller/TraditionalController.cpp" "CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o" "gcc" "CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o.d"
+  "/home/hong/Movement_Control/Go2Robot/src/Dynamic/pinocchio.cpp" "CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.o" "gcc" "CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.o.d"
   "/home/hong/Movement_Control/Go2Robot/src/Estimator/PositionVelocityEstimator.cpp" "CMakeFiles/go2_core.dir/src/Estimator/PositionVelocityEstimator.cpp.o" "gcc" "CMakeFiles/go2_core.dir/src/Estimator/PositionVelocityEstimator.cpp.o.d"
   "/home/hong/Movement_Control/Go2Robot/src/MPC/MPC.cpp" "CMakeFiles/go2_core.dir/src/MPC/MPC.cpp.o" "gcc" "CMakeFiles/go2_core.dir/src/MPC/MPC.cpp.o.d"
-  "/home/hong/Movement_Control/Go2Robot/src/Model/pinocchio.cpp" "CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.o" "gcc" "CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.o.d"
   "/home/hong/Movement_Control/Go2Robot/src/Planner/GaitScheduler.cpp" "CMakeFiles/go2_core.dir/src/Planner/GaitScheduler.cpp.o" "gcc" "CMakeFiles/go2_core.dir/src/Planner/GaitScheduler.cpp.o.d"
   "/home/hong/Movement_Control/Go2Robot/src/Planner/SwingLegPlanner.cpp" "CMakeFiles/go2_core.dir/src/Planner/SwingLegPlanner.cpp.o" "gcc" "CMakeFiles/go2_core.dir/src/Planner/SwingLegPlanner.cpp.o.d"
+  "/home/hong/Movement_Control/Go2Robot/src/RobotInterface/MujocoRobotInterface.cpp" "CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o" "gcc" "CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o.d"
   "/home/hong/Movement_Control/Go2Robot/src/SIM/MJCsim.cpp" "CMakeFiles/go2_core.dir/src/SIM/MJCsim.cpp.o" "gcc" "CMakeFiles/go2_core.dir/src/SIM/MJCsim.cpp.o.d"
   "/home/hong/Movement_Control/Go2Robot/src/WBC/WBC.cpp" "CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o" "gcc" "CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o.d"
   "/home/hong/Movement_Control/Go2Robot/src/fsm/ControlFSM.cpp" "CMakeFiles/go2_core.dir/src/fsm/ControlFSM.cpp.o" "gcc" "CMakeFiles/go2_core.dir/src/fsm/ControlFSM.cpp.o.d"

@@ -1,0 +1,52 @@
+[  5%] Built target go2_robot__rosidl_generator_c
+[  5%] Built target ament_cmake_python_symlink_go2_robot
+[  7%] Built target go2_robot__cpp
+[  9%] Built target go2_robot__rs
+[ 19%] Built target OsqpEigen
+[ 25%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp
+[ 30%] Built target go2_robot__rosidl_typesupport_introspection_cpp
+[ 42%] Built target go2_robot__rosidl_typesupport_fastrtps_c
+[ 42%] Built target go2_robot__rosidl_typesupport_c
+[ 48%] Built target go2_robot__rosidl_typesupport_introspection_c
+[ 53%] Built target go2_robot__rosidl_typesupport_cpp
+[ 53%] Built target go2_robot
+[ 55%] Built target go2_robot__py
+Consolidate compiler generated dependencies of target go2_core
+[ 59%] Built target go2_robot__rosidl_generator_py
+[ 63%] Building CXX object CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o
+[ 63%] Building CXX object CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o
+[ 65%] Building CXX object CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o
+[ 69%] Built target go2_robot__rosidl_typesupport_c__pyext
+[ 73%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext
+[ 76%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext
+running egg_info
+writing go2_robot.egg-info/PKG-INFO
+writing dependency_links to go2_robot.egg-info/dependency_links.txt
+writing top-level names to go2_robot.egg-info/top_level.txt
+reading manifest file 'go2_robot.egg-info/SOURCES.txt'
+writing manifest file 'go2_robot.egg-info/SOURCES.txt'
+In file included from /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:1:
+/home/hong/Movement_Control/Go2Robot/include/Controller/RLController.hpp:5:10: fatal error: onnxruntime_cxx_api.h: 没有那个文件或目录
+    5 | #include <onnxruntime_cxx_api.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:216：CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o] 错误 1
+gmake[2]: *** 正在等待未完成的任务....
+[ 76%] Built target ament_cmake_python_build_go2_robot_egg
+/home/hong/Movement_Control/Go2Robot/src/RobotInterface/MujocoRobotInterface.cpp: In member function ‘virtual void RobotInterface::MujocoRobotInterface::setCommand(const VectorXd&)’:
+/home/hong/Movement_Control/Go2Robot/src/RobotInterface/MujocoRobotInterface.cpp:34:23: error: binding reference of type ‘Eigen::VectorXd&’ {aka ‘Eigen::Matrix<double, -1, 1>&’} to ‘const VectorXd’ {aka ‘const Eigen::Matrix<double, -1, 1>’} discards qualifiers
+   34 |         sim_->control(tau);
+      |                       ^~~
+In file included from /home/hong/Movement_Control/Go2Robot/src/RobotInterface/MujocoRobotInterface.cpp:2:
+/home/hong/Movement_Control/Go2Robot/include/SIM/MJCsim.hpp:25:39: note:   initializing argument 1 of ‘void MJCSIM::SIM::control(Eigen::VectorXd&, bool)’
+   25 |         void control(Eigen::VectorXd &tau, bool hip_enabled = false);
+      |                      ~~~~~~~~~~~~~~~~~^~~
+gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:188：CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o] 错误 1
+In file included from /home/hong/Movement_Control/Go2Robot/src/Controller/TraditionalController.cpp:1:
+/home/hong/Movement_Control/Go2Robot/include/Controller/TraditionalController.hpp:19:10: fatal error: go2_robot/msg/go2_telemetry.hpp: 没有那个文件或目录
+   19 | #include "go2_robot/msg/go2_telemetry.hpp"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:202：CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:265：CMakeFiles/go2_core.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

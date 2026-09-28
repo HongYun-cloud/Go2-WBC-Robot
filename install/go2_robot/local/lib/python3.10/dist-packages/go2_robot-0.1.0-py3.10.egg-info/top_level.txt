@@ -1,1 +1,1 @@
-go2_robot
+/home/hong/Movement_Control/Go2Robot/build/go2_robot/ament_cmake_python/go2_robot/go2_robot.egg-info/top_level.txt

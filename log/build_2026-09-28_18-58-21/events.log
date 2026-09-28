@@ -1,0 +1,156 @@
+[0.000000] (-) TimerEvent: {}
+[0.000048] (go2_robot) JobQueued: {'identifier': 'go2_robot', 'dependencies': OrderedDict()}
+[0.000302] (go2_robot) JobStarted: {'identifier': 'go2_robot'}
+[0.035370] (go2_robot) JobProgress: {'identifier': 'go2_robot', 'progress': 'cmake'}
+[0.059909] (go2_robot) JobProgress: {'identifier': 'go2_robot', 'progress': 'build'}
+[0.059966] (go2_robot) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/hong/Movement_Control/Go2Robot/build/go2_robot', '--', '-j24', '-l24'], 'cwd': '/home/hong/Movement_Control/Go2Robot/build/go2_robot', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('ANTHROPIC_MODEL', 'DeepSeek-V4-Flash'), ('HTTPS_PROXY', 'http://127.0.0.1:7897/'), ('no_proxy', 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,::1'), ('LANGUAGE', 'zh_CN:zh:en_US:en'), ('USER', 'hong'), ('npm_config_user_agent', 'npm/undefined node/v24.3.0 linux x64 workspaces/false'), ('LC_TIME', 'zh_CN.UTF-8'), ('AGENT', '1'), ('all_proxy', 'socks://127.0.0.1:7897/'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/local/cuda-12.1/lib64:/home/hong/Movement_Control/Go2Robot/install/go2_robot/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.1/lib64:'), ('INPUT_METHOD', 'fcitx'), ('HOME', '/home/hong'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/hong/Movement_Control/Go2Robot'), ('DESKTOP_SESSION', 'ubuntu'), ('NO_PROXY', 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,::1'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SDL_IM_MODULE', 'fcitx'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('GLFW_IM_MODULE', 'ibus'), ('SYSTEMD_EXEC_PID', '31508'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('_CONDA_ROOT', '/home/hong/miniconda3'), ('https_proxy', 'http://127.0.0.1:7897/'), ('COLCON_PREFIX_PATH', '/home/hong/Movement_Control/Go2Robot/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'hong'), ('ALL_PROXY', 'socks://127.0.0.1:7897/'), ('http_proxy', 'http://127.0.0.1:7897/'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('MUJOCO_HOME', '/home/hong/.mujoco/mujoco-3.9.0'), ('USERNAME', 'hong'), ('ANTHROPIC_BASE_URL', 'https://api.scnet.cn/api/llm/anthropic'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('OPENCODE', '1'), ('PATH', '/home/hong/.opencode/bin:/usr/local/cuda-12.1/bin:/opt/ros/humble/bin:/usr/local/cuda-12.1/bin:/home/hong/miniconda3/condabin:/home/hong/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/hong/.mujoco/mujoco-3.9.0/bin:/home/hong/.mujoco/mujoco-3.9.0/bin'), ('SESSION_MANAGER', 'local/hong:@/tmp/.ICE-unix/31480,unix/hong:/tmp/.ICE-unix/31480'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/9dcd14e3_5483_45ef_9cdc_6178f80e9f6b'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('OPENCODE_PID', '82808'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=fcitx'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.178'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/hong/Movement_Control/Go2Robot/install/go2_robot:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/hong/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ANTHROPIC_AUTH_TOKEN', 'sk-tp-OTIyLTEyMTIyMzgxNDQ1LTE3ODczNjY2ODg0ODY='), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('_CONDA_EXE', '/home/hong/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/hong/Movement_Control/Go2Robot/build/go2_robot'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/hong/miniconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:7897/'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/hong/Movement_Control/Go2Robot/install/go2_robot:/opt/ros/humble')]), 'shell': False}
+[0.099960] (-) TimerEvent: {}
+[0.200215] (-) TimerEvent: {}
+[0.300644] (-) TimerEvent: {}
+[0.400975] (-) TimerEvent: {}
+[0.501319] (-) TimerEvent: {}
+[0.601571] (-) TimerEvent: {}
+[0.701864] (-) TimerEvent: {}
+[0.717970] (go2_robot) StdoutLine: {'line': b'[  1%] Built target go2_robot__rs\n'}
+[0.719695] (go2_robot) StdoutLine: {'line': b'[  3%] Built target go2_robot__cpp\n'}
+[0.721573] (go2_robot) StdoutLine: {'line': b'[  9%] Built target go2_robot__rosidl_generator_c\n'}
+[0.722443] (go2_robot) StdoutLine: {'line': b'[  9%] Built target ament_cmake_python_symlink_go2_robot\n'}
+[0.724651] (go2_robot) StdoutLine: {'line': b'[ 19%] Built target OsqpEigen\n'}
+[0.735011] (go2_robot) StdoutLine: {'line': b'[ 25%] Built target go2_robot__rosidl_typesupport_introspection_cpp\n'}
+[0.735291] (go2_robot) StdoutLine: {'line': b'[ 30%] Built target go2_robot__rosidl_typesupport_c\n'}
+[0.737755] (go2_robot) StdoutLine: {'line': b'[ 36%] Built target go2_robot__rosidl_typesupport_introspection_c\n'}
+[0.738850] (go2_robot) StdoutLine: {'line': b'[ 42%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp\n'}
+[0.739136] (go2_robot) StdoutLine: {'line': b'[ 48%] Built target go2_robot__rosidl_typesupport_cpp\n'}
+[0.739546] (go2_robot) StdoutLine: {'line': b'[ 53%] Built target go2_robot__rosidl_typesupport_fastrtps_c\n'}
+[0.756318] (go2_robot) StdoutLine: {'line': b'[ 53%] Built target go2_robot\n'}
+[0.770038] (go2_robot) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target go2_core\n'}
+[0.775464] (go2_robot) StdoutLine: {'line': b'[ 55%] Built target go2_robot__py\n'}
+[0.790877] (go2_robot) StdoutLine: {'line': b'[ 57%] Building CXX object CMakeFiles/go2_core.dir/src/SIM/MJCsim.cpp.o\n'}
+[0.793054] (go2_robot) StdoutLine: {'line': b'[ 59%] Building CXX object CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o\n'}
+[0.794076] (go2_robot) StdoutLine: {'line': b'[ 61%] Building CXX object CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o\n'}
+[0.794602] (go2_robot) StdoutLine: {'line': b'[ 63%] Building CXX object CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o\n'}
+[0.795768] (go2_robot) StdoutLine: {'line': b'[ 67%] Built target go2_robot__rosidl_generator_py\n'}
+[0.801942] (-) TimerEvent: {}
+[0.816161] (go2_robot) StdoutLine: {'line': b'[ 71%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext\n'}
+[0.816405] (go2_robot) StdoutLine: {'line': b'[ 78%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.816447] (go2_robot) StdoutLine: {'line': b'[ 78%] Built target go2_robot__rosidl_typesupport_c__pyext\n'}
+[0.879901] (go2_robot) StdoutLine: {'line': b'running egg_info\n'}
+[0.880277] (go2_robot) StdoutLine: {'line': b'writing go2_robot.egg-info/PKG-INFO\n'}
+[0.880592] (go2_robot) StdoutLine: {'line': b'writing dependency_links to go2_robot.egg-info/dependency_links.txt\n'}
+[0.880722] (go2_robot) StdoutLine: {'line': b'writing top-level names to go2_robot.egg-info/top_level.txt\n'}
+[0.881894] (go2_robot) StdoutLine: {'line': b"reading manifest file 'go2_robot.egg-info/SOURCES.txt'\n"}
+[0.882246] (go2_robot) StdoutLine: {'line': b"writing manifest file 'go2_robot.egg-info/SOURCES.txt'\n"}
+[0.902045] (-) TimerEvent: {}
+[0.902468] (go2_robot) StdoutLine: {'line': b'[ 78%] Built target ament_cmake_python_build_go2_robot_egg\n'}
+[1.002210] (-) TimerEvent: {}
+[1.102557] (-) TimerEvent: {}
+[1.202815] (-) TimerEvent: {}
+[1.303018] (-) TimerEvent: {}
+[1.403209] (-) TimerEvent: {}
+[1.435881] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:6:10: fatal error: onnxruntime_cxx_api.h: \xe6\xb2\xa1\xe6\x9c\x89\xe9\x82\xa3\xe4\xb8\xaa\xe6\x96\x87\xe4\xbb\xb6\xe6\x88\x96\xe7\x9b\xae\xe5\xbd\x95\n'}
+[1.436091] (go2_robot) StderrLine: {'line': b'    6 | #include <onnxruntime_cxx_api.h>\n'}
+[1.436176] (go2_robot) StderrLine: {'line': b'      |          ^~~~~~~~~~~~~~~~~~~~~~~\n'}
+[1.436253] (go2_robot) StderrLine: {'line': b'compilation terminated.\n'}
+[1.457418] (go2_robot) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:216\xef\xbc\x9aCMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[1.457598] (go2_robot) StderrLine: {'line': b'gmake[2]: *** \xe6\xad\xa3\xe5\x9c\xa8\xe7\xad\x89\xe5\xbe\x85\xe6\x9c\xaa\xe5\xae\x8c\xe6\x88\x90\xe7\x9a\x84\xe4\xbb\xbb\xe5\x8a\xa1....\n'}
+[1.503337] (-) TimerEvent: {}
+[1.603556] (-) TimerEvent: {}
+[1.703750] (-) TimerEvent: {}
+[1.803950] (-) TimerEvent: {}
+[1.904171] (-) TimerEvent: {}
+[2.004462] (-) TimerEvent: {}
+[2.104666] (-) TimerEvent: {}
+[2.204865] (-) TimerEvent: {}
+[2.305077] (-) TimerEvent: {}
+[2.405346] (-) TimerEvent: {}
+[2.505560] (-) TimerEvent: {}
+[2.605831] (-) TimerEvent: {}
+[2.706015] (-) TimerEvent: {}
+[2.806246] (-) TimerEvent: {}
+[2.906529] (-) TimerEvent: {}
+[3.006956] (-) TimerEvent: {}
+[3.107280] (-) TimerEvent: {}
+[3.207587] (-) TimerEvent: {}
+[3.307874] (-) TimerEvent: {}
+[3.408067] (-) TimerEvent: {}
+[3.508257] (-) TimerEvent: {}
+[3.608484] (-) TimerEvent: {}
+[3.708789] (-) TimerEvent: {}
+[3.809127] (-) TimerEvent: {}
+[3.909421] (-) TimerEvent: {}
+[4.009775] (-) TimerEvent: {}
+[4.110078] (-) TimerEvent: {}
+[4.210479] (-) TimerEvent: {}
+[4.310894] (-) TimerEvent: {}
+[4.411349] (-) TimerEvent: {}
+[4.511791] (-) TimerEvent: {}
+[4.612214] (-) TimerEvent: {}
+[4.712533] (-) TimerEvent: {}
+[4.812823] (-) TimerEvent: {}
+[4.913115] (-) TimerEvent: {}
+[5.013525] (-) TimerEvent: {}
+[5.113868] (-) TimerEvent: {}
+[5.214263] (-) TimerEvent: {}
+[5.314630] (-) TimerEvent: {}
+[5.414906] (-) TimerEvent: {}
+[5.515290] (-) TimerEvent: {}
+[5.615739] (-) TimerEvent: {}
+[5.716088] (-) TimerEvent: {}
+[5.816504] (-) TimerEvent: {}
+[5.916829] (-) TimerEvent: {}
+[6.017210] (-) TimerEvent: {}
+[6.117570] (-) TimerEvent: {}
+[6.217916] (-) TimerEvent: {}
+[6.318329] (-) TimerEvent: {}
+[6.418698] (-) TimerEvent: {}
+[6.519000] (-) TimerEvent: {}
+[6.619193] (-) TimerEvent: {}
+[6.719437] (-) TimerEvent: {}
+[6.819631] (-) TimerEvent: {}
+[6.919775] (-) TimerEvent: {}
+[7.019938] (-) TimerEvent: {}
+[7.120130] (-) TimerEvent: {}
+[7.220378] (-) TimerEvent: {}
+[7.320537] (-) TimerEvent: {}
+[7.420690] (-) TimerEvent: {}
+[7.520973] (-) TimerEvent: {}
+[7.621170] (-) TimerEvent: {}
+[7.721413] (-) TimerEvent: {}
+[7.821604] (-) TimerEvent: {}
+[7.921776] (-) TimerEvent: {}
+[8.021935] (-) TimerEvent: {}
+[8.122102] (-) TimerEvent: {}
+[8.222291] (-) TimerEvent: {}
+[8.322525] (-) TimerEvent: {}
+[8.422810] (-) TimerEvent: {}
+[8.522997] (-) TimerEvent: {}
+[8.623166] (-) TimerEvent: {}
+[8.723416] (-) TimerEvent: {}
+[8.823685] (-) TimerEvent: {}
+[8.923846] (-) TimerEvent: {}
+[9.024030] (-) TimerEvent: {}
+[9.040786] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/Controller/TraditionalController.cpp: In member function \xe2\x80\x98virtual Eigen::VectorXd Controller::TraditionalController::update(const RobotState&, const Vector3d&)\xe2\x80\x99:\n'}
+[9.040924] (go2_robot) StderrLine: {'line': b'/home/hong/Movement_Control/Go2Robot/src/Controller/TraditionalController.cpp:132:35: error: assignment of read-only location \xe2\x80\x98state.RobotState::contact_states.std::vector<int>::operator[](((std::vector<int>::size_type)leg))\xe2\x80\x99\n'}
+[9.040968] (go2_robot) StderrLine: {'line': b'  132 |         state.contact_states[leg] = leg_contact[leg].stance;\n'}
+[9.124214] (-) TimerEvent: {}
+[9.224499] (-) TimerEvent: {}
+[9.324762] (-) TimerEvent: {}
+[9.425010] (-) TimerEvent: {}
+[9.525296] (-) TimerEvent: {}
+[9.625550] (-) TimerEvent: {}
+[9.725804] (-) TimerEvent: {}
+[9.826075] (-) TimerEvent: {}
+[9.926324] (-) TimerEvent: {}
+[10.026642] (-) TimerEvent: {}
+[10.126812] (-) TimerEvent: {}
+[10.227006] (-) TimerEvent: {}
+[10.327172] (-) TimerEvent: {}
+[10.427387] (-) TimerEvent: {}
+[10.527664] (-) TimerEvent: {}
+[10.535073] (go2_robot) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:202\xef\xbc\x9aCMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[10.535601] (go2_robot) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:265\xef\xbc\x9aCMakeFiles/go2_core.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[10.536014] (go2_robot) StderrLine: {'line': b'gmake: *** [Makefile:146\xef\xbc\x9aall] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[10.537811] (go2_robot) CommandEnded: {'returncode': 2}
+[10.627887] (-) TimerEvent: {}
+[10.631362] (go2_robot) JobEnded: {'identifier': 'go2_robot', 'rc': 2}
+[10.641812] (-) EventReactorShutdown: {}

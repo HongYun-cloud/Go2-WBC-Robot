@@ -97,19 +97,19 @@ CMakeFiles/go2_core.dir/src/MPC/MPC.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/go2_core.dir/src/MPC/MPC.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hong/Movement_Control/Go2Robot/src/MPC/MPC.cpp -o CMakeFiles/go2_core.dir/src/MPC/MPC.cpp.s
 
-CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.o: CMakeFiles/go2_core.dir/flags.make
-CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.o: ../../src/Model/pinocchio.cpp
-CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.o: CMakeFiles/go2_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.o -MF CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.o.d -o CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.o -c /home/hong/Movement_Control/Go2Robot/src/Model/pinocchio.cpp
+CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.o: CMakeFiles/go2_core.dir/flags.make
+CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.o: ../../src/Dynamic/pinocchio.cpp
+CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.o: CMakeFiles/go2_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.o -MF CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.o.d -o CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.o -c /home/hong/Movement_Control/Go2Robot/src/Dynamic/pinocchio.cpp
 
-CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hong/Movement_Control/Go2Robot/src/Model/pinocchio.cpp > CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.i
+CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hong/Movement_Control/Go2Robot/src/Dynamic/pinocchio.cpp > CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.i
 
-CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hong/Movement_Control/Go2Robot/src/Model/pinocchio.cpp -o CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.s
+CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hong/Movement_Control/Go2Robot/src/Dynamic/pinocchio.cpp -o CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.s
 
 CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o: CMakeFiles/go2_core.dir/flags.make
 CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o: ../../src/WBC/WBC.cpp
@@ -181,31 +181,79 @@ CMakeFiles/go2_core.dir/src/Estimator/PositionVelocityEstimator.cpp.s: cmake_for
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/go2_core.dir/src/Estimator/PositionVelocityEstimator.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hong/Movement_Control/Go2Robot/src/Estimator/PositionVelocityEstimator.cpp -o CMakeFiles/go2_core.dir/src/Estimator/PositionVelocityEstimator.cpp.s
 
+CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o: CMakeFiles/go2_core.dir/flags.make
+CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o: ../../src/RobotInterface/MujocoRobotInterface.cpp
+CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o: CMakeFiles/go2_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o -MF CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o.d -o CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o -c /home/hong/Movement_Control/Go2Robot/src/RobotInterface/MujocoRobotInterface.cpp
+
+CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hong/Movement_Control/Go2Robot/src/RobotInterface/MujocoRobotInterface.cpp > CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.i
+
+CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hong/Movement_Control/Go2Robot/src/RobotInterface/MujocoRobotInterface.cpp -o CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.s
+
+CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o: CMakeFiles/go2_core.dir/flags.make
+CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o: ../../src/Controller/TraditionalController.cpp
+CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o: CMakeFiles/go2_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o -MF CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o.d -o CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o -c /home/hong/Movement_Control/Go2Robot/src/Controller/TraditionalController.cpp
+
+CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hong/Movement_Control/Go2Robot/src/Controller/TraditionalController.cpp > CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.i
+
+CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hong/Movement_Control/Go2Robot/src/Controller/TraditionalController.cpp -o CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.s
+
+CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o: CMakeFiles/go2_core.dir/flags.make
+CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o: ../../src/Controller/RLController.cpp
+CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o: CMakeFiles/go2_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o -MF CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o.d -o CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o -c /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp
+
+CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp > CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.i
+
+CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp -o CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.s
+
 # Object files for target go2_core
 go2_core_OBJECTS = \
 "CMakeFiles/go2_core.dir/src/SIM/MJCsim.cpp.o" \
 "CMakeFiles/go2_core.dir/src/MPC/MPC.cpp.o" \
-"CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.o" \
+"CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.o" \
 "CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o" \
 "CMakeFiles/go2_core.dir/src/Planner/GaitScheduler.cpp.o" \
 "CMakeFiles/go2_core.dir/src/Planner/SwingLegPlanner.cpp.o" \
 "CMakeFiles/go2_core.dir/src/fsm/ControlFSM.cpp.o" \
-"CMakeFiles/go2_core.dir/src/Estimator/PositionVelocityEstimator.cpp.o"
+"CMakeFiles/go2_core.dir/src/Estimator/PositionVelocityEstimator.cpp.o" \
+"CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o" \
+"CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o" \
+"CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o"
 
 # External object files for target go2_core
 go2_core_EXTERNAL_OBJECTS =
 
 libgo2_core.a: CMakeFiles/go2_core.dir/src/SIM/MJCsim.cpp.o
 libgo2_core.a: CMakeFiles/go2_core.dir/src/MPC/MPC.cpp.o
-libgo2_core.a: CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.o
+libgo2_core.a: CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.o
 libgo2_core.a: CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o
 libgo2_core.a: CMakeFiles/go2_core.dir/src/Planner/GaitScheduler.cpp.o
 libgo2_core.a: CMakeFiles/go2_core.dir/src/Planner/SwingLegPlanner.cpp.o
 libgo2_core.a: CMakeFiles/go2_core.dir/src/fsm/ControlFSM.cpp.o
 libgo2_core.a: CMakeFiles/go2_core.dir/src/Estimator/PositionVelocityEstimator.cpp.o
+libgo2_core.a: CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o
+libgo2_core.a: CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o
+libgo2_core.a: CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o
 libgo2_core.a: CMakeFiles/go2_core.dir/build.make
 libgo2_core.a: CMakeFiles/go2_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library libgo2_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX static library libgo2_core.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/go2_core.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/go2_core.dir/link.txt --verbose=$(VERBOSE)
 

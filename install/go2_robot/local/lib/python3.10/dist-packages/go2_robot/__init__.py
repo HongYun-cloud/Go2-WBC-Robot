@@ -1,0 +1,1 @@
+/home/hong/Movement_Control/Go2Robot/build/go2_robot/rosidl_generator_py/go2_robot/__init__.py

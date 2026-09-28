@@ -1,1 +1,1 @@
-from go2_robot.msg._go2_telemetry import Go2Telemetry  # noqa: F401
+/home/hong/Movement_Control/Go2Robot/build/go2_robot/rosidl_generator_py/go2_robot/msg/__init__.py

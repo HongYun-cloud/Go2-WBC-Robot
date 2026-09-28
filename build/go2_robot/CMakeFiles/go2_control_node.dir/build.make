@@ -121,6 +121,7 @@ go2_control_node: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_introsp
 go2_control_node: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_introspection_cpp.so
 go2_control_node: /opt/ros/humble/lib/libsensor_msgs__rosidl_generator_py.so
 go2_control_node: libgo2_core.a
+go2_control_node: ../../third_party/onnxruntime/lib/libonnxruntime.so
 go2_control_node: libgo2_robot__rosidl_typesupport_cpp.so
 go2_control_node: /opt/ros/humble/lib/liblibstatistics_collector.so
 go2_control_node: /opt/ros/humble/lib/librcl.so

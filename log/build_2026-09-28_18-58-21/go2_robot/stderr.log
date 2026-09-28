@@ -1,0 +1,12 @@
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:6:10: fatal error: onnxruntime_cxx_api.h: 没有那个文件或目录
+    6 | #include <onnxruntime_cxx_api.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:216：CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o] 错误 1
+gmake[2]: *** 正在等待未完成的任务....
+/home/hong/Movement_Control/Go2Robot/src/Controller/TraditionalController.cpp: In member function ‘virtual Eigen::VectorXd Controller::TraditionalController::update(const RobotState&, const Vector3d&)’:
+/home/hong/Movement_Control/Go2Robot/src/Controller/TraditionalController.cpp:132:35: error: assignment of read-only location ‘state.RobotState::contact_states.std::vector<int>::operator[](((std::vector<int>::size_type)leg))’
+  132 |         state.contact_states[leg] = leg_contact[leg].stance;
+gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:202：CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:265：CMakeFiles/go2_core.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

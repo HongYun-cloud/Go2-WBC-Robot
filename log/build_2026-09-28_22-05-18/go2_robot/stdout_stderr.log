@@ -1,0 +1,42 @@
+[  9%] Built target OsqpEigen
+[ 15%] Built target go2_robot__rosidl_generator_c
+[ 17%] Built target go2_robot__cpp
+[ 19%] Built target go2_robot__rs
+[ 19%] Built target ament_cmake_python_symlink_go2_robot
+[35m[1mConsolidate compiler generated dependencies of target go2_core[0m
+[ 25%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp
+[ 30%] Built target go2_robot__rosidl_typesupport_fastrtps_c
+[ 36%] Built target go2_robot__rosidl_typesupport_cpp
+[ 42%] Built target go2_robot__rosidl_typesupport_introspection_cpp
+[ 53%] Built target go2_robot__rosidl_typesupport_c
+[ 53%] Built target go2_robot__rosidl_typesupport_introspection_c
+[ 53%] Built target go2_robot
+[ 55%] Built target go2_robot__py
+[ 57%] [32mBuilding CXX object CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o[0m
+[ 61%] Built target go2_robot__rosidl_generator_py
+[ 65%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext
+[ 69%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext
+[ 73%] Built target go2_robot__rosidl_typesupport_c__pyext
+running egg_info
+writing go2_robot.egg-info/PKG-INFO
+writing dependency_links to go2_robot.egg-info/dependency_links.txt
+writing top-level names to go2_robot.egg-info/top_level.txt
+reading manifest file 'go2_robot.egg-info/SOURCES.txt'
+writing manifest file 'go2_robot.egg-info/SOURCES.txt'
+[ 73%] Built target ament_cmake_python_build_go2_robot_egg
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:164[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/include/common.h:5[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/include/Controller/ControllerBase.hpp:4[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/include/Controller/RLController.hpp:4[m[K,
+                 from [01m[K/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:1[m[K:
+/usr/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h: In instantiation of ‘[01m[Kstatic const ConstantReturnType Eigen::DenseBase<Derived>::Constant(const Scalar&) [with Derived = Eigen::Matrix<double, -1, 1>; Eigen::DenseBase<Derived>::ConstantReturnType = Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<double>, Eigen::Matrix<double, -1, 1> >; Eigen::DenseBase<Derived>::Scalar = double][m[K’:
+[01m[K/usr/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h:516:18:[m[K   required from ‘[01m[Kstatic const ConstantReturnType Eigen::DenseBase<Derived>::Zero() [with Derived = Eigen::Matrix<double, -1, 1>; Eigen::DenseBase<Derived>::ConstantReturnType = Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<double>, Eigen::Matrix<double, -1, 1> >][m[K’
+[01m[K/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:208:33:[m[K   required from here
+[01m[K/usr/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h:229:3:[m[K [01;31m[Kerror: [m[Kstatic assertion failed: YOU_CALLED_A_FIXED_SIZE_METHOD_ON_A_DYNAMIC_SIZE_MATRIX_OR_VECTOR
+  229 |   [01;31m[KEIGEN_STATIC_ASSERT_FIXED_SIZE[m[K(Derived)
+      |   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h:229:3:[m[K [01;36m[Knote: [m[K‘[01m[K(((int)Eigen::Matrix<double, -1, 1>::SizeAtCompileTime) != ((int)Eigen::Dynamic))[m[K’ evaluates to false
+gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:216：CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:265：CMakeFiles/go2_core.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

@@ -81,7 +81,7 @@ void MJCSIM::SIM::Render(){
  * Pinocchio 12 维顺序: FL_hip,FL_thigh,FL_calf, FR_hip,FR_thigh,FR_calf, RL_hip,RL_thigh,RL_calf, RR_hip,RR_thigh,RR_calf
  * MuJoCo actuator 顺序: FL_calf, FL_thigh, RR_calf, RR_thigh, RL_calf, RL_thigh, FR_calf, FR_thigh
  */
-void MJCSIM::SIM::control(Eigen::VectorXd &tau, bool hip_enabled){
+void MJCSIM::SIM::control(const Eigen::VectorXd &tau, bool hip_enabled){
 
     double flh = 0, flt = 0, flc = 0,frh = 0, frt = 0, frc = 0;
     double rlh = 0, rlt = 0, rlc = 0,rrh = 0, rrt = 0, rrc = 0;

@@ -18,7 +18,9 @@ find_package(rosidl_default_generators REQUIRED)
 # 2. MuJoCo 路径
 # =========================
 set(MUJOCO_PATH $ENV{HOME}/.mujoco/mujoco-3.9.0)
-
+set(ONNXRUNTIME_PATH
+    ${CMAKE_SOURCE_DIR}/third_party/onnxruntime
+)
 # =========================
 # 3. GLFW / GLEW / OpenGL
 # =========================
@@ -46,17 +48,23 @@ find_package(pinocchio REQUIRED
 add_library(go2_core STATIC
     src/SIM/MJCsim.cpp
     src/MPC/MPC.cpp
-    src/Model/pinocchio.cpp
+    src/Dynamic/pinocchio.cpp
     src/WBC/WBC.cpp
     src/Planner/GaitScheduler.cpp
     src/Planner/SwingLegPlanner.cpp
     src/fsm/ControlFSM.cpp
     src/Estimator/PositionVelocityEstimator.cpp
+    src/RobotInterface/MujocoRobotInterface.cpp
+    src/Controller/TraditionalController.cpp
+    src/Controller/RLController.cpp
+    
 )
 target_include_directories(go2_core PUBLIC
     ${CMAKE_SOURCE_DIR}/include
     ${MUJOCO_PATH}/include
+    ${ONNXRUNTIME_PATH}/include
     /usr/include/eigen3
+    
 )
 target_link_libraries(go2_core PUBLIC
     pinocchio::pinocchio
@@ -68,6 +76,7 @@ target_link_libraries(go2_core PUBLIC
     ${CMAKE_DL_LIBS}
     GLEW
     Threads::Threads
+    
 )
 
 # =========================
@@ -91,12 +100,16 @@ ament_target_dependencies(go2_control_node
 # 链接你自己的库（去掉 PRIVATE 关键字，避免之前的冲突报错）
 target_link_libraries(go2_control_node
     go2_core
+    ${ONNXRUNTIME_PATH}/lib/libonnxruntime.so
 )
 
 target_include_directories(go2_control_node PUBLIC
     ${CMAKE_SOURCE_DIR}/include
+    ${ONNXRUNTIME_PATH}/include
 )
-
+set_target_properties(go2_control_node PROPERTIES
+    BUILD_RPATH "${ONNXRUNTIME_PATH}/lib"
+)
 
 # =========================
 # 8. 自定义消息 (PlotJuggler 遥测)

@@ -1,0 +1,43 @@
+[0.061s] Invoking command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24
+[0.718s] [  1%] Built target go2_robot__rs
+[0.719s] [  3%] Built target go2_robot__cpp
+[0.721s] [  9%] Built target go2_robot__rosidl_generator_c
+[0.722s] [  9%] Built target ament_cmake_python_symlink_go2_robot
+[0.724s] [ 19%] Built target OsqpEigen
+[0.735s] [ 25%] Built target go2_robot__rosidl_typesupport_introspection_cpp
+[0.735s] [ 30%] Built target go2_robot__rosidl_typesupport_c
+[0.737s] [ 36%] Built target go2_robot__rosidl_typesupport_introspection_c
+[0.739s] [ 42%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp
+[0.739s] [ 48%] Built target go2_robot__rosidl_typesupport_cpp
+[0.739s] [ 53%] Built target go2_robot__rosidl_typesupport_fastrtps_c
+[0.756s] [ 53%] Built target go2_robot
+[0.770s] Consolidate compiler generated dependencies of target go2_core
+[0.775s] [ 55%] Built target go2_robot__py
+[0.791s] [ 57%] Building CXX object CMakeFiles/go2_core.dir/src/SIM/MJCsim.cpp.o
+[0.793s] [ 59%] Building CXX object CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o
+[0.794s] [ 61%] Building CXX object CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o
+[0.794s] [ 63%] Building CXX object CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o
+[0.795s] [ 67%] Built target go2_robot__rosidl_generator_py
+[0.816s] [ 71%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext
+[0.816s] [ 78%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext
+[0.816s] [ 78%] Built target go2_robot__rosidl_typesupport_c__pyext
+[0.880s] running egg_info
+[0.880s] writing go2_robot.egg-info/PKG-INFO
+[0.880s] writing dependency_links to go2_robot.egg-info/dependency_links.txt
+[0.880s] writing top-level names to go2_robot.egg-info/top_level.txt
+[0.882s] reading manifest file 'go2_robot.egg-info/SOURCES.txt'
+[0.882s] writing manifest file 'go2_robot.egg-info/SOURCES.txt'
+[0.902s] [ 78%] Built target ament_cmake_python_build_go2_robot_egg
+[1.436s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:6:10: fatal error: onnxruntime_cxx_api.h: 没有那个文件或目录
+[1.436s]     6 | #include <onnxruntime_cxx_api.h>
+[1.436s]       |          ^~~~~~~~~~~~~~~~~~~~~~~
+[1.436s] compilation terminated.
+[1.457s] gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:216：CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o] 错误 1
+[1.457s] gmake[2]: *** 正在等待未完成的任务....
+[9.041s] /home/hong/Movement_Control/Go2Robot/src/Controller/TraditionalController.cpp: In member function ‘virtual Eigen::VectorXd Controller::TraditionalController::update(const RobotState&, const Vector3d&)’:
+[9.041s] /home/hong/Movement_Control/Go2Robot/src/Controller/TraditionalController.cpp:132:35: error: assignment of read-only location ‘state.RobotState::contact_states.std::vector<int>::operator[](((std::vector<int>::size_type)leg))’
+[9.041s]   132 |         state.contact_states[leg] = leg_contact[leg].stance;
+[10.535s] gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:202：CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o] 错误 1
+[10.535s] gmake[1]: *** [CMakeFiles/Makefile2:265：CMakeFiles/go2_core.dir/all] 错误 2
+[10.536s] gmake: *** [Makefile:146：all] 错误 2
+[10.538s] Invoked command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24

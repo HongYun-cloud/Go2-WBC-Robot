@@ -341,17 +341,17 @@ go2_robot__rosidl_typesupport_cpp/fast:
 .PHONY : go2_robot__rosidl_typesupport_cpp/fast
 
 #=============================================================================
-# Target rules for targets named ament_cmake_python_copy_go2_robot
+# Target rules for targets named ament_cmake_python_symlink_go2_robot
 
 # Build rule for target.
-ament_cmake_python_copy_go2_robot: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_copy_go2_robot
-.PHONY : ament_cmake_python_copy_go2_robot
+ament_cmake_python_symlink_go2_robot: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_symlink_go2_robot
+.PHONY : ament_cmake_python_symlink_go2_robot
 
 # fast build rule for target.
-ament_cmake_python_copy_go2_robot/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_go2_robot.dir/build.make CMakeFiles/ament_cmake_python_copy_go2_robot.dir/build
-.PHONY : ament_cmake_python_copy_go2_robot/fast
+ament_cmake_python_symlink_go2_robot/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/build.make CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/build
+.PHONY : ament_cmake_python_symlink_go2_robot/fast
 
 #=============================================================================
 # Target rules for targets named ament_cmake_python_build_go2_robot_egg
@@ -1085,6 +1085,78 @@ rosidl_typesupport_introspection_cpp/go2_robot/msg/detail/go2_telemetry__type_su
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/go2_robot/msg/detail/go2_telemetry__type_support.cpp.s
 .PHONY : rosidl_typesupport_introspection_cpp/go2_robot/msg/detail/go2_telemetry__type_support.cpp.s
 
+src/Controller/RLController.o: src/Controller/RLController.cpp.o
+.PHONY : src/Controller/RLController.o
+
+# target to build an object file
+src/Controller/RLController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o
+.PHONY : src/Controller/RLController.cpp.o
+
+src/Controller/RLController.i: src/Controller/RLController.cpp.i
+.PHONY : src/Controller/RLController.i
+
+# target to preprocess a source file
+src/Controller/RLController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.i
+.PHONY : src/Controller/RLController.cpp.i
+
+src/Controller/RLController.s: src/Controller/RLController.cpp.s
+.PHONY : src/Controller/RLController.s
+
+# target to generate assembly for a file
+src/Controller/RLController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.s
+.PHONY : src/Controller/RLController.cpp.s
+
+src/Controller/TraditionalController.o: src/Controller/TraditionalController.cpp.o
+.PHONY : src/Controller/TraditionalController.o
+
+# target to build an object file
+src/Controller/TraditionalController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o
+.PHONY : src/Controller/TraditionalController.cpp.o
+
+src/Controller/TraditionalController.i: src/Controller/TraditionalController.cpp.i
+.PHONY : src/Controller/TraditionalController.i
+
+# target to preprocess a source file
+src/Controller/TraditionalController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.i
+.PHONY : src/Controller/TraditionalController.cpp.i
+
+src/Controller/TraditionalController.s: src/Controller/TraditionalController.cpp.s
+.PHONY : src/Controller/TraditionalController.s
+
+# target to generate assembly for a file
+src/Controller/TraditionalController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.s
+.PHONY : src/Controller/TraditionalController.cpp.s
+
+src/Dynamic/pinocchio.o: src/Dynamic/pinocchio.cpp.o
+.PHONY : src/Dynamic/pinocchio.o
+
+# target to build an object file
+src/Dynamic/pinocchio.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.o
+.PHONY : src/Dynamic/pinocchio.cpp.o
+
+src/Dynamic/pinocchio.i: src/Dynamic/pinocchio.cpp.i
+.PHONY : src/Dynamic/pinocchio.i
+
+# target to preprocess a source file
+src/Dynamic/pinocchio.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.i
+.PHONY : src/Dynamic/pinocchio.cpp.i
+
+src/Dynamic/pinocchio.s: src/Dynamic/pinocchio.cpp.s
+.PHONY : src/Dynamic/pinocchio.s
+
+# target to generate assembly for a file
+src/Dynamic/pinocchio.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.s
+.PHONY : src/Dynamic/pinocchio.cpp.s
+
 src/Estimator/PositionVelocityEstimator.o: src/Estimator/PositionVelocityEstimator.cpp.o
 .PHONY : src/Estimator/PositionVelocityEstimator.o
 
@@ -1133,30 +1205,6 @@ src/MPC/MPC.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/MPC/MPC.cpp.s
 .PHONY : src/MPC/MPC.cpp.s
 
-src/Model/pinocchio.o: src/Model/pinocchio.cpp.o
-.PHONY : src/Model/pinocchio.o
-
-# target to build an object file
-src/Model/pinocchio.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.o
-.PHONY : src/Model/pinocchio.cpp.o
-
-src/Model/pinocchio.i: src/Model/pinocchio.cpp.i
-.PHONY : src/Model/pinocchio.i
-
-# target to preprocess a source file
-src/Model/pinocchio.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.i
-.PHONY : src/Model/pinocchio.cpp.i
-
-src/Model/pinocchio.s: src/Model/pinocchio.cpp.s
-.PHONY : src/Model/pinocchio.s
-
-# target to generate assembly for a file
-src/Model/pinocchio.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/Model/pinocchio.cpp.s
-.PHONY : src/Model/pinocchio.cpp.s
-
 src/Planner/GaitScheduler.o: src/Planner/GaitScheduler.cpp.o
 .PHONY : src/Planner/GaitScheduler.o
 
@@ -1204,6 +1252,30 @@ src/Planner/SwingLegPlanner.s: src/Planner/SwingLegPlanner.cpp.s
 src/Planner/SwingLegPlanner.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/Planner/SwingLegPlanner.cpp.s
 .PHONY : src/Planner/SwingLegPlanner.cpp.s
+
+src/RobotInterface/MujocoRobotInterface.o: src/RobotInterface/MujocoRobotInterface.cpp.o
+.PHONY : src/RobotInterface/MujocoRobotInterface.o
+
+# target to build an object file
+src/RobotInterface/MujocoRobotInterface.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o
+.PHONY : src/RobotInterface/MujocoRobotInterface.cpp.o
+
+src/RobotInterface/MujocoRobotInterface.i: src/RobotInterface/MujocoRobotInterface.cpp.i
+.PHONY : src/RobotInterface/MujocoRobotInterface.i
+
+# target to preprocess a source file
+src/RobotInterface/MujocoRobotInterface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.i
+.PHONY : src/RobotInterface/MujocoRobotInterface.cpp.i
+
+src/RobotInterface/MujocoRobotInterface.s: src/RobotInterface/MujocoRobotInterface.cpp.s
+.PHONY : src/RobotInterface/MujocoRobotInterface.s
+
+# target to generate assembly for a file
+src/RobotInterface/MujocoRobotInterface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.s
+.PHONY : src/RobotInterface/MujocoRobotInterface.cpp.s
 
 src/SIM/MJCsim.o: src/SIM/MJCsim.cpp.o
 .PHONY : src/SIM/MJCsim.o
@@ -1367,7 +1439,7 @@ help:
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
 	@echo "... ament_cmake_python_build_go2_robot_egg"
-	@echo "... ament_cmake_python_copy_go2_robot"
+	@echo "... ament_cmake_python_symlink_go2_robot"
 	@echo "... go2_robot"
 	@echo "... go2_robot__cpp"
 	@echo "... go2_robot__py"
@@ -1421,21 +1493,30 @@ help:
 	@echo "... rosidl_typesupport_introspection_cpp/go2_robot/msg/detail/go2_telemetry__type_support.o"
 	@echo "... rosidl_typesupport_introspection_cpp/go2_robot/msg/detail/go2_telemetry__type_support.i"
 	@echo "... rosidl_typesupport_introspection_cpp/go2_robot/msg/detail/go2_telemetry__type_support.s"
+	@echo "... src/Controller/RLController.o"
+	@echo "... src/Controller/RLController.i"
+	@echo "... src/Controller/RLController.s"
+	@echo "... src/Controller/TraditionalController.o"
+	@echo "... src/Controller/TraditionalController.i"
+	@echo "... src/Controller/TraditionalController.s"
+	@echo "... src/Dynamic/pinocchio.o"
+	@echo "... src/Dynamic/pinocchio.i"
+	@echo "... src/Dynamic/pinocchio.s"
 	@echo "... src/Estimator/PositionVelocityEstimator.o"
 	@echo "... src/Estimator/PositionVelocityEstimator.i"
 	@echo "... src/Estimator/PositionVelocityEstimator.s"
 	@echo "... src/MPC/MPC.o"
 	@echo "... src/MPC/MPC.i"
 	@echo "... src/MPC/MPC.s"
-	@echo "... src/Model/pinocchio.o"
-	@echo "... src/Model/pinocchio.i"
-	@echo "... src/Model/pinocchio.s"
 	@echo "... src/Planner/GaitScheduler.o"
 	@echo "... src/Planner/GaitScheduler.i"
 	@echo "... src/Planner/GaitScheduler.s"
 	@echo "... src/Planner/SwingLegPlanner.o"
 	@echo "... src/Planner/SwingLegPlanner.i"
 	@echo "... src/Planner/SwingLegPlanner.s"
+	@echo "... src/RobotInterface/MujocoRobotInterface.o"
+	@echo "... src/RobotInterface/MujocoRobotInterface.i"
+	@echo "... src/RobotInterface/MujocoRobotInterface.s"
 	@echo "... src/SIM/MJCsim.o"
 	@echo "... src/SIM/MJCsim.i"
 	@echo "... src/SIM/MJCsim.s"

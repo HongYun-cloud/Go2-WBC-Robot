@@ -1,0 +1,277 @@
+[0.000000] (-) TimerEvent: {}
+[0.000161] (go2_robot) JobQueued: {'identifier': 'go2_robot', 'dependencies': OrderedDict()}
+[0.000197] (go2_robot) JobStarted: {'identifier': 'go2_robot'}
+[0.005684] (go2_robot) JobProgress: {'identifier': 'go2_robot', 'progress': 'cmake'}
+[0.006404] (go2_robot) JobProgress: {'identifier': 'go2_robot', 'progress': 'build'}
+[0.007072] (go2_robot) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/hong/Movement_Control/Go2Robot/build/go2_robot', '--', '-j24', '-l24'], 'cwd': '/home/hong/Movement_Control/Go2Robot/build/go2_robot', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('ANTHROPIC_MODEL', 'DeepSeek-V4-Flash'), ('HTTPS_PROXY', 'http://127.0.0.1:7897/'), ('no_proxy', 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,::1'), ('LANGUAGE', 'zh_CN:zh:en_US:en'), ('USER', 'hong'), ('LC_TIME', 'zh_CN.UTF-8'), ('all_proxy', 'socks://127.0.0.1:7897/'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/hong/Movement_Control/Go2Robot/install/go2_robot/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.1/lib64:'), ('INPUT_METHOD', 'fcitx'), ('HOME', '/home/hong'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/hong'), ('DESKTOP_SESSION', 'ubuntu'), ('NO_PROXY', 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,::1'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SDL_IM_MODULE', 'fcitx'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('GLFW_IM_MODULE', 'ibus'), ('SYSTEMD_EXEC_PID', '31508'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('_CONDA_ROOT', '/home/hong/miniconda3'), ('https_proxy', 'http://127.0.0.1:7897/'), ('COLCON_PREFIX_PATH', '/home/hong/Movement_Control/Go2Robot/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'hong'), ('ALL_PROXY', 'socks://127.0.0.1:7897/'), ('http_proxy', 'http://127.0.0.1:7897/'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('MUJOCO_HOME', '/home/hong/.mujoco/mujoco-3.9.0'), ('USERNAME', 'hong'), ('ANTHROPIC_BASE_URL', 'https://api.scnet.cn/api/llm/anthropic'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/hong/.opencode/bin:/opt/ros/humble/bin:/usr/local/cuda-12.1/bin:/home/hong/miniconda3/condabin:/home/hong/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/hong/.mujoco/mujoco-3.9.0/bin'), ('SESSION_MANAGER', 'local/hong:@/tmp/.ICE-unix/31480,unix/hong:/tmp/.ICE-unix/31480'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/910a406b_e13d_4f0f_b43d_418eb13f0dc6'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=fcitx'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.178'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/hong/Movement_Control/Go2Robot/install/go2_robot:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/hong/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ANTHROPIC_AUTH_TOKEN', 'sk-tp-OTIyLTEyMTIyMzgxNDQ1LTE3ODczNjY2ODg0ODY='), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('_CONDA_EXE', '/home/hong/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/hong/Movement_Control/Go2Robot/build/go2_robot'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/hong/miniconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:7897/'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/hong/Movement_Control/Go2Robot/install/go2_robot:/opt/ros/humble')]), 'shell': False}
+[0.058664] (go2_robot) StdoutLine: {'line': b'[  5%] Built target go2_robot__rosidl_generator_c\n'}
+[0.061288] (go2_robot) StdoutLine: {'line': b'[  7%] Built target go2_robot__cpp\n'}
+[0.062069] (go2_robot) StdoutLine: {'line': b'[  9%] Built target go2_robot__rs\n'}
+[0.066967] (go2_robot) StdoutLine: {'line': b'[ 19%] Built target OsqpEigen\n'}
+[0.069431] (go2_robot) StdoutLine: {'line': b'[ 19%] Built target ament_cmake_python_symlink_go2_robot\n'}
+[0.085698] (go2_robot) StdoutLine: {'line': b'[ 25%] Built target go2_robot__rosidl_typesupport_introspection_c\n'}
+[0.087166] (go2_robot) StdoutLine: {'line': b'[ 30%] Built target go2_robot__rosidl_typesupport_c\n'}
+[0.089649] (go2_robot) StdoutLine: {'line': b'[ 36%] Built target go2_robot__rosidl_typesupport_fastrtps_c\n'}
+[0.096068] (go2_robot) StdoutLine: {'line': b'[ 42%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp\n'}
+[0.098316] (go2_robot) StdoutLine: {'line': b'[ 48%] Built target go2_robot__rosidl_typesupport_introspection_cpp\n'}
+[0.098685] (go2_robot) StdoutLine: {'line': b'[ 53%] Built target go2_robot__rosidl_typesupport_cpp\n'}
+[0.099549] (-) TimerEvent: {}
+[0.117016] (go2_robot) StdoutLine: {'line': b'[ 53%] Built target go2_robot\n'}
+[0.127297] (go2_robot) StdoutLine: {'line': b'[ 55%] \x1b[32mBuilding CXX object CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o\x1b[0m\n'}
+[0.136831] (go2_robot) StdoutLine: {'line': b'[ 57%] Built target go2_robot__py\n'}
+[0.155800] (go2_robot) StdoutLine: {'line': b'[ 61%] Built target go2_robot__rosidl_generator_py\n'}
+[0.175577] (go2_robot) StdoutLine: {'line': b'[ 69%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext\n'}
+[0.175792] (go2_robot) StdoutLine: {'line': b'[ 69%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.176393] (go2_robot) StdoutLine: {'line': b'[ 73%] Built target go2_robot__rosidl_typesupport_c__pyext\n'}
+[0.199724] (-) TimerEvent: {}
+[0.227308] (go2_robot) StdoutLine: {'line': b'running egg_info\n'}
+[0.227790] (go2_robot) StdoutLine: {'line': b'writing go2_robot.egg-info/PKG-INFO\n'}
+[0.228083] (go2_robot) StdoutLine: {'line': b'writing dependency_links to go2_robot.egg-info/dependency_links.txt\n'}
+[0.228208] (go2_robot) StdoutLine: {'line': b'writing top-level names to go2_robot.egg-info/top_level.txt\n'}
+[0.229402] (go2_robot) StdoutLine: {'line': b"reading manifest file 'go2_robot.egg-info/SOURCES.txt'\n"}
+[0.229600] (go2_robot) StdoutLine: {'line': b"writing manifest file 'go2_robot.egg-info/SOURCES.txt'\n"}
+[0.249162] (go2_robot) StdoutLine: {'line': b'[ 73%] Built target ament_cmake_python_build_go2_robot_egg\n'}
+[0.299914] (-) TimerEvent: {}
+[0.400322] (-) TimerEvent: {}
+[0.500709] (-) TimerEvent: {}
+[0.601093] (-) TimerEvent: {}
+[0.701475] (-) TimerEvent: {}
+[0.801908] (-) TimerEvent: {}
+[0.902311] (-) TimerEvent: {}
+[1.002719] (-) TimerEvent: {}
+[1.103018] (-) TimerEvent: {}
+[1.203423] (-) TimerEvent: {}
+[1.303832] (-) TimerEvent: {}
+[1.404237] (-) TimerEvent: {}
+[1.504636] (-) TimerEvent: {}
+[1.605201] (-) TimerEvent: {}
+[1.705515] (-) TimerEvent: {}
+[1.805753] (-) TimerEvent: {}
+[1.906028] (-) TimerEvent: {}
+[2.006271] (-) TimerEvent: {}
+[2.106584] (-) TimerEvent: {}
+[2.206853] (-) TimerEvent: {}
+[2.307113] (-) TimerEvent: {}
+[2.407430] (-) TimerEvent: {}
+[2.507747] (-) TimerEvent: {}
+[2.551274] (go2_robot) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX static library libgo2_core.a\x1b[0m\n'}
+[2.607837] (-) TimerEvent: {}
+[2.614460] (go2_robot) StdoutLine: {'line': b'[ 94%] Built target go2_core\n'}
+[2.650944] (go2_robot) StdoutLine: {'line': b'[ 96%] \x1b[32m\x1b[1mLinking CXX executable go2_control_node\x1b[0m\n'}
+[2.707948] (-) TimerEvent: {}
+[2.808234] (-) TimerEvent: {}
+[2.837360] (go2_robot) StdoutLine: {'line': b'[100%] Built target go2_control_node\n'}
+[2.846227] (go2_robot) CommandEnded: {'returncode': 0}
+[2.847446] (go2_robot) JobProgress: {'identifier': 'go2_robot', 'progress': 'install'}
+[2.857811] (go2_robot) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/hong/Movement_Control/Go2Robot/build/go2_robot'], 'cwd': '/home/hong/Movement_Control/Go2Robot/build/go2_robot', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('ANTHROPIC_MODEL', 'DeepSeek-V4-Flash'), ('HTTPS_PROXY', 'http://127.0.0.1:7897/'), ('no_proxy', 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,::1'), ('LANGUAGE', 'zh_CN:zh:en_US:en'), ('USER', 'hong'), ('LC_TIME', 'zh_CN.UTF-8'), ('all_proxy', 'socks://127.0.0.1:7897/'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/hong/Movement_Control/Go2Robot/install/go2_robot/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/local/cuda-12.1/lib64:'), ('INPUT_METHOD', 'fcitx'), ('HOME', '/home/hong'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/hong'), ('DESKTOP_SESSION', 'ubuntu'), ('NO_PROXY', 'localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,::1'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SDL_IM_MODULE', 'fcitx'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('GLFW_IM_MODULE', 'ibus'), ('SYSTEMD_EXEC_PID', '31508'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('_CONDA_ROOT', '/home/hong/miniconda3'), ('https_proxy', 'http://127.0.0.1:7897/'), ('COLCON_PREFIX_PATH', '/home/hong/Movement_Control/Go2Robot/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'hong'), ('ALL_PROXY', 'socks://127.0.0.1:7897/'), ('http_proxy', 'http://127.0.0.1:7897/'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('MUJOCO_HOME', '/home/hong/.mujoco/mujoco-3.9.0'), ('USERNAME', 'hong'), ('ANTHROPIC_BASE_URL', 'https://api.scnet.cn/api/llm/anthropic'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/hong/.opencode/bin:/opt/ros/humble/bin:/usr/local/cuda-12.1/bin:/home/hong/miniconda3/condabin:/home/hong/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/hong/.mujoco/mujoco-3.9.0/bin'), ('SESSION_MANAGER', 'local/hong:@/tmp/.ICE-unix/31480,unix/hong:/tmp/.ICE-unix/31480'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/910a406b_e13d_4f0f_b43d_418eb13f0dc6'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=fcitx'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.178'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/hong/Movement_Control/Go2Robot/install/go2_robot:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/hong/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ANTHROPIC_AUTH_TOKEN', 'sk-tp-OTIyLTEyMTIyMzgxNDQ1LTE3ODczNjY2ODg0ODY='), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('_CONDA_EXE', '/home/hong/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/hong/Movement_Control/Go2Robot/build/go2_robot'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/hong/miniconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HTTP_PROXY', 'http://127.0.0.1:7897/'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/hong/Movement_Control/Go2Robot/install/go2_robot:/opt/ros/humble')]), 'shell': False}
+[2.867506] (go2_robot) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[2.868510] (go2_robot) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[2.868744] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/cmake/osqp-eigen/package.xml\n'}
+[2.869071] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/ament_index/resource_index/rosidl_interfaces/go2_robot\n'}
+[2.869262] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__functions.h\n'}
+[2.869384] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__struct.h\n'}
+[2.869493] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__type_support.h\n'}
+[2.869596] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/go2_telemetry.h\n'}
+[2.869706] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/rosidl_generator_c__visibility_control.h\n'}
+[2.869856] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/environment/library_path.sh\n'}
+[2.870022] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/environment/library_path.dsv\n'}
+[2.870515] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__rosidl_typesupport_fastrtps_c.h\n'}
+[2.870628] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[2.871035] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__builder.hpp\n'}
+[2.871240] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__struct.hpp\n'}
+[2.871344] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__traits.hpp\n'}
+[2.871441] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__type_support.hpp\n'}
+[2.871537] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/go2_telemetry.hpp\n'}
+[2.871622] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[2.871924] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[2.872051] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[2.872341] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__rosidl_typesupport_introspection_c.h\n'}
+[2.872448] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[2.872766] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/go2_robot/go2_robot/msg/detail/go2_telemetry__rosidl_typesupport_introspection_cpp.hpp\n'}
+[2.872937] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/environment/pythonpath.sh\n'}
+[2.873094] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/environment/pythonpath.dsv\n'}
+[2.873431] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot-0.1.0-py3.10.egg-info/PKG-INFO\n'}
+[2.873558] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot-0.1.0-py3.10.egg-info/SOURCES.txt\n'}
+[2.873687] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot-0.1.0-py3.10.egg-info/dependency_links.txt\n'}
+[2.873804] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot-0.1.0-py3.10.egg-info/top_level.txt\n'}
+[2.874352] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/__init__.py\n'}
+[2.874458] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/_go2_robot_s.ep.rosidl_typesupport_c.c\n'}
+[2.874558] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/_go2_robot_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[2.874667] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/_go2_robot_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[2.874781] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/go2_robot_s__rosidl_typesupport_c..cpython-310-x86_64-linux-gnu.so\n'}
+[2.874886] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/go2_robot_s__rosidl_typesupport_fastrtps_c..cpython-310-x86_64-linux-gnu.so\n'}
+[2.874989] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/go2_robot_s__rosidl_typesupport_introspection_c..cpython-310-x86_64-linux-gnu.so\n'}
+[2.875098] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/libgo2_robot__rosidl_generator_py.so\n'}
+[2.875213] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/msg/__init__.py\n'}
+[2.875316] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/msg/_go2_telemetry.py\n'}
+[2.875417] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/msg/_go2_telemetry_s.c\n'}
+[2.875707] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/go2_robot_s__rosidl_typesupport_fastrtps_c..cpython-310-x86_64-linux-gnu.so\n'}
+[2.875930] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/go2_robot_s__rosidl_typesupport_introspection_c..cpython-310-x86_64-linux-gnu.so\n'}
+[2.876149] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/go2_robot_s__rosidl_typesupport_c..cpython-310-x86_64-linux-gnu.so\n'}
+[2.876307] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/ament_index/resource_index/rust_packages/go2_robot\n'}
+[2.876634] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/rust/Cargo.toml\n'}
+[2.876725] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/rust/build.rs\n'}
+[2.876874] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/rust/src/lib.rs\n'}
+[2.877028] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/rust/src/msg.rs\n'}
+[2.877152] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/rust/src/msg/rmw.rs\n'}
+[2.877300] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/msg/Go2Telemetry.idl\n'}
+[2.877377] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/msg/Go2Telemetry.msg\n'}
+[2.877570] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/go2_robot/go2_control_node\n'}
+[2.877985] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/config/control.yaml\n'}
+[2.878218] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/config/go2_params.yaml\n'}
+[2.878361] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/launch/__pycache__/go2_sim.launch.cpython-310.pyc\n'}
+[2.878493] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/launch/__pycache__/go2_sim.launch.cpython-38.pyc\n'}
+[2.878625] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/launch/go2_sim.launch.py\n'}
+[2.880444] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_0.obj\n'}
+[2.880628] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_0.stl\n'}
+[2.880766] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_1.obj\n'}
+[2.880872] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_1.stl\n'}
+[2.880973] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_2.obj\n'}
+[2.881080] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_2.stl\n'}
+[2.881187] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_3.obj\n'}
+[2.881292] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_3.stl\n'}
+[2.881396] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_4.obj\n'}
+[2.881507] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/base_4.stl\n'}
+[2.881618] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/calf_0.obj\n'}
+[2.881743] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/calf_0.stl\n'}
+[2.881845] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/calf_1.obj\n'}
+[2.881950] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/calf_1.stl\n'}
+[2.882054] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/calf_mirror_0.obj\n'}
+[2.882152] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/calf_mirror_0.stl\n'}
+[2.882257] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/calf_mirror_1.obj\n'}
+[2.882360] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/calf_mirror_1.stl\n'}
+[2.882465] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/foot.obj\n'}
+[2.882566] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/foot.stl\n'}
+[2.882678] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/hip_0.obj\n'}
+[2.882791] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/hip_0.stl\n'}
+[2.882922] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/hip_1.obj\n'}
+[2.883036] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/hip_1.stl\n'}
+[2.883146] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/thigh_0.obj\n'}
+[2.883232] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/thigh_0.stl\n'}
+[2.883314] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/thigh_1.obj\n'}
+[2.883398] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/thigh_1.stl\n'}
+[2.883483] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/thigh_mirror_0.obj\n'}
+[2.883560] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/thigh_mirror_0.stl\n'}
+[2.883718] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/thigh_mirror_1.obj\n'}
+[2.883809] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/assets/thigh_mirror_1.stl\n'}
+[2.883892] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/build/.built_by\n'}
+[2.883975] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/build/COLCON_IGNORE\n'}
+[2.884059] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/dae/base.dae\n'}
+[2.884142] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/dae/calf.dae\n'}
+[2.884225] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/dae/calf_mirror.dae\n'}
+[2.884308] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/dae/foot.dae\n'}
+[2.884389] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/dae/hip.dae\n'}
+[2.884469] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/dae/thigh.dae\n'}
+[2.884550] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/dae/thigh_mirror.dae\n'}
+[2.884634] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/estiandtruth.xml\n'}
+[2.884723] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/go2.xml\n'}
+[2.884806] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/go2_description.urdf\n'}
+[2.884891] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/height_field.png\n'}
+[2.884974] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/install/.colcon_install_layout\n'}
+[2.885054] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/install/COLCON_IGNORE\n'}
+[2.885138] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/install/_local_setup_util_ps1.py\n'}
+[2.885226] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/install/_local_setup_util_sh.py\n'}
+[2.885299] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/install/local_setup.bash\n'}
+[2.885372] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/install/local_setup.ps1\n'}
+[2.885444] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/install/local_setup.sh\n'}
+[2.885516] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/install/local_setup.zsh\n'}
+[2.885589] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/install/setup.bash\n'}
+[2.885669] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/install/setup.ps1\n'}
+[2.885743] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/install/setup.sh\n'}
+[2.885816] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/install/setup.zsh\n'}
+[2.885896] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/log/COLCON_IGNORE\n'}
+[2.885973] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/log/build_2026-04-01_21-17-31/events.log\n'}
+[2.886046] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/log/build_2026-04-01_21-17-31/logger_all.log\n'}
+[2.886119] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/log/build_2026-04-01_21-17-33/events.log\n'}
+[2.886192] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/log/build_2026-04-01_21-17-33/logger_all.log\n'}
+[2.886264] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/log/build_2026-04-23_08-24-14/events.log\n'}
+[2.886336] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/log/build_2026-04-23_08-24-14/logger_all.log\n'}
+[2.886409] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/log/latest/events.log\n'}
+[2.886481] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/log/latest/logger_all.log\n'}
+[2.886553] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/log/latest_build/events.log\n'}
+[2.886628] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/log/latest_build/logger_all.log\n'}
+[2.886702] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/FL_elbow_Link.STL\n'}
+[2.886778] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/FL_knee_Link.STL\n'}
+[2.886850] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/FR_elbow_Link.STL\n'}
+[2.886923] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/FR_knee_Link.STL\n'}
+[2.886998] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/RL_elbow_Link.STL\n'}
+[2.887071] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/RL_knee_Link.STL\n'}
+[2.887142] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/RR_elbow_Link.STL\n'}
+[2.887214] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/RR_knee_Link.STL\n'}
+[2.887286] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/meshes/base_link.STL\n'}
+[2.887358] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/mjmodel.xml\n'}
+[2.887430] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/my_bot.xml\n'}
+[2.887502] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/scene.xml\n'}
+[2.887574] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/scene_flat.xml\n'}
+[2.887652] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/scene_terrain.xml\n'}
+[2.887730] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/go2/unitree_hfield.png\n'}
+[2.887803] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/ament_index/resource_index/package_run_dependencies/go2_robot\n'}
+[2.887875] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/ament_index/resource_index/parent_prefix_path/go2_robot\n'}
+[2.887947] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/environment/ament_prefix_path.sh\n'}
+[2.888019] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/environment/ament_prefix_path.dsv\n'}
+[2.888092] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/environment/path.sh\n'}
+[2.888165] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/environment/path.dsv\n'}
+[2.888244] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/local_setup.bash\n'}
+[2.888317] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/local_setup.sh\n'}
+[2.888390] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/local_setup.zsh\n'}
+[2.888462] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/local_setup.dsv\n'}
+[2.888535] (go2_robot) StdoutLine: {'line': b'-- Symlinking: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/package.dsv\n'}
+[2.892660] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/ament_index/resource_index/packages/go2_robot\n'}
+[2.892916] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/rosidl_cmake-extras.cmake\n'}
+[2.893039] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[2.893097] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[2.893146] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[2.893183] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[2.893228] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[2.893274] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[2.893310] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robotConfig.cmake\n'}
+[2.893359] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robotConfig-version.cmake\n'}
+[2.893396] (go2_robot) StdoutLine: {'line': b'-- Up-to-date symlink: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/package.xml\n'}
+[2.893494] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libgo2_robot__rosidl_generator_c.so\n'}
+[2.893645] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libgo2_robot__rosidl_typesupport_fastrtps_c.so\n'}
+[2.893780] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libgo2_robot__rosidl_typesupport_fastrtps_cpp.so\n'}
+[2.893912] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libgo2_robot__rosidl_typesupport_introspection_c.so\n'}
+[2.894263] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libgo2_robot__rosidl_typesupport_c.so\n'}
+[2.894357] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libgo2_robot__rosidl_typesupport_introspection_cpp.so\n'}
+[2.894414] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libgo2_robot__rosidl_typesupport_cpp.so\n'}
+[2.908312] (-) TimerEvent: {}
+[2.923666] (go2_robot) StdoutLine: {'line': b"Listing '/home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot'...\n"}
+[2.923823] (go2_robot) StdoutLine: {'line': b"Listing '/home/hong/Movement_Control/Go2Robot/install/go2_robot/local/lib/python3.10/dist-packages/go2_robot/msg'...\n"}
+[2.926807] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libgo2_robot__rosidl_generator_py.so\n'}
+[2.927050] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_generator_cExport.cmake\n'}
+[2.927137] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_generator_cExport-release.cmake\n'}
+[2.927180] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[2.927373] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_typesupport_fastrtps_cExport-release.cmake\n'}
+[2.927454] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_generator_cppExport.cmake\n'}
+[2.927522] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[2.927569] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_typesupport_fastrtps_cppExport-release.cmake\n'}
+[2.927610] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robot__rosidl_typesupport_introspection_cExport.cmake\n'}
+[2.927818] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robot__rosidl_typesupport_introspection_cExport-release.cmake\n'}
+[2.928035] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robot__rosidl_typesupport_cExport.cmake\n'}
+[2.928090] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robot__rosidl_typesupport_cExport-release.cmake\n'}
+[2.928131] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robot__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[2.928174] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robot__rosidl_typesupport_introspection_cppExport-release.cmake\n'}
+[2.928211] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robot__rosidl_typesupport_cppExport.cmake\n'}
+[2.928247] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/go2_robot__rosidl_typesupport_cppExport-release.cmake\n'}
+[2.928282] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_generator_pyExport.cmake\n'}
+[2.928318] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/share/go2_robot/cmake/export_go2_robot__rosidl_generator_pyExport-release.cmake\n'}
+[2.928355] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libOsqpEigen.so.0.11.0\n'}
+[2.928389] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/libOsqpEigen.so\n'}
+[2.928423] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/OsqpEigen.h\n'}
+[2.928458] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/Constants.hpp\n'}
+[2.928491] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/SparseMatrixHelper.hpp\n'}
+[2.928526] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/SparseMatrixHelper.tpp\n'}
+[2.928560] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/Data.hpp\n'}
+[2.928593] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/Data.tpp\n'}
+[2.928636] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/Settings.hpp\n'}
+[2.928671] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/Solver.hpp\n'}
+[2.928704] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/Solver.tpp\n'}
+[2.928738] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/Compat.hpp\n'}
+[2.928772] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/include/OsqpEigen/Debug.hpp\n'}
+[2.928806] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/cmake/OsqpEigen/OsqpEigenConfigVersion.cmake\n'}
+[2.928841] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/cmake/OsqpEigen/OsqpEigenConfig.cmake\n'}
+[2.928876] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/cmake/OsqpEigen/OsqpEigenTargets.cmake\n'}
+[2.928910] (go2_robot) StdoutLine: {'line': b'-- Up-to-date: /home/hong/Movement_Control/Go2Robot/install/go2_robot/lib/cmake/OsqpEigen/OsqpEigenTargets-release.cmake\n'}
+[2.929960] (go2_robot) CommandEnded: {'returncode': 0}
+[2.946994] (go2_robot) JobEnded: {'identifier': 'go2_robot', 'rc': 0}
+[2.947462] (-) EventReactorShutdown: {}

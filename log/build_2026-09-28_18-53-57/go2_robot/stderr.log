@@ -1,0 +1,24 @@
+In file included from /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:1:
+/home/hong/Movement_Control/Go2Robot/include/Controller/RLController.hpp:5:10: fatal error: onnxruntime_cxx_api.h: 没有那个文件或目录
+    5 | #include <onnxruntime_cxx_api.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:216：CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o] 错误 1
+gmake[2]: *** 正在等待未完成的任务....
+/home/hong/Movement_Control/Go2Robot/src/RobotInterface/MujocoRobotInterface.cpp: In member function ‘virtual void RobotInterface::MujocoRobotInterface::setCommand(const VectorXd&)’:
+/home/hong/Movement_Control/Go2Robot/src/RobotInterface/MujocoRobotInterface.cpp:34:23: error: binding reference of type ‘Eigen::VectorXd&’ {aka ‘Eigen::Matrix<double, -1, 1>&’} to ‘const VectorXd’ {aka ‘const Eigen::Matrix<double, -1, 1>’} discards qualifiers
+   34 |         sim_->control(tau);
+      |                       ^~~
+In file included from /home/hong/Movement_Control/Go2Robot/src/RobotInterface/MujocoRobotInterface.cpp:2:
+/home/hong/Movement_Control/Go2Robot/include/SIM/MJCsim.hpp:25:39: note:   initializing argument 1 of ‘void MJCSIM::SIM::control(Eigen::VectorXd&, bool)’
+   25 |         void control(Eigen::VectorXd &tau, bool hip_enabled = false);
+      |                      ~~~~~~~~~~~~~~~~~^~~
+gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:188：CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o] 错误 1
+In file included from /home/hong/Movement_Control/Go2Robot/src/Controller/TraditionalController.cpp:1:
+/home/hong/Movement_Control/Go2Robot/include/Controller/TraditionalController.hpp:19:10: fatal error: go2_robot/msg/go2_telemetry.hpp: 没有那个文件或目录
+   19 | #include "go2_robot/msg/go2_telemetry.hpp"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:202：CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:265：CMakeFiles/go2_core.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

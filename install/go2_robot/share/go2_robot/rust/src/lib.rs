@@ -1,12 +1,1 @@
-#![allow(non_camel_case_types)]
-#![allow(clippy::derive_partial_eq_without_eq)]
-#![allow(clippy::upper_case_acronyms)]
-
-#[path = "msg.rs"]
-mod msg_idiomatic;
-pub mod msg {
-    pub use super::msg_idiomatic::*;
-    pub mod rmw;
-}
-
-
+/home/hong/Movement_Control/Go2Robot/build/go2_robot/rosidl_generator_rs/go2_robot/rust/src/lib.rs

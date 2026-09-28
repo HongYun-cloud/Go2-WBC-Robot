@@ -11,7 +11,7 @@
 /home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles/go2_robot__rosidl_typesupport_c.dir
 /home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles/go2_robot__rosidl_typesupport_introspection_cpp.dir
 /home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles/go2_robot__rosidl_typesupport_cpp.dir
-/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles/ament_cmake_python_copy_go2_robot.dir
+/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles/ament_cmake_python_symlink_go2_robot.dir
 /home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles/ament_cmake_python_build_go2_robot_egg.dir
 /home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles/go2_robot__rosidl_generator_py.dir
 /home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_c__pyext.dir

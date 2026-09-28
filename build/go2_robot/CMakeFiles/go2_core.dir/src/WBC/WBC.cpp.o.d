@@ -539,7 +539,7 @@ CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o: \
  /usr/include/yaml-cpp/node/convert.h \
  /usr/include/yaml-cpp/node/detail/impl.h \
  /usr/include/yaml-cpp/node/parse.h /usr/include/yaml-cpp/node/emit.h \
- /home/hong/Movement_Control/Go2Robot/include/Model/pinocchio.hpp \
+ /home/hong/Movement_Control/Go2Robot/include/Dynamic/pinocchio.hpp \
  /opt/ros/humble/include/pinocchio/parsers/urdf.hpp \
  /opt/ros/humble/include/pinocchio/multibody/model.hpp \
  /opt/ros/humble/include/pinocchio/spatial/fwd.hpp \

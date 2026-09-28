@@ -1,0 +1,49 @@
+/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp: In member function ‘RobotInterface::RobotInterfacePtr go2::Go2ControlNode::createRobotInterface(const string&)’:
+/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:112:32: error: ‘createMujocoRobotInterface’ is not a member of ‘RobotInterface’
+  112 |         return RobotInterface::createMujocoRobotInterface(mujoco_model, urdf_path);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:115:32: error: ‘createMujocoRobotInterface’ is not a member of ‘RobotInterface’
+  115 |         return RobotInterface::createMujocoRobotInterface(mujoco_model, urdf_path);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp: In member function ‘Controller::ControllerPtr go2::Go2ControlNode::createController(const string&)’:
+/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:125:45: error: ‘TraditionalController’ is not a member of ‘Controller’
+  125 |         return std::make_shared<Controller::TraditionalController>();
+      |                                             ^~~~~~~~~~~~~~~~~~~~~
+/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:125:67: error: no matching function for call to ‘make_shared<<expression error> >()’
+  125 |         return std::make_shared<Controller::TraditionalController>();
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+In file included from /usr/include/c++/11/memory:77,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153,
+                 from /home/hong/Movement_Control/Go2Robot/include/ros2/go2_control_node.hpp:19,
+                 from /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:1:
+/usr/include/c++/11/bits/shared_ptr.h:875:5: note: candidate: ‘template<class _Tp, class ... _Args> std::shared_ptr<_Tp> std::make_shared(_Args&& ...)’
+  875 |     make_shared(_Args&&... __args)
+      |     ^~~~~~~~~~~
+/usr/include/c++/11/bits/shared_ptr.h:875:5: note:   template argument deduction/substitution failed:
+/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:125:67: error: template argument 1 is invalid
+  125 |         return std::make_shared<Controller::TraditionalController>();
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:127:45: error: ‘RLController’ is not a member of ‘Controller’
+  127 |         return std::make_shared<Controller::RLController>();
+      |                                             ^~~~~~~~~~~~
+/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:127:58: error: no matching function for call to ‘make_shared<<expression error> >()’
+  127 |         return std::make_shared<Controller::RLController>();
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+In file included from /usr/include/c++/11/memory:77,
+                 from /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153,
+                 from /home/hong/Movement_Control/Go2Robot/include/ros2/go2_control_node.hpp:19,
+                 from /home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:1:
+/usr/include/c++/11/bits/shared_ptr.h:875:5: note: candidate: ‘template<class _Tp, class ... _Args> std::shared_ptr<_Tp> std::make_shared(_Args&& ...)’
+  875 |     make_shared(_Args&&... __args)
+      |     ^~~~~~~~~~~
+/usr/include/c++/11/bits/shared_ptr.h:875:5: note:   template argument deduction/substitution failed:
+/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:127:58: error: template argument 1 is invalid
+  127 |         return std::make_shared<Controller::RLController>();
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp: In member function ‘void go2::Go2ControlNode::publishState()’:
+/home/hong/Movement_Control/Go2Robot/src/ros2/go2_control_node.cpp:244:22: error: ‘using element_type = class Controller::ControllerBase’ {aka ‘class Controller::ControllerBase’} has no member named ‘fillTelemetry’
+  244 |         controller_->fillTelemetry(telemetry, state);
+      |                      ^~~~~~~~~~~~~
+gmake[2]: *** [CMakeFiles/go2_control_node.dir/build.make:76：CMakeFiles/go2_control_node.dir/src/ros2/go2_control_node.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:294：CMakeFiles/go2_control_node.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

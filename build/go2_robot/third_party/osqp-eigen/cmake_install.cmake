@@ -125,10 +125,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xOsqpEigenx" OR NOT CMAKE_INSTALL_CO
   endif()
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cmake/osqp-eigen" TYPE FILE FILES "/home/hong/Movement_Control/Go2Robot/third_party/osqp-eigen/package.xml")
-endif()
-
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/home/hong/Movement_Control/Go2Robot/build/go2_robot/third_party/osqp-eigen/tests/cmake_install.cmake")

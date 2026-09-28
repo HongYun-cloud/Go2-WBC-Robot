@@ -1,0 +1,97 @@
+CMake Warning (dev) at /usr/share/cmake-3.22/Modules/FindOpenGL.cmake:315 (message):
+  Policy CMP0072 is not set: FindOpenGL prefers GLVND by default when
+  available.  Run "cmake --help-policy CMP0072" for policy details.  Use the
+  cmake_policy command to set the policy and suppress this warning.
+
+  FindOpenGL found both a legacy GL library:
+
+    OPENGL_gl_LIBRARY: /usr/lib/x86_64-linux-gnu/libGL.so
+
+  and GLVND libraries for OpenGL and GLX:
+
+    OPENGL_opengl_LIBRARY: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+    OPENGL_glx_LIBRARY: /usr/lib/x86_64-linux-gnu/libGLX.so
+
+  OpenGL_GL_PREFERENCE has not been set to "GLVND" or "LEGACY", so for
+  compatibility with CMake 3.10 and below the legacy GL library will be used.
+Call Stack (most recent call first):
+  CMakeLists.txt:29 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning at /usr/share/cmake-3.22/Modules/FindBoost.cmake:2201 (message):
+  No header defined for python310; skipping header check (note: header-only
+  libraries have no designated component)
+Call Stack (most recent call first):
+  /opt/ros/humble/lib/x86_64-linux-gnu/cmake/eigenpy/boost.cmake:148 (find_package)
+  /opt/ros/humble/lib/x86_64-linux-gnu/cmake/eigenpy/eigenpyConfig.cmake:149 (SEARCH_FOR_BOOST_PYTHON)
+  /usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+  /opt/ros/humble/lib/x86_64-linux-gnu/cmake/pinocchio/pinocchioConfig.cmake:161 (find_dependency)
+  CMakeLists.txt:41 (find_package)
+
+
+In file included from /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:1:
+/home/hong/Movement_Control/Go2Robot/include/Controller/RLController.hpp:27:5: error: ‘Ort’ does not name a type
+   27 |     Ort::Env env_;
+      |     ^~~
+/home/hong/Movement_Control/Go2Robot/include/Controller/RLController.hpp:28:21: error: ‘Ort’ was not declared in this scope
+   28 |     std::unique_ptr<Ort::Session> session_;
+      |                     ^~~
+/home/hong/Movement_Control/Go2Robot/include/Controller/RLController.hpp:28:33: error: template argument 1 is invalid
+   28 |     std::unique_ptr<Ort::Session> session_;
+      |                                 ^
+/home/hong/Movement_Control/Go2Robot/include/Controller/RLController.hpp:28:33: error: template argument 2 is invalid
+/home/hong/Movement_Control/Go2Robot/include/Controller/RLController.hpp:50:10: error: ‘mutex’ in namespace ‘std’ does not name a type
+   50 |     std::mutex cmd_mutex_;
+      |          ^~~~~
+/home/hong/Movement_Control/Go2Robot/include/Controller/RLController.hpp:5:1: note: ‘std::mutex’ is defined in header ‘<mutex>’; did you forget to ‘#include <mutex>’?
+    4 | #include "Controller/ControllerBase.hpp"
+  +++ |+#include <mutex>
+    5 | #include <vector>
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp: In constructor ‘Controller::RLController::RLController()’:
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:13:7: error: class ‘Controller::RLController’ does not have any field named ‘env_’
+   13 |     : env_(ORT_LOGGING_LEVEL_WARNING, "Go2RL")
+      |       ^~~~
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp: In member function ‘virtual void Controller::RLController::init(const Controller::ControllerConfig&, RobotInterface::RobotInterfacePtr)’:
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:32:51: error: ‘env_’ was not declared in this scope
+   32 |         session_ = std::make_unique<Ort::Session>(env_, onnx_path.c_str(), session_options);
+      |                                                   ^~~~
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:41:33: error: base operand of ‘->’ is not a pointer
+   41 |     size_t num_inputs = session_->GetInputCount();
+      |                                 ^~
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:42:34: error: base operand of ‘->’ is not a pointer
+   42 |     size_t num_outputs = session_->GetOutputCount();
+      |                                  ^~
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:48:40: error: base operand of ‘->’ is not a pointer
+   48 |         input_names_.push_back(session_->GetInputNameAllocated(i, allocator).get());
+      |                                        ^~
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:49:34: error: base operand of ‘->’ is not a pointer
+   49 |         auto type_info = session_->GetInputTypeInfo(i);
+      |                                  ^~
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:57:41: error: base operand of ‘->’ is not a pointer
+   57 |         output_names_.push_back(session_->GetOutputNameAllocated(i, allocator).get());
+      |                                         ^~
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:58:34: error: base operand of ‘->’ is not a pointer
+   58 |         auto type_info = session_->GetOutputTypeInfo(i);
+      |                                  ^~
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp: In member function ‘virtual Eigen::VectorXd Controller::RLController::update(const RobotState&, const Vector3d&)’:
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:128:40: error: ‘cmd_mutex_’ was not declared in this scope; did you mean ‘cmd_vel_’?
+  128 |         std::lock_guard<std::mutex> lk(cmd_mutex_);
+      |                                        ^~~~~~~~~~
+      |                                        cmd_vel_
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:151:27: error: base operand of ‘->’ is not a pointer
+  151 |         outputs = session_->Run(Ort::RunOptions{nullptr}, input_names_.data(), &input_tensor, 1, output_names_.data(), output_names_.size());
+      |                           ^~
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp: In member function ‘Eigen::VectorXd Controller::RLController::computeObservation(const RobotState&)’:
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:231:44: error: ‘cmd_mutex_’ was not declared in this scope; did you mean ‘cmd_vel_’?
+  231 |             std::lock_guard<std::mutex> lk(cmd_mutex_);
+      |                                            ^~~~~~~~~~
+      |                                            cmd_vel_
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp: In member function ‘virtual void Controller::RLController::setCmdVel(const Vector3d&)’:
+/home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:268:36: error: ‘cmd_mutex_’ was not declared in this scope; did you mean ‘cmd_vel_’?
+  268 |     std::lock_guard<std::mutex> lk(cmd_mutex_);
+      |                                    ^~~~~~~~~~
+      |                                    cmd_vel_
+gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:216：CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o] 错误 1
+gmake[2]: *** 正在等待未完成的任务....
+gmake[1]: *** [CMakeFiles/Makefile2:265：CMakeFiles/go2_core.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

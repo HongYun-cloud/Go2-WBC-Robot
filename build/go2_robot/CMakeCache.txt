@@ -25,7 +25,7 @@ AMENT_CMAKE_ENVIRONMENT_PARENT_PREFIX_PATH_GENERATION:BOOL=ON
 
 //Replace the CMake install command with a custom implementation
 // using symlinks instead of copying resources
-AMENT_CMAKE_SYMLINK_INSTALL:BOOL=OFF
+AMENT_CMAKE_SYMLINK_INSTALL:BOOL=1
 
 //Generate an uninstall target to revert the effects of the install
 // step
@@ -468,7 +468,7 @@ PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 PYTHON_DEB_LAYOUT:BOOL=OFF
 
 //Path to a program.
-PYTHON_EXECUTABLE:FILEPATH=
+PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python3
 
 //Path to a library.
 PYTHON_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpython3.10.so
@@ -1169,12 +1169,6 @@ _OPENSSL_openssl_INCLUDEDIR:INTERNAL=
 _OPENSSL_openssl_LIBDIR:INTERNAL=
 _OPENSSL_openssl_PREFIX:INTERNAL=
 _OPENSSL_openssl_VERSION:INTERNAL=
-//Path to a program.
-_Python2_CONFIG:INTERNAL=_Python2_CONFIG-NOTFOUND
-//Path to a program.
-_Python2_EXECUTABLE:INTERNAL=Python2_EXECUTABLE-NOTFOUND
-//Path to a file.
-_Python2_INCLUDE_DIR:INTERNAL=_Python2_INCLUDE_DIR-NOTFOUND
 _Python3_DEVELOPMENT_MODULE_SIGNATURE:INTERNAL=4bc14a0ea6a21ea267e38aa660e9b54b
 _Python3_EXECUTABLE:INTERNAL=/usr/bin/python3
 _Python3_INCLUDE_DIR:INTERNAL=/usr/include/python3.10
@@ -1183,7 +1177,9 @@ _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;10;12;64;;cpython-310-x86_64-l
 _Python3_INTERPRETER_SIGNATURE:INTERNAL=0f3e53742e142b1d9e50e4ca5b901dd8
 _Python3_NUMPY_SIGNATURE:INTERNAL=2c9f54926079e6790283292d6d849f51
 //Path to a file.
-_Python3_NumPy_INCLUDE_DIR:INTERNAL=/usr/lib/python3/dist-packages/numpy/core/include
+_Python3_NumPy_INCLUDE_DIR:INTERNAL=/home/hong/.local/lib/python3.10/site-packages/numpy/_core/include
+//Index for unique symlink install targets
+__AMENT_CMAKE_SYMLINK_INSTALL_TARGETS_INDEX:INTERNAL=4
 __pkg_config_arguments__OPENSSL:INTERNAL=QUIET;openssl
 __pkg_config_checked__OPENSSL:INTERNAL=1
 //Result of TRY_COMPILE

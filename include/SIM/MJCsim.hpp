@@ -22,7 +22,7 @@ class SIM{
         void SimStop();
         void Step();
         void Render();
-        void control(Eigen::VectorXd &tau, bool hip_enabled = false);
+        void control(const Eigen::VectorXd &tau, bool hip_enabled = false);
         void getModel(double &box_mass,double &stick_mass,double &stick_length);
         RobotState getState();
 

@@ -103,7 +103,7 @@ clean: CMakeFiles/go2_robot__rosidl_typesupport_introspection_c.dir/clean
 clean: CMakeFiles/go2_robot__rosidl_typesupport_c.dir/clean
 clean: CMakeFiles/go2_robot__rosidl_typesupport_introspection_cpp.dir/clean
 clean: CMakeFiles/go2_robot__rosidl_typesupport_cpp.dir/clean
-clean: CMakeFiles/ament_cmake_python_copy_go2_robot.dir/clean
+clean: CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/clean
 clean: CMakeFiles/ament_cmake_python_build_go2_robot_egg.dir/clean
 clean: CMakeFiles/go2_robot__rosidl_generator_py.dir/clean
 clean: CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_c__pyext.dir/clean
@@ -263,12 +263,12 @@ CMakeFiles/go2_robot_uninstall.dir/clean:
 CMakeFiles/go2_core.dir/all: third_party/osqp-eigen/CMakeFiles/OsqpEigen.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_core.dir/build.make CMakeFiles/go2_core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=9,10,11,12,13,14,15,16,17 "Built target go2_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=9,10,11,12,13,14,15,16,17,18,19,20 "Built target go2_core"
 .PHONY : CMakeFiles/go2_core.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/go2_core.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/go2_core.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles 0
 .PHONY : CMakeFiles/go2_core.dir/rule
@@ -297,7 +297,7 @@ CMakeFiles/go2_control_node.dir/all: third_party/osqp-eigen/CMakeFiles/OsqpEigen
 
 # Build rule for subdir invocation for target.
 CMakeFiles/go2_control_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/go2_control_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles 0
 .PHONY : CMakeFiles/go2_control_node.dir/rule
@@ -352,7 +352,7 @@ CMakeFiles/go2_robot.dir/clean:
 CMakeFiles/go2_robot__rosidl_generator_c.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_generator_c.dir/build.make CMakeFiles/go2_robot__rosidl_generator_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_generator_c.dir/build.make CMakeFiles/go2_robot__rosidl_generator_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=20,21,22 "Built target go2_robot__rosidl_generator_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=23,24,25 "Built target go2_robot__rosidl_generator_c"
 .PHONY : CMakeFiles/go2_robot__rosidl_generator_c.dir/all
 
 # Build rule for subdir invocation for target.
@@ -378,7 +378,7 @@ CMakeFiles/go2_robot__rosidl_generator_c.dir/clean:
 CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_c.dir/all: CMakeFiles/go2_robot__rosidl_generator_c.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=33,34,35 "Built target go2_robot__rosidl_typesupport_fastrtps_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=36,37,38 "Built target go2_robot__rosidl_typesupport_fastrtps_c"
 .PHONY : CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_c.dir/all
 
 # Build rule for subdir invocation for target.
@@ -404,7 +404,7 @@ CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_c.dir/clean:
 CMakeFiles/go2_robot__cpp.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__cpp.dir/build.make CMakeFiles/go2_robot__cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__cpp.dir/build.make CMakeFiles/go2_robot__cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=18 "Built target go2_robot__cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=21 "Built target go2_robot__cpp"
 .PHONY : CMakeFiles/go2_robot__cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -430,7 +430,7 @@ CMakeFiles/go2_robot__cpp.dir/clean:
 CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_cpp.dir/all: CMakeFiles/go2_robot__cpp.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=38,39,40 "Built target go2_robot__rosidl_typesupport_fastrtps_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=41,42,43 "Built target go2_robot__rosidl_typesupport_fastrtps_cpp"
 .PHONY : CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -456,7 +456,7 @@ CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_cpp.dir/clean:
 CMakeFiles/go2_robot__rosidl_typesupport_introspection_c.dir/all: CMakeFiles/go2_robot__rosidl_generator_c.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_introspection_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_introspection_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=41,42,43 "Built target go2_robot__rosidl_typesupport_introspection_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=44,45,46 "Built target go2_robot__rosidl_typesupport_introspection_c"
 .PHONY : CMakeFiles/go2_robot__rosidl_typesupport_introspection_c.dir/all
 
 # Build rule for subdir invocation for target.
@@ -482,7 +482,7 @@ CMakeFiles/go2_robot__rosidl_typesupport_introspection_c.dir/clean:
 CMakeFiles/go2_robot__rosidl_typesupport_c.dir/all: CMakeFiles/go2_robot__rosidl_generator_c.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_c.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_c.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=25,26,27 "Built target go2_robot__rosidl_typesupport_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=28,29,30 "Built target go2_robot__rosidl_typesupport_c"
 .PHONY : CMakeFiles/go2_robot__rosidl_typesupport_c.dir/all
 
 # Build rule for subdir invocation for target.
@@ -508,7 +508,7 @@ CMakeFiles/go2_robot__rosidl_typesupport_c.dir/clean:
 CMakeFiles/go2_robot__rosidl_typesupport_introspection_cpp.dir/all: CMakeFiles/go2_robot__cpp.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_introspection_cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_introspection_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=46,47,48 "Built target go2_robot__rosidl_typesupport_introspection_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=49,50,51 "Built target go2_robot__rosidl_typesupport_introspection_cpp"
 .PHONY : CMakeFiles/go2_robot__rosidl_typesupport_introspection_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -534,7 +534,7 @@ CMakeFiles/go2_robot__rosidl_typesupport_introspection_cpp.dir/clean:
 CMakeFiles/go2_robot__rosidl_typesupport_cpp.dir/all: CMakeFiles/go2_robot__cpp.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_cpp.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_cpp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_cpp.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=30,31,32 "Built target go2_robot__rosidl_typesupport_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=33,34,35 "Built target go2_robot__rosidl_typesupport_cpp"
 .PHONY : CMakeFiles/go2_robot__rosidl_typesupport_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -554,36 +554,36 @@ CMakeFiles/go2_robot__rosidl_typesupport_cpp.dir/clean:
 .PHONY : CMakeFiles/go2_robot__rosidl_typesupport_cpp.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ament_cmake_python_copy_go2_robot.dir
+# Target rules for target CMakeFiles/ament_cmake_python_symlink_go2_robot.dir
 
 # All Build rule for target.
-CMakeFiles/ament_cmake_python_copy_go2_robot.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_go2_robot.dir/build.make CMakeFiles/ament_cmake_python_copy_go2_robot.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_go2_robot.dir/build.make CMakeFiles/ament_cmake_python_copy_go2_robot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num= "Built target ament_cmake_python_copy_go2_robot"
-.PHONY : CMakeFiles/ament_cmake_python_copy_go2_robot.dir/all
+CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/build.make CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/build.make CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num= "Built target ament_cmake_python_symlink_go2_robot"
+.PHONY : CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ament_cmake_python_copy_go2_robot.dir/rule: cmake_check_build_system
+CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ament_cmake_python_copy_go2_robot.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles 0
-.PHONY : CMakeFiles/ament_cmake_python_copy_go2_robot.dir/rule
+.PHONY : CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/rule
 
 # Convenience name for target.
-ament_cmake_python_copy_go2_robot: CMakeFiles/ament_cmake_python_copy_go2_robot.dir/rule
-.PHONY : ament_cmake_python_copy_go2_robot
+ament_cmake_python_symlink_go2_robot: CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/rule
+.PHONY : ament_cmake_python_symlink_go2_robot
 
 # clean rule for target.
-CMakeFiles/ament_cmake_python_copy_go2_robot.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_go2_robot.dir/build.make CMakeFiles/ament_cmake_python_copy_go2_robot.dir/clean
-.PHONY : CMakeFiles/ament_cmake_python_copy_go2_robot.dir/clean
+CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/build.make CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/clean
+.PHONY : CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/ament_cmake_python_build_go2_robot_egg.dir
 
 # All Build rule for target.
-CMakeFiles/ament_cmake_python_build_go2_robot_egg.dir/all: CMakeFiles/ament_cmake_python_copy_go2_robot.dir/all
+CMakeFiles/ament_cmake_python_build_go2_robot_egg.dir/all: CMakeFiles/ament_cmake_python_symlink_go2_robot.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_go2_robot_egg.dir/build.make CMakeFiles/ament_cmake_python_build_go2_robot_egg.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_go2_robot_egg.dir/build.make CMakeFiles/ament_cmake_python_build_go2_robot_egg.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num= "Built target ament_cmake_python_build_go2_robot_egg"
@@ -614,7 +614,7 @@ CMakeFiles/go2_robot__rosidl_generator_py.dir/all: CMakeFiles/go2_robot__rosidl_
 CMakeFiles/go2_robot__rosidl_generator_py.dir/all: go2_robot__py/CMakeFiles/go2_robot__py.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_generator_py.dir/build.make CMakeFiles/go2_robot__rosidl_generator_py.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_generator_py.dir/build.make CMakeFiles/go2_robot__rosidl_generator_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=23,24 "Built target go2_robot__rosidl_generator_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=26,27 "Built target go2_robot__rosidl_generator_py"
 .PHONY : CMakeFiles/go2_robot__rosidl_generator_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -644,7 +644,7 @@ CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_c__pyext.dir/all: CMakeFiles/g
 CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_c__pyext.dir/all: go2_robot__py/CMakeFiles/go2_robot__py.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_c__pyext.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_c__pyext.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_c__pyext.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_c__pyext.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=36,37 "Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=39,40 "Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext"
 .PHONY : CMakeFiles/go2_robot__rosidl_typesupport_fastrtps_c__pyext.dir/all
 
 # Build rule for subdir invocation for target.
@@ -674,7 +674,7 @@ CMakeFiles/go2_robot__rosidl_typesupport_introspection_c__pyext.dir/all: CMakeFi
 CMakeFiles/go2_robot__rosidl_typesupport_introspection_c__pyext.dir/all: go2_robot__py/CMakeFiles/go2_robot__py.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_introspection_c__pyext.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_introspection_c__pyext.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_introspection_c__pyext.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_introspection_c__pyext.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=44,45 "Built target go2_robot__rosidl_typesupport_introspection_c__pyext"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=47,48 "Built target go2_robot__rosidl_typesupport_introspection_c__pyext"
 .PHONY : CMakeFiles/go2_robot__rosidl_typesupport_introspection_c__pyext.dir/all
 
 # Build rule for subdir invocation for target.
@@ -703,7 +703,7 @@ CMakeFiles/go2_robot__rosidl_typesupport_c__pyext.dir/all: CMakeFiles/go2_robot_
 CMakeFiles/go2_robot__rosidl_typesupport_c__pyext.dir/all: go2_robot__py/CMakeFiles/go2_robot__py.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_c__pyext.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_c__pyext.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go2_robot__rosidl_typesupport_c__pyext.dir/build.make CMakeFiles/go2_robot__rosidl_typesupport_c__pyext.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=28,29 "Built target go2_robot__rosidl_typesupport_c__pyext"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=31,32 "Built target go2_robot__rosidl_typesupport_c__pyext"
 .PHONY : CMakeFiles/go2_robot__rosidl_typesupport_c__pyext.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1483,7 +1483,7 @@ third_party/osqp-eigen/CMakeFiles/OsqpEigen.dir/clean:
 go2_robot__py/CMakeFiles/go2_robot__py.dir/all: CMakeFiles/go2_robot.dir/all
 	$(MAKE) $(MAKESILENT) -f go2_robot__py/CMakeFiles/go2_robot__py.dir/build.make go2_robot__py/CMakeFiles/go2_robot__py.dir/depend
 	$(MAKE) $(MAKESILENT) -f go2_robot__py/CMakeFiles/go2_robot__py.dir/build.make go2_robot__py/CMakeFiles/go2_robot__py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=19 "Built target go2_robot__py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=22 "Built target go2_robot__py"
 .PHONY : go2_robot__py/CMakeFiles/go2_robot__py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1509,7 +1509,7 @@ go2_robot__py/CMakeFiles/go2_robot__py.dir/clean:
 go2_robot__rs/CMakeFiles/go2_robot__rs.dir/all:
 	$(MAKE) $(MAKESILENT) -f go2_robot__rs/CMakeFiles/go2_robot__rs.dir/build.make go2_robot__rs/CMakeFiles/go2_robot__rs.dir/depend
 	$(MAKE) $(MAKESILENT) -f go2_robot__rs/CMakeFiles/go2_robot__rs.dir/build.make go2_robot__rs/CMakeFiles/go2_robot__rs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=49 "Built target go2_robot__rs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hong/Movement_Control/Go2Robot/build/go2_robot/CMakeFiles --progress-num=52 "Built target go2_robot__rs"
 .PHONY : go2_robot__rs/CMakeFiles/go2_robot__rs.dir/all
 
 # Build rule for subdir invocation for target.

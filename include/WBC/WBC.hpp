@@ -5,7 +5,7 @@
 #include "WBC_Base.h"
 #include <OsqpEigen/OsqpEigen.h>
 #include <yaml-cpp/yaml.h>
-#include "Model/pinocchio.hpp"
+#include "Dynamic/pinocchio.hpp"
 #include "Estimator/PositionVelocityEstimator.hpp"
 // 首先说明，wbc是全状态的空间方程，考虑到了腿的重量，科氏力等，考虑了mpc里没有考虑到的一些力
 // 根据动力学方程M(q)*ddot(q) + h(q,ddot(q)) = S.transpose() * τ + J.transpose() * f

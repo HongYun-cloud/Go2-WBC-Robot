@@ -55,3 +55,6 @@ endforeach()
 message(STATUS "Execute custom uninstall script")
 
 # begin of custom uninstall code
+
+# uninstall files installed using the symlink install functions
+include("/home/hong/Movement_Control/Go2Robot/build/go2_robot/ament_cmake_symlink_install/ament_cmake_symlink_install_uninstall_script.cmake")

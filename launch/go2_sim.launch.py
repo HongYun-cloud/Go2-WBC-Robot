@@ -1,4 +1,4 @@
-"""Go2 四足 WBC 仿真节点启动文件.
+"""Go2 四足控制节点启动文件 (支持 sim/hardware 和 traditional/RL 切换).
 
 用法:
   # 方式一: 源码路径启动 (从包根目录执行, 改 config/*.yaml 即时生效, 无需重新 build)
@@ -10,23 +10,26 @@
   ros2 launch go2_robot go2_sim.launch.py
 
 参数优先级 (高 → 低):
-  1. 启动参数 (下面的 gait / overrides)
+  1. 启动参数 (下面的 gait / robot_backend / controller_type / overrides)
   2. <pkg_root>/config/go2_params.yaml   ← 数据源, 第一优先
   3. 节点里 declare_parameter 的默认值
 
-路径参数 (mujoco_model / urdf_path / control_config) 同样以 yaml 为准, 只是由本文件
+路径参数 (mujoco_model / urdf_path / control_config / policy_path) 同样以 yaml 为准, 只是由本文件
 把 yaml 里的**相对路径按 <pkg_root> 解析成绝对路径**再传给节点 (节点自己的默认值是相对
 **运行目录**的, 而 ros2 launch 时节点 cwd 取决于启动位置, 不可靠):
       yaml:  mujoco_model: "go2/scene_flat.xml"
    → 实际加载 <pkg_root>/go2/scene_flat.xml
-  换模型/换 URDF 改 yaml 即可; 写绝对路径则原样使用。找不到文件会在启动时直接报错。
+   换模型/换 URDF 改 yaml 即可; 写绝对路径则原样使用。找不到文件会在启动时直接报错。
 
 可调启动参数:
-  gait:=TROT|WALK|STAND     覆盖 yaml 的 initial_gait; 留空 (默认) = 用 yaml 的值
+  robot_backend:=mujoco|unitree  选择仿真后端 (默认 mujoco, unitree 待实现)
+  controller_type:=traditional|rl  选择控制器 (默认 traditional MPC+WBC, rl 为 ONNX 策略)
+  gait:=TROT|WALK|STAND     覆盖 yaml 的 initial_gait (仅 traditional); 留空 = 用 yaml 的值
   overrides:="{key: value}" 临时覆盖 yaml 里任意参数 (yaml 语法的字典), 用于不编辑文件
                             快速试参数, 例:
         ros2 launch launch/go2_sim.launch.py overrides:="{desired_height: 0.28, touchdown_force: 8.0}"
         ros2 launch launch/go2_sim.launch.py gait:=WALK overrides:="{airborne_hold_ratio: 0.001}"
+        ros2 launch launch/go2_sim.launch.py controller_type:=rl robot_backend:=mujoco
   注: wbc.W / wbc.FI / wbc.C 是数组, 要整条覆盖:
         overrides:="{wbc: {C: [200,200,200, 200,200,200, 200,200,200, 200,200,200]}}"
 """
@@ -94,6 +97,14 @@ def _make_node(context, *args, **kwargs):
     ]
 
     # 3) 启动参数覆盖: 留空 = 不覆盖, 让 yaml 生效
+    robot_backend = context.launch_configurations.get('robot_backend', '')
+    if robot_backend:
+        params.append({'robot_backend': robot_backend})
+
+    controller_type = context.launch_configurations.get('controller_type', '')
+    if controller_type:
+        params.append({'controller_type': controller_type})
+
     gait = context.launch_configurations.get('gait', '')
     if gait:
         params.append({'initial_gait': gait})
@@ -133,9 +144,17 @@ def _make_node(context, *args, **kwargs):
 def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
+            'robot_backend', default_value='',
+            description='选择仿真后端: mujoco | unitree (待实现); 留空 = 用 yaml 里的值',
+        ),
+        DeclareLaunchArgument(
+            'controller_type', default_value='',
+            description='选择控制器: traditional (MPC+WBC) | rl (ONNX Policy); 留空 = 用 yaml 里的值',
+        ),
+        DeclareLaunchArgument(
             'gait', default_value='',
             description='覆盖 go2_params.yaml 的 initial_gait: TROT / WALK / STAND; '
-                        '留空 (默认) = 用 yaml 里的值',
+                        '留空 (默认) = 用 yaml 里的值 (仅 traditional 生效)',
         ),
         DeclareLaunchArgument(
             'overrides', default_value='',

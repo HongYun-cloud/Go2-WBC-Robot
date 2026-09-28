@@ -1,0 +1,197 @@
+[0.007s] Invoking command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24
+[0.123s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.478s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.186s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[1.544s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.582s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.627s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.709s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.750s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.013s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.049s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[2.328s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.613s] -- Found geometry_msgs: 4.9.2 (/opt/ros/humble/share/geometry_msgs/cmake)
+[2.681s] -- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+[2.744s] -- Found nav_msgs: 4.9.1 (/opt/ros/humble/share/nav_msgs/cmake)
+[2.794s] -- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[2.955s] CMake Warning (dev) at /usr/share/cmake-3.22/Modules/FindOpenGL.cmake:315 (message):
+[2.956s]   Policy CMP0072 is not set: FindOpenGL prefers GLVND by default when
+[2.956s]   available.  Run "cmake --help-policy CMP0072" for policy details.  Use the
+[2.956s]   cmake_policy command to set the policy and suppress this warning.
+[2.956s] 
+[2.956s]   FindOpenGL found both a legacy GL library:
+[2.956s] 
+[2.956s]     OPENGL_gl_LIBRARY: /usr/lib/x86_64-linux-gnu/libGL.so
+[2.956s] 
+[2.956s]   and GLVND libraries for OpenGL and GLX:
+[2.956s] 
+[2.956s]     OPENGL_opengl_LIBRARY: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+[2.957s]     OPENGL_glx_LIBRARY: /usr/lib/x86_64-linux-gnu/libGLX.so
+[2.957s] 
+[2.957s]   OpenGL_GL_PREFERENCE has not been set to "GLVND" or "LEGACY", so for
+[2.957s]   compatibility with CMake 3.10 and below the legacy GL library will be used.
+[2.957s] Call Stack (most recent call first):
+[2.957s]   CMakeLists.txt:29 (find_package)
+[2.957s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[2.957s] 
+[3.147s] -- pinocchio_default FOUND. pinocchio_default at /opt/ros/humble/lib/x86_64-linux-gnu/libpinocchio_default.so
+[3.147s] -- pinocchio_parsers FOUND. pinocchio_parsers at /opt/ros/humble/lib/x86_64-linux-gnu/libpinocchio_parsers.so
+[3.148s] -- boost_filesystem FOUND. boost_filesystem at /lib/x86_64-linux-gnu/libboost_filesystem.so
+[3.197s] -- Found Boost: /usr/include (found version "1.74.0") found components: filesystem serialization 
+[3.234s] -- eigenpy FOUND. eigenpy at /opt/ros/humble/lib/x86_64-linux-gnu/libeigenpy.so
+[3.255s] -- Checking for NumPy
+[3.615s] --   NUMPY_INCLUDE_DIRS=/home/hong/.local/lib/python3.10/site-packages/numpy/_core/include
+[3.749s] --   NUMPY_VERSION=2.2.6
+[3.950s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter Development.Module NumPy 
+[3.951s] -- PythonLibraryDirs: 
+[3.951s] -- PythonLibVersionString: 3.10.12
+[3.965s] -- Python site lib: lib/python3.10/site-packages
+[3.965s] -- Python include dirs: /usr/include/python3.10
+[3.993s] -- Checking for NumPy
+[4.073s] --   NUMPY_INCLUDE_DIRS=/home/hong/.local/lib/python3.10/site-packages/numpy/_core/include
+[4.163s] --   NUMPY_VERSION=2.2.6
+[4.163s] -- NumPy include dir: /home/hong/.local/lib/python3.10/site-packages/numpy/_core/include
+[4.167s] CMake Warning at /usr/share/cmake-3.22/Modules/FindBoost.cmake:2201 (message):
+[4.167s]   No header defined for python310; skipping header check (note: header-only
+[4.167s]   libraries have no designated component)
+[4.167s] Call Stack (most recent call first):
+[4.167s]   /opt/ros/humble/lib/x86_64-linux-gnu/cmake/eigenpy/boost.cmake:148 (find_package)
+[4.167s]   /opt/ros/humble/lib/x86_64-linux-gnu/cmake/eigenpy/eigenpyConfig.cmake:149 (SEARCH_FOR_BOOST_PYTHON)
+[4.167s]   /usr/share/cmake-3.22/Modules/CMakeFindDependencyMacro.cmake:47 (find_package)
+[4.167s]   /opt/ros/humble/lib/x86_64-linux-gnu/cmake/pinocchio/pinocchioConfig.cmake:161 (find_dependency)
+[4.167s]   CMakeLists.txt:41 (find_package)
+[4.167s] 
+[4.167s] 
+[4.167s] -- Found Boost: /usr/include (found version "1.74.0") found components: python310 
+[4.503s] -- Default C++ standard: 201703
+[4.504s] -- C++ standard sufficient: Minimal required 11, currently defined: 17
+[4.513s] -- hpp-fcl FOUND. hpp-fcl at /opt/ros/humble/lib/x86_64-linux-gnu/libhpp-fcl.so
+[4.525s] -- Found Boost: /usr/include (found version "1.74.0") found components: chrono serialization filesystem 
+[4.540s] -- C++ standard sufficient: Minimal required 11, currently defined: 17
+[4.542s] -- C++ standard sufficient: Minimal required 11, currently defined: 17
+[4.587s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[4.945s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[5.268s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[5.421s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.475s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[5.491s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[5.491s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[5.491s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[5.717s] -- Configuring done
+[5.980s] -- Generating done
+[6.007s] -- Build files have been written to: /home/hong/Movement_Control/Go2Robot/build/go2_robot
+[6.033s] Consolidate compiler generated dependencies of target go2_robot__rosidl_generator_c
+[6.041s] Consolidate compiler generated dependencies of target OsqpEigen
+[6.041s] [  1%] Built target go2_robot__rs
+[6.042s] [  3%] Built target go2_robot__cpp
+[6.045s] [  9%] Built target go2_robot__rosidl_generator_c
+[6.050s] [  9%] Built target ament_cmake_python_symlink_go2_robot
+[6.053s] Consolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_c
+[6.053s] Consolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_fastrtps_cpp
+[6.053s] Consolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_introspection_cpp
+[6.053s] [ 19%] Built target OsqpEigen
+[6.054s] Consolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_fastrtps_c
+[6.055s] Consolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_cpp
+[6.056s] Consolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_introspection_c
+[6.060s] [ 25%] Built target go2_robot__rosidl_typesupport_fastrtps_cpp
+[6.060s] [ 30%] Built target go2_robot__rosidl_typesupport_introspection_cpp
+[6.060s] [ 36%] Built target go2_robot__rosidl_typesupport_fastrtps_c
+[6.062s] [ 42%] Built target go2_robot__rosidl_typesupport_c
+[6.064s] [ 48%] Built target go2_robot__rosidl_typesupport_cpp
+[6.065s] [ 53%] Built target go2_robot__rosidl_typesupport_introspection_c
+[6.080s] [ 53%] Built target go2_robot
+[6.099s] [ 55%] Built target go2_robot__py
+[6.110s] Consolidate compiler generated dependencies of target go2_robot__rosidl_generator_py
+[6.118s] [ 59%] Built target go2_robot__rosidl_generator_py
+[6.131s] Consolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_c__pyext
+[6.132s] Consolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_fastrtps_c__pyext
+[6.132s] Consolidate compiler generated dependencies of target go2_robot__rosidl_typesupport_introspection_c__pyext
+[6.142s] [ 63%] Built target go2_robot__rosidl_typesupport_introspection_c__pyext
+[6.142s] [ 67%] Built target go2_robot__rosidl_typesupport_c__pyext
+[6.142s] [ 71%] Built target go2_robot__rosidl_typesupport_fastrtps_c__pyext
+[6.190s] running egg_info
+[6.190s] writing go2_robot.egg-info/PKG-INFO
+[6.190s] writing dependency_links to go2_robot.egg-info/dependency_links.txt
+[6.190s] writing top-level names to go2_robot.egg-info/top_level.txt
+[6.191s] reading manifest file 'go2_robot.egg-info/SOURCES.txt'
+[6.192s] writing manifest file 'go2_robot.egg-info/SOURCES.txt'
+[6.196s] Consolidate compiler generated dependencies of target go2_core
+[6.212s] [ 71%] Built target ament_cmake_python_build_go2_robot_egg
+[6.214s] [ 73%] Building CXX object CMakeFiles/go2_core.dir/src/SIM/MJCsim.cpp.o
+[6.214s] [ 75%] Building CXX object CMakeFiles/go2_core.dir/src/MPC/MPC.cpp.o
+[6.218s] [ 76%] Building CXX object CMakeFiles/go2_core.dir/src/WBC/WBC.cpp.o
+[6.219s] [ 78%] Building CXX object CMakeFiles/go2_core.dir/src/Planner/GaitScheduler.cpp.o
+[6.219s] [ 80%] Building CXX object CMakeFiles/go2_core.dir/src/Planner/SwingLegPlanner.cpp.o
+[6.219s] [ 82%] Building CXX object CMakeFiles/go2_core.dir/src/Dynamic/pinocchio.cpp.o
+[6.219s] [ 84%] Building CXX object CMakeFiles/go2_core.dir/src/fsm/ControlFSM.cpp.o
+[6.220s] [ 86%] Building CXX object CMakeFiles/go2_core.dir/src/Estimator/PositionVelocityEstimator.cpp.o
+[6.222s] [ 88%] Building CXX object CMakeFiles/go2_core.dir/src/RobotInterface/MujocoRobotInterface.cpp.o
+[6.222s] [ 90%] Building CXX object CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o
+[6.222s] [ 92%] Building CXX object CMakeFiles/go2_core.dir/src/Controller/TraditionalController.cpp.o
+[7.363s] In file included from /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:1:
+[7.363s] /home/hong/Movement_Control/Go2Robot/include/Controller/RLController.hpp:27:5: error: ‘Ort’ does not name a type
+[7.363s]    27 |     Ort::Env env_;
+[7.363s]       |     ^~~
+[7.366s] /home/hong/Movement_Control/Go2Robot/include/Controller/RLController.hpp:28:21: error: ‘Ort’ was not declared in this scope
+[7.367s]    28 |     std::unique_ptr<Ort::Session> session_;
+[7.367s]       |                     ^~~
+[7.367s] /home/hong/Movement_Control/Go2Robot/include/Controller/RLController.hpp:28:33: error: template argument 1 is invalid
+[7.367s]    28 |     std::unique_ptr<Ort::Session> session_;
+[7.367s]       |                                 ^
+[7.367s] /home/hong/Movement_Control/Go2Robot/include/Controller/RLController.hpp:28:33: error: template argument 2 is invalid
+[7.372s] /home/hong/Movement_Control/Go2Robot/include/Controller/RLController.hpp:50:10: error: ‘mutex’ in namespace ‘std’ does not name a type
+[7.372s]    50 |     std::mutex cmd_mutex_;
+[7.372s]       |          ^~~~~
+[7.372s] /home/hong/Movement_Control/Go2Robot/include/Controller/RLController.hpp:5:1: note: ‘std::mutex’ is defined in header ‘<mutex>’; did you forget to ‘#include <mutex>’?
+[7.372s]     4 | #include "Controller/ControllerBase.hpp"
+[7.372s]   +++ |+#include <mutex>
+[7.372s]     5 | #include <vector>
+[7.663s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp: In constructor ‘Controller::RLController::RLController()’:
+[7.663s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:13:7: error: class ‘Controller::RLController’ does not have any field named ‘env_’
+[7.663s]    13 |     : env_(ORT_LOGGING_LEVEL_WARNING, "Go2RL")
+[7.663s]       |       ^~~~
+[7.668s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp: In member function ‘virtual void Controller::RLController::init(const Controller::ControllerConfig&, RobotInterface::RobotInterfacePtr)’:
+[7.668s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:32:51: error: ‘env_’ was not declared in this scope
+[7.668s]    32 |         session_ = std::make_unique<Ort::Session>(env_, onnx_path.c_str(), session_options);
+[7.669s]       |                                                   ^~~~
+[7.669s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:41:33: error: base operand of ‘->’ is not a pointer
+[7.669s]    41 |     size_t num_inputs = session_->GetInputCount();
+[7.669s]       |                                 ^~
+[7.669s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:42:34: error: base operand of ‘->’ is not a pointer
+[7.669s]    42 |     size_t num_outputs = session_->GetOutputCount();
+[7.669s]       |                                  ^~
+[7.669s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:48:40: error: base operand of ‘->’ is not a pointer
+[7.669s]    48 |         input_names_.push_back(session_->GetInputNameAllocated(i, allocator).get());
+[7.669s]       |                                        ^~
+[7.670s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:49:34: error: base operand of ‘->’ is not a pointer
+[7.670s]    49 |         auto type_info = session_->GetInputTypeInfo(i);
+[7.670s]       |                                  ^~
+[7.670s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:57:41: error: base operand of ‘->’ is not a pointer
+[7.670s]    57 |         output_names_.push_back(session_->GetOutputNameAllocated(i, allocator).get());
+[7.670s]       |                                         ^~
+[7.670s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:58:34: error: base operand of ‘->’ is not a pointer
+[7.670s]    58 |         auto type_info = session_->GetOutputTypeInfo(i);
+[7.670s]       |                                  ^~
+[7.681s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp: In member function ‘virtual Eigen::VectorXd Controller::RLController::update(const RobotState&, const Vector3d&)’:
+[7.682s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:128:40: error: ‘cmd_mutex_’ was not declared in this scope; did you mean ‘cmd_vel_’?
+[7.682s]   128 |         std::lock_guard<std::mutex> lk(cmd_mutex_);
+[7.682s]       |                                        ^~~~~~~~~~
+[7.682s]       |                                        cmd_vel_
+[7.682s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:151:27: error: base operand of ‘->’ is not a pointer
+[7.682s]   151 |         outputs = session_->Run(Ort::RunOptions{nullptr}, input_names_.data(), &input_tensor, 1, output_names_.data(), output_names_.size());
+[7.682s]       |                           ^~
+[7.730s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp: In member function ‘Eigen::VectorXd Controller::RLController::computeObservation(const RobotState&)’:
+[7.730s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:231:44: error: ‘cmd_mutex_’ was not declared in this scope; did you mean ‘cmd_vel_’?
+[7.730s]   231 |             std::lock_guard<std::mutex> lk(cmd_mutex_);
+[7.731s]       |                                            ^~~~~~~~~~
+[7.731s]       |                                            cmd_vel_
+[7.736s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp: In member function ‘virtual void Controller::RLController::setCmdVel(const Vector3d&)’:
+[7.736s] /home/hong/Movement_Control/Go2Robot/src/Controller/RLController.cpp:268:36: error: ‘cmd_mutex_’ was not declared in this scope; did you mean ‘cmd_vel_’?
+[7.736s]   268 |     std::lock_guard<std::mutex> lk(cmd_mutex_);
+[7.736s]       |                                    ^~~~~~~~~~
+[7.736s]       |                                    cmd_vel_
+[8.242s] gmake[2]: *** [CMakeFiles/go2_core.dir/build.make:216：CMakeFiles/go2_core.dir/src/Controller/RLController.cpp.o] 错误 1
+[8.243s] gmake[2]: *** 正在等待未完成的任务....
+[46.087s] gmake[1]: *** [CMakeFiles/Makefile2:265：CMakeFiles/go2_core.dir/all] 错误 2
+[46.087s] gmake: *** [Makefile:146：all] 错误 2
+[46.142s] Invoked command in '/home/hong/Movement_Control/Go2Robot/build/go2_robot' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/hong/Movement_Control/Go2Robot/build/go2_robot -- -j24 -l24

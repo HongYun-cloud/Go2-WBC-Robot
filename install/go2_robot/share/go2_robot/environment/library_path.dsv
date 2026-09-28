@@ -1,1 +1,1 @@
-prepend-non-duplicate;LD_LIBRARY_PATH;lib
+/home/hong/Movement_Control/Go2Robot/build/go2_robot/ament_cmake_environment_hooks/library_path.dsv
