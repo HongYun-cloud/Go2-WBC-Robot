@@ -31,33 +31,13 @@ private:
     std::unique_ptr<Impl> impl_;
 };
 
-class GowRobotInterface : public RobotInterface
-{
-    public:
-    explicit GowRobotInterface(const std::string& model_path, const std::string& urdf_path);
 
-    void init() override;
-    double getTimestep() const override;
-    RobotState getState() override;
-    void setCommand(const Eigen::VectorXd& tau) override;
-    void step() override;
-    void render() override;
-    void reset() override;
-    bool isRunning() const override;
-    std::string getUrdfPath() const override;
-    std::string getModelPath() const override;
-
-private:
-    class Impl;
-    std::unique_ptr<Impl> impl_;
-};
 
 
 /**
  * Factory function to create a MuJoCo robot interface.
  */
 RobotInterfacePtr createMujocoRobotInterface(const std::string& model_path, const std::string& urdf_path);
-RobotInterfacePtr createGowRobotInterface(const std::string& model_path, const std::string& urdf_path);
 
 } // namespace RobotInterface
 
